@@ -98,18 +98,15 @@ initialize:
 	mov	lr, pc
 	bx	r3
 	mov	r3, #67108864
-	mov	r0, #4352
+	mov	r2, #4352
 	mov	r1, #23552
-	mov	r2, #0
-	strh	r0, [r3]	@ movhi
+	strh	r2, [r3]	@ movhi
 	strh	r1, [r3, #8]	@ movhi
-	ldr	r0, .L8+8
-	ldr	r1, .L8+12
-	ldrh	r0, [r0, #48]
-	ldr	r3, .L8+16
+	ldr	r2, .L8+8
+	ldr	r3, .L8+12
+	ldrh	r2, [r2, #48]
 	pop	{r4, lr}
-	strh	r0, [r1]	@ movhi
-	str	r2, [r3]
+	strh	r2, [r3]	@ movhi
 	b	goToStart
 .L9:
 	.align	2
@@ -118,7 +115,6 @@ initialize:
 	.word	hideSprites
 	.word	67109120
 	.word	buttons
-	.word	.LANCHOR0
 	.size	initialize, .-initialize
 	.align	2
 	.syntax unified
@@ -159,22 +155,22 @@ goToGame:
 	strh	r2, [r3, #8]	@ movhi
 	strh	r1, [r3]	@ movhi
 	ldr	r2, .L16
+	ldr	r4, .L16+4
 	mov	lr, pc
 	bx	r2
-	ldr	r4, .L16+4
 	mov	r3, #2048
 	mov	r0, #3
 	ldr	r2, .L16+8
 	ldr	r1, .L16+12
 	mov	lr, pc
 	bx	r4
-	mov	r3, #14592
+	mov	r3, #256
 	mov	r2, #100663296
 	mov	r0, #3
 	ldr	r1, .L16+16
 	mov	lr, pc
 	bx	r4
-	mov	r3, #16
+	mov	r3, #256
 	mov	r2, #83886080
 	mov	r0, #3
 	ldr	r1, .L16+20
@@ -186,17 +182,23 @@ goToGame:
 	ldr	r1, .L16+28
 	mov	lr, pc
 	bx	r4
-	ldr	r2, .L16+32
-	mov	r3, #16
+	mov	r3, #256
 	mov	r0, #3
+	ldr	r2, .L16+32
 	ldr	r1, .L16+36
 	mov	lr, pc
 	bx	r4
-	ldr	r3, .L16+40
+	mov	r2, #117440512
+	mov	r3, #512
+	mov	r0, #3
+	ldr	r1, .L16+40
+	mov	lr, pc
+	bx	r4
+	ldr	r3, .L16+44
 	mov	lr, pc
 	bx	r3
 	mov	r2, #1
-	ldr	r3, .L16+44
+	ldr	r3, .L16+48
 	pop	{r4, lr}
 	str	r2, [r3]
 	bx	lr
@@ -206,13 +208,14 @@ goToGame:
 	.word	waitForVBlank
 	.word	DMANow
 	.word	100720640
-	.word	bg_tryMap
-	.word	bg_tryTiles
-	.word	bg_tryPal
+	.word	newbgMap
+	.word	newbg_tileTiles
+	.word	newbg_tilePal
 	.word	100728832
 	.word	catSpritesheetTiles
 	.word	83886592
 	.word	catSpritesheetPal
+	.word	shadowOAM
 	.word	hideSprites
 	.word	state
 	.size	goToGame, .-goToGame
@@ -663,9 +666,9 @@ game:
 .L83:
 	.align	2
 .L82:
-	.word	updatePlayer
+	.word	updateGame
 	.word	oldButtons
-	.word	drawPlayer
+	.word	drawGame
 	.word	buttons
 	.size	game, .-game
 	.align	2
@@ -718,10 +721,6 @@ draw:
 	.word	DMANow
 	.word	shadowOAM
 	.size	draw, .-draw
-	.section	.rodata.str1.4
-	.align	2
-.LC1:
-	.ascii	"State: %d\000"
 	.section	.text.startup,"ax",%progbits
 	.align	2
 	.global	main
@@ -738,24 +737,20 @@ main:
 	ldr	r3, .L109
 	mov	lr, pc
 	bx	r3
-	ldr	r6, .L109+4
-	ldr	r5, .L109+8
-	ldr	r4, .L109+12
-	ldr	r10, .L109+16
-	ldr	fp, .L109+20
-	ldr	r7, .L109+24
-	ldr	r9, .L109+28
-	ldr	r8, .L109+32
+	ldr	r4, .L109+4
+	ldr	r8, .L109+8
+	ldr	r7, .L109+12
+	ldr	fp, .L109+16
+	ldr	r10, .L109+20
+	ldr	r9, .L109+24
+	ldr	r5, .L109+28
+	ldr	r6, .L109+32
 .L98:
-	ldrh	r3, [r5]
-	strh	r3, [r6]	@ movhi
-	ldrh	r3, [r9, #48]
-	mov	r0, r8
-	ldr	r1, [r4]
-	strh	r3, [r5]	@ movhi
-	mov	lr, pc
-	bx	r10
-	ldr	r3, [r4]
+	ldrh	r2, [r4]
+	strh	r2, [r8]	@ movhi
+	ldr	r3, [r7]
+	ldrh	r1, [r6, #48]
+	strh	r1, [r4]	@ movhi
 	cmp	r3, #5
 	ldrls	pc, [pc, r3, asl #2]
 	b	.L90
@@ -767,33 +762,29 @@ main:
 	.word	.L93
 	.word	.L91
 .L91:
-	ldrh	r3, [r6]
-	tst	r3, #8
+	tst	r2, #8
 	ldrne	r3, .L109+36
 	movne	lr, pc
 	bxne	r3
 .L90:
 	mov	lr, pc
-	bx	r7
+	bx	r5
 	b	.L98
 .L93:
-	ldrh	r3, [r6]
-	tst	r3, #8
+	tst	r2, #8
 	beq	.L90
 	ldr	r3, .L109+40
 	mov	lr, pc
 	bx	r3
 	b	.L90
 .L94:
-	ldr	r3, .L109+44
 	mov	lr, pc
-	bx	r3
+	bx	r9
 	b	.L90
 .L95:
-	ldrh	r3, [r6]
-	tst	r3, #8
+	tst	r2, #8
 	beq	.L90
-	ldr	r3, .L109+48
+	ldr	r3, .L109+44
 	mov	lr, pc
 	bx	r3
 	b	.L90
@@ -802,29 +793,26 @@ main:
 	bx	fp
 	b	.L90
 .L96:
-	ldr	r3, .L109+52
 	mov	lr, pc
-	bx	r3
+	bx	r10
 	b	.L90
 .L110:
 	.align	2
 .L109:
 	.word	initialize
-	.word	oldButtons
 	.word	buttons
+	.word	oldButtons
 	.word	state
-	.word	mgba_printf
 	.word	start
+	.word	game
+	.word	pause
 	.word	draw
 	.word	67109120
-	.word	.LC1
 	.word	lose.part.0
 	.word	win.part.0
-	.word	pause
 	.word	instruction.part.0
-	.word	game
 	.size	main, .-main
-	.comm	player,52,4
+	.comm	player,60,4
 	.comm	shadowOAM,1024,4
 	.global	vOff
 	.global	hOff

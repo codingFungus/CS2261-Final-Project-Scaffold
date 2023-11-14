@@ -12,8 +12,11 @@
 #include "winbg.h"
 #include "startscreen.h"
 #include "bg_try.h"
+#include "newbg.h"
+#include "newbg_tile.h"
 #include "instructions.h"
 #include "losebg.h"
+#include "bg_collisionmap.h"
 
 /**
  * Finished: displaying game map, sprite basic movement, 
@@ -40,11 +43,12 @@ SPRITE player;
 
 int main() {
     initialize();
+    
 
     while (1) {
         oldButtons = buttons;
         buttons = REG_BUTTONS;
-        mgba_printf("State: %d", state);
+        //mgba_printf("State: %d", state);
 
         switch(state) {
             case START:
@@ -83,7 +87,7 @@ void initialize() {
     
     
     buttons = REG_BUTTONS;
-    hOff = 0;
+    //hOff = 0;
     
     goToStart();
 
@@ -91,11 +95,7 @@ void initialize() {
 void goToStart() {
     REG_DISPCTL = MODE(0) | BG_ENABLE(0) | SPRITE_ENABLE;
     REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_SMALL;
-    //BG(0): start bg
-    
-    //DMANow(3, startbgTiles, &CHARBLOCK[2], startbgTilesLen/2);
-    //DMANow(3, catgameMap, &SCREENBLOCK[30], catgameMapLen/2);
-    //DMANow(3, bg_tryPal, BG_PALETTE, 256);
+
     DMANow(3, startscreenMap, &SCREENBLOCK[28], startscreenMapLen / 2);
     DMANow(3, startscreenTiles, &CHARBLOCK[0], startscreenTilesLen / 2);
     DMANow(3, startscreenPal, BG_PALETTE, startscreenPalLen / 2);
@@ -117,6 +117,7 @@ void start() {
         //srand(seed);
         goToGame();
         initGame();
+        
         //initGame();
     }
     if (BUTTON_PRESSED(BUTTON_SELECT)) {
@@ -132,23 +133,23 @@ void goToGame() {
 
     waitForVBlank();
    
-    DMANow(3, bg_tryMap, &SCREENBLOCK[28], bg_tryMapLen/2);
-    DMANow(3, bg_tryTiles, &CHARBLOCK[0], bg_tryTilesLen/2);
-    DMANow(3, bg_tryPal, BG_PALETTE, bg_tryPalLen/2);
+    DMANow(3, newbgMap, &SCREENBLOCK[28], bg_tryMapLen/2);
+    DMANow(3, newbg_tileTiles, &CHARBLOCK[0], newbg_tileTilesLen/2);
+    DMANow(3, newbg_tilePal, BG_PALETTE, newbg_tilePalLen/2);
     //load in spritesheet of cat
     DMANow(3, catSpritesheetTiles, &CHARBLOCK[4], catSpritesheetTilesLen/2);
     DMANow(3, catSpritesheetPal, SPRITE_PALETTE, catSpritesheetPalLen/2);
 
-    
+    DMANow(3, shadowOAM, OAM, 512);
 
     hideSprites();
     state = GAME;
 }
 
 void game() {
+    updateGame();
+    drawGame();
     
-    updatePlayer();
-    drawPlayer();
     if (BUTTON_PRESSED(BUTTON_START)) {
         goToPause();
     }

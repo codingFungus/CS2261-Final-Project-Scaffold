@@ -78,6 +78,8 @@ typedef struct {
     int numFrames;
     u8 oamIndex; 
     int isMoving;
+    int hide;
+    int lives;
 } SPRITE;
 
 #endif

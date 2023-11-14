@@ -4,11 +4,11 @@
 //======================================================================
 //
 //	catSpritesheet, 256x256@4, 
-//	+ palette 16 entries, not compressed
+//	+ palette 256 entries, not compressed
 //	+ 1024 tiles not compressed
-//	Total size: 32 + 32768 = 32800
+//	Total size: 512 + 32768 = 33280
 //
-//	Time-stamp: 2023-11-09, 14:30:12
+//	Time-stamp: 2023-11-14, 00:09:30
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.3
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -20,8 +20,8 @@
 #define catSpritesheetTilesLen 32768
 extern const unsigned short catSpritesheetTiles[16384];
 
-#define catSpritesheetPalLen 32
-extern const unsigned short catSpritesheetPal[16];
+#define catSpritesheetPalLen 512
+extern const unsigned short catSpritesheetPal[256];
 
 #endif // GRIT_CATSPRITESHEET_H
 

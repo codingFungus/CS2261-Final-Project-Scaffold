@@ -15,9 +15,16 @@
 #define min(a,b)            (((a) < (b)) ? (a) : (b))
 #endif
 
+#define ORANGE_COUNT 6
+#define CUCUMBER_COUNT 4
+#define MAPWIDTH 512
+#define MAPHEIGHT 256
 void initGame();
 void updatePlayer();
 void drawPlayer();
 void initPlayer();
+void drawGame();
+//void playerCollision();
+void updateGame();
 
 #endif
