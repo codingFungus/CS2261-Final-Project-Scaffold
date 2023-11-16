@@ -4,19 +4,18 @@
 #include "sprites.h"
 #include "print.h"
 #include "game.h"
-#include "startbg.h"
 #include "pauseScreen.h"
 #include "pausetile.h"
 #include "catSpriteSheet.h"
 #include "startbgMap.h"
 #include "winbg.h"
 #include "startscreen.h"
-#include "bg_try.h"
 #include "newbg.h"
 #include "newbg_tile.h"
 #include "instructions.h"
 #include "losebg.h"
 #include "bg_collisionmap.h"
+#include "enemies.h"
 
 /**
  * Finished: displaying game map, sprite basic movement, 
@@ -133,7 +132,7 @@ void goToGame() {
 
     waitForVBlank();
    
-    DMANow(3, newbgMap, &SCREENBLOCK[28], bg_tryMapLen/2);
+    DMANow(3, newbgMap, &SCREENBLOCK[28], newbgMapLen/2);
     DMANow(3, newbg_tileTiles, &CHARBLOCK[0], newbg_tileTilesLen/2);
     DMANow(3, newbg_tilePal, BG_PALETTE, newbg_tilePalLen/2);
     //load in spritesheet of cat
@@ -153,18 +152,21 @@ void game() {
     if (BUTTON_PRESSED(BUTTON_START)) {
         goToPause();
     }
+    if (player.lives == 0) {
+        goToLose();
+    }
+    if (player.score == 5) {
+        goToWin();
+    }
     
     //will implement more on win&lose state in the next milestone
     if (BUTTON_PRESSED(BUTTON_A)) {
         goToWin();
     }
-    if (BUTTON_PRESSED(BUTTON_B)) {
-        goToLose();
-    }
 }
 void goToInstruction() {
     REG_DISPCTL = MODE(0) | BG_ENABLE(0);
-    REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_SMALL;
+    REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_WIDE;
 
     DMANow(3, instructionsMap, &SCREENBLOCK[28], instructionsMapLen/2);
     DMANow(3, instructionsTiles, &CHARBLOCK[0], instructionsTilesLen/2);

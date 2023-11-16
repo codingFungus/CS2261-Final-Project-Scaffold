@@ -80,6 +80,8 @@ typedef struct {
     int isMoving;
     int hide;
     int lives;
+    int score;
+    int isAttacking;
 } SPRITE;
 
 #endif

@@ -97,6 +97,7 @@ typedef struct {
     int isMoving;
     int hide;
     int lives;
+    int score;
 } SPRITE;
 # 5 "main.c" 2
 # 1 "print.h" 1
@@ -339,22 +340,37 @@ void win();
 void goToWin();
 void draw();
 # 9 "game.h" 2
-# 22 "game.h"
+# 24 "game.h"
+SPRITE player;
+SPRITE orange[6];
+SPRITE cucumber[4];
+SPRITE rat;
+SPRITE catnip[7];
+SPRITE dog;
+
+int score;
+
+extern int hOff;
+extern int vOff;
+
+typedef enum {LEFT, RIGHT} DIRECTION;
+
 void initGame();
 void updatePlayer();
 void drawPlayer();
 void initPlayer();
 void drawGame();
-void playerCollision();
 void updateGame();
+
+void drawOrange();
+void initOrange();
+void initCucumber();
+void drawCucumber();
+void initCatnip();
+void drawCatnip();
+
+void playerCollision();
 # 7 "main.c" 2
-# 1 "startbg.h" 1
-# 21 "startbg.h"
-extern const unsigned short startbgTiles[9600];
-
-
-extern const unsigned short startbgPal[256];
-# 8 "main.c" 2
 # 1 "pauseScreen.h" 1
 # 22 "pauseScreen.h"
 extern const unsigned short pauseScreenTiles[1440];
@@ -364,21 +380,21 @@ extern const unsigned short pauseScreenMap[1024];
 
 
 extern const unsigned short pauseScreenPal[16];
-# 9 "main.c" 2
+# 8 "main.c" 2
 # 1 "pausetile.h" 1
 # 21 "pausetile.h"
 extern const unsigned short pausetileTiles[9600];
 
 
 extern const unsigned short pausetilePal[256];
-# 10 "main.c" 2
+# 9 "main.c" 2
 # 1 "catSpriteSheet.h" 1
 # 21 "catSpriteSheet.h"
 extern const unsigned short catSpritesheetTiles[16384];
 
 
 extern const unsigned short catSpritesheetPal[256];
-# 11 "main.c" 2
+# 10 "main.c" 2
 # 1 "startbgMap.h" 1
 
 
@@ -388,7 +404,7 @@ extern const unsigned short catSpritesheetPal[256];
 
 
 extern const unsigned short startbgMapMap[1024];
-# 12 "main.c" 2
+# 11 "main.c" 2
 # 1 "winbg.h" 1
 # 22 "winbg.h"
 extern const unsigned short winbgTiles[448];
@@ -398,7 +414,7 @@ extern const unsigned short winbgMap[1024];
 
 
 extern const unsigned short winbgPal[16];
-# 13 "main.c" 2
+# 12 "main.c" 2
 # 1 "startscreen.h" 1
 # 22 "startscreen.h"
 extern const unsigned short startscreenTiles[13296];
@@ -408,17 +424,7 @@ extern const unsigned short startscreenMap[2048];
 
 
 extern const unsigned short startscreenPal[16];
-# 14 "main.c" 2
-# 1 "bg_try.h" 1
-# 22 "bg_try.h"
-extern const unsigned short bg_tryTiles[14592];
-
-
-extern const unsigned short bg_tryMap[2048];
-
-
-extern const unsigned short bg_tryPal[16];
-# 15 "main.c" 2
+# 13 "main.c" 2
 # 1 "newbg.h" 1
 
 
@@ -428,24 +434,24 @@ extern const unsigned short bg_tryPal[16];
 
 
 extern const unsigned short newbgMap[2048];
-# 16 "main.c" 2
+# 14 "main.c" 2
 # 1 "newbg_tile.h" 1
 # 21 "newbg_tile.h"
 extern const unsigned short newbg_tileTiles[256];
 
 
 extern const unsigned short newbg_tilePal[256];
-# 17 "main.c" 2
+# 15 "main.c" 2
 # 1 "instructions.h" 1
 # 22 "instructions.h"
-extern const unsigned short instructionsTiles[1008];
+extern const unsigned short instructionsTiles[3024];
 
 
-extern const unsigned short instructionsMap[1024];
+extern const unsigned short instructionsMap[600];
 
 
-extern const unsigned short instructionsPal[16];
-# 18 "main.c" 2
+extern const unsigned short instructionsPal[256];
+# 16 "main.c" 2
 # 1 "losebg.h" 1
 # 22 "losebg.h"
 extern const unsigned short losebgTiles[528];
@@ -455,12 +461,23 @@ extern const unsigned short losebgMap[1024];
 
 
 extern const unsigned short losebgPal[16];
-# 19 "main.c" 2
+# 17 "main.c" 2
 # 1 "bg_collisionmap.h" 1
 # 20 "bg_collisionmap.h"
 extern const unsigned short bg_collisionmapBitmap[65536];
-# 20 "main.c" 2
-# 29 "main.c"
+# 18 "main.c" 2
+# 1 "enemies.h" 1
+
+
+
+void initRat();
+void drawRat();
+void updateRat();
+void initDog();
+void drawDog();
+void updateDog();
+# 19 "main.c" 2
+# 28 "main.c"
 int state;
 enum {START, GAME, INSTRUCTION, PAUSE, WIN, LOSE};
 
@@ -568,7 +585,7 @@ void goToGame() {
 
     waitForVBlank();
 
-    DMANow(3, newbgMap, &((SB*) 0x06000000)[28], 4096/2);
+    DMANow(3, newbgMap, &((SB*) 0x06000000)[28], (4096)/2);
     DMANow(3, newbg_tileTiles, &((CB*) 0x06000000)[0], 512/2);
     DMANow(3, newbg_tilePal, ((unsigned short*) 0x05000000), 512/2);
 
@@ -588,22 +605,25 @@ void game() {
     if ((!(~(oldButtons) & ((1 << 3))) && (~buttons & ((1 << 3))))) {
         goToPause();
     }
+    if (player.lives == 0) {
+        goToLose();
+    }
+    if (player.score == 5) {
+        goToWin();
+    }
 
 
     if ((!(~(oldButtons) & ((1 << 0))) && (~buttons & ((1 << 0))))) {
         goToWin();
     }
-    if ((!(~(oldButtons) & ((1 << 1))) && (~buttons & ((1 << 1))))) {
-        goToLose();
-    }
 }
 void goToInstruction() {
     (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | (1 << (8 + (0 % 4)));
-    (*(volatile unsigned short*) 0x04000008) = ((0) << 2) | ((28) << 8) | (0 << 14);
+    (*(volatile unsigned short*) 0x04000008) = ((0) << 2) | ((28) << 8) | (1 << 14);
 
-    DMANow(3, instructionsMap, &((SB*) 0x06000000)[28], 2048/2);
-    DMANow(3, instructionsTiles, &((CB*) 0x06000000)[0], 2016/2);
-    DMANow(3, instructionsPal, ((unsigned short*) 0x05000000), 32/2);
+    DMANow(3, instructionsMap, &((SB*) 0x06000000)[28], 1200/2);
+    DMANow(3, instructionsTiles, &((CB*) 0x06000000)[0], 6048/2);
+    DMANow(3, instructionsPal, ((unsigned short*) 0x05000000), 512/2);
 
     hideSprites();
     waitForVBlank();

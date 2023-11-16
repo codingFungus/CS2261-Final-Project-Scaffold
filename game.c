@@ -1,37 +1,37 @@
 #include "game.h"
 #include "bg_collisionmap.h"
+#include "enemies.h"
 
-SPRITE player;
-SPRITE orange[ORANGE_COUNT];
-SPRITE cucumber[CUCUMBER_COUNT];
-
-int xOrange[ORANGE_COUNT] = {160, 410, 375, 104, 320};
-int yOrange[ORANGE_COUNT] = {170, 80, 16, 113, 40};
+int xOrange[ORANGE_COUNT] = {160, 410, 360, 100, 320};
+int yOrange[ORANGE_COUNT] = {170, 80, 16, 110, 40};
 
 int xCuc[CUCUMBER_COUNT] = {165, 248, 464, 308};
 int yCuc[CUCUMBER_COUNT] = {20, 32, 196, 212};
 
-int score;
+int xNip[CATNIP_COUNT] = {276,5, 8, 480, 200};
+int yNip[CATNIP_COUNT] = {10, 160, 16, 0, 215};
 
-int hOff;
-int vOff;
 
-typedef enum {LEFT, RIGHT} DIRECTION;
 
 
 void initGame() {
     initPlayer();
     initOrange();
     initCucumber();
-
+    initCatnip();
+    initRat();
 }
 void drawGame() {
     drawPlayer();
     drawOrange();
     drawCucumber();
+    drawCatnip();
+    drawRat();
 }
 void updateGame() {
     updatePlayer();
+    updateRat();
+    //updateDog();
 
 }
 
@@ -54,6 +54,8 @@ void initPlayer() {
     player.yVel = 2;
     player.currentFrame = 0;
     player.oamIndex = 0;
+    player.score = 0;
+    player.isAttacking = 0;
     
 }
 
@@ -112,9 +114,12 @@ void updatePlayer() {
         }
 
     }
+
     if (BUTTON_HELD(BUTTON_LSHOULDER)) {
         playerAttack();
     }
+
+    //handles animation of player
 
     if (BUTTON_HELD(BUTTON_LEFT) || BUTTON_HELD(BUTTON_RIGHT) || BUTTON_HELD(BUTTON_DOWN) || BUTTON_HELD(BUTTON_UP) ||
         BUTTON_HELD(BUTTON_LSHOULDER)) {
@@ -132,6 +137,7 @@ void updatePlayer() {
         player.timeUntilNextFrame = 10;
     }
         
+    //camera control
     hOff = player.x - SCREENWIDTH / 2 + player.height / 2;
     vOff = player.y - SCREENHEIGHT / 2 + player.width / 2;
 
@@ -141,54 +147,65 @@ void updatePlayer() {
     vOff = max(0, vOff);
     vOff = min(MAPHEIGHT - SCREENHEIGHT, vOff);
 
-
-
-
-    //player collision method
-    for (int i = 0; i < ORANGE_COUNT; i++) {
-        for (int j = 0; j < CUCUMBER_COUNT; j++) {
-            if (collision(player.x + 3, player.y, player.width - 3, player.height - 3,
-                    orange[i].x, orange[i].y, orange[i].width, orange[i].height)
-                    && 
-                    collision(player.x + 3, player.y, player.width - 3, player.height - 3,
-                    cucumber[j].x, cucumber[j].y, cucumber[j].width, cucumber[j].height)) {
-
-                    mgba_printf("player attacked by obj");
-
-                    player.lives--;
-                    playerDisgusted();
-                    mgba_printf("%d\n", player.lives);
-            }
-                
-        }
-    }
+    playerCollision();
 
 
 }
 
-// void playerCollision() {
-//     for (int i = 0; i < ORANGE_COUNT; i++) {
-//         for (int j = 0; j < CUCUMBER_COUNT; j++) {
-//             if (collision(player.x + 3, player.y, player.width - 3, player.height - 3,
-//                     orange[i].x, orange[i].y, orange[i].width, orange[i].height)
-//                     && 
-//                     collision(player.x + 3, player.y, player.width - 3, player.height - 3,
-//                     cucumber[j].x, cucumber[j].y, cucumber[j].width, cucumber[j].height)) {
-
-//                     player.lives--;
-//                     playerDisgusted();
-//                     mgba_printf("player attacked by obj");
-//                     mgba_printf("%d\n", player.lives);
-//             }
+//handles collision of player and objects
+void playerCollision() {
+    //handles collision of the player and objects
+    for (int i = 0; i < ORANGE_COUNT; i++) {
+        if (collision(player.x + 5, player.y, player.width - 5, player.height - 5,
+            orange[i].x, orange[i].y - 10, orange[i].width - 10, orange[i].height - 10)) {
+                if (!player.isAttacking) {
+                    playerDisgusted();
+                    orange[i].hide = 0;
+                    //player.lives--;
+                    mgba_printf("%d\n", player.lives);
+                } else {
+                    mgba_printf("player attacked orange");
+                    orange[i].hide = 1;
+                }
                 
-//         }
-//     }
+        }
+    }
+    for (int j = 0; j < CUCUMBER_COUNT; j++) {
+        if (collision(player.x + 5, player.y, player.width - 5, player.height - 5,
+            cucumber[j].x + 10, cucumber[j].y, cucumber[j].width - 20, cucumber[j].height - 10)) {
+                if (!player.isAttacking) {
+                    playerDisgusted();
+                    cucumber[j].hide = 0;
+                    //player.lives--;
+                    mgba_printf("%d\n", player.lives);
+
+                } else {
+                    mgba_printf("player attacked cucumber");
+                    cucumber[j].hide = 1;
+
+                }
+        }
+
+    }
+
+    //scoring by collecting catnip
+
+    for (int i = 0; i < CATNIP_COUNT; i++) {
+        if (collision(player.x + 5, player.y, player.width - 5, player.height - 5,
+            catnip[i].x, catnip[i].y - 10, catnip[i].width - 10,catnip[i].height - 10)) {
+                //player.score++;
+                catnip[i].hide = 1;
+                mgba_printf("%d\n", player.score);
+
+        }
+
+    }
     
-// }
+}
 
 void playerAttack() {
     mgba_printf("attack");
-    //player.timeUntilNextFrame = 10;
+    player.isAttacking = 1;
 
     shadowOAM[player.oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(player.y - vOff);
     shadowOAM[player.oamIndex].attr1 = ATTR1_MEDIUM | ATTR1_X(player.x - hOff);
@@ -215,7 +232,6 @@ void playerDisgusted() {
 
 }
 void initOrange() {
-    mgba_printf("orange");
     for (int i = 0; i < ORANGE_COUNT; i++) {
         orange[i].width = 32;
         orange[i].height = 32;
@@ -224,28 +240,33 @@ void initOrange() {
         
         orange[i].oamIndex = 1 + i;
 
-        //orange[i].hide = 0;
+        orange[i].hide = 0;
     }
 }
 
 void drawOrange() {
     for (int i = 0; i < ORANGE_COUNT; i++) {
-        
-        shadowOAM[orange[i].oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(orange[i].y - vOff);
-        shadowOAM[orange[i].oamIndex].attr1 = ATTR1_MEDIUM | ATTR1_X(orange[i].x - hOff);
-        shadowOAM[orange[i].oamIndex].attr2 = ATTR2_TILEID(0, 12);
-
+        if (!orange[i].hide) {
+            shadowOAM[orange[i].oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(orange[i].y - vOff);
+            shadowOAM[orange[i].oamIndex].attr1 = ATTR1_MEDIUM | ATTR1_X(orange[i].x - hOff);
+            shadowOAM[orange[i].oamIndex].attr2 = ATTR2_TILEID(12, 8);
+        } else {
+            shadowOAM[orange[i].oamIndex].attr0 = ATTR0_HIDE;
+        }
+    
     }
     
 }
 
 void initCucumber() {
     for (int i = 0; i < CUCUMBER_COUNT; i++) {
+
         cucumber[i].width = 32;
         cucumber[i].height = 32;
         cucumber[i].x = xCuc[i];
         cucumber[i].y = yCuc[i];
         cucumber[i].oamIndex = 8 + i;
+        cucumber[i].hide = 0;
     
 
     }
@@ -254,10 +275,43 @@ void initCucumber() {
 
 void drawCucumber() {
     for (int i = 0; i < CUCUMBER_COUNT; i++) {
-        shadowOAM[cucumber[i].oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(cucumber[i].y - vOff);
-        shadowOAM[cucumber[i].oamIndex].attr1 = ATTR1_MEDIUM | ATTR1_X(cucumber[i].x - hOff);
-        shadowOAM[cucumber[i].oamIndex].attr2 = ATTR2_TILEID(4, 12);
+        if (!cucumber[i].hide) {
+            shadowOAM[cucumber[i].oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(cucumber[i].y - vOff);
+            shadowOAM[cucumber[i].oamIndex].attr1 = ATTR1_MEDIUM | ATTR1_X(cucumber[i].x - hOff);
+            shadowOAM[cucumber[i].oamIndex].attr2 = ATTR2_TILEID(16, 8);
 
+        } else {
+            shadowOAM[cucumber[i].oamIndex].attr0 = ATTR0_HIDE;
+        }
     }
     
 }
+
+void initCatnip() {
+    for (int i = 0; i < CATNIP_COUNT; i++) {
+        catnip[i].width = 32;
+        catnip[i].height = 32;
+        catnip[i].x = xNip[i];
+        catnip[i].y = yNip[i];
+        catnip[i].oamIndex = 15 + i;
+        catnip[i].hide = 0;
+
+    }
+
+}
+void drawCatnip() {
+    for (int i = 0; i < CATNIP_COUNT; i++) {
+        if (!catnip[i].hide) {
+            shadowOAM[catnip[i].oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(catnip[i].y - vOff);
+            shadowOAM[catnip[i].oamIndex].attr1 = ATTR1_MEDIUM | ATTR1_X(catnip[i].x - hOff);
+            shadowOAM[catnip[i].oamIndex].attr2 = ATTR2_TILEID(20, 8);
+        }
+        else {
+            shadowOAM[catnip[i].oamIndex].attr0 = ATTR0_HIDE;
+        }
+        
+    }
+
+}
+
+
