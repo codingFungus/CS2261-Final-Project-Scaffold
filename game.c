@@ -9,9 +9,10 @@ int xCuc[CUCUMBER_COUNT] = {165, 248, 464, 308};
 int yCuc[CUCUMBER_COUNT] = {20, 32, 196, 212};
 
 int xNip[CATNIP_COUNT] = {276,5, 8, 480, 200};
-int yNip[CATNIP_COUNT] = {10, 160, 16, 0, 215};
+int yNip[CATNIP_COUNT] = {10, 150, 16, 0, 215};
 
-
+int collisionCooldown = 0;
+int disgustedDisplayTimer = 0;
 
 
 void initGame() {
@@ -20,6 +21,9 @@ void initGame() {
     initCucumber();
     initCatnip();
     initRat();
+    initScore();
+    initHeart();
+    initLives();
 }
 void drawGame() {
     drawPlayer();
@@ -27,8 +31,21 @@ void drawGame() {
     drawCucumber();
     drawCatnip();
     drawRat();
+    drawScore();
+    drawHeart();
+    drawLives();
 }
 void updateGame() {
+    if (collisionCooldown > 0) {
+        collisionCooldown--;
+    }
+    // if (disgustedDisplayTimer > 0) {
+    //     disgustedDisplayTimer--;
+    //     if (disgustedDisplayTimer == 0) {
+            
+    //     }
+    // }
+    
     updatePlayer();
     updateRat();
     //updateDog();
@@ -46,7 +63,7 @@ void initPlayer() {
     player.height = 32;
     player.x = 20;
     player.y = 210;
-    player.numFrames = 5;
+    player.numFrames = 7;
     player.direction = RIGHT;
     
     player.timeUntilNextFrame = 10;
@@ -56,14 +73,18 @@ void initPlayer() {
     player.oamIndex = 0;
     player.score = 0;
     player.isAttacking = 0;
+    player.cheat = 0;
     
 }
 
 void drawPlayer() {
-    shadowOAM[player.oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(player.y - vOff);
-    shadowOAM[player.oamIndex].attr1 = ATTR1_MEDIUM | ATTR1_X(player.x - hOff);
-    shadowOAM[player.oamIndex].attr2 = ATTR2_TILEID(player.currentFrame * 4, 0);
+    if (player.cheat == 0) {
+        shadowOAM[player.oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(player.y - vOff);
+        shadowOAM[player.oamIndex].attr1 = ATTR1_MEDIUM | ATTR1_X(player.x - hOff);
+        shadowOAM[player.oamIndex].attr2 = ATTR2_TILEID(player.currentFrame * 4, 0);
 
+    }
+    
     if (player.direction == RIGHT) {
         shadowOAM[player.oamIndex].attr1 |= ATTR1_HFLIP;
     }
@@ -115,10 +136,24 @@ void updatePlayer() {
 
     }
 
+    //cheats bypressting buttonA while attacking
     if (BUTTON_HELD(BUTTON_LSHOULDER)) {
         playerAttack();
-    }
+        player.isAttacking = 1;
+        // if (BUTTON_PRESSED(BUTTON_A)) {
+        //     player.cheat = 1;
+        // }
 
+    } else {
+        player.isAttacking = 0;
+    }
+    playerAnimation();
+
+    
+
+}
+
+void playerAnimation() {
     //handles animation of player
 
     if (BUTTON_HELD(BUTTON_LEFT) || BUTTON_HELD(BUTTON_RIGHT) || BUTTON_HELD(BUTTON_DOWN) || BUTTON_HELD(BUTTON_UP) ||
@@ -127,7 +162,8 @@ void updatePlayer() {
 
         if (player.timeUntilNextFrame == 0) {
             player.currentFrame++;
-            if (player.currentFrame >= player.numFrames) {
+            
+            if (player.currentFrame >= 6) {
                 player.currentFrame = 0;
             }
             player.timeUntilNextFrame = 10;
@@ -149,40 +185,60 @@ void updatePlayer() {
 
     playerCollision();
 
+    DMANow(3, shadowOAM, OAM, 512);
+
 
 }
 
 //handles collision of player and objects
 void playerCollision() {
     //handles collision of the player and objects
+
+    int collidedDuringAttack = 0;
+    if (collisionCooldown > 0) {
+        return;
+    }
+    //loses life by touching orange
     for (int i = 0; i < ORANGE_COUNT; i++) {
         if (collision(player.x + 5, player.y, player.width - 5, player.height - 5,
-            orange[i].x, orange[i].y - 10, orange[i].width - 10, orange[i].height - 10)) {
-                if (!player.isAttacking) {
-                    playerDisgusted();
-                    orange[i].hide = 0;
-                    //player.lives--;
-                    mgba_printf("%d\n", player.lives);
-                } else {
-                    mgba_printf("player attacked orange");
+            orange[i].x, orange[i].y - 10, orange[i].width - 10, orange[i].height - 10)
+            &&
+            !orange[i].hide) {
+                if (player.isAttacking && !collidedDuringAttack) {
+                    collidedDuringAttack = 1;
+                    
                     orange[i].hide = 1;
+                    mgba_printf("player attacked orange");
+                } else {
+                    playerDisgusted();
+                    player.lives--;
+                    collisionCooldown = COLLISION_COOLDOWN;
+                    playerDisgusted();
+                    mgba_printf("player lives: %d\n", player.lives);
                 }
                 
         }
     }
+
+    //loses life by touching cucumber
     for (int j = 0; j < CUCUMBER_COUNT; j++) {
         if (collision(player.x + 5, player.y, player.width - 5, player.height - 5,
-            cucumber[j].x + 10, cucumber[j].y, cucumber[j].width - 20, cucumber[j].height - 10)) {
-                if (!player.isAttacking) {
-                    playerDisgusted();
-                    cucumber[j].hide = 0;
-                    //player.lives--;
-                    mgba_printf("%d\n", player.lives);
+            cucumber[j].x + 10, cucumber[j].y, cucumber[j].width - 20, cucumber[j].height - 10)
+            &&
+            !cucumber[j].hide) {
+                if (player.isAttacking && !collidedDuringAttack) {
+                    collidedDuringAttack = 1;
+                    
+                    cucumber[j].hide = 1;
+                    mgba_printf("player attacked cucumber");
 
                 } else {
-                    mgba_printf("player attacked cucumber");
-                    cucumber[j].hide = 1;
-
+                    playerDisgusted();
+                    player.lives--;
+                    collisionCooldown = COLLISION_COOLDOWN;
+                    mgba_printf("player lives: %d\n", player.lives);
+                    
+                    
                 }
         }
 
@@ -191,28 +247,88 @@ void playerCollision() {
     //scoring by collecting catnip
 
     for (int i = 0; i < CATNIP_COUNT; i++) {
+        //insyead of just colliding\, check if colliding and the current one youre colliding with is not hidden 
+        //player.score++;
+
+
         if (collision(player.x + 5, player.y, player.width - 5, player.height - 5,
-            catnip[i].x, catnip[i].y - 10, catnip[i].width - 10,catnip[i].height - 10)) {
-                //player.score++;
+            catnip[i].x, catnip[i].y + 10, catnip[i].width - 10,catnip[i].height - 10)
+            &&
+            !catnip[i].hide) {
+                
+
+                player.score++;
+                player.lives++;
                 catnip[i].hide = 1;
-                mgba_printf("%d\n", player.score);
+                //change position(0, 0) when hide
+                collisionCooldown = COLLISION_COOLDOWN;
+                if (player.score >= 6) {
+                    player.score = 6;
+
+                }
+                if (player.lives >= 5) {
+                    player.lives = 5;
+                }
+
+                mgba_printf("player score: %d\n", player.score);
+                mgba_printf("player lives: %d\n", player.lives);
 
         }
-
     }
+
+    //player being attacked by enemies
+
+    if (collision(player.x + 5, player.y, player.width - 5, player.height - 5, 
+        rat.x, rat.y, rat.width, rat.height)
+        && !rat.hide) {
+        if (player.isAttacking && !collidedDuringAttack) {
+            collidedDuringAttack = 1;
+            mgba_printf("player attacked rat");
+            mgba_printf("rat lives: %d\n", rat.lives);
+            rat.lives--;
+            if (rat.lives == 0) {
+                rat.hide = 1;
+            }
+        } else {
+            player.lives--;
+            collisionCooldown = COLLISION_COOLDOWN;
+            playerDisgusted();
+            mgba_printf("player lives: %d\n", player.lives);
+        }
+    }
+
+
     
 }
 
 void playerAttack() {
     mgba_printf("attack");
-    player.isAttacking = 1;
+    
+    if (player.cheat == 0) {
+        shadowOAM[player.oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(player.y - vOff);
+        shadowOAM[player.oamIndex].attr1 = ATTR1_MEDIUM | ATTR1_X(player.x - hOff);
+        shadowOAM[player.oamIndex].attr2 = ATTR2_TILEID(player.currentFrame * 4, 4);
+        if (player.direction == RIGHT) {
+            shadowOAM[player.oamIndex].attr1 |= ATTR1_HFLIP;
+        }
+    // } else {
 
-    shadowOAM[player.oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(player.y - vOff);
-    shadowOAM[player.oamIndex].attr1 = ATTR1_MEDIUM | ATTR1_X(player.x - hOff);
-    shadowOAM[player.oamIndex].attr2 = ATTR2_TILEID(player.currentFrame * 4, 4);
-    if (player.direction == RIGHT) {
-        shadowOAM[player.oamIndex].attr1 |= ATTR1_HFLIP;
+    //     if (player.currentFrame < 7) {
+    //         shadowOAM[player.oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(player.y - vOff);
+    //         shadowOAM[player.oamIndex].attr1 = ATTR1_MEDIUM | ATTR1_X(player.x - hOff);
+    //         shadowOAM[player.oamIndex].attr2 = ATTR2_TILEID(player.currentFrame * 4, 4);
+    //     } else {
+    //         shadowOAM[player.oamIndex].attr0 = ATTR0_4BPP | ATTR0_WIDE | ATTR0_Y(player.y - vOff);
+    //         shadowOAM[player.oamIndex].attr1 = ATTR1_LARGE | ATTR1_X(player.x - hOff);
+    //         shadowOAM[player.oamIndex].attr2 = ATTR2_TILEID(player.currentFrame * 8, 4);
+    //     }
+    //     if (player.direction == RIGHT) {
+    //         shadowOAM[player.oamIndex].attr1 |= ATTR1_HFLIP;
+    //     }
+
     }
+
+    
     DMANow(3, shadowOAM, OAM, 512);
 
         
@@ -220,6 +336,7 @@ void playerAttack() {
 
 void playerDisgusted() {
     mgba_printf("disgusted");
+    //disgustedDisplayTimer = DISGUSTED_TIME;
 
     shadowOAM[player.oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(player.y - vOff);
     shadowOAM[player.oamIndex].attr1 = ATTR1_MEDIUM | ATTR1_X(player.x - hOff);

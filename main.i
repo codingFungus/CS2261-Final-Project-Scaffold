@@ -98,6 +98,8 @@ typedef struct {
     int hide;
     int lives;
     int score;
+    int isAttacking;
+    int cheat;
 } SPRITE;
 # 5 "main.c" 2
 # 1 "print.h" 1
@@ -340,13 +342,15 @@ void win();
 void goToWin();
 void draw();
 # 9 "game.h" 2
-# 24 "game.h"
+# 26 "game.h"
 SPRITE player;
 SPRITE orange[6];
 SPRITE cucumber[4];
 SPRITE rat;
 SPRITE catnip[7];
 SPRITE dog;
+SPRITE player_score;
+SPRITE player_life;
 
 int score;
 
@@ -369,7 +373,12 @@ void drawCucumber();
 void initCatnip();
 void drawCatnip();
 
+void playerAnimation();
+
 void playerCollision();
+
+void initScore();
+void drawScore();
 # 7 "main.c" 2
 # 1 "pauseScreen.h" 1
 # 22 "pauseScreen.h"
@@ -444,10 +453,10 @@ extern const unsigned short newbg_tilePal[256];
 # 15 "main.c" 2
 # 1 "instructions.h" 1
 # 22 "instructions.h"
-extern const unsigned short instructionsTiles[3024];
+extern const unsigned short instructionsTiles[3216];
 
 
-extern const unsigned short instructionsMap[600];
+extern const unsigned short instructionsMap[512];
 
 
 extern const unsigned short instructionsPal[256];
@@ -477,7 +486,14 @@ void initDog();
 void drawDog();
 void updateDog();
 # 19 "main.c" 2
-# 28 "main.c"
+# 1 "numbers.h" 1
+# 21 "numbers.h"
+extern const unsigned short numbersTiles[8192];
+
+
+extern const unsigned short numbersPal[256];
+# 20 "main.c" 2
+# 29 "main.c"
 int state;
 enum {START, GAME, INSTRUCTION, PAUSE, WIN, LOSE};
 
@@ -608,21 +624,21 @@ void game() {
     if (player.lives == 0) {
         goToLose();
     }
-    if (player.score == 5) {
+    if (player.score == 6 && rat.lives == 0) {
         goToWin();
     }
 
 
-    if ((!(~(oldButtons) & ((1 << 0))) && (~buttons & ((1 << 0))))) {
-        goToWin();
-    }
+
+
+
 }
 void goToInstruction() {
     (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | (1 << (8 + (0 % 4)));
-    (*(volatile unsigned short*) 0x04000008) = ((0) << 2) | ((28) << 8) | (1 << 14);
+    (*(volatile unsigned short*) 0x04000008) = ((0) << 2) | ((28) << 8) | (0 << 14);
 
-    DMANow(3, instructionsMap, &((SB*) 0x06000000)[28], 1200/2);
-    DMANow(3, instructionsTiles, &((CB*) 0x06000000)[0], 6048/2);
+    DMANow(3, instructionsMap, &((SB*) 0x06000000)[28], 1024/2);
+    DMANow(3, instructionsTiles, &((CB*) 0x06000000)[0], 6432/2);
     DMANow(3, instructionsPal, ((unsigned short*) 0x05000000), 512/2);
 
     hideSprites();

@@ -21,32 +21,33 @@ initRat:
 	@ Function supports interworking.
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
-	mov	r0, #15
-	push	{r4, r5, r6, r7, lr}
+	push	{r4, r5, r6, r7, r8, lr}
+	mov	r4, #15
 	mov	r2, #1
-	mov	r7, #32
-	mov	r6, #24
-	mov	r5, #120
-	mov	r4, #10
-	mov	lr, #7
+	mov	r8, #32
+	mov	r7, #24
+	mov	r6, #120
+	mov	r5, #30
+	mov	lr, #10
 	mov	r1, #0
-	mov	ip, #3
+	mov	ip, #7
+	mov	r0, #3
 	ldr	r3, .L4
-	strb	r0, [r3, #44]
-	str	r7, [r3, #16]
-	str	r6, [r3, #20]
-	str	r5, [r3]
-	str	r4, [r3, #24]
-	str	lr, [r3, #40]
-	str	ip, [r3, #56]
-	str	r0, [r3, #4]
+	strb	r4, [r3, #44]
+	str	r8, [r3, #16]
+	str	r7, [r3, #20]
+	str	r6, [r3]
+	str	r5, [r3, #4]
+	str	lr, [r3, #24]
+	str	ip, [r3, #40]
+	str	r0, [r3, #56]
 	str	r2, [r3, #8]
 	str	r2, [r3, #12]
 	str	r2, [r3, #28]
 	str	r2, [r3, #32]
 	str	r1, [r3, #36]
 	str	r1, [r3, #52]
-	pop	{r4, r5, r6, r7, lr}
+	pop	{r4, r5, r6, r7, r8, lr}
 	bx	lr
 .L5:
 	.align	2
@@ -113,18 +114,18 @@ updateRat:
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
-	ldr	r3, .L21
+	ldr	r3, .L22
 	ldr	r2, [r3, #52]
 	cmp	r2, #0
-	bxne	lr
+	bne	.L12
 	ldr	r2, [r3, #32]
 	cmp	r2, #0
-	beq	.L15
+	beq	.L14
 	ldr	r2, [r3, #24]
 	sub	r2, r2, #1
 	cmp	r2, #0
 	str	r2, [r3, #24]
-	bne	.L15
+	bne	.L14
 	ldr	r1, [r3, #36]
 	ldr	r0, [r3, #40]
 	add	r1, r1, #1
@@ -133,29 +134,37 @@ updateRat:
 	mov	r2, #10
 	str	r1, [r3, #36]
 	str	r2, [r3, #24]
-.L15:
+.L14:
 	ldr	r2, [r3, #28]
 	cmp	r2, #1
 	ldr	r1, [r3, #8]
 	ldr	r2, [r3]
-	beq	.L20
+	beq	.L21
 	sub	r2, r2, r1
-	cmp	r2, #49
+	cmp	r2, #19
 	str	r2, [r3]
 	movle	r2, #1
 	strle	r2, [r3, #28]
 	bx	lr
-.L20:
+.L12:
+	mov	r1, #512
+	ldrb	r3, [r3, #44]	@ zero_extendqisi2
+	ldr	r2, .L22+4
+	lsl	r3, r3, #3
+	strh	r1, [r2, r3]	@ movhi
+	bx	lr
+.L21:
 	add	r2, r2, r1
-	cmp	r2, #150
+	cmp	r2, #200
 	str	r2, [r3]
 	movgt	r2, #0
 	strgt	r2, [r3, #28]
 	bx	lr
-.L22:
+.L23:
 	.align	2
-.L21:
+.L22:
 	.word	rat
+	.word	shadowOAM
 	.size	updateRat, .-updateRat
 	.align	2
 	.global	initDog
@@ -176,7 +185,7 @@ initDog:
 	mov	r0, #0
 	mov	r1, #1
 	mov	r2, #8
-	ldr	r3, .L25
+	ldr	r3, .L26
 	strb	r6, [r3, #44]
 	stm	r3, {r4, lr}
 	str	r5, [r3, #24]
@@ -190,9 +199,9 @@ initDog:
 	str	r2, [r3, #40]
 	pop	{r4, r5, r6, lr}
 	bx	lr
-.L26:
+.L27:
 	.align	2
-.L25:
+.L26:
 	.word	dog
 	.size	initDog, .-initDog
 	.align	2
@@ -205,8 +214,8 @@ drawDog:
 	@ Function supports interworking.
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
-	ldr	r1, .L29
-	ldr	r2, .L29+4
+	ldr	r1, .L30
+	ldr	r2, .L30+4
 	ldr	r3, [r1]
 	ldr	r2, [r2]
 	sub	r3, r3, r2
@@ -216,12 +225,12 @@ drawDog:
 	push	{r4, lr}
 	mvn	r3, r3, lsr #18
 	mov	lr, #512
-	ldr	r0, .L29+8
+	ldr	r0, .L30+8
 	ldr	r2, [r1, #4]
 	ldr	r0, [r0]
 	sub	r2, r2, r0
-	ldr	r0, .L29+12
-	ldr	ip, .L29+16
+	ldr	r0, .L30+12
+	ldr	ip, .L30+16
 	ldrb	r1, [r1, #44]	@ zero_extendqisi2
 	ldrb	r0, [r0, #44]	@ zero_extendqisi2
 	add	r4, ip, r1, lsl #3
@@ -233,9 +242,9 @@ drawDog:
 	strh	r2, [ip, r1]	@ movhi
 	pop	{r4, lr}
 	bx	lr
-.L30:
+.L31:
 	.align	2
-.L29:
+.L30:
 	.word	dog
 	.word	hOff
 	.word	vOff
@@ -256,10 +265,12 @@ updateDog:
 	bx	lr
 	.size	updateDog, .-updateDog
 	.comm	score,4,4
-	.comm	dog,64,4
-	.comm	catnip,448,4
-	.comm	rat,64,4
-	.comm	cucumber,256,4
-	.comm	orange,384,4
-	.comm	player,64,4
+	.comm	player_life,72,4
+	.comm	player_score,72,4
+	.comm	dog,72,4
+	.comm	catnip,504,4
+	.comm	rat,72,4
+	.comm	cucumber,288,4
+	.comm	orange,432,4
+	.comm	player,72,4
 	.ident	"GCC: (devkitARM release 53) 9.1.0"

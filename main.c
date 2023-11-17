@@ -16,6 +16,7 @@
 #include "losebg.h"
 #include "bg_collisionmap.h"
 #include "enemies.h"
+#include "numbers.h"
 
 /**
  * Finished: displaying game map, sprite basic movement, 
@@ -155,18 +156,18 @@ void game() {
     if (player.lives == 0) {
         goToLose();
     }
-    if (player.score == 5) {
+    if (player.score == 6 && rat.lives == 0) {
         goToWin();
     }
     
     //will implement more on win&lose state in the next milestone
-    if (BUTTON_PRESSED(BUTTON_A)) {
-        goToWin();
-    }
+    //if (BUTTON_PRESSED(BUTTON_A)) {
+        //goToWin();
+    //}
 }
 void goToInstruction() {
     REG_DISPCTL = MODE(0) | BG_ENABLE(0);
-    REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_WIDE;
+    REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_SMALL;
 
     DMANow(3, instructionsMap, &SCREENBLOCK[28], instructionsMapLen/2);
     DMANow(3, instructionsTiles, &CHARBLOCK[0], instructionsTilesLen/2);

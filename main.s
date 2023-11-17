@@ -232,17 +232,17 @@ goToInstruction:
 	push	{r4, r5, r6, lr}
 	mov	r2, #67108864
 	mov	r5, #256
-	mov	r1, #23552
+	mov	r1, #7168
 	ldr	r4, .L20
 	strh	r5, [r2]	@ movhi
-	mov	r3, #600
+	mov	r3, #512
 	strh	r1, [r2, #8]	@ movhi
 	mov	r0, #3
 	ldr	r2, .L20+4
 	ldr	r1, .L20+8
 	mov	lr, pc
 	bx	r4
-	mov	r3, #3024
+	mov	r3, #3216
 	mov	r2, #100663296
 	mov	r0, #3
 	ldr	r1, .L20+12
@@ -620,62 +620,55 @@ game:
 	@ Function supports interworking.
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
-	push	{r4, r5, r6, lr}
-	ldr	r3, .L81
-	ldr	r4, .L81+4
+	push	{r4, lr}
+	ldr	r3, .L76
 	mov	lr, pc
 	bx	r3
-	ldr	r3, .L81+8
+	ldr	r3, .L76+4
 	mov	lr, pc
 	bx	r3
-	ldrh	r3, [r4]
+	ldr	r3, .L76+8
+	ldrh	r3, [r3]
 	tst	r3, #8
 	beq	.L66
-	ldr	r3, .L81+12
+	ldr	r3, .L76+12
 	ldrh	r3, [r3]
 	tst	r3, #8
-	beq	.L77
+	beq	.L73
 .L66:
-	ldr	r5, .L81+16
-	ldr	r3, [r5, #56]
+	ldr	r4, .L76+16
+	ldr	r3, [r4, #56]
 	cmp	r3, #0
-	beq	.L78
-	ldr	r3, [r5, #60]
-	cmp	r3, #5
-	beq	.L79
-.L68:
-	ldrh	r3, [r4]
-	tst	r3, #1
-	beq	.L65
-	ldr	r3, .L81+12
-	ldrh	r3, [r3]
-	tst	r3, #1
-	beq	.L80
+	beq	.L74
+.L67:
+	ldr	r3, [r4, #60]
+	cmp	r3, #6
+	beq	.L75
 .L65:
-	pop	{r4, r5, r6, lr}
+	pop	{r4, lr}
 	bx	lr
-.L78:
-	bl	goToLose
-	ldr	r3, [r5, #60]
-	cmp	r3, #5
-	bne	.L68
-.L79:
-	bl	goToWin
-	b	.L68
-.L80:
-	pop	{r4, r5, r6, lr}
+.L75:
+	ldr	r3, .L76+20
+	ldr	r3, [r3, #56]
+	cmp	r3, #0
+	bne	.L65
+	pop	{r4, lr}
 	b	goToWin
-.L77:
+.L74:
+	bl	goToLose
+	b	.L67
+.L73:
 	bl	goToPause
 	b	.L66
-.L82:
+.L77:
 	.align	2
-.L81:
+.L76:
 	.word	updateGame
-	.word	oldButtons
 	.word	drawGame
+	.word	oldButtons
 	.word	buttons
 	.word	player
+	.word	rat
 	.size	game, .-game
 	.align	2
 	.global	win
@@ -701,27 +694,27 @@ draw:
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	mov	r3, #67108864
-	ldr	r2, .L86
+	ldr	r2, .L81
 	push	{r4, lr}
 	ldrh	r0, [r2]
 	ldrh	r1, [r2, #4]
 	strh	r0, [r3, #16]	@ movhi
-	ldr	r2, .L86+4
+	ldr	r2, .L81+4
 	strh	r1, [r3, #18]	@ movhi
 	mov	lr, pc
 	bx	r2
-	ldr	r4, .L86+8
+	ldr	r4, .L81+8
 	mov	r3, #512
 	mov	r2, #117440512
 	mov	r0, #3
-	ldr	r1, .L86+12
+	ldr	r1, .L81+12
 	mov	lr, pc
 	bx	r4
 	pop	{r4, lr}
 	bx	lr
-.L87:
+.L82:
 	.align	2
-.L86:
+.L81:
 	.word	.LANCHOR0
 	.word	waitForVBlank
 	.word	DMANow
@@ -740,18 +733,18 @@ main:
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	push	{r4, r7, fp, lr}
-	ldr	r3, .L108
+	ldr	r3, .L103
 	mov	lr, pc
 	bx	r3
-	ldr	r4, .L108+4
-	ldr	r8, .L108+8
-	ldr	r7, .L108+12
-	ldr	fp, .L108+16
-	ldr	r10, .L108+20
-	ldr	r9, .L108+24
-	ldr	r5, .L108+28
-	ldr	r6, .L108+32
-.L97:
+	ldr	r4, .L103+4
+	ldr	r8, .L103+8
+	ldr	r7, .L103+12
+	ldr	fp, .L103+16
+	ldr	r10, .L103+20
+	ldr	r9, .L103+24
+	ldr	r5, .L103+28
+	ldr	r6, .L103+32
+.L92:
 	ldrh	r2, [r4]
 	strh	r2, [r8]	@ movhi
 	ldr	r3, [r7]
@@ -759,52 +752,52 @@ main:
 	strh	r1, [r4]	@ movhi
 	cmp	r3, #5
 	ldrls	pc, [pc, r3, asl #2]
-	b	.L89
-.L91:
-	.word	.L96
-	.word	.L95
-	.word	.L94
-	.word	.L93
-	.word	.L92
+	b	.L84
+.L86:
+	.word	.L91
 	.word	.L90
-.L90:
+	.word	.L89
+	.word	.L88
+	.word	.L87
+	.word	.L85
+.L85:
 	tst	r2, #8
-	ldrne	r3, .L108+36
+	ldrne	r3, .L103+36
 	movne	lr, pc
 	bxne	r3
-.L89:
+.L84:
 	mov	lr, pc
 	bx	r5
-	b	.L97
-.L92:
+	b	.L92
+.L87:
 	tst	r2, #8
-	beq	.L89
-	ldr	r3, .L108+40
+	beq	.L84
+	ldr	r3, .L103+40
 	mov	lr, pc
 	bx	r3
-	b	.L89
-.L93:
+	b	.L84
+.L88:
 	mov	lr, pc
 	bx	r9
-	b	.L89
-.L94:
+	b	.L84
+.L89:
 	tst	r2, #8
-	beq	.L89
-	ldr	r3, .L108+44
+	beq	.L84
+	ldr	r3, .L103+44
 	mov	lr, pc
 	bx	r3
-	b	.L89
-.L96:
+	b	.L84
+.L91:
 	mov	lr, pc
 	bx	fp
-	b	.L89
-.L95:
+	b	.L84
+.L90:
 	mov	lr, pc
 	bx	r10
-	b	.L89
-.L109:
+	b	.L84
+.L104:
 	.align	2
-.L108:
+.L103:
 	.word	initialize
 	.word	buttons
 	.word	oldButtons
@@ -827,12 +820,14 @@ main:
 	.comm	buttons,2,2
 	.comm	state,4,4
 	.comm	score,4,4
-	.comm	dog,64,4
-	.comm	catnip,448,4
-	.comm	rat,64,4
-	.comm	cucumber,256,4
-	.comm	orange,384,4
-	.comm	player,64,4
+	.comm	player_life,72,4
+	.comm	player_score,72,4
+	.comm	dog,72,4
+	.comm	catnip,504,4
+	.comm	rat,72,4
+	.comm	cucumber,288,4
+	.comm	orange,432,4
+	.comm	player,72,4
 	.bss
 	.align	2
 	.set	.LANCHOR0,. + 0

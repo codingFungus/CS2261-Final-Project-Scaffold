@@ -1,4 +1,4 @@
-
+#include "enemies.h"
 #include "game.h"
 #include "bg_collisionmap.h"
 
@@ -6,7 +6,7 @@ void initRat() {
     rat.width = 32;
     rat.height = 24;
     rat.x = 120;
-    rat.y = 15;
+    rat.y = 30;
     rat.oamIndex = 15;
     rat.xVel = 1;
     rat.yVel = 1;
@@ -50,17 +50,21 @@ void updateRat() {
         // Update rat movement logic
         if (rat.direction == RIGHT) {
             rat.x += rat.xVel;
-            if (rat.x > 150) {
+            //rat.y += rat.yVel;
+            if (rat.x > 200) {
                 rat.direction = LEFT;
             }
         } else {
             rat.x -= rat.xVel;
-            if (rat.x < 50) {
+            //rat.y -= rat.yVel;
+            if (rat.x < 20) {
                 rat.direction = RIGHT;
             }
         }
 
 
+    } else {
+        shadowOAM[rat.oamIndex].attr0 = ATTR0_HIDE;
     }
 }
 

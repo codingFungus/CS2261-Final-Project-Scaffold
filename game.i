@@ -92,6 +92,7 @@ typedef struct {
     int lives;
     int score;
     int isAttacking;
+    int cheat;
 } SPRITE;
 # 7 "game.h" 2
 # 1 "mode0.h" 1
@@ -122,13 +123,16 @@ void win();
 void goToWin();
 void draw();
 # 9 "game.h" 2
-# 24 "game.h"
+# 26 "game.h"
 SPRITE player;
 SPRITE orange[6];
 SPRITE cucumber[4];
 SPRITE rat;
 SPRITE catnip[7];
 SPRITE dog;
+SPRITE player_score;
+SPRITE heart;
+SPRITE player_life;
 
 int score;
 
@@ -151,7 +155,18 @@ void drawCucumber();
 void initCatnip();
 void drawCatnip();
 
+void playerAnimation();
+
 void playerCollision();
+
+void initScore();
+void drawScore();
+
+void initHeart();
+void drawHeart();
+
+void initLives();
+void drawLives();
 # 2 "game.c" 2
 # 1 "bg_collisionmap.h" 1
 # 20 "bg_collisionmap.h"
@@ -176,9 +191,10 @@ int xCuc[4] = {165, 248, 464, 308};
 int yCuc[4] = {20, 32, 196, 212};
 
 int xNip[7] = {276,5, 8, 480, 200};
-int yNip[7] = {10, 160, 16, 0, 215};
+int yNip[7] = {10, 150, 16, 0, 215};
 
-
+int collisionCooldown = 0;
+int disgustedDisplayTimer = 0;
 
 
 void initGame() {
@@ -187,6 +203,9 @@ void initGame() {
     initCucumber();
     initCatnip();
     initRat();
+    initScore();
+    initHeart();
+    initLives();
 }
 void drawGame() {
     drawPlayer();
@@ -194,8 +213,21 @@ void drawGame() {
     drawCucumber();
     drawCatnip();
     drawRat();
+    drawScore();
+    drawHeart();
+    drawLives();
 }
 void updateGame() {
+    if (collisionCooldown > 0) {
+        collisionCooldown--;
+    }
+
+
+
+
+
+
+
     updatePlayer();
     updateRat();
 
@@ -213,7 +245,7 @@ void initPlayer() {
     player.height = 32;
     player.x = 20;
     player.y = 210;
-    player.numFrames = 5;
+    player.numFrames = 7;
     player.direction = RIGHT;
 
     player.timeUntilNextFrame = 10;
@@ -223,13 +255,17 @@ void initPlayer() {
     player.oamIndex = 0;
     player.score = 0;
     player.isAttacking = 0;
+    player.cheat = 0;
 
 }
 
 void drawPlayer() {
-    shadowOAM[player.oamIndex].attr0 = (0 << 13) | (0 << 14) | ((player.y - vOff) & 0xFF);
-    shadowOAM[player.oamIndex].attr1 = (2 << 14) | ((player.x - hOff) & 0x1FF);
-    shadowOAM[player.oamIndex].attr2 = (((0) * (32) + (player.currentFrame * 4)) & 0x3FF);
+    if (player.cheat == 0) {
+        shadowOAM[player.oamIndex].attr0 = (0 << 13) | (0 << 14) | ((player.y - vOff) & 0xFF);
+        shadowOAM[player.oamIndex].attr1 = (2 << 14) | ((player.x - hOff) & 0x1FF);
+        shadowOAM[player.oamIndex].attr2 = (((0) * (32) + (player.currentFrame * 4)) & 0x3FF);
+
+    }
 
     if (player.direction == RIGHT) {
         shadowOAM[player.oamIndex].attr1 |= (1 << 12);
@@ -282,10 +318,24 @@ void updatePlayer() {
 
     }
 
+
     if ((~(buttons) & ((1 << 9)))) {
         playerAttack();
-    }
+        player.isAttacking = 1;
 
+
+
+
+    } else {
+        player.isAttacking = 0;
+    }
+    playerAnimation();
+
+
+
+}
+
+void playerAnimation() {
 
 
     if ((~(buttons) & ((1 << 5))) || (~(buttons) & ((1 << 4))) || (~(buttons) & ((1 << 7))) || (~(buttons) & ((1 << 6))) ||
@@ -294,7 +344,8 @@ void updatePlayer() {
 
         if (player.timeUntilNextFrame == 0) {
             player.currentFrame++;
-            if (player.currentFrame >= player.numFrames) {
+
+            if (player.currentFrame >= 6) {
                 player.currentFrame = 0;
             }
             player.timeUntilNextFrame = 10;
@@ -316,43 +367,61 @@ void updatePlayer() {
 
     playerCollision();
 
+    DMANow(3, shadowOAM, ((OBJ_ATTR*) 0x7000000), 512);
+
 
 }
 
 
 void playerCollision() {
 
+
+    int collidedDuringAttack = 0;
+    if (collisionCooldown > 0) {
+        return;
+    }
+
     for (int i = 0; i < 6; i++) {
         if (collision(player.x + 5, player.y, player.width - 5, player.height - 5,
-            orange[i].x, orange[i].y - 10, orange[i].width - 10, orange[i].height - 10)) {
-                if (!player.isAttacking) {
-                    playerDisgusted();
-                    orange[i].hide = 0;
+            orange[i].x, orange[i].y - 10, orange[i].width - 10, orange[i].height - 10)
+            &&
+            !orange[i].hide) {
+                if (player.isAttacking && !collidedDuringAttack) {
+                    collidedDuringAttack = 1;
 
-                    mgba_printf("%d\n", player.lives);
-                } else {
-                    mgba_printf("player attacked orange");
                     orange[i].hide = 1;
+                    mgba_printf("player attacked orange");
+                } else {
+                    playerDisgusted();
+                    player.lives--;
+                    collisionCooldown = 30;
+                    playerDisgusted();
+                    mgba_printf("player lives: %d\n", player.lives);
                 }
 
         }
     }
+
+
     for (int j = 0; j < 4; j++) {
         if (collision(player.x + 5, player.y, player.width - 5, player.height - 5,
-            cucumber[j].x + 10, cucumber[j].y, cucumber[j].width - 20, cucumber[j].height - 10)) {
-                if (!player.isAttacking) {
-                    playerDisgusted();
-                    cucumber[j].hide = 0;
+            cucumber[j].x + 10, cucumber[j].y, cucumber[j].width - 20, cucumber[j].height - 10)
+            &&
+            !cucumber[j].hide) {
+                if (player.isAttacking && !collidedDuringAttack) {
+                    collidedDuringAttack = 1;
 
-                    mgba_printf("%d\n", player.lives);
+                    cucumber[j].hide = 1;
+                    mgba_printf("player attacked cucumber");
 
                 } else {
-                    mgba_printf("player attacked cucumber");
-                    cucumber[j].hide = 1;
+                    playerDisgusted();
+                    player.lives--;
+                    collisionCooldown = 30;
+                    mgba_printf("player lives: %d\n", player.lives);
+
 
                 }
-
-
         }
 
     }
@@ -360,28 +429,74 @@ void playerCollision() {
 
 
     for (int i = 0; i < 7; i++) {
-        if (collision(player.x + 5, player.y, player.width - 5, player.height - 5,
-            catnip[i].x, catnip[i].y - 10, catnip[i].width - 10,catnip[i].height - 10)) {
 
+
+
+
+        if (collision(player.x + 5, player.y, player.width - 5, player.height - 5,
+            catnip[i].x, catnip[i].y + 10, catnip[i].width - 10,catnip[i].height - 10)
+            &&
+            !catnip[i].hide) {
+
+
+                player.score++;
+                player.lives++;
                 catnip[i].hide = 1;
-                mgba_printf("%d\n", player.score);
+
+                collisionCooldown = 30;
+                if (player.score >= 6) {
+                    player.score = 6;
+
+                }
+                if (player.lives >= 5) {
+                    player.lives = 5;
+                }
+
+                mgba_printf("player score: %d\n", player.score);
+                mgba_printf("player lives: %d\n", player.lives);
 
         }
-
     }
+
+
+
+    if (collision(player.x + 5, player.y, player.width - 5, player.height - 5,
+        rat.x, rat.y, rat.width, rat.height)
+        && !rat.hide) {
+        if (player.isAttacking && !collidedDuringAttack) {
+            collidedDuringAttack = 1;
+            mgba_printf("player attacked rat");
+            mgba_printf("rat lives: %d\n", rat.lives);
+            rat.lives--;
+            if (rat.lives == 0) {
+                rat.hide = 1;
+            }
+        } else {
+            player.lives--;
+            collisionCooldown = 30;
+            playerDisgusted();
+            mgba_printf("player lives: %d\n", player.lives);
+        }
+    }
+
+
 
 }
 
 void playerAttack() {
     mgba_printf("attack");
-    player.isAttacking = 1;
 
-    shadowOAM[player.oamIndex].attr0 = (0 << 13) | (0 << 14) | ((player.y - vOff) & 0xFF);
-    shadowOAM[player.oamIndex].attr1 = (2 << 14) | ((player.x - hOff) & 0x1FF);
-    shadowOAM[player.oamIndex].attr2 = (((4) * (32) + (player.currentFrame * 4)) & 0x3FF);
-    if (player.direction == RIGHT) {
-        shadowOAM[player.oamIndex].attr1 |= (1 << 12);
+    if (player.cheat == 0) {
+        shadowOAM[player.oamIndex].attr0 = (0 << 13) | (0 << 14) | ((player.y - vOff) & 0xFF);
+        shadowOAM[player.oamIndex].attr1 = (2 << 14) | ((player.x - hOff) & 0x1FF);
+        shadowOAM[player.oamIndex].attr2 = (((4) * (32) + (player.currentFrame * 4)) & 0x3FF);
+        if (player.direction == RIGHT) {
+            shadowOAM[player.oamIndex].attr1 |= (1 << 12);
+        }
+# 329 "game.c"
     }
+
+
     DMANow(3, shadowOAM, ((OBJ_ATTR*) 0x7000000), 512);
 
 
@@ -389,6 +504,7 @@ void playerAttack() {
 
 void playerDisgusted() {
     mgba_printf("disgusted");
+
 
     shadowOAM[player.oamIndex].attr0 = (0 << 13) | (0 << 14) | ((player.y - vOff) & 0xFF);
     shadowOAM[player.oamIndex].attr1 = (2 << 14) | ((player.x - hOff) & 0x1FF);
