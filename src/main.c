@@ -1,22 +1,4 @@
-#include "gba.h"
-#include "mode0.h"
-#include "mode4.h"
-#include "sprites.h"
-#include "print.h"
-#include "game.h"
-#include "pauseScreen.h"
-#include "pausetile.h"
-#include "catSpriteSheet.h"
-#include "startbgMap.h"
-#include "winbg.h"
-#include "startscreen.h"
-#include "newbg.h"
-#include "newbg_tile.h"
-#include "instructions.h"
-#include "losebg.h"
-#include "bg_collisionmap.h"
-#include "enemies.h"
-#include "numbers.h"
+#include "main.h"
 
 /**
  * MileStone2
@@ -31,8 +13,6 @@
  * lives on the right cornerof the screen
  *  
 */
-
-
 
 int state;
 enum {START, GAME, INSTRUCTION, PAUSE, WIN, LOSE};

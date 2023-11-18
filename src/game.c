@@ -2,21 +2,28 @@
 #include "bg_collisionmap.h"
 #include "enemies.h"
 
-int xOrange[ORANGE_COUNT] = {160, 410, 360, 100, 320};
-int yOrange[ORANGE_COUNT] = {170, 80, 16, 110, 40};
+//wip
+void objectFactory(enum Code code) {
+    if (code == ORANGE) {
+        for (int i = 0; i < ORANGE_COUNT; ++i) {
+            initObject(i, orange, 32, 32, xOrange[i], yOrange[i], 1 + i, 0);
+        }
+    } else if (code == CUCUMBER) {
 
-int xCuc[CUCUMBER_COUNT] = {165, 248, 464, 308};
-int yCuc[CUCUMBER_COUNT] = {20, 32, 196, 212};
+    } else if (code == RAT) {
 
-int xNip[CATNIP_COUNT] = {276,5, 8, 480, 200};
-int yNip[CATNIP_COUNT] = {10, 150, 16, 0, 215};
+    } else if (code == DOG) {
 
-int collisionCooldown = 0;
-int disgustedDisplayTimer = 0;
+    }
 
+    
+}
 
 void initGame() {
     initPlayer();
+
+    initObjects();
+
     initOrange();
     initCucumber();
     initCatnip();
@@ -363,17 +370,29 @@ void initOrange() {
 
 void drawOrange() {
     for (int i = 0; i < ORANGE_COUNT; i++) {
-        if (!orange[i].hide) {
-            shadowOAM[orange[i].oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(orange[i].y - vOff);
-            shadowOAM[orange[i].oamIndex].attr1 = ATTR1_MEDIUM | ATTR1_X(orange[i].x - hOff);
-            shadowOAM[orange[i].oamIndex].attr2 = ATTR2_TILEID(12, 8);
-        } else {
+        shadowOAM[orange[i].oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(orange[i].y - vOff);
+        shadowOAM[orange[i].oamIndex].attr1 = ATTR1_MEDIUM | ATTR1_X(orange[i].x - hOff);
+        shadowOAM[orange[i].oamIndex].attr2 = ATTR2_TILEID(12, 8);
+
+        if (orange[i].hide) {
             shadowOAM[orange[i].oamIndex].attr0 = ATTR0_HIDE;
         }
-    
     }
     
 }
+
+// Proof of concept, could use more work
+// Basic idea ---> use parameters to make more generic function
+// That way you repeat less code
+void initObject(int index, SPRITE* object, int width, int height, int x, int y, int oamIndex, int hide) {
+    object[index].width = width;
+    object[index].height = height;
+    object[index].x = x;
+    object[index].y = y;
+    object[index].oamIndex = oamIndex;
+    object[index].hide = hide;
+}
+
 
 void initCucumber() {
     for (int i = 0; i < CUCUMBER_COUNT; i++) {

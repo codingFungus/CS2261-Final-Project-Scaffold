@@ -1,6 +1,4 @@
 #include "enemies.h"
-#include "game.h"
-#include "bg_collisionmap.h"
 
 void initRat() {
     rat.width = 32;
@@ -17,8 +15,6 @@ void initRat() {
     rat.isAnimating = 1;
     rat.hide = 0;
     rat.lives = 3;
-
-
 }
 
 void drawRat() {
@@ -29,8 +25,6 @@ void drawRat() {
     if (rat.direction == RIGHT) {
         shadowOAM[rat.oamIndex].attr1 |= ATTR1_HFLIP;
     }
-
-
 }
 
 void updateRat() {
@@ -81,8 +75,6 @@ void initDog() {
     dog.timeUntilNextFrame = 10;
     dog.x = 100;
     dog.y = 200;
-
-
 }
 
 void drawDog() {
