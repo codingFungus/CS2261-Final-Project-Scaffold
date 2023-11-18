@@ -81,6 +81,11 @@ typedef struct {
     int numFrames;
     u8 oamIndex;
     int isMoving;
+    int hide;
+    int lives;
+    int score;
+    int isAttacking;
+    int cheat;
 } SPRITE;
 # 2 "sprites.c" 2
 

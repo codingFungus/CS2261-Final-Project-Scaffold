@@ -350,6 +350,7 @@ SPRITE rat;
 SPRITE catnip[7];
 SPRITE dog;
 SPRITE player_score;
+SPRITE heart;
 SPRITE player_life;
 
 int score;
@@ -379,6 +380,12 @@ void playerCollision();
 
 void initScore();
 void drawScore();
+
+void initHeart();
+void drawHeart();
+
+void initLives();
+void drawLives();
 # 7 "main.c" 2
 # 1 "pauseScreen.h" 1
 # 22 "pauseScreen.h"
@@ -493,7 +500,7 @@ extern const unsigned short numbersTiles[8192];
 
 extern const unsigned short numbersPal[256];
 # 20 "main.c" 2
-# 29 "main.c"
+# 37 "main.c"
 int state;
 enum {START, GAME, INSTRUCTION, PAUSE, WIN, LOSE};
 

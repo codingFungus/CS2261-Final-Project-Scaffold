@@ -821,6 +821,7 @@ main:
 	.comm	state,4,4
 	.comm	score,4,4
 	.comm	player_life,72,4
+	.comm	heart,72,4
 	.comm	player_score,72,4
 	.comm	dog,72,4
 	.comm	catnip,504,4

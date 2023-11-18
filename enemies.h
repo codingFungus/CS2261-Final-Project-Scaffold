@@ -7,5 +7,6 @@ void updateRat();
 void initDog();
 void drawDog();
 void updateDog();
+
 #endif
 

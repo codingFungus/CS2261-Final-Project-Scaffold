@@ -142,6 +142,7 @@ SPRITE rat;
 SPRITE catnip[7];
 SPRITE dog;
 SPRITE player_score;
+SPRITE heart;
 SPRITE player_life;
 
 int score;
@@ -168,6 +169,15 @@ void drawCatnip();
 void playerAnimation();
 
 void playerCollision();
+
+void initScore();
+void drawScore();
+
+void initHeart();
+void drawHeart();
+
+void initLives();
+void drawLives();
 # 3 "enemies.c" 2
 # 1 "bg_collisionmap.h" 1
 # 20 "bg_collisionmap.h"

@@ -19,9 +19,17 @@
 #include "numbers.h"
 
 /**
- * Finished: displaying game map, sprite basic movement, 
- * state machines(win and lose are triggered by buttons A and B currently)
- * Needed: sprite attack movements, collision map, sounds, enemies, objects
+ * MileStone2
+ * Finished: 
+ * new background and collision map
+ * CAT MOVEMENT: press leftShoulder button to punch
+ * OBJECT DISPLAY: catnip disappears when collides with player,
+ * oranges and cucumbers disappear when being hit by the player
+ * ENEMY: rat movement, rat attacks player by colliding with player, 
+ * player kills rat by punching it. Rat's body remains after defeated
+ * SCORE AND LIFE: displays score on the left corner, 
+ * lives on the right cornerof the screen
+ *  
 */
 
 
