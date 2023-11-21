@@ -66,7 +66,7 @@ void initPlayer();
 void drawGame();
 void updateGame();
 
-void initObject(int index, SPRITE* object, int width, int height, int x, int y, int oamIndex, int hide)
+void initObject(int index, SPRITE* object, int width, int height, int x, int y, int oamIndex, int hide);
 
 void drawOrange();
 void initOrange();
