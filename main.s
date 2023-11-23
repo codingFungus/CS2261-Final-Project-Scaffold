@@ -29,7 +29,7 @@ goToStart:
 	ldr	r4, .L4
 	strh	r3, [r2]	@ movhi
 	strh	r1, [r2, #8]	@ movhi
-	mov	r3, #2048
+	mov	r3, #640
 	ldr	r2, .L4+4
 	ldr	r1, .L4+8
 	mov	lr, pc
@@ -43,7 +43,7 @@ goToStart:
 	mov	r2, #83886080
 	mov	r0, #3
 	ldr	r1, .L4+20
-	mov	r3, #16
+	mov	r3, #256
 	mov	lr, pc
 	bx	r4
 	ldr	r3, .L4+24
@@ -71,7 +71,7 @@ goToStart:
 	.word	DMANow
 	.word	100720640
 	.word	startscreenMap
-	.word	13296
+	.word	6544
 	.word	startscreenTiles
 	.word	startscreenPal
 	.word	hideSprites
@@ -235,14 +235,14 @@ goToInstruction:
 	mov	r1, #7168
 	ldr	r4, .L20
 	strh	r5, [r2]	@ movhi
-	mov	r3, #512
+	mov	r3, #1024
 	strh	r1, [r2, #8]	@ movhi
 	mov	r0, #3
 	ldr	r2, .L20+4
 	ldr	r1, .L20+8
 	mov	lr, pc
 	bx	r4
-	mov	r3, #3216
+	mov	r3, #3248
 	mov	r2, #100663296
 	mov	r0, #3
 	ldr	r1, .L20+12
@@ -371,50 +371,50 @@ goToPause:
 	@ Function supports interworking.
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
+	push	{r4, r5, r6, lr}
 	mov	r3, #67108864
-	mov	r1, #256
-	mov	r2, #23552
-	push	{r4, lr}
+	mov	r5, #256
+	mov	r2, #7168
+	strh	r5, [r3]	@ movhi
 	ldr	r0, .L42
-	strh	r1, [r3]	@ movhi
 	strh	r2, [r3, #8]	@ movhi
 	ldr	r3, .L42+4
 	mov	lr, pc
 	bx	r3
 	ldr	r4, .L42+8
+	mov	r3, #2480
 	mov	r2, #100663296
 	mov	r0, #3
-	ldr	r3, .L42+12
-	ldr	r1, .L42+16
+	ldr	r1, .L42+12
 	mov	lr, pc
 	bx	r4
 	mov	r3, #1024
 	mov	r0, #3
-	ldr	r2, .L42+20
-	ldr	r1, .L42+24
+	ldr	r2, .L42+16
+	ldr	r1, .L42+20
 	mov	lr, pc
 	bx	r4
 	mov	r2, #83886080
 	mov	r0, #3
-	ldr	r1, .L42+28
-	mov	r3, #16
+	ldr	r1, .L42+24
+	mov	r3, r5
 	mov	lr, pc
 	bx	r4
-	ldr	r3, .L42+32
+	ldr	r3, .L42+28
 	mov	lr, pc
 	bx	r3
-	ldr	r3, .L42+36
+	ldr	r3, .L42+32
 	mov	lr, pc
 	bx	r3
 	mov	r3, #512
 	mov	r2, #117440512
 	mov	r0, #3
-	ldr	r1, .L42+40
+	ldr	r1, .L42+36
 	mov	lr, pc
 	bx	r4
 	mov	r2, #3
-	ldr	r3, .L42+44
-	pop	{r4, lr}
+	ldr	r3, .L42+40
+	pop	{r4, r5, r6, lr}
 	str	r2, [r3]
 	bx	lr
 .L43:
@@ -423,7 +423,6 @@ goToPause:
 	.word	.LC0
 	.word	mgba_printf
 	.word	DMANow
-	.word	4336
 	.word	newpauseScreenTiles
 	.word	100720640
 	.word	newpauseScreenMap

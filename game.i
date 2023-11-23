@@ -121,11 +121,11 @@ enum Code {
 };
 
 
-
 extern int score;
 
 extern int hOff;
 extern int vOff;
+
 typedef enum {LEFT, RIGHT} DIRECTION;
 
 void initGame();
@@ -158,14 +158,14 @@ void initLives();
 void drawLives();
 # 2 "game.c" 2
 
-int xOrange[6] = {160, 410, 360, 100, 320};
-int yOrange[6] = {170, 80, 16, 110, 40};
+const int xOrange[6] = {160, 410, 360, 100, 320};
+const int yOrange[6] = {170, 80, 16, 110, 40};
 
-int xCuc[4] = {165, 248, 464, 308};
-int yCuc[4] = {20, 32, 196, 212};
+const int xCuc[4] = {165, 248, 464, 308};
+const int yCuc[4] = {20, 32, 196, 212};
 
-int xNip[7] = {276,5, 8, 480, 200};
-int yNip[7] = {10, 150, 16, 0, 215};
+const int xNip[7] = {276,5, 8, 480, 200};
+const int yNip[7] = {10, 160, 16, 0, 215};
 
 int collisionCooldown = 0;
 int disgustedDisplayTimer = 0;

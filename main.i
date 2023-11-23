@@ -345,11 +345,11 @@ enum Code {
 };
 
 
-
 extern int score;
 
 extern int hOff;
 extern int vOff;
+
 typedef enum {LEFT, RIGHT} DIRECTION;
 
 void initGame();
@@ -402,13 +402,13 @@ extern const unsigned short winbgPal[16];
 # 15 "main.h" 2
 # 1 "startscreen.h" 1
 # 22 "startscreen.h"
-extern const unsigned short startscreenTiles[13296];
+extern const unsigned short startscreenTiles[6544];
 
 
-extern const unsigned short startscreenMap[2048];
+extern const unsigned short startscreenMap[640];
 
 
-extern const unsigned short startscreenPal[16];
+extern const unsigned short startscreenPal[256];
 # 16 "main.h" 2
 # 1 "newbg.h" 1
 
@@ -429,10 +429,10 @@ extern const unsigned short newbg_tilePal[256];
 # 18 "main.h" 2
 # 1 "instructions.h" 1
 # 22 "instructions.h"
-extern const unsigned short instructionsTiles[3216];
+extern const unsigned short instructionsTiles[3248];
 
 
-extern const unsigned short instructionsMap[512];
+extern const unsigned short instructionsMap[1024];
 
 
 extern const unsigned short instructionsPal[256];
@@ -464,7 +464,7 @@ void updateDog();
 # 22 "main.h" 2
 # 1 "newpauseScreen.h" 1
 # 22 "newpauseScreen.h"
-extern const unsigned short newpauseScreenTiles[4336];
+extern const unsigned short newpauseScreenTiles[2480];
 
 
 extern const unsigned short newpauseScreenMap[1024];
@@ -559,9 +559,9 @@ void goToStart() {
     (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | (1 << (8 + (0 % 4))) | (1 << 12);
     (*(volatile unsigned short*) 0x04000008) = ((0) << 2) | ((28) << 8) | (0 << 14);
 
-    DMANow(3, startscreenMap, &((SB*) 0x06000000)[28], 4096 / 2);
-    DMANow(3, startscreenTiles, &((CB*) 0x06000000)[0], 26592 / 2);
-    DMANow(3, startscreenPal, ((unsigned short*) 0x05000000), 32 / 2);
+    DMANow(3, startscreenMap, &((SB*) 0x06000000)[28], 1280 / 2);
+    DMANow(3, startscreenTiles, &((CB*) 0x06000000)[0], 13088 / 2);
+    DMANow(3, startscreenPal, ((unsigned short*) 0x05000000), 512 / 2);
 
     hideSprites();
     waitForVBlank();
@@ -632,8 +632,8 @@ void goToInstruction() {
     (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | (1 << (8 + (0 % 4)));
     (*(volatile unsigned short*) 0x04000008) = ((0) << 2) | ((28) << 8) | (0 << 14);
 
-    DMANow(3, instructionsMap, &((SB*) 0x06000000)[28], 1024/2);
-    DMANow(3, instructionsTiles, &((CB*) 0x06000000)[0], 6432/2);
+    DMANow(3, instructionsMap, &((SB*) 0x06000000)[28], 2048/2);
+    DMANow(3, instructionsTiles, &((CB*) 0x06000000)[0], 6496/2);
     DMANow(3, instructionsPal, ((unsigned short*) 0x05000000), 512/2);
 
     hideSprites();
@@ -653,16 +653,16 @@ void instruction() {
 
 void goToPause() {
     (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | (1 << (8 + (0 % 4)));
-    (*(volatile unsigned short*) 0x04000008) = ((0) << 2) | ((28) << 8) | (1 << 14);
+    (*(volatile unsigned short*) 0x04000008) = ((0) << 2) | ((28) << 8) | (0 << 14);
 
 
 
 
     mgba_printf("paused");
 
-    DMANow(3, newpauseScreenTiles, &((CB*) 0x06000000)[0], 8672/2);
+    DMANow(3, newpauseScreenTiles, &((CB*) 0x06000000)[0], 4960/2);
     DMANow(3, newpauseScreenMap, &((SB*) 0x06000000)[28], 2048/2);
-    DMANow(3, newpauseScreenPal, ((unsigned short*) 0x05000000), 16);
+    DMANow(3, newpauseScreenPal, ((unsigned short*) 0x05000000), 512/2);
 
     hideSprites();
     waitForVBlank();

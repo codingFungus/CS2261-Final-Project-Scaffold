@@ -178,7 +178,7 @@ void instruction() {
 
 void goToPause() {
     REG_DISPCTL = MODE(0) | BG_ENABLE(0);
-    REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_WIDE;
+    REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_SMALL;
 
     //waitForVBlank();
     //hideSprites();
@@ -187,7 +187,7 @@ void goToPause() {
 
     DMANow(3, newpauseScreenTiles, &CHARBLOCK[0], newpauseScreenTilesLen/2);
     DMANow(3, newpauseScreenMap, &SCREENBLOCK[28], newpauseScreenMapLen/2);
-    DMANow(3, newpauseScreenPal, BG_PALETTE, 16);
+    DMANow(3, newpauseScreenPal, BG_PALETTE, newpauseScreenPalLen/2);
 
     hideSprites();
     waitForVBlank();
