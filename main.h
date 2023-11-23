@@ -6,10 +6,11 @@
 #include "mode4.h"
 #include "sprites.h"
 #include "print.h"
+
 #include "game.h"
+
 #include "catSpritesheet.h"
-#include "pauseScreen.h"
-#include "pausetile.h"
+
 #include "winbg.h"
 #include "startscreen.h"
 #include "newbg.h"
@@ -18,7 +19,7 @@
 #include "losebg.h"
 #include "bg_collisionmap.h"
 #include "enemies.h"
-#include "numbers.h"
+#include "newpauseScreen.h"
 
 void initialize();
 void start();

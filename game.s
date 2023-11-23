@@ -1007,45 +1007,44 @@ drawOrange:
 	@ Function supports interworking.
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
-	push	{r4, r5, r6, r7, r8, r9, r10, lr}
-	mov	r8, #512
-	mov	r7, #268
-	ldr	r1, .L149
-	ldr	r2, .L149+4
-	ldr	r3, .L149+8
-	ldrh	r6, [r1]
-	ldrh	r5, [r2]
-	ldr	r1, .L149+12
-	ldr	r4, .L149+16
-	ldr	lr, .L149+20
-	add	ip, r3, #432
-.L146:
-	ldr	r2, [r3, #52]
-	cmp	r2, #0
-	ldrb	r2, [r3, #44]	@ zero_extendqisi2
-	add	r0, r1, r2, lsl #3
-	lsl	r9, r2, #3
-	lslne	r2, r2, #3
-	strhne	r8, [r1, r2]	@ movhi
-	bne	.L145
-	ldm	r3, {r2, r10}
-	sub	r2, r2, r5
-	and	r2, r2, r4
-	sub	r10, r10, r6
-	orr	r2, r2, lr
-	and	r10, r10, #255
-	strh	r7, [r0, #4]	@ movhi
-	strh	r2, [r0, #2]	@ movhi
-	strh	r10, [r1, r9]	@ movhi
+	push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+	mov	fp, #268
+	mov	r10, #512
+	ldr	r1, .L151
+	ldr	r3, .L151+4
+	ldr	r2, .L151+8
+	ldrh	r9, [r1]
+	ldrh	r8, [r3]
+	ldr	lr, .L151+12
+	ldr	r7, .L151+16
+	ldr	r6, .L151+20
+	add	r5, r2, #432
 .L145:
-	add	r3, r3, #72
-	cmp	r3, ip
-	bne	.L146
-	pop	{r4, r5, r6, r7, r8, r9, r10, lr}
+	ldr	r1, [r2, #4]
+	ldr	r3, [r2, #52]
+	sub	r1, r1, r9
+	cmp	r3, #0
+	and	r1, r1, #255
+	moveq	ip, r1
+	movne	ip, r10
+	ldr	r3, [r2]
+	ldrb	r0, [r2, #44]	@ zero_extendqisi2
+	sub	r3, r3, r8
+	and	r3, r3, r7
+	add	r2, r2, #72
+	lsl	r4, r0, #3
+	orr	r3, r3, r6
+	add	r0, lr, r0, lsl #3
+	cmp	r5, r2
+	strh	fp, [r0, #4]	@ movhi
+	strh	ip, [lr, r4]	@ movhi
+	strh	r3, [r0, #2]	@ movhi
+	bne	.L145
+	pop	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
 	bx	lr
-.L150:
+.L152:
 	.align	2
-.L149:
+.L151:
 	.word	vOff
 	.word	hOff
 	.word	orange
@@ -1067,10 +1066,10 @@ initCucumber:
 	mov	r2, #8
 	mov	ip, #32
 	mov	r5, #0
-	ldr	r1, .L155
-	ldr	r3, .L155+4
+	ldr	r1, .L157
+	ldr	r3, .L157+4
 	add	r0, r1, #16
-.L152:
+.L154:
 	add	lr, r2, #1
 	strb	r2, [r3, #44]
 	ldr	r4, [r1], #4
@@ -1082,12 +1081,12 @@ initCucumber:
 	str	ip, [r3, #20]
 	str	r5, [r3, #52]
 	add	r3, r3, #72
-	bne	.L152
+	bne	.L154
 	pop	{r4, r5, lr}
 	bx	lr
-.L156:
+.L158:
 	.align	2
-.L155:
+.L157:
 	.word	.LANCHOR0+48
 	.word	cucumber
 	.size	initCucumber, .-initCucumber
@@ -1104,16 +1103,16 @@ drawCucumber:
 	push	{r4, r5, r6, r7, r8, r9, r10, lr}
 	mov	r8, #512
 	mov	r7, #272
-	ldr	r1, .L163
-	ldr	r2, .L163+4
-	ldr	r3, .L163+8
+	ldr	r1, .L165
+	ldr	r2, .L165+4
+	ldr	r3, .L165+8
 	ldrh	r6, [r1]
 	ldrh	r5, [r2]
-	ldr	r1, .L163+12
-	ldr	r4, .L163+16
-	ldr	lr, .L163+20
+	ldr	r1, .L165+12
+	ldr	r4, .L165+16
+	ldr	lr, .L165+20
 	add	ip, r3, #288
-.L160:
+.L162:
 	ldr	r2, [r3, #52]
 	cmp	r2, #0
 	ldrb	r2, [r3, #44]	@ zero_extendqisi2
@@ -1121,7 +1120,7 @@ drawCucumber:
 	lsl	r9, r2, #3
 	lslne	r2, r2, #3
 	strhne	r8, [r1, r2]	@ movhi
-	bne	.L159
+	bne	.L161
 	ldm	r3, {r2, r10}
 	sub	r2, r2, r5
 	and	r2, r2, r4
@@ -1131,15 +1130,15 @@ drawCucumber:
 	strh	r7, [r0, #4]	@ movhi
 	strh	r2, [r0, #2]	@ movhi
 	strh	r10, [r1, r9]	@ movhi
-.L159:
+.L161:
 	add	r3, r3, #72
 	cmp	r3, ip
-	bne	.L160
+	bne	.L162
 	pop	{r4, r5, r6, r7, r8, r9, r10, lr}
 	bx	lr
-.L164:
+.L166:
 	.align	2
-.L163:
+.L165:
 	.word	vOff
 	.word	hOff
 	.word	cucumber
@@ -1161,10 +1160,10 @@ initCatnip:
 	mov	r2, #15
 	mov	ip, #32
 	mov	r5, #0
-	ldr	r1, .L169
-	ldr	r3, .L169+4
+	ldr	r1, .L171
+	ldr	r3, .L171+4
 	add	r0, r1, #28
-.L166:
+.L168:
 	add	lr, r2, #1
 	strb	r2, [r3, #44]
 	ldr	r4, [r1], #4
@@ -1176,12 +1175,12 @@ initCatnip:
 	str	ip, [r3, #20]
 	str	r5, [r3, #52]
 	add	r3, r3, #72
-	bne	.L166
+	bne	.L168
 	pop	{r4, r5, lr}
 	bx	lr
-.L170:
+.L172:
 	.align	2
-.L169:
+.L171:
 	.word	.LANCHOR0+80
 	.word	catnip
 	.size	initCatnip, .-initCatnip
@@ -1198,16 +1197,16 @@ drawCatnip:
 	push	{r4, r5, r6, r7, r8, r9, r10, lr}
 	mov	r8, #512
 	mov	r7, #276
-	ldr	r1, .L177
-	ldr	r2, .L177+4
-	ldr	r3, .L177+8
+	ldr	r1, .L179
+	ldr	r2, .L179+4
+	ldr	r3, .L179+8
 	ldrh	r6, [r1]
 	ldrh	r5, [r2]
-	ldr	r1, .L177+12
-	ldr	r4, .L177+16
-	ldr	lr, .L177+20
+	ldr	r1, .L179+12
+	ldr	r4, .L179+16
+	ldr	lr, .L179+20
 	add	ip, r3, #504
-.L174:
+.L176:
 	ldr	r2, [r3, #52]
 	cmp	r2, #0
 	ldrb	r2, [r3, #44]	@ zero_extendqisi2
@@ -1215,7 +1214,7 @@ drawCatnip:
 	lsl	r9, r2, #3
 	lslne	r2, r2, #3
 	strhne	r8, [r1, r2]	@ movhi
-	bne	.L173
+	bne	.L175
 	ldm	r3, {r2, r10}
 	sub	r2, r2, r5
 	and	r2, r2, r4
@@ -1225,15 +1224,15 @@ drawCatnip:
 	strh	r7, [r0, #4]	@ movhi
 	strh	r2, [r0, #2]	@ movhi
 	strh	r10, [r1, r9]	@ movhi
-.L173:
+.L175:
 	add	r3, r3, #72
 	cmp	r3, ip
-	bne	.L174
+	bne	.L176
 	pop	{r4, r5, r6, r7, r8, r9, r10, lr}
 	bx	lr
-.L178:
+.L180:
 	.align	2
-.L177:
+.L179:
 	.word	vOff
 	.word	hOff
 	.word	catnip
@@ -1256,23 +1255,23 @@ drawGame:
 	bl	drawOrange
 	bl	drawCucumber
 	bl	drawCatnip
-	ldr	r3, .L181
+	ldr	r3, .L183
 	mov	lr, pc
 	bx	r3
-	ldr	r3, .L181+4
+	ldr	r3, .L183+4
 	mov	lr, pc
 	bx	r3
-	ldr	r3, .L181+8
+	ldr	r3, .L183+8
 	mov	lr, pc
 	bx	r3
-	ldr	r3, .L181+12
+	ldr	r3, .L183+12
 	mov	lr, pc
 	bx	r3
 	pop	{r4, lr}
 	bx	lr
-.L182:
+.L184:
 	.align	2
-.L181:
+.L183:
 	.word	drawRat
 	.word	drawScore
 	.word	drawHeart
@@ -1286,7 +1285,6 @@ drawGame:
 	.global	xCuc
 	.global	yOrange
 	.global	xOrange
-	.comm	score,4,4
 	.comm	player_life,72,4
 	.comm	heart,72,4
 	.comm	player_score,72,4

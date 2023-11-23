@@ -5,28 +5,10 @@
 # 1 "enemies.h" 1
 
 
-
-void initRat();
-void drawRat();
-void updateRat();
-void initDog();
-void drawDog();
-void updateDog();
-# 2 "enemies.c" 2
 # 1 "game.h" 1
 
 
 
-# 1 "backgroundTileMap.h" 1
-
-
-
-
-
-
-
-extern const unsigned short backgroundTileMapMap[2048];
-# 5 "game.h" 2
 # 1 "gba.h" 1
 
 
@@ -68,7 +50,7 @@ typedef volatile struct {
 extern DMA *dma;
 # 99 "gba.h"
 void DMANow(int channel, volatile const void *src, volatile void *dst, unsigned int cnt);
-# 6 "game.h" 2
+# 5 "game.h" 2
 # 1 "sprites.h" 1
 # 10 "sprites.h"
 typedef struct {
@@ -105,7 +87,7 @@ typedef struct {
     int isAttacking;
     int cheat;
 } SPRITE;
-# 7 "game.h" 2
+# 6 "game.h" 2
 # 1 "mode0.h" 1
 # 32 "mode0.h"
 typedef struct {
@@ -117,24 +99,12 @@ typedef struct {
 typedef struct {
  u16 tilemap[1024];
 } SB;
+# 7 "game.h" 2
+# 1 "bg_collisionmap.h" 1
+# 20 "bg_collisionmap.h"
+extern const unsigned short bg_collisionmapBitmap[65536];
 # 8 "game.h" 2
-# 1 "main.h" 1
-void initialize();
-void start();
-void goToStart();
-void game();
-void goToGame();
-void instruction();
-void goToInstruction();
-void pause();
-void goToPause();
-void lose();
-void goToLose();
-void win();
-void goToWin();
-void draw();
-# 9 "game.h" 2
-# 26 "game.h"
+# 25 "game.h"
 SPRITE player;
 SPRITE orange[6];
 SPRITE cucumber[4];
@@ -145,11 +115,20 @@ SPRITE player_score;
 SPRITE heart;
 SPRITE player_life;
 
-int score;
+enum Code {
+    ORANGE,
+    CUCUMBER,
+    RAT,
+    DOG,
+    PLAYER,
+};
+
+
+
+extern int score;
 
 extern int hOff;
 extern int vOff;
-
 typedef enum {LEFT, RIGHT} DIRECTION;
 
 void initGame();
@@ -158,6 +137,8 @@ void drawPlayer();
 void initPlayer();
 void drawGame();
 void updateGame();
+
+void initObject(int index, SPRITE* object, int width, int height, int x, int y, int oamIndex, int hide);
 
 void drawOrange();
 void initOrange();
@@ -178,11 +159,17 @@ void drawHeart();
 
 void initLives();
 void drawLives();
-# 3 "enemies.c" 2
-# 1 "bg_collisionmap.h" 1
-# 20 "bg_collisionmap.h"
-extern const unsigned short bg_collisionmapBitmap[65536];
-# 4 "enemies.c" 2
+# 4 "enemies.h" 2
+
+
+
+void initRat();
+void drawRat();
+void updateRat();
+void initDog();
+void drawDog();
+void updateDog();
+# 2 "enemies.c" 2
 
 void initRat() {
     rat.width = 32;
@@ -199,8 +186,6 @@ void initRat() {
     rat.isAnimating = 1;
     rat.hide = 0;
     rat.lives = 3;
-
-
 }
 
 void drawRat() {
@@ -211,8 +196,6 @@ void drawRat() {
     if (rat.direction == RIGHT) {
         shadowOAM[rat.oamIndex].attr1 |= (1 << 12);
     }
-
-
 }
 
 void updateRat() {
@@ -263,8 +246,6 @@ void initDog() {
     dog.timeUntilNextFrame = 10;
     dog.x = 100;
     dog.y = 200;
-
-
 }
 
 void drawDog() {

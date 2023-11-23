@@ -4,7 +4,7 @@
 #include "gba.h"
 #include "sprites.h"
 #include "mode0.h"
-#include "main.h"
+#include "bg_collisionmap.h"
 
 #ifndef max
 #define max(a,b)            (((a) > (b)) ? (a) : (b))
@@ -40,19 +40,8 @@ enum Code {
     PLAYER,
 };
 
-int xOrange[ORANGE_COUNT] = {160, 410, 360, 100, 320};
-int yOrange[ORANGE_COUNT] = {170, 80, 16, 110, 40};
 
-int xCuc[CUCUMBER_COUNT] = {165, 248, 464, 308};
-int yCuc[CUCUMBER_COUNT] = {20, 32, 196, 212};
-
-int xNip[CATNIP_COUNT] = {276,5, 8, 480, 200};
-int yNip[CATNIP_COUNT] = {10, 150, 16, 0, 215};
-
-int collisionCooldown = 0;
-int disgustedDisplayTimer = 0;
-
-int score;
+extern int score;
 
 extern int hOff;
 extern int vOff;

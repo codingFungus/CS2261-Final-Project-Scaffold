@@ -185,9 +185,9 @@ void goToPause() {
 
     mgba_printf("paused");
 
-    DMANow(3, pauseScreenTiles, &CHARBLOCK[0], pausetileTilesLen/2);
-    DMANow(3, pauseScreenMap, &SCREENBLOCK[28], pauseScreenMapLen/2);
-    DMANow(3, pauseScreenPal, BG_PALETTE, 16);
+    DMANow(3, newpauseScreenTiles, &CHARBLOCK[0], newpauseScreenTilesLen/2);
+    DMANow(3, newpauseScreenMap, &SCREENBLOCK[28], newpauseScreenMapLen/2);
+    DMANow(3, newpauseScreenPal, BG_PALETTE, 16);
 
     hideSprites();
     waitForVBlank();

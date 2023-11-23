@@ -1,28 +1,38 @@
 #include "game.h"
-#include "bg_collisionmap.h"
-#include "enemies.h"
+
+const int xOrange[ORANGE_COUNT] = {160, 410, 360, 100, 320};
+const int yOrange[ORANGE_COUNT] = {170, 80, 16, 110, 40};
+
+const int xCuc[CUCUMBER_COUNT] = {165, 248, 464, 308};
+const int yCuc[CUCUMBER_COUNT] = {20, 32, 196, 212};
+
+const int xNip[CATNIP_COUNT] = {276,5, 8, 480, 200};
+const int yNip[CATNIP_COUNT] = {10, 160, 16, 0, 215};
+
+int collisionCooldown = 0;
+int disgustedDisplayTimer = 0;
 
 //wip
-void objectFactory(enum Code code) {
-    if (code == ORANGE) {
-        for (int i = 0; i < ORANGE_COUNT; ++i) {
-            initObject(i, orange, 32, 32, xOrange[i], yOrange[i], 1 + i, 0);
-        }
-    } else if (code == CUCUMBER) {
+// void objectFactory(enum Code code) {
+//     if (code == ORANGE) {
+//         for (int i = 0; i < ORANGE_COUNT; ++i) {
+//             initObject(i, orange, 32, 32, xOrange[i], yOrange[i], 1 + i, 0);
+//         }
+//     } else if (code == CUCUMBER) {
 
-    } else if (code == RAT) {
+//     } else if (code == RAT) {
 
-    } else if (code == DOG) {
+//     } else if (code == DOG) {
 
-    }
+//     }
 
     
-}
+// }
 
 void initGame() {
     initPlayer();
 
-    initObjects();
+    //objectFactory(ORANGE);
 
     initOrange();
     initCucumber();
@@ -41,6 +51,7 @@ void drawGame() {
     drawScore();
     drawHeart();
     drawLives();
+    
 }
 void updateGame() {
     if (collisionCooldown > 0) {
@@ -384,14 +395,14 @@ void drawOrange() {
 // Proof of concept, could use more work
 // Basic idea ---> use parameters to make more generic function
 // That way you repeat less code
-void initObject(int index, SPRITE* object, int width, int height, int x, int y, int oamIndex, int hide) {
-    object[index].width = width;
-    object[index].height = height;
-    object[index].x = x;
-    object[index].y = y;
-    object[index].oamIndex = oamIndex;
-    object[index].hide = hide;
-}
+// void initObject(int index, SPRITE* object, int width, int height, int x, int y, int oamIndex, int hide) {
+//     object[index].width = width;
+//     object[index].height = height;
+//     object[index].x = x;
+//     object[index].y = y;
+//     object[index].oamIndex = oamIndex;
+//     object[index].hide = hide;
+// }
 
 
 void initCucumber() {

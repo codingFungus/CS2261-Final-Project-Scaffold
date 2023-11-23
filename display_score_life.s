@@ -210,7 +210,6 @@ drawLives:
 	.word	shadowOAM
 	.word	1022
 	.size	drawLives, .-drawLives
-	.comm	score,4,4
 	.comm	player_life,72,4
 	.comm	heart,72,4
 	.comm	player_score,72,4

@@ -264,7 +264,6 @@ updateDog:
 	@ link register save eliminated.
 	bx	lr
 	.size	updateDog, .-updateDog
-	.comm	score,4,4
 	.comm	player_life,72,4
 	.comm	heart,72,4
 	.comm	player_score,72,4

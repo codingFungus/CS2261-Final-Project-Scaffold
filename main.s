@@ -382,38 +382,38 @@ goToPause:
 	mov	lr, pc
 	bx	r3
 	ldr	r4, .L42+8
-	mov	r3, #9600
 	mov	r2, #100663296
 	mov	r0, #3
-	ldr	r1, .L42+12
+	ldr	r3, .L42+12
+	ldr	r1, .L42+16
 	mov	lr, pc
 	bx	r4
 	mov	r3, #1024
 	mov	r0, #3
-	ldr	r2, .L42+16
-	ldr	r1, .L42+20
+	ldr	r2, .L42+20
+	ldr	r1, .L42+24
 	mov	lr, pc
 	bx	r4
 	mov	r2, #83886080
 	mov	r0, #3
-	ldr	r1, .L42+24
+	ldr	r1, .L42+28
 	mov	r3, #16
 	mov	lr, pc
 	bx	r4
-	ldr	r3, .L42+28
+	ldr	r3, .L42+32
 	mov	lr, pc
 	bx	r3
-	ldr	r3, .L42+32
+	ldr	r3, .L42+36
 	mov	lr, pc
 	bx	r3
 	mov	r3, #512
 	mov	r2, #117440512
 	mov	r0, #3
-	ldr	r1, .L42+36
+	ldr	r1, .L42+40
 	mov	lr, pc
 	bx	r4
 	mov	r2, #3
-	ldr	r3, .L42+40
+	ldr	r3, .L42+44
 	pop	{r4, lr}
 	str	r2, [r3]
 	bx	lr
@@ -423,10 +423,11 @@ goToPause:
 	.word	.LC0
 	.word	mgba_printf
 	.word	DMANow
-	.word	pauseScreenTiles
+	.word	4336
+	.word	newpauseScreenTiles
 	.word	100720640
-	.word	pauseScreenMap
-	.word	pauseScreenPal
+	.word	newpauseScreenMap
+	.word	newpauseScreenPal
 	.word	hideSprites
 	.word	waitForVBlank
 	.word	shadowOAM
@@ -819,7 +820,6 @@ main:
 	.comm	oldButtons,2,2
 	.comm	buttons,2,2
 	.comm	state,4,4
-	.comm	score,4,4
 	.comm	player_life,72,4
 	.comm	heart,72,4
 	.comm	player_score,72,4

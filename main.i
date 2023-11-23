@@ -313,6 +313,7 @@ void mgba_printf(const char* string, ...);
 void mgba_break(void);
 void mgba_close(void);
 # 9 "main.h" 2
+
 # 1 "game.h" 1
 
 
@@ -320,10 +321,11 @@ void mgba_close(void);
 
 
 
-
-# 1 "main.h" 1
-# 9 "game.h" 2
-# 26 "game.h"
+# 1 "bg_collisionmap.h" 1
+# 20 "bg_collisionmap.h"
+extern const unsigned short bg_collisionmapBitmap[65536];
+# 8 "game.h" 2
+# 25 "game.h"
 SPRITE player;
 SPRITE orange[6];
 SPRITE cucumber[4];
@@ -334,11 +336,20 @@ SPRITE player_score;
 SPRITE heart;
 SPRITE player_life;
 
-int score;
+enum Code {
+    ORANGE,
+    CUCUMBER,
+    RAT,
+    DOG,
+    PLAYER,
+};
+
+
+
+extern int score;
 
 extern int hOff;
 extern int vOff;
-
 typedef enum {LEFT, RIGHT} DIRECTION;
 
 void initGame();
@@ -347,6 +358,8 @@ void drawPlayer();
 void initPlayer();
 void drawGame();
 void updateGame();
+
+void initObject(int index, SPRITE* object, int width, int height, int x, int y, int oamIndex, int hide);
 
 void drawOrange();
 void initOrange();
@@ -367,4 +380,355 @@ void drawHeart();
 
 void initLives();
 void drawLives();
-# 10 "main.h" 2
+# 11 "main.h" 2
+
+# 1 "catSpritesheet.h" 1
+# 21 "catSpritesheet.h"
+extern const unsigned short catSpritesheetTiles[16384];
+
+
+extern const unsigned short catSpritesheetPal[256];
+# 13 "main.h" 2
+
+# 1 "winbg.h" 1
+# 22 "winbg.h"
+extern const unsigned short winbgTiles[448];
+
+
+extern const unsigned short winbgMap[1024];
+
+
+extern const unsigned short winbgPal[16];
+# 15 "main.h" 2
+# 1 "startscreen.h" 1
+# 22 "startscreen.h"
+extern const unsigned short startscreenTiles[13296];
+
+
+extern const unsigned short startscreenMap[2048];
+
+
+extern const unsigned short startscreenPal[16];
+# 16 "main.h" 2
+# 1 "newbg.h" 1
+
+
+
+
+
+
+
+extern const unsigned short newbgMap[2048];
+# 17 "main.h" 2
+# 1 "newbg_tile.h" 1
+# 21 "newbg_tile.h"
+extern const unsigned short newbg_tileTiles[256];
+
+
+extern const unsigned short newbg_tilePal[256];
+# 18 "main.h" 2
+# 1 "instructions.h" 1
+# 22 "instructions.h"
+extern const unsigned short instructionsTiles[3216];
+
+
+extern const unsigned short instructionsMap[512];
+
+
+extern const unsigned short instructionsPal[256];
+# 19 "main.h" 2
+# 1 "losebg.h" 1
+# 22 "losebg.h"
+extern const unsigned short losebgTiles[528];
+
+
+extern const unsigned short losebgMap[1024];
+
+
+extern const unsigned short losebgPal[16];
+# 20 "main.h" 2
+
+# 1 "enemies.h" 1
+
+
+
+
+
+
+void initRat();
+void drawRat();
+void updateRat();
+void initDog();
+void drawDog();
+void updateDog();
+# 22 "main.h" 2
+# 1 "newpauseScreen.h" 1
+# 22 "newpauseScreen.h"
+extern const unsigned short newpauseScreenTiles[4336];
+
+
+extern const unsigned short newpauseScreenMap[1024];
+
+
+extern const unsigned short newpauseScreenPal[256];
+# 23 "main.h" 2
+
+void initialize();
+void start();
+void goToStart();
+void game();
+void goToGame();
+void instruction();
+void goToInstruction();
+void pause();
+void goToPause();
+void lose();
+void goToLose();
+void win();
+void goToWin();
+void draw();
+# 2 "main.c" 2
+# 17 "main.c"
+int state;
+enum {START, GAME, INSTRUCTION, PAUSE, WIN, LOSE};
+
+unsigned short buttons;
+unsigned short oldButtons;
+
+int seed;
+char buffer[41];
+int hOff = 0;
+int vOff = 0;
+extern int lives;
+extern int score;
+OBJ_ATTR shadowOAM[128];
+SPRITE player;
+
+int main() {
+    initialize();
+
+
+    while (1) {
+        oldButtons = buttons;
+        buttons = (*(volatile unsigned short*) 0x04000130);
+
+
+        switch(state) {
+            case START:
+                start();
+                break;
+            case GAME:
+                game();
+                break;
+            case INSTRUCTION:
+                instruction();
+                break;
+            case PAUSE:
+                pause();
+                break;
+            case WIN:
+                win();
+                break;
+            case LOSE:
+                lose();
+                break;
+        }
+        draw();
+    }
+    return 0;
+
+}
+
+void initialize() {
+
+    mgba_open();
+
+    hideSprites();
+    (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | ((1 << (8 + (0 % 4)))) | (1 << 12);
+
+    (*(volatile unsigned short*) 0x04000008) = ((0) << 2) | ((28) << 8) | (1 << 14) | (0 << 7);
+
+
+    buttons = (*(volatile unsigned short*) 0x04000130);
+
+
+    goToStart();
+
+}
+void goToStart() {
+    (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | (1 << (8 + (0 % 4))) | (1 << 12);
+    (*(volatile unsigned short*) 0x04000008) = ((0) << 2) | ((28) << 8) | (0 << 14);
+
+    DMANow(3, startscreenMap, &((SB*) 0x06000000)[28], 4096 / 2);
+    DMANow(3, startscreenTiles, &((CB*) 0x06000000)[0], 26592 / 2);
+    DMANow(3, startscreenPal, ((unsigned short*) 0x05000000), 32 / 2);
+
+    hideSprites();
+    waitForVBlank();
+    DMANow(3, shadowOAM, ((OBJ_ATTR*) 0x7000000), 512);
+    seed = 0;
+
+    state = START;
+
+}
+void start() {
+
+    seed++;
+
+
+    if ((!(~(oldButtons) & ((1 << 3))) && (~buttons & ((1 << 3))))) {
+
+        goToGame();
+        initGame();
+
+
+    }
+    if ((!(~(oldButtons) & ((1 << 2))) && (~buttons & ((1 << 2))))) {
+        goToInstruction();
+    }
+
+
+}
+void goToGame() {
+
+    (*(volatile unsigned short*) 0x04000008) = ((0) << 2) | ((28) << 8) | (1 << 14);
+    (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | (1 << (8 + (0 % 4))) | (1 << 12);
+
+    waitForVBlank();
+
+    DMANow(3, newbgMap, &((SB*) 0x06000000)[28], (4096)/2);
+    DMANow(3, newbg_tileTiles, &((CB*) 0x06000000)[0], 512/2);
+    DMANow(3, newbg_tilePal, ((unsigned short*) 0x05000000), 512/2);
+
+    DMANow(3, catSpritesheetTiles, &((CB*) 0x06000000)[4], 32768/2);
+    DMANow(3, catSpritesheetPal, ((u16*) 0x5000200), 512/2);
+
+    DMANow(3, shadowOAM, ((OBJ_ATTR*) 0x7000000), 512);
+
+    hideSprites();
+    state = GAME;
+}
+
+void game() {
+    updateGame();
+    drawGame();
+
+    if ((!(~(oldButtons) & ((1 << 3))) && (~buttons & ((1 << 3))))) {
+        goToPause();
+    }
+    if (player.lives == 0) {
+        goToLose();
+    }
+    if (player.score == 6 && rat.lives == 0) {
+        goToWin();
+    }
+
+
+
+
+
+}
+void goToInstruction() {
+    (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | (1 << (8 + (0 % 4)));
+    (*(volatile unsigned short*) 0x04000008) = ((0) << 2) | ((28) << 8) | (0 << 14);
+
+    DMANow(3, instructionsMap, &((SB*) 0x06000000)[28], 1024/2);
+    DMANow(3, instructionsTiles, &((CB*) 0x06000000)[0], 6432/2);
+    DMANow(3, instructionsPal, ((unsigned short*) 0x05000000), 512/2);
+
+    hideSprites();
+    waitForVBlank();
+
+    DMANow(3, shadowOAM, ((OBJ_ATTR*) 0x7000000), 512);
+    state = INSTRUCTION;
+
+
+}
+void instruction() {
+    if ((!(~(oldButtons) & ((1 << 3))) && (~buttons & ((1 << 3))))) {
+        goToStart();
+    }
+
+}
+
+void goToPause() {
+    (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | (1 << (8 + (0 % 4)));
+    (*(volatile unsigned short*) 0x04000008) = ((0) << 2) | ((28) << 8) | (1 << 14);
+
+
+
+
+    mgba_printf("paused");
+
+    DMANow(3, newpauseScreenTiles, &((CB*) 0x06000000)[0], 8672/2);
+    DMANow(3, newpauseScreenMap, &((SB*) 0x06000000)[28], 2048/2);
+    DMANow(3, newpauseScreenPal, ((unsigned short*) 0x05000000), 16);
+
+    hideSprites();
+    waitForVBlank();
+
+    DMANow(3, shadowOAM, ((OBJ_ATTR*) 0x7000000), 512);
+
+    state = PAUSE;
+}
+
+void pause() {
+    if ((!(~(oldButtons) & ((1 << 3))) && (~buttons & ((1 << 3))))) {
+        goToGame();
+    } else if ((!(~(oldButtons) & ((1 << 2))) && (~buttons & ((1 << 2))))) {
+        goToStart();
+    }
+}
+
+void goToLose() {
+
+    (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | (1 << (8 + (1 % 4)));
+    (*(volatile unsigned short*) 0x0400000A) = ((0) << 2) | ((28) << 8) | (1 << 14);
+
+    DMANow(3, losebgMap, &((SB*) 0x06000000)[28], 2048/2);
+    DMANow(3, losebgTiles, &((CB*) 0x06000000)[0], 1056/2);
+    DMANow(3, losebgPal, ((unsigned short*) 0x05000000), 16);
+
+    hideSprites();
+    waitForVBlank();
+
+    DMANow(3, shadowOAM, ((OBJ_ATTR*) 0x7000000), 512);
+    state = LOSE;
+
+}
+void lose() {
+    if ((!(~(oldButtons) & ((1 << 3))) && (~buttons & ((1 << 3))))) {
+        goToStart();
+    }
+}
+
+void goToWin() {
+    (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | (1 << (8 + (1 % 4)));
+    (*(volatile unsigned short*) 0x0400000A) = ((0) << 2) | ((28) << 8) | (1 << 14);
+
+    DMANow(3, winbgMap, &((SB*) 0x06000000)[28], 2048/2);
+    DMANow(3, winbgTiles, &((CB*) 0x06000000)[0], 896/2);
+    DMANow(3, winbgPal, ((unsigned short*) 0x05000000), 32/2);
+
+    hideSprites();
+    waitForVBlank();
+
+    DMANow(3, shadowOAM, ((OBJ_ATTR*) 0x7000000), 512);
+
+    state = WIN;
+}
+void win() {
+
+    if ((!(~(oldButtons) & ((1 << 3))) && (~buttons & ((1 << 3))))) {
+        goToStart();
+    }
+
+}
+
+void draw() {
+    (*(volatile unsigned short*) 0x04000010) = hOff;
+    (*(volatile unsigned short*) 0x04000012) = vOff;
+    waitForVBlank();
+
+    DMANow(3, shadowOAM, ((OBJ_ATTR*) 0x7000000), 128*4);
+}
