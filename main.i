@@ -325,7 +325,55 @@ void mgba_close(void);
 # 20 "bg_collisionmap.h"
 extern const unsigned short bg_collisionmapBitmap[65536];
 # 8 "game.h" 2
-# 25 "game.h"
+# 1 "Catbgm.h" 1
+
+
+extern const unsigned int Catbgm_sampleRate;
+extern const unsigned int Catbgm_length;
+extern const signed char Catbgm_data[];
+# 9 "game.h" 2
+# 1 "disgusted.h" 1
+
+
+extern const unsigned int disgusted_sampleRate;
+extern const unsigned int disgusted_length;
+extern const signed char disgusted_data[];
+# 10 "game.h" 2
+# 1 "Meow.h" 1
+
+
+extern const unsigned int Meow_sampleRate;
+extern const unsigned int Meow_length;
+extern const signed char Meow_data[];
+# 11 "game.h" 2
+# 1 "digitalSound.h" 1
+
+
+
+void setupSounds();
+void setupSoundInterrupts();
+void interruptHandler();
+
+void playSoundA(const signed char* sound, int length, int loops);
+void playSoundB(const signed char* sound, int length, int loops);
+
+void pauseSounds();
+void unpauseSounds();
+void stopSounds();
+# 52 "digitalSound.h"
+typedef struct{
+    const signed char* data;
+    int dataLength;
+    int isPlaying;
+    int looping;
+    int durationInVBlanks;
+    int vBlankCount;
+} SOUND;
+
+SOUND soundA;
+SOUND soundB;
+# 12 "game.h" 2
+# 29 "game.h"
 SPRITE player;
 SPRITE orange[5];
 SPRITE cucumber[4];
@@ -472,6 +520,28 @@ extern const unsigned short newpauseScreenMap[1024];
 
 extern const unsigned short newpauseScreenPal[256];
 # 23 "main.h" 2
+# 1 "Catbgm.h" 1
+
+
+extern const unsigned int Catbgm_sampleRate;
+extern const unsigned int Catbgm_length;
+extern const signed char Catbgm_data[];
+# 24 "main.h" 2
+# 1 "disgusted.h" 1
+
+
+extern const unsigned int disgusted_sampleRate;
+extern const unsigned int disgusted_length;
+extern const signed char disgusted_data[];
+# 25 "main.h" 2
+# 1 "Meow.h" 1
+
+
+extern const unsigned int Meow_sampleRate;
+extern const unsigned int Meow_length;
+extern const signed char Meow_data[];
+# 26 "main.h" 2
+
 
 void initialize();
 void start();
@@ -519,6 +589,7 @@ int main() {
                 break;
             case GAME:
                 game();
+
                 break;
             case INSTRUCTION:
                 instruction();
@@ -550,6 +621,7 @@ void initialize() {
 
 
     buttons = (*(volatile unsigned short*) 0x04000130);
+    setupSounds();
 
 
     goToStart();
@@ -595,6 +667,7 @@ void goToGame() {
     (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | (1 << (8 + (0 % 4))) | (1 << 12);
 
     waitForVBlank();
+    playSoundA(Catbgm_data, Catbgm_length, 1);
 
     DMANow(3, newbgMap, &((SB*) 0x06000000)[28], (4096)/2);
     DMANow(3, newbg_tileTiles, &((CB*) 0x06000000)[0], 512/2);
@@ -610,6 +683,7 @@ void goToGame() {
 }
 
 void game() {
+
     updateGame();
     drawGame();
 

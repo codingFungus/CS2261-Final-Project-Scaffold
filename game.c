@@ -234,6 +234,8 @@ void playerCollision() {
                     playerDisgusted();
                     player.lives--;
                     collisionCooldown = COLLISION_COOLDOWN;
+                    playSoundB(disgusted_data, disgusted_length, 0);
+                    
                     playerDisgusted();
                     mgba_printf("player lives: %d\n", player.lives);
                 }
@@ -256,6 +258,7 @@ void playerCollision() {
                 } else {
                     playerDisgusted();
                     player.lives--;
+                    playSoundB(disgusted_data, disgusted_length, 0);
                     collisionCooldown = COLLISION_COOLDOWN;
                     mgba_printf("player lives: %d\n", player.lives);
                     
@@ -281,6 +284,7 @@ void playerCollision() {
                 player.score++;
                 player.lives++;
                 catnip[i].hide = 1;
+                playSoundB(Meow_data, Meow_length, 0);
                 //change position(0, 0) when hide
                 collisionCooldown = COLLISION_COOLDOWN;
                 if (player.lives >= 5) {

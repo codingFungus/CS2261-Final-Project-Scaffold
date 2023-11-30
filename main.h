@@ -20,6 +20,10 @@
 #include "bg_collisionmap.h"
 #include "enemies.h"
 #include "newpauseScreen.h"
+#include "Catbgm.h"
+#include "disgusted.h"
+#include "Meow.h"
+#include "digitalSound.h"
 
 void initialize();
 void start();

@@ -101,7 +101,55 @@ typedef struct {
 # 20 "bg_collisionmap.h"
 extern const unsigned short bg_collisionmapBitmap[65536];
 # 8 "game.h" 2
-# 25 "game.h"
+# 1 "Catbgm.h" 1
+
+
+extern const unsigned int Catbgm_sampleRate;
+extern const unsigned int Catbgm_length;
+extern const signed char Catbgm_data[];
+# 9 "game.h" 2
+# 1 "disgusted.h" 1
+
+
+extern const unsigned int disgusted_sampleRate;
+extern const unsigned int disgusted_length;
+extern const signed char disgusted_data[];
+# 10 "game.h" 2
+# 1 "Meow.h" 1
+
+
+extern const unsigned int Meow_sampleRate;
+extern const unsigned int Meow_length;
+extern const signed char Meow_data[];
+# 11 "game.h" 2
+# 1 "digitalSound.h" 1
+
+
+
+void setupSounds();
+void setupSoundInterrupts();
+void interruptHandler();
+
+void playSoundA(const signed char* sound, int length, int loops);
+void playSoundB(const signed char* sound, int length, int loops);
+
+void pauseSounds();
+void unpauseSounds();
+void stopSounds();
+# 52 "digitalSound.h"
+typedef struct{
+    const signed char* data;
+    int dataLength;
+    int isPlaying;
+    int looping;
+    int durationInVBlanks;
+    int vBlankCount;
+} SOUND;
+
+SOUND soundA;
+SOUND soundB;
+# 12 "game.h" 2
+# 29 "game.h"
 SPRITE player;
 SPRITE orange[5];
 SPRITE cucumber[4];
@@ -375,7 +423,8 @@ void playerCollision() {
                     playerDisgusted();
                     player.lives--;
                     collisionCooldown = 40;
-                    disgustedDisplayTimer = 100;
+                    playSoundB(disgusted_data, disgusted_length, 0);
+
                     playerDisgusted();
                     mgba_printf("player lives: %d\n", player.lives);
                 }
@@ -398,6 +447,7 @@ void playerCollision() {
                 } else {
                     playerDisgusted();
                     player.lives--;
+                    playSoundB(disgusted_data, disgusted_length, 0);
                     collisionCooldown = 40;
                     mgba_printf("player lives: %d\n", player.lives);
 
@@ -423,6 +473,7 @@ void playerCollision() {
                 player.score++;
                 player.lives++;
                 catnip[i].hide = 1;
+                playSoundB(Meow_data, Meow_length, 0);
 
                 collisionCooldown = 40;
                 if (player.lives >= 5) {
@@ -470,7 +521,7 @@ void playerAttack() {
         if (player.direction == RIGHT) {
             shadowOAM[player.oamIndex].attr1 |= (1 << 12);
         }
-# 347 "game.c"
+# 350 "game.c"
     }
 
 
@@ -481,7 +532,7 @@ void playerAttack() {
 
 void playerDisgusted() {
     mgba_printf("disgusted");
-# 368 "game.c"
+# 371 "game.c"
     if (disgustedDisplayTimer == 0) {
         shadowOAM[player.oamIndex].attr0 = (0 << 13) | (0 << 14) | ((player.y - vOff) & 0xFF);
         shadowOAM[player.oamIndex].attr1 = (2 << 14) | ((player.x - hOff) & 0x1FF);
@@ -523,7 +574,7 @@ void drawOrange() {
     }
 
 }
-# 423 "game.c"
+# 426 "game.c"
 void initCucumber() {
     for (int i = 0; i < 4; i++) {
 

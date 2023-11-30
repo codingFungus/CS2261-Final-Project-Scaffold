@@ -44,6 +44,7 @@ int main() {
                 break;
             case GAME:
                 game();
+                
                 break;
             case INSTRUCTION:
                 instruction();
@@ -75,6 +76,7 @@ void initialize() {
     
     
     buttons = REG_BUTTONS;
+    setupSounds();
     //hOff = 0;
     
     goToStart();
@@ -120,6 +122,7 @@ void goToGame() {
     REG_DISPCTL = MODE(0) | BG_ENABLE(0) | SPRITE_ENABLE;
 
     waitForVBlank();
+    playSoundA(Catbgm_data, Catbgm_length, 1);
    
     DMANow(3, newbgMap, &SCREENBLOCK[28], newbgMapLen/2);
     DMANow(3, newbg_tileTiles, &CHARBLOCK[0], newbg_tileTilesLen/2);
@@ -135,6 +138,7 @@ void goToGame() {
 }
 
 void game() {
+    
     updateGame();
     drawGame();
     

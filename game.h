@@ -5,6 +5,10 @@
 #include "sprites.h"
 #include "mode0.h"
 #include "bg_collisionmap.h"
+#include "Catbgm.h"
+#include "disgusted.h"
+#include "Meow.h"
+#include "digitalSound.h"
 
 #ifndef max
 #define max(a,b)            (((a) > (b)) ? (a) : (b))

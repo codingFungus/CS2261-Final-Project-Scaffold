@@ -98,15 +98,18 @@ initialize:
 	mov	lr, pc
 	bx	r3
 	mov	r3, #67108864
-	mov	r2, #4352
-	mov	r1, #23552
-	strh	r2, [r3]	@ movhi
-	strh	r1, [r3, #8]	@ movhi
-	ldr	r2, .L8+8
-	ldr	r3, .L8+12
-	ldrh	r2, [r2, #48]
+	mov	r1, #4352
+	mov	r2, #23552
+	strh	r1, [r3]	@ movhi
+	strh	r2, [r3, #8]	@ movhi
+	ldr	r1, .L8+8
+	ldr	r2, .L8+12
+	ldrh	r1, [r1, #48]
+	ldr	r3, .L8+16
+	strh	r1, [r2]	@ movhi
+	mov	lr, pc
+	bx	r3
 	pop	{r4, lr}
-	strh	r2, [r3]	@ movhi
 	b	goToStart
 .L9:
 	.align	2
@@ -115,6 +118,7 @@ initialize:
 	.word	hideSprites
 	.word	67109120
 	.word	buttons
+	.word	setupSounds
 	.size	initialize, .-initialize
 	.align	2
 	.syntax unified
@@ -155,50 +159,57 @@ goToGame:
 	strh	r2, [r3, #8]	@ movhi
 	strh	r1, [r3]	@ movhi
 	ldr	r2, .L16
-	ldr	r4, .L16+4
 	mov	lr, pc
 	bx	r2
+	ldr	r3, .L16+4
+	mov	r2, #1
+	ldr	r1, [r3]
+	ldr	r0, .L16+8
+	ldr	r3, .L16+12
+	ldr	r4, .L16+16
+	mov	lr, pc
+	bx	r3
 	mov	r3, #2048
 	mov	r0, #3
-	ldr	r2, .L16+8
-	ldr	r1, .L16+12
+	ldr	r2, .L16+20
+	ldr	r1, .L16+24
 	mov	lr, pc
 	bx	r4
 	mov	r3, #256
 	mov	r2, #100663296
 	mov	r0, #3
-	ldr	r1, .L16+16
+	ldr	r1, .L16+28
 	mov	lr, pc
 	bx	r4
 	mov	r3, #256
 	mov	r2, #83886080
 	mov	r0, #3
-	ldr	r1, .L16+20
+	ldr	r1, .L16+32
 	mov	lr, pc
 	bx	r4
 	mov	r3, #16384
 	mov	r0, #3
-	ldr	r2, .L16+24
-	ldr	r1, .L16+28
+	ldr	r2, .L16+36
+	ldr	r1, .L16+40
 	mov	lr, pc
 	bx	r4
 	mov	r3, #256
 	mov	r0, #3
-	ldr	r2, .L16+32
-	ldr	r1, .L16+36
+	ldr	r2, .L16+44
+	ldr	r1, .L16+48
 	mov	lr, pc
 	bx	r4
 	mov	r2, #117440512
 	mov	r3, #512
 	mov	r0, #3
-	ldr	r1, .L16+40
+	ldr	r1, .L16+52
 	mov	lr, pc
 	bx	r4
-	ldr	r3, .L16+44
+	ldr	r3, .L16+56
 	mov	lr, pc
 	bx	r3
 	mov	r2, #1
-	ldr	r3, .L16+48
+	ldr	r3, .L16+60
 	pop	{r4, lr}
 	str	r2, [r3]
 	bx	lr
@@ -206,6 +217,9 @@ goToGame:
 	.align	2
 .L16:
 	.word	waitForVBlank
+	.word	Catbgm_length
+	.word	Catbgm_data
+	.word	playSoundA
 	.word	DMANow
 	.word	100720640
 	.word	newbgMap
@@ -828,6 +842,8 @@ main:
 	.comm	cucumber,288,4
 	.comm	orange,360,4
 	.comm	player,72,4
+	.comm	soundB,24,4
+	.comm	soundA,24,4
 	.bss
 	.align	2
 	.set	.LANCHOR0,. + 0
