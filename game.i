@@ -103,10 +103,10 @@ extern const unsigned short bg_collisionmapBitmap[65536];
 # 8 "game.h" 2
 # 25 "game.h"
 SPRITE player;
-SPRITE orange[6];
+SPRITE orange[5];
 SPRITE cucumber[4];
 SPRITE rat;
-SPRITE catnip[7];
+SPRITE catnip[6];
 SPRITE dog;
 SPRITE player_score;
 SPRITE heart;
@@ -158,14 +158,14 @@ void initLives();
 void drawLives();
 # 2 "game.c" 2
 
-const int xOrange[6] = {160, 410, 360, 100, 320};
-const int yOrange[6] = {170, 80, 16, 110, 40};
+const int xOrange[5] = {160, 410, 360, 100, 320};
+const int yOrange[5] = {170, 80, 16, 110, 40};
 
 const int xCuc[4] = {165, 248, 464, 308};
 const int yCuc[4] = {20, 32, 196, 212};
 
-const int xNip[7] = {276,5, 8, 480, 200};
-const int yNip[7] = {10, 160, 16, 0, 215};
+const int xNip[6] = {5, 8, 480, 400, 90, 350};
+const int yNip[6] = {160, 16, 100, 0, 10, 70};
 
 int collisionCooldown = 0;
 int disgustedDisplayTimer = 0;
@@ -198,8 +198,11 @@ void updateGame() {
     if (collisionCooldown > 0) {
         collisionCooldown--;
     }
+    if (disgustedDisplayTimer > 0) {
+        playerDisgusted();
+        disgustedDisplayTimer--;
 
-
+    }
 
 
 
@@ -358,7 +361,7 @@ void playerCollision() {
         return;
     }
 
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 5; i++) {
         if (collision(player.x + 5, player.y, player.width - 5, player.height - 5,
             orange[i].x, orange[i].y - 10, orange[i].width - 10, orange[i].height - 10)
             &&
@@ -371,7 +374,8 @@ void playerCollision() {
                 } else {
                     playerDisgusted();
                     player.lives--;
-                    collisionCooldown = 30;
+                    collisionCooldown = 40;
+                    disgustedDisplayTimer = 100;
                     playerDisgusted();
                     mgba_printf("player lives: %d\n", player.lives);
                 }
@@ -394,7 +398,7 @@ void playerCollision() {
                 } else {
                     playerDisgusted();
                     player.lives--;
-                    collisionCooldown = 30;
+                    collisionCooldown = 40;
                     mgba_printf("player lives: %d\n", player.lives);
 
 
@@ -405,7 +409,7 @@ void playerCollision() {
 
 
 
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < 6; i++) {
 
 
 
@@ -420,11 +424,7 @@ void playerCollision() {
                 player.lives++;
                 catnip[i].hide = 1;
 
-                collisionCooldown = 30;
-                if (player.score >= 6) {
-                    player.score = 6;
-
-                }
+                collisionCooldown = 40;
                 if (player.lives >= 5) {
                     player.lives = 5;
                 }
@@ -450,7 +450,7 @@ void playerCollision() {
             }
         } else {
             player.lives--;
-            collisionCooldown = 30;
+            collisionCooldown = 40;
             playerDisgusted();
             mgba_printf("player lives: %d\n", player.lives);
         }
@@ -481,20 +481,25 @@ void playerAttack() {
 
 void playerDisgusted() {
     mgba_printf("disgusted");
+# 368 "game.c"
+    if (disgustedDisplayTimer == 0) {
+        shadowOAM[player.oamIndex].attr0 = (0 << 13) | (0 << 14) | ((player.y - vOff) & 0xFF);
+        shadowOAM[player.oamIndex].attr1 = (2 << 14) | ((player.x - hOff) & 0x1FF);
+        shadowOAM[player.oamIndex].attr2 = (((8) * (32) + (0)) & 0x3FF);
 
+        if (player.direction == RIGHT) {
+            shadowOAM[player.oamIndex].attr1 |= (1 << 12);
+        }
 
-    shadowOAM[player.oamIndex].attr0 = (0 << 13) | (0 << 14) | ((player.y - vOff) & 0xFF);
-    shadowOAM[player.oamIndex].attr1 = (2 << 14) | ((player.x - hOff) & 0x1FF);
-    shadowOAM[player.oamIndex].attr2 = (((8) * (32) + (0)) & 0x3FF);
-
-    if (player.direction == RIGHT) {
-        shadowOAM[player.oamIndex].attr1 |= (1 << 12);
+        DMANow(3, shadowOAM, ((OBJ_ATTR*) 0x7000000), 512);
+        disgustedDisplayTimer = 100;
+    } else {
+        disgustedDisplayTimer--;
     }
-    DMANow(3, shadowOAM, ((OBJ_ATTR*) 0x7000000), 512);
 
 }
 void initOrange() {
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 5; i++) {
         orange[i].width = 32;
         orange[i].height = 32;
         orange[i].x = xOrange[i];
@@ -507,7 +512,7 @@ void initOrange() {
 }
 
 void drawOrange() {
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 5; i++) {
         shadowOAM[orange[i].oamIndex].attr0 = (0 << 13) | (0 << 14) | ((orange[i].y - vOff) & 0xFF);
         shadowOAM[orange[i].oamIndex].attr1 = (2 << 14) | ((orange[i].x - hOff) & 0x1FF);
         shadowOAM[orange[i].oamIndex].attr2 = (((8) * (32) + (12)) & 0x3FF);
@@ -518,7 +523,7 @@ void drawOrange() {
     }
 
 }
-# 408 "game.c"
+# 423 "game.c"
 void initCucumber() {
     for (int i = 0; i < 4; i++) {
 
@@ -549,7 +554,7 @@ void drawCucumber() {
 }
 
 void initCatnip() {
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < 6; i++) {
         catnip[i].width = 32;
         catnip[i].height = 32;
         catnip[i].x = xNip[i];
@@ -561,7 +566,7 @@ void initCatnip() {
 
 }
 void drawCatnip() {
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < 6; i++) {
         if (!catnip[i].hide) {
             shadowOAM[catnip[i].oamIndex].attr0 = (0 << 13) | (0 << 14) | ((catnip[i].y - vOff) & 0xFF);
             shadowOAM[catnip[i].oamIndex].attr1 = (2 << 14) | ((catnip[i].x - hOff) & 0x1FF);

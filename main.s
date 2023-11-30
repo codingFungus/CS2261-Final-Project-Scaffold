@@ -29,7 +29,7 @@ goToStart:
 	ldr	r4, .L4
 	strh	r3, [r2]	@ movhi
 	strh	r1, [r2, #8]	@ movhi
-	mov	r3, #640
+	mov	r3, #1024
 	ldr	r2, .L4+4
 	ldr	r1, .L4+8
 	mov	lr, pc
@@ -71,7 +71,7 @@ goToStart:
 	.word	DMANow
 	.word	100720640
 	.word	startscreenMap
-	.word	6544
+	.word	4848
 	.word	startscreenTiles
 	.word	startscreenPal
 	.word	hideSprites
@@ -242,7 +242,7 @@ goToInstruction:
 	ldr	r1, .L20+8
 	mov	lr, pc
 	bx	r4
-	mov	r3, #3248
+	mov	r3, #3008
 	mov	r2, #100663296
 	mov	r0, #3
 	ldr	r1, .L20+12
@@ -642,7 +642,7 @@ game:
 	beq	.L74
 .L67:
 	ldr	r3, [r4, #60]
-	cmp	r3, #6
+	cmp	r3, #5
 	beq	.L75
 .L65:
 	pop	{r4, lr}
@@ -823,10 +823,10 @@ main:
 	.comm	heart,72,4
 	.comm	player_score,72,4
 	.comm	dog,72,4
-	.comm	catnip,504,4
+	.comm	catnip,432,4
 	.comm	rat,72,4
 	.comm	cucumber,288,4
-	.comm	orange,432,4
+	.comm	orange,360,4
 	.comm	player,72,4
 	.bss
 	.align	2

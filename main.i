@@ -327,10 +327,10 @@ extern const unsigned short bg_collisionmapBitmap[65536];
 # 8 "game.h" 2
 # 25 "game.h"
 SPRITE player;
-SPRITE orange[6];
+SPRITE orange[5];
 SPRITE cucumber[4];
 SPRITE rat;
-SPRITE catnip[7];
+SPRITE catnip[6];
 SPRITE dog;
 SPRITE player_score;
 SPRITE heart;
@@ -402,10 +402,10 @@ extern const unsigned short winbgPal[16];
 # 15 "main.h" 2
 # 1 "startscreen.h" 1
 # 22 "startscreen.h"
-extern const unsigned short startscreenTiles[6544];
+extern const unsigned short startscreenTiles[4848];
 
 
-extern const unsigned short startscreenMap[640];
+extern const unsigned short startscreenMap[1024];
 
 
 extern const unsigned short startscreenPal[256];
@@ -429,7 +429,7 @@ extern const unsigned short newbg_tilePal[256];
 # 18 "main.h" 2
 # 1 "instructions.h" 1
 # 22 "instructions.h"
-extern const unsigned short instructionsTiles[3248];
+extern const unsigned short instructionsTiles[3008];
 
 
 extern const unsigned short instructionsMap[1024];
@@ -559,8 +559,8 @@ void goToStart() {
     (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | (1 << (8 + (0 % 4))) | (1 << 12);
     (*(volatile unsigned short*) 0x04000008) = ((0) << 2) | ((28) << 8) | (0 << 14);
 
-    DMANow(3, startscreenMap, &((SB*) 0x06000000)[28], 1280 / 2);
-    DMANow(3, startscreenTiles, &((CB*) 0x06000000)[0], 13088 / 2);
+    DMANow(3, startscreenMap, &((SB*) 0x06000000)[28], 2048 / 2);
+    DMANow(3, startscreenTiles, &((CB*) 0x06000000)[0], 9696 / 2);
     DMANow(3, startscreenPal, ((unsigned short*) 0x05000000), 512 / 2);
 
     hideSprites();
@@ -619,7 +619,7 @@ void game() {
     if (player.lives == 0) {
         goToLose();
     }
-    if (player.score == 6 && rat.lives == 0) {
+    if (player.score == 5 && rat.lives == 0) {
         goToWin();
     }
 
@@ -633,7 +633,7 @@ void goToInstruction() {
     (*(volatile unsigned short*) 0x04000008) = ((0) << 2) | ((28) << 8) | (0 << 14);
 
     DMANow(3, instructionsMap, &((SB*) 0x06000000)[28], 2048/2);
-    DMANow(3, instructionsTiles, &((CB*) 0x06000000)[0], 6496/2);
+    DMANow(3, instructionsTiles, &((CB*) 0x06000000)[0], 6016/2);
     DMANow(3, instructionsPal, ((unsigned short*) 0x05000000), 512/2);
 
     hideSprites();

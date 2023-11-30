@@ -122,11 +122,11 @@ enum Code {
 };
 
 
-
 extern int score;
 
 extern int hOff;
 extern int vOff;
+
 typedef enum {LEFT, RIGHT} DIRECTION;
 
 void initGame();

@@ -6,8 +6,8 @@ const int yOrange[ORANGE_COUNT] = {170, 80, 16, 110, 40};
 const int xCuc[CUCUMBER_COUNT] = {165, 248, 464, 308};
 const int yCuc[CUCUMBER_COUNT] = {20, 32, 196, 212};
 
-const int xNip[CATNIP_COUNT] = {276,5, 8, 480, 200};
-const int yNip[CATNIP_COUNT] = {10, 160, 16, 0, 215};
+const int xNip[CATNIP_COUNT] = {5, 8, 480, 400, 90, 350};
+const int yNip[CATNIP_COUNT] = {160, 16, 100, 0, 10, 70};
 
 int collisionCooldown = 0;
 int disgustedDisplayTimer = 0;
@@ -15,7 +15,7 @@ int disgustedDisplayTimer = 0;
 //wip
 // void objectFactory(enum Code code) {
 //     if (code == ORANGE) {
-//         for (int i = 0; i < ORANGE_COUNT; ++i) {
+//         for (int i = 0; i < ORANGE_xCOUNT; ++i) {
 //             initObject(i, orange, 32, 32, xOrange[i], yOrange[i], 1 + i, 0);
 //         }
 //     } else if (code == CUCUMBER) {
@@ -57,8 +57,11 @@ void updateGame() {
     if (collisionCooldown > 0) {
         collisionCooldown--;
     }
-    // if (disgustedDisplayTimer > 0) {
-    //     disgustedDisplayTimer--;
+    if (disgustedDisplayTimer > 0) {
+        playerDisgusted();
+        disgustedDisplayTimer--;
+        
+    }
     //     if (disgustedDisplayTimer == 0) {
             
     //     }
@@ -280,10 +283,6 @@ void playerCollision() {
                 catnip[i].hide = 1;
                 //change position(0, 0) when hide
                 collisionCooldown = COLLISION_COOLDOWN;
-                if (player.score >= 6) {
-                    player.score = 6;
-
-                }
                 if (player.lives >= 5) {
                     player.lives = 5;
                 }
@@ -355,15 +354,30 @@ void playerAttack() {
 void playerDisgusted() {
     mgba_printf("disgusted");
     //disgustedDisplayTimer = DISGUSTED_TIME;
+    
 
-    shadowOAM[player.oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(player.y - vOff);
-    shadowOAM[player.oamIndex].attr1 = ATTR1_MEDIUM | ATTR1_X(player.x - hOff);
-    shadowOAM[player.oamIndex].attr2 = ATTR2_TILEID(0, 8);
+    // shadowOAM[player.oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(player.y - vOff);
+    // shadowOAM[player.oamIndex].attr1 = ATTR1_MEDIUM | ATTR1_X(player.x - hOff);
+    // shadowOAM[player.oamIndex].attr2 = ATTR2_TILEID(0, 8);
 
-    if (player.direction == RIGHT) {
-        shadowOAM[player.oamIndex].attr1 |= ATTR1_HFLIP;
+    // if (player.direction == IGHT) {
+    //     shadowOAM[player.oamIndex].attr1 |= ATTR1_HFLIP;
+    // }
+    // DMANow(3, shadowOAM, OAM, 512);
+    if (disgustedDisplayTimer == 0) {
+        shadowOAM[player.oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(player.y - vOff);
+        shadowOAM[player.oamIndex].attr1 = ATTR1_MEDIUM | ATTR1_X(player.x - hOff);
+        shadowOAM[player.oamIndex].attr2 = ATTR2_TILEID(0, 8);
+
+        if (player.direction == RIGHT) {
+            shadowOAM[player.oamIndex].attr1 |= ATTR1_HFLIP;
+        }
+
+        DMANow(3, shadowOAM, OAM, 512);
+        disgustedDisplayTimer = DISGUSTED_TIME;
+    } else {
+        disgustedDisplayTimer--;
     }
-    DMANow(3, shadowOAM, OAM, 512);
 
 }
 void initOrange() {

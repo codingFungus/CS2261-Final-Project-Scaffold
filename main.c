@@ -144,7 +144,7 @@ void game() {
     if (player.lives == 0) {
         goToLose();
     }
-    if (player.score == 6 && rat.lives == 0) {
+    if (player.score == 5 && rat.lives == 0) {
         goToWin();
     }
     

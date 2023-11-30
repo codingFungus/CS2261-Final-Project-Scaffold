@@ -14,13 +14,13 @@
 #define min(a,b)            (((a) < (b)) ? (a) : (b))
 #endif
 
-#define ORANGE_COUNT 6
+#define ORANGE_COUNT 5
 #define CUCUMBER_COUNT 4
 #define MAPWIDTH 512
 #define MAPHEIGHT 256
-#define CATNIP_COUNT 7
-#define COLLISION_COOLDOWN 30
-#define DISGUSTED_TIME 60
+#define CATNIP_COUNT 6
+#define COLLISION_COOLDOWN 40
+#define DISGUSTED_TIME 100
 
 SPRITE player;
 SPRITE orange[ORANGE_COUNT];
