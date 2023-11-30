@@ -440,13 +440,13 @@ extern const unsigned short catSpritesheetPal[256];
 
 # 1 "winbg.h" 1
 # 22 "winbg.h"
-extern const unsigned short winbgTiles[448];
+extern const unsigned short winbgTiles[2272];
 
 
 extern const unsigned short winbgMap[1024];
 
 
-extern const unsigned short winbgPal[16];
+extern const unsigned short winbgPal[256];
 # 15 "main.h" 2
 # 1 "startscreen.h" 1
 # 22 "startscreen.h"
@@ -477,7 +477,7 @@ extern const unsigned short newbg_tilePal[256];
 # 18 "main.h" 2
 # 1 "instructions.h" 1
 # 22 "instructions.h"
-extern const unsigned short instructionsTiles[3008];
+extern const unsigned short instructionsTiles[2992];
 
 
 extern const unsigned short instructionsMap[1024];
@@ -487,13 +487,13 @@ extern const unsigned short instructionsPal[256];
 # 19 "main.h" 2
 # 1 "losebg.h" 1
 # 22 "losebg.h"
-extern const unsigned short losebgTiles[528];
+extern const unsigned short losebgTiles[9344];
 
 
 extern const unsigned short losebgMap[1024];
 
 
-extern const unsigned short losebgPal[16];
+extern const unsigned short losebgPal[256];
 # 20 "main.h" 2
 
 # 1 "enemies.h" 1
@@ -707,7 +707,7 @@ void goToInstruction() {
     (*(volatile unsigned short*) 0x04000008) = ((0) << 2) | ((28) << 8) | (0 << 14);
 
     DMANow(3, instructionsMap, &((SB*) 0x06000000)[28], 2048/2);
-    DMANow(3, instructionsTiles, &((CB*) 0x06000000)[0], 6016/2);
+    DMANow(3, instructionsTiles, &((CB*) 0x06000000)[0], 5984/2);
     DMANow(3, instructionsPal, ((unsigned short*) 0x05000000), 512/2);
 
     hideSprites();
@@ -757,10 +757,10 @@ void pause() {
 void goToLose() {
 
     (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | (1 << (8 + (1 % 4)));
-    (*(volatile unsigned short*) 0x0400000A) = ((0) << 2) | ((28) << 8) | (1 << 14);
+    (*(volatile unsigned short*) 0x0400000A) = ((0) << 2) | ((28) << 8) | (0 << 14);
 
     DMANow(3, losebgMap, &((SB*) 0x06000000)[28], 2048/2);
-    DMANow(3, losebgTiles, &((CB*) 0x06000000)[0], 1056/2);
+    DMANow(3, losebgTiles, &((CB*) 0x06000000)[0], 18688/2);
     DMANow(3, losebgPal, ((unsigned short*) 0x05000000), 16);
 
     hideSprites();
@@ -781,8 +781,8 @@ void goToWin() {
     (*(volatile unsigned short*) 0x0400000A) = ((0) << 2) | ((28) << 8) | (1 << 14);
 
     DMANow(3, winbgMap, &((SB*) 0x06000000)[28], 2048/2);
-    DMANow(3, winbgTiles, &((CB*) 0x06000000)[0], 896/2);
-    DMANow(3, winbgPal, ((unsigned short*) 0x05000000), 32/2);
+    DMANow(3, winbgTiles, &((CB*) 0x06000000)[0], 4544/2);
+    DMANow(3, winbgPal, ((unsigned short*) 0x05000000), 512/2);
 
     hideSprites();
     waitForVBlank();

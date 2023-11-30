@@ -256,7 +256,7 @@ goToInstruction:
 	ldr	r1, .L20+8
 	mov	lr, pc
 	bx	r4
-	mov	r3, #3008
+	mov	r3, #2992
 	mov	r2, #100663296
 	mov	r0, #3
 	ldr	r1, .L20+12
@@ -494,7 +494,7 @@ goToLose:
 	push	{r4, r5, r6, lr}
 	mov	r2, #67108864
 	mov	r5, #512
-	mov	r1, #23552
+	mov	r1, #7168
 	ldr	r4, .L58
 	strh	r5, [r2]	@ movhi
 	mov	r3, #1024
@@ -504,7 +504,7 @@ goToLose:
 	ldr	r1, .L58+8
 	mov	lr, pc
 	bx	r4
-	mov	r3, #528
+	mov	r3, #9344
 	mov	r2, #100663296
 	mov	r0, #3
 	ldr	r1, .L58+12
@@ -582,7 +582,7 @@ goToWin:
 	ldr	r1, .L63+8
 	mov	lr, pc
 	bx	r4
-	mov	r3, #448
+	mov	r3, #2272
 	mov	r2, #100663296
 	mov	r0, #3
 	ldr	r1, .L63+12
@@ -591,7 +591,7 @@ goToWin:
 	mov	r2, #83886080
 	mov	r0, #3
 	ldr	r1, .L63+16
-	mov	r3, #16
+	mov	r3, #256
 	mov	lr, pc
 	bx	r4
 	ldr	r3, .L63+20

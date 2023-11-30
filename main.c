@@ -212,7 +212,7 @@ void pause() {
 void goToLose() {
     //DMANow()
     REG_DISPCTL = MODE(0) | BG_ENABLE(1);
-    REG_BG1CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_WIDE;
+    REG_BG1CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_SMALL;
 
     DMANow(3, losebgMap, &SCREENBLOCK[28], losebgMapLen/2);
     DMANow(3, losebgTiles, &CHARBLOCK[0], losebgTilesLen/2);
