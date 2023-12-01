@@ -462,7 +462,7 @@ extern const unsigned short winbgPal[256];
 # 15 "main.h" 2
 # 1 "startscreen.h" 1
 # 22 "startscreen.h"
-extern const unsigned short startscreenTiles[5200];
+extern const unsigned short startscreenTiles[5152];
 
 
 extern const unsigned short startscreenMap[1024];
@@ -499,7 +499,7 @@ extern const unsigned short instructionsPal[256];
 # 19 "main.h" 2
 # 1 "losebg.h" 1
 # 22 "losebg.h"
-extern const unsigned short losebgTiles[9344];
+extern const unsigned short losebgTiles[7984];
 
 
 extern const unsigned short losebgMap[1024];
@@ -524,7 +524,7 @@ void updateDog();
 # 22 "main.h" 2
 # 1 "newpauseScreen.h" 1
 # 22 "newpauseScreen.h"
-extern const unsigned short newpauseScreenTiles[2480];
+extern const unsigned short newpauseScreenTiles[2512];
 
 
 extern const unsigned short newpauseScreenMap[1024];
@@ -564,6 +564,26 @@ extern const unsigned short blankbgMap[1024];
 
 extern const unsigned short blankbgPal[256];
 # 28 "main.h" 2
+# 1 "startscreen1.h" 1
+# 22 "startscreen1.h"
+extern const unsigned short startscreen1Tiles[7328];
+
+
+extern const unsigned short startscreen1Map[2048];
+
+
+extern const unsigned short startscreen1Pal[256];
+# 29 "main.h" 2
+# 1 "startscreen2.h" 1
+# 22 "startscreen2.h"
+extern const unsigned short startscreen2Tiles[16];
+
+
+extern const unsigned short startscreen2Map[1024];
+
+
+extern const unsigned short startscreen2Pal[256];
+# 30 "main.h" 2
 
 
 
@@ -653,24 +673,34 @@ void initialize() {
 
 }
 void goToStart() {
-    (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | (1 << (8 + (0 % 4))) | (1 << 12);
-    (*(volatile unsigned short*) 0x04000008) = ((0) << 2) | ((28) << 8) | (0 << 14);
+    (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | (1 << (8 + (0 % 4))) | ((1 << (8 + (1 % 4))));
+    (*(volatile unsigned short*) 0x0400000A) = ((0) << 2) | ((28) << 8) | (1 << 14) | (2 << 10);
+    (*(volatile unsigned short*) 0x04000008) = ((1) << 2) | ((30) << 8) | (1 << 14);
+
+    DMANow(3, startscreenPal, ((unsigned short*) 0x05000000), 16);
+
+
+    DMANow(3, startscreenTiles, &((CB*) 0x06000000)[0], 10304/2);
+    DMANow(3, startscreenMap, &((SB*) 0x06000000)[28], 2048/2);
+
+    DMANow(3, startscreen2Tiles, &((CB*) 0x06000000)[1], 32/2);
+    DMANow(3, startscreen2Map, &((SB*) 0x06000000)[30], 2048/2);
 
 
 
-    DMANow(3, startscreenMap, &((SB*) 0x06000000)[28], 2048 / 2);
-    DMANow(3, startscreenTiles, &((CB*) 0x06000000)[0], 10400 / 2);
-    DMANow(3, startscreenPal, ((unsigned short*) 0x05000000), 512 / 2);
+
 
 
 
     hideSprites();
 
-
     waitForVBlank();
 
     (*(volatile unsigned short*) 0x04000012) = 0;
     (*(volatile unsigned short*) 0x04000010) = 0;
+    (*(volatile unsigned short*) 0x04000016) = 0;
+    (*(volatile unsigned short*) 0x04000014) = 0;
+
     seed = 0;
     DMANow(3, shadowOAM, ((OBJ_ATTR*) 0x7000000), 512);
 
@@ -680,19 +710,31 @@ void goToStart() {
 void start() {
 
     seed++;
-
-
     if ((!(~(oldButtons) & ((1 << 3))) && (~buttons & ((1 << 3))))) {
-
         goToGame();
         initGame();
-
-
     }
+
     if ((!(~(oldButtons) & ((1 << 2))) && (~buttons & ((1 << 2))))) {
         goToInstruction();
     }
 
+    if ((~(buttons) & ((1 << 4)))) {
+  hOff+=2;
+ } else if ((~(buttons) & ((1 << 5)))) {
+  hOff-=2;
+ }
+ if ((~(buttons) & ((1 << 6)))) {
+  vOff-=2;
+ } else if ((~(buttons) & ((1 << 7)))) {
+  vOff+=2;
+ }
+
+    waitForVBlank();
+    (*(volatile unsigned short*) 0x04000014) = hOff/2;
+ (*(volatile unsigned short*) 0x04000016) = vOff/2;
+    (*(volatile unsigned short*) 0x04000010) = hOff;
+ (*(volatile unsigned short*) 0x04000012) = vOff;
 
 }
 void goToGame() {
@@ -725,7 +767,7 @@ void game() {
     if ((!(~(oldButtons) & ((1 << 3))) && (~buttons & ((1 << 3))))) {
         goToPause();
     }
-# 168 "main.c"
+
     if (player.lives == 0) {
         if (delayTimer <= 0) {
             delayTimer = 40;
@@ -753,14 +795,9 @@ void game() {
             goToWin();
         }
     }
-# 208 "main.c"
+
+
 }
-
-
-
-
-
-
 
 void goToInstruction() {
     (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | (1 << (8 + (0 % 4)));
@@ -794,7 +831,7 @@ void goToPause() {
 
     mgba_printf("paused");
 
-    DMANow(3, newpauseScreenTiles, &((CB*) 0x06000000)[0], 4960/2);
+    DMANow(3, newpauseScreenTiles, &((CB*) 0x06000000)[0], 5024/2);
     DMANow(3, newpauseScreenMap, &((SB*) 0x06000000)[28], 2048/2);
     DMANow(3, newpauseScreenPal, ((unsigned short*) 0x05000000), 512/2);
 
@@ -820,7 +857,7 @@ void goToLose() {
     (*(volatile unsigned short*) 0x0400000A) = ((0) << 2) | ((28) << 8) | (0 << 14);
 
     DMANow(3, losebgMap, &((SB*) 0x06000000)[28], 2048/2);
-    DMANow(3, losebgTiles, &((CB*) 0x06000000)[0], 18688/2);
+    DMANow(3, losebgTiles, &((CB*) 0x06000000)[0], 15968/2);
     DMANow(3, losebgPal, ((unsigned short*) 0x05000000), 512/2);
 
     hideSprites();
@@ -864,6 +901,12 @@ void draw() {
         (*(volatile unsigned short*) 0x04000010) = hOff;
         (*(volatile unsigned short*) 0x04000012) = vOff;
 
+
+    } else if (state == START) {
+        (*(volatile unsigned short*) 0x04000010) = 0;
+        (*(volatile unsigned short*) 0x04000012) = 0;
+        (*(volatile unsigned short*) 0x04000014) = hOff/2;
+        (*(volatile unsigned short*) 0x04000016) = vOff/2;
     } else {
         (*(volatile unsigned short*) 0x04000010) = 0;
         (*(volatile unsigned short*) 0x04000012) = 0;

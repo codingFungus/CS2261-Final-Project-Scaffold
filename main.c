@@ -82,24 +82,34 @@ void initialize() {
 
 }
 void goToStart() {
-    REG_DISPCTL = MODE(0) | BG_ENABLE(0) | SPRITE_ENABLE;
-    REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_SMALL;
+    REG_DISPCTL = MODE(0) | BG_ENABLE(0) | BG1_ENABLE;
+    REG_BG1CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_WIDE | (2 << 10);
+    REG_BG0CNT = BG_CHARBLOCK(1) | BG_SCREENBLOCK(30) | BG_SIZE_WIDE;
+
+    DMANow(3, startscreenPal, BG_PALETTE, 16);
+
+//load in start screen 1: the background of the start screen
+    DMANow(3, startscreenTiles, &CHARBLOCK[0], startscreenTilesLen/2);
+    DMANow(3, startscreenMap, &SCREENBLOCK[28], startscreenMapLen/2);
+//load in start screen 2
+    DMANow(3, startscreen2Tiles, &CHARBLOCK[1], startscreen2TilesLen/2);
+    DMANow(3, startscreen2Map, &SCREENBLOCK[30], startscreen2MapLen/2);
 
     //DMANow(3, blankbgMap, &SCREENBLOCK[28], blankbgMapLen / 2);
 
-    DMANow(3, startscreenMap, &SCREENBLOCK[28], startscreenMapLen / 2);
-    DMANow(3, startscreenTiles, &CHARBLOCK[0], startscreenTilesLen / 2);
-    DMANow(3, startscreenPal, BG_PALETTE, startscreenPalLen / 2);
-
-
+    // DMANow(3, startscreenMap, &SCREENBLOCK[28], startscreenMapLen / 2);
+    // DMANow(3, startscreenTiles, &CHARBLOCK[0], startscreenTilesLen / 2);
+    // DMANow(3, startscreenPal, BG_PALETTE, startscreenPalLen / 2);
     
     hideSprites();
-    
     
     waitForVBlank();
 
     REG_BG0VOFF = 0;
     REG_BG0HOFF = 0;
+    REG_BG1VOFF = 0;
+    REG_BG1HOFF = 0;
+
     seed = 0;
     DMANow(3, shadowOAM, OAM, 512);
 
@@ -109,19 +119,31 @@ void goToStart() {
 void start() {
 
     seed++;
-    // waitForVBlank();
-    // mgba_printf("debug_start");
     if (BUTTON_PRESSED(BUTTON_START)) {
-        //srand(seed);
         goToGame();
         initGame();
-        
-        //initGame();
     }
+
     if (BUTTON_PRESSED(BUTTON_SELECT)) {
         goToInstruction();
     }
 
+    if (BUTTON_HELD(BUTTON_RIGHT)) {
+		hOff+=2;
+	} else if (BUTTON_HELD(BUTTON_LEFT)) {
+		hOff-=2;
+	}
+	if (BUTTON_HELD(BUTTON_UP)) {
+		vOff-=2;
+	} else if (BUTTON_HELD(BUTTON_DOWN)) {
+		vOff+=2;
+	}
+
+    waitForVBlank();
+    REG_BG1HOFF = hOff/2;
+	REG_BG1VOFF = vOff/2;
+    REG_BG0HOFF = hOff;
+	REG_BG0VOFF = vOff;
 
 }
 void goToGame() {
@@ -154,17 +176,7 @@ void game() {
     if (BUTTON_PRESSED(BUTTON_START)) {
         goToPause();
     }
-    // if (player.lives == 0) {
-    //     delayTimer = delay_time;
-    //     if (delayTimer > 0) {
-    //         delayTimer--;
-
-    //         if (delayTimer == 0) {
-    //             goToLose();
-    //         }
-    //     }
-        
-    // }
+  
     if (player.lives == 0) {
         if (delayTimer <= 0) {
             delayTimer = delay_time;
@@ -192,26 +204,9 @@ void game() {
             goToWin();
         }
     }
-
-    // if (player.score >= 5 && ratsDead) {
-    //     delayTimer = delay_time;
-    //     if (delayTimer > 0) {
-    //         delayTimer--;
-
-    //         if (delayTimer == 0) {
-    //             goToWin();
-    //         }
-    //     }
-    // }
     
 
 }
-    
-    
-    //will implement more on win&lose state in the next milestone
-    //if (BUTTON_PRESSED(BUTTON_A)) {
-        //goToWin();
-    //}
 
 void goToInstruction() {
     REG_DISPCTL = MODE(0) | BG_ENABLE(0);
@@ -314,7 +309,13 @@ void draw() {
     if (state == GAME) {
         REG_BG0HOFF = hOff;
         REG_BG0VOFF = vOff;
+
         
+    } else if (state == START) {
+        REG_BG0HOFF = 0;
+        REG_BG0VOFF = 0;
+        REG_BG1HOFF = hOff/2;
+        REG_BG1VOFF = vOff/2;
     } else {
         REG_BG0HOFF = 0;
         REG_BG0VOFF = 0;

@@ -25,6 +25,8 @@
 #include "Meow.h"
 #include "digitalSound.h"
 #include "blankbg.h"
+#include "startscreen1.h"
+#include "startscreen2.h"
 
 #define delay_time 40
 

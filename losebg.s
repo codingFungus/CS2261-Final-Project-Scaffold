@@ -373,9 +373,7 @@ losebgMap:
 	.short	94
 	.short	95
 	.short	96
-	.short	65
 	.short	97
-	.short	2115
 	.short	98
 	.short	99
 	.short	100
@@ -393,7 +391,6 @@ losebgMap:
 	.short	112
 	.short	113
 	.short	114
-	.short	1100
 	.short	115
 	.short	116
 	.short	117
@@ -412,6 +409,7 @@ losebgMap:
 	.short	130
 	.short	131
 	.short	132
+	.short	133
 	.short	133
 	.short	134
 	.short	135
@@ -436,14 +434,14 @@ losebgMap:
 	.short	154
 	.short	155
 	.short	156
-	.short	64
 	.short	157
 	.short	158
 	.short	159
 	.short	160
-	.short	159
-	.short	159
+	.short	133
+	.short	133
 	.short	161
+	.short	133
 	.short	162
 	.short	163
 	.short	164
@@ -463,17 +461,12 @@ losebgMap:
 	.short	178
 	.short	179
 	.short	180
-	.short	0
 	.short	181
-	.short	63
-	.short	63
 	.short	182
+	.short	0
 	.short	183
 	.short	184
-	.short	159
-	.short	159
 	.short	185
-	.short	159
 	.short	186
 	.short	187
 	.short	188
@@ -495,7 +488,6 @@ losebgMap:
 	.short	204
 	.short	205
 	.short	206
-	.short	0
 	.short	207
 	.short	208
 	.short	209
@@ -564,6 +556,7 @@ losebgMap:
 	.short	272
 	.short	273
 	.short	274
+	.short	260
 	.short	275
 	.short	276
 	.short	277
@@ -587,7 +580,6 @@ losebgMap:
 	.short	295
 	.short	296
 	.short	297
-	.short	298
 	.short	298
 	.short	299
 	.short	300
@@ -696,6 +688,7 @@ losebgMap:
 	.short	403
 	.short	404
 	.short	405
+	.short	405
 	.short	406
 	.short	407
 	.short	408
@@ -708,6 +701,7 @@ losebgMap:
 	.short	415
 	.short	416
 	.short	417
+	.short	386
 	.short	418
 	.short	419
 	.short	420
@@ -724,6 +718,8 @@ losebgMap:
 	.short	431
 	.short	432
 	.short	433
+	.short	405
+	.short	405
 	.short	434
 	.short	435
 	.short	436
@@ -739,6 +735,7 @@ losebgMap:
 	.short	446
 	.short	447
 	.short	448
+	.short	419
 	.short	449
 	.short	450
 	.short	451
@@ -752,7 +749,9 @@ losebgMap:
 	.short	459
 	.short	460
 	.short	461
-	.short	461
+	.short	405
+	.short	405
+	.short	405
 	.short	462
 	.short	463
 	.short	464
@@ -765,7 +764,6 @@ losebgMap:
 	.short	471
 	.short	472
 	.short	473
-	.short	442
 	.short	474
 	.short	475
 	.short	476
@@ -782,8 +780,6 @@ losebgMap:
 	.short	487
 	.short	488
 	.short	489
-	.short	461
-	.short	461
 	.short	490
 	.short	491
 	.short	492
@@ -793,98 +789,102 @@ losebgMap:
 	.short	496
 	.short	497
 	.short	498
-	.short	499
-	.short	500
-	.short	501
-	.short	502
-	.short	442
-	.short	503
-	.short	504
-	.short	505
-	.short	506
-	.short	507
-	.short	508
-	.short	509
-	.short	510
-	.short	511
-	.short	512
-	.short	513
-	.short	514
-	.short	515
-	.short	516
-	.short	517
-	.short	461
-	.short	461
-	.short	461
-	.short	518
-	.short	519
-	.short	520
-	.short	521
-	.short	522
-	.short	523
-	.short	524
-	.short	525
-	.short	526
-	.short	527
-	.short	528
-	.short	529
-	.short	530
-	.short	531
-	.short	532
-	.short	504
-	.short	533
-	.short	534
-	.short	535
-	.short	536
-	.short	537
-	.short	538
-	.short	539
-	.short	540
-	.short	541
-	.short	542
-	.short	543
-	.short	544
-	.short	545
-	.short	546
-	.short	547
-	.short	461
-	.short	548
-	.short	549
-	.short	550
-	.short	551
-	.short	552
-	.short	553
-	.short	554
-	.short	555
-	.short	556
-	.short	557
-	.short	558
-	.short	559
-	.short	560
-	.short	561
-	.short	561
-	.short	562
-	.short	563
-	.short	564
-	.short	565
-	.short	566
-	.short	567
-	.short	568
-	.short	569
-	.short	570
-	.short	571
-	.short	572
-	.short	573
-	.short	574
-	.short	575
-	.short	576
-	.short	577
-	.short	578
-	.short	579
-	.short	580
-	.short	581
-	.short	582
-	.short	583
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
 	.short	0
 	.short	0
 	.short	0
@@ -1302,7 +1302,7 @@ losebgMap:
 	.short	0
 	.short	0
 	.type	losebgTiles, %object
-	.size	losebgTiles, 18688
+	.size	losebgTiles, 15968
 losebgTiles:
 	.short	0
 	.short	0
@@ -1328,14 +1328,14 @@ losebgTiles:
 	.short	-19013
 	.short	-17483
 	.short	-17477
-	.short	-17483
-	.short	-17477
 	.short	23381
 	.short	-17579
 	.short	-17483
 	.short	-17477
 	.short	-17483
 	.short	23483
+	.short	-17483
+	.short	-17477
 	.short	-8739
 	.short	-8739
 	.short	-17477
@@ -1345,23 +1345,23 @@ losebgTiles:
 	.short	-17477
 	.short	187
 	.short	-17477
-	.short	187
-	.short	-17477
 	.short	91
 	.short	21947
 	.short	91
 	.short	23483
 	.short	187
+	.short	23387
+	.short	85
 	.short	-8739
 	.short	-8739
 	.short	-6002
 	.short	22613
 	.short	0
 	.short	20480
-	.short	13107
-	.short	-20429
 	.short	30583
 	.short	-20361
+	.short	30583
+	.short	20599
 	.short	30583
 	.short	20599
 	.short	30583
@@ -1375,13 +1375,13 @@ losebgTiles:
 	.short	-17477
 	.short	91
 	.short	-17477
-	.short	12331
-	.short	-17477
 	.short	28837
 	.short	-17579
 	.short	28683
 	.short	-17579
 	.short	28677
+	.short	-17579
+	.short	28683
 	.short	-17579
 	.short	28683
 	.short	-8739
@@ -1390,14 +1390,14 @@ losebgTiles:
 	.short	21854
 	.short	0
 	.short	0
-	.short	13107
-	.short	819
 	.short	30583
 	.short	-6281
 	.short	30583
 	.short	18295
 	.short	30583
 	.short	14199
+	.short	30583
+	.short	30583
 	.short	30583
 	.short	30583
 	.short	-27683
@@ -1407,8 +1407,6 @@ losebgTiles:
 	.short	1360
 	.short	0
 	.short	1360
-	.short	13107
-	.short	1360
 	.short	30583
 	.short	1504
 	.short	30583
@@ -1416,14 +1414,14 @@ losebgTiles:
 	.short	30583
 	.short	1360
 	.short	30583
+	.short	1322
+	.short	30583
 	.short	13107
 	.short	-26311
 	.short	-21854
 	.short	-21846
 	.short	0
 	.short	0
-	.short	17203
-	.short	14080
 	.short	30583
 	.short	30464
 	.short	30583
@@ -1432,14 +1430,14 @@ losebgTiles:
 	.short	30464
 	.short	30583
 	.short	30624
+	.short	30583
+	.short	30688
 	.short	-26317
 	.short	-26215
 	.short	170
 	.short	0
 	.short	0
 	.short	0
-	.short	13107
-	.short	-24461
 	.short	30583
 	.short	-24457
 	.short	30583
@@ -1448,14 +1446,14 @@ losebgTiles:
 	.short	-24457
 	.short	30583
 	.short	8311
+	.short	30583
+	.short	-8073
 	.short	-27751
 	.short	13107
 	.short	0
 	.short	0
 	.short	0
 	.short	0
-	.short	0
-	.short	13200
 	.short	0
 	.short	30512
 	.short	2730
@@ -1464,14 +1462,14 @@ losebgTiles:
 	.short	30512
 	.short	-21982
 	.short	30512
+	.short	-24027
+	.short	30512
 	.short	-11469
 	.short	-8739
 	.short	10912
 	.short	21794
 	.short	0
 	.short	0
-	.short	51
-	.short	13280
 	.short	2167
 	.short	30688
 	.short	887
@@ -1480,14 +1478,14 @@ losebgTiles:
 	.short	30480
 	.short	14199
 	.short	30480
+	.short	30583
+	.short	30688
 	.short	15667
 	.short	-8739
 	.short	21845
 	.short	21851
 	.short	8192
 	.short	597
-	.short	-24013
-	.short	229
 	.short	-23945
 	.short	28837
 	.short	3703
@@ -1496,14 +1494,14 @@ losebgTiles:
 	.short	30496
 	.short	3703
 	.short	30528
+	.short	3703
+	.short	30576
 	.short	13117
 	.short	-11309
 	.short	2725
 	.short	21792
 	.short	29504
 	.short	227
-	.short	30579
-	.short	1143
 	.short	30583
 	.short	30583
 	.short	30583
@@ -1512,19 +1510,21 @@ losebgTiles:
 	.short	30583
 	.short	14199
 	.short	30583
+	.short	1911
+	.short	30583
 	.short	-8739
 	.short	-8739
 	.short	21845
 	.short	21845
 	.short	90
 	.short	0
-	.short	28896
-	.short	13107
 	.short	12288
 	.short	30583
 	.short	-28665
 	.short	30583
 	.short	16535
+	.short	30583
+	.short	-8073
 	.short	30583
 	.short	-8073
 	.short	30583
@@ -1534,8 +1534,6 @@ losebgTiles:
 	.short	21845
 	.short	512
 	.short	0
-	.short	163
-	.short	13107
 	.short	-8153
 	.short	30583
 	.short	-7961
@@ -1544,14 +1542,14 @@ losebgTiles:
 	.short	30583
 	.short	-28601
 	.short	30583
+	.short	28823
+	.short	30583
 	.short	13277
 	.short	-11309
 	.short	-31403
 	.short	21848
 	.short	8192
 	.short	0
-	.short	-24429
-	.short	13114
 	.short	119
 	.short	30590
 	.short	119
@@ -1560,13 +1558,13 @@ losebgTiles:
 	.short	30579
 	.short	119
 	.short	30583
+	.short	119
+	.short	30583
 	.short	-8739
 	.short	-11299
 	.short	21845
 	.short	23477
 	.short	20480
-	.short	9557
-	.short	8243
 	.short	9557
 	.short	20599
 	.short	9563
@@ -1576,14 +1574,14 @@ losebgTiles:
 	.short	22664
 	.short	-28553
 	.short	-6008
+	.short	28791
+	.short	-4276
 	.short	-10275
 	.short	-11299
 	.short	21845
 	.short	21845
 	.short	0
 	.short	-24576
-	.short	13104
-	.short	3635
 	.short	30576
 	.short	3703
 	.short	30576
@@ -1592,18 +1590,20 @@ losebgTiles:
 	.short	3703
 	.short	30586
 	.short	3703
+	.short	30576
+	.short	3703
 	.short	13277
 	.short	-8909
 	.short	21848
 	.short	21845
 	.short	0
 	.short	-8192
-	.short	13104
-	.short	20531
 	.short	30576
 	.short	-21897
 	.short	30576
 	.short	2423
+	.short	30576
+	.short	1911
 	.short	30576
 	.short	1911
 	.short	30576
@@ -1614,8 +1614,6 @@ losebgTiles:
 	.short	21845
 	.short	0
 	.short	8192
-	.short	13168
-	.short	8243
 	.short	30576
 	.short	8311
 	.short	30576
@@ -1624,14 +1622,14 @@ losebgTiles:
 	.short	8311
 	.short	30576
 	.short	20599
+	.short	30576
+	.short	-8073
 	.short	-8739
 	.short	-11459
 	.short	21845
 	.short	-4379
 	.short	21845
 	.short	5
-	.short	21845
-	.short	13058
 	.short	23477
 	.short	30466
 	.short	23483
@@ -1640,14 +1638,16 @@ losebgTiles:
 	.short	30469
 	.short	17615
 	.short	30472
+	.short	20300
+	.short	30472
 	.short	-8909
 	.short	-25123
 	.short	21998
 	.short	8738
 	.short	0
 	.short	0
-	.short	17203
-	.short	13104
+	.short	-26761
+	.short	30576
 	.short	-26761
 	.short	30576
 	.short	-26761
@@ -1662,12 +1662,12 @@ losebgTiles:
 	.short	8738
 	.short	0
 	.short	0
-	.short	819
-	.short	13280
 	.short	1911
 	.short	30480
 	.short	1911
 	.short	30592
+	.short	1911
+	.short	30480
 	.short	1911
 	.short	30480
 	.short	1911
@@ -1678,8 +1678,8 @@ losebgTiles:
 	.short	0
 	.short	0
 	.short	0
-	.short	13107
-	.short	819
+	.short	30583
+	.short	1911
 	.short	30583
 	.short	1911
 	.short	30583
@@ -1694,8 +1694,8 @@ losebgTiles:
 	.short	-21846
 	.short	10
 	.short	0
-	.short	12288
-	.short	13111
+	.short	28672
+	.short	30583
 	.short	28672
 	.short	30583
 	.short	28672
@@ -1710,8 +1710,6 @@ losebgTiles:
 	.short	-21846
 	.short	0
 	.short	0
-	.short	-23757
-	.short	13056
 	.short	-6281
 	.short	30464
 	.short	18295
@@ -1720,14 +1718,14 @@ losebgTiles:
 	.short	29696
 	.short	14199
 	.short	29696
+	.short	30583
+	.short	32256
 	.short	13209
 	.short	13203
 	.short	8874
 	.short	9506
 	.short	0
 	.short	160
-	.short	13107
-	.short	12288
 	.short	30583
 	.short	28672
 	.short	30583
@@ -1736,14 +1734,14 @@ losebgTiles:
 	.short	28682
 	.short	30583
 	.short	28686
+	.short	30583
+	.short	28676
 	.short	-26317
 	.short	-26215
 	.short	-24027
 	.short	-21846
 	.short	0
 	.short	0
-	.short	13107
-	.short	13059
 	.short	30583
 	.short	30471
 	.short	30583
@@ -1752,14 +1750,16 @@ losebgTiles:
 	.short	30471
 	.short	30583
 	.short	30471
+	.short	30583
+	.short	30467
 	.short	-26215
 	.short	-26215
 	.short	8746
 	.short	-21982
 	.short	0
 	.short	0
-	.short	13107
-	.short	13107
+	.short	30583
+	.short	30583
 	.short	30583
 	.short	30583
 	.short	30583
@@ -1774,10 +1774,10 @@ losebgTiles:
 	.short	170
 	.short	0
 	.short	0
-	.short	14592
-	.short	-23757
 	.short	30976
 	.short	-26761
+	.short	30976
+	.short	30583
 	.short	30976
 	.short	30583
 	.short	30976
@@ -1790,8 +1790,6 @@ losebgTiles:
 	.short	21845
 	.short	0
 	.short	0
-	.short	13056
-	.short	819
 	.short	30464
 	.short	1911
 	.short	30464
@@ -1799,6 +1797,8 @@ losebgTiles:
 	.short	30464
 	.short	1911
 	.short	30464
+	.short	1911
+	.short	30465
 	.short	1911
 	.short	-8739
 	.short	-8739
@@ -1828,14 +1828,10 @@ losebgTiles:
 	.short	-15019
 	.short	21845
 	.short	-15019
-	.short	21845
-	.short	-15019
 	.short	21077
 	.short	-15019
-	.short	-17483
-	.short	-17477
-	.short	-17579
-	.short	-17477
+	.short	21845
+	.short	-15019
 	.short	-17579
 	.short	-17477
 	.short	-19115
@@ -1848,12 +1844,12 @@ losebgTiles:
 	.short	-17477
 	.short	-17483
 	.short	-17477
-	.short	23387
-	.short	85
+	.short	-17483
+	.short	-17477
+	.short	-17483
+	.short	-17477
 	.short	-17477
 	.short	85
-	.short	-17477
-	.short	187
 	.short	23483
 	.short	187
 	.short	-17477
@@ -1864,13 +1860,13 @@ losebgTiles:
 	.short	187
 	.short	-17477
 	.short	187
+	.short	-17477
+	.short	187
+	.short	-17477
+	.short	187
 	.short	30583
 	.short	20599
 	.short	30583
-	.short	20599
-	.short	30583
-	.short	20599
-	.short	30583
 	.short	-20361
 	.short	30583
 	.short	-20361
@@ -1880,12 +1876,12 @@ losebgTiles:
 	.short	-20361
 	.short	30583
 	.short	-20361
-	.short	-17579
-	.short	28683
+	.short	30583
+	.short	-20361
+	.short	30583
+	.short	-20361
 	.short	-17477
 	.short	29195
-	.short	-17477
-	.short	32264
 	.short	-17483
 	.short	29704
 	.short	-17477
@@ -1896,10 +1892,10 @@ losebgTiles:
 	.short	30466
 	.short	23483
 	.short	30506
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
+	.short	-17477
+	.short	30528
+	.short	-17477
+	.short	30512
 	.short	30583
 	.short	30583
 	.short	-26761
@@ -1912,11 +1908,11 @@ losebgTiles:
 	.short	30583
 	.short	1911
 	.short	30583
-	.short	1322
+	.short	887
+	.short	30583
+	.short	2167
 	.short	30583
 	.short	1288
-	.short	30583
-	.short	1284
 	.short	30583
 	.short	3593
 	.short	30583
@@ -1928,12 +1924,12 @@ losebgTiles:
 	.short	30583
 	.short	3591
 	.short	30583
+	.short	3591
 	.short	30583
-	.short	30688
+	.short	2727
+	.short	30583
 	.short	30583
 	.short	30528
-	.short	30583
-	.short	30608
 	.short	30583
 	.short	30514
 	.short	30583
@@ -1945,9 +1941,9 @@ losebgTiles:
 	.short	30583
 	.short	30583
 	.short	30583
-	.short	-8073
 	.short	30583
-	.short	8311
+	.short	30615
+	.short	30583
 	.short	30583
 	.short	8311
 	.short	30583
@@ -1960,11 +1956,11 @@ losebgTiles:
 	.short	-8073
 	.short	30580
 	.short	4215
-	.short	-24027
-	.short	30512
+	.short	30577
+	.short	4215
+	.short	30576
+	.short	-32649
 	.short	8866
-	.short	30512
-	.short	8738
 	.short	30512
 	.short	8942
 	.short	30512
@@ -1976,12 +1972,12 @@ losebgTiles:
 	.short	30512
 	.short	-4370
 	.short	30512
+	.short	-4578
+	.short	30512
+	.short	-30703
+	.short	30512
 	.short	30583
 	.short	30688
-	.short	30583
-	.short	30688
-	.short	30583
-	.short	30698
 	.short	30583
 	.short	30697
 	.short	30583
@@ -1992,13 +1988,13 @@ losebgTiles:
 	.short	30695
 	.short	30583
 	.short	30615
-	.short	3703
-	.short	30576
+	.short	30583
+	.short	30583
+	.short	30583
+	.short	30583
 	.short	3703
 	.short	30586
 	.short	3703
-	.short	30578
-	.short	3703
 	.short	30590
 	.short	3703
 	.short	30590
@@ -2008,13 +2004,13 @@ losebgTiles:
 	.short	30590
 	.short	3703
 	.short	30590
-	.short	1911
-	.short	30583
+	.short	3703
+	.short	30590
+	.short	3703
+	.short	30590
 	.short	1911
 	.short	30579
 	.short	1911
-	.short	30579
-	.short	1911
 	.short	30585
 	.short	1911
 	.short	30585
@@ -2024,10 +2020,10 @@ losebgTiles:
 	.short	30585
 	.short	1911
 	.short	30585
-	.short	-8073
-	.short	30583
-	.short	119
-	.short	30583
+	.short	1911
+	.short	30585
+	.short	1911
+	.short	30585
 	.short	119
 	.short	30583
 	.short	119
@@ -2040,12 +2036,12 @@ losebgTiles:
 	.short	30590
 	.short	119
 	.short	30576
-	.short	28823
-	.short	30583
+	.short	119
+	.short	30576
+	.short	119
+	.short	30576
 	.short	28727
 	.short	30583
-	.short	28727
-	.short	30583
 	.short	28791
 	.short	30583
 	.short	28791
@@ -2056,9 +2052,9 @@ losebgTiles:
 	.short	30583
 	.short	28791
 	.short	30583
-	.short	119
+	.short	31351
 	.short	30583
-	.short	119
+	.short	32375
 	.short	30583
 	.short	119
 	.short	30583
@@ -2072,12 +2068,12 @@ losebgTiles:
 	.short	30583
 	.short	631
 	.short	30583
-	.short	28791
-	.short	-4276
+	.short	-20873
+	.short	30583
+	.short	-31625
+	.short	30583
 	.short	12407
 	.short	-31523
-	.short	12407
-	.short	-899
 	.short	12439
 	.short	-643
 	.short	28823
@@ -2088,6 +2084,10 @@ losebgTiles:
 	.short	-29325
 	.short	29863
 	.short	-29321
+	.short	14599
+	.short	-29321
+	.short	14087
+	.short	-4643
 	.short	30576
 	.short	3703
 	.short	30576
@@ -2104,13 +2104,9 @@ losebgTiles:
 	.short	3703
 	.short	30576
 	.short	3703
-	.short	30576
-	.short	1911
 	.short	30576
 	.short	-26761
 	.short	30576
-	.short	14199
-	.short	30576
 	.short	30583
 	.short	30576
 	.short	30583
@@ -2121,9 +2117,9 @@ losebgTiles:
 	.short	30576
 	.short	30583
 	.short	30576
-	.short	-8073
+	.short	30583
 	.short	30576
-	.short	-8073
+	.short	30583
 	.short	30576
 	.short	-8073
 	.short	30576
@@ -2136,12 +2132,12 @@ losebgTiles:
 	.short	-8073
 	.short	30583
 	.short	-8073
-	.short	20300
-	.short	30472
+	.short	30583
+	.short	-8073
+	.short	30583
+	.short	-8073
 	.short	-15156
 	.short	30479
-	.short	-12340
-	.short	30472
 	.short	-60
 	.short	30478
 	.short	-30644
@@ -2152,26 +2148,26 @@ losebgTiles:
 	.short	30478
 	.short	18684
 	.short	30472
+	.short	20476
+	.short	30472
+	.short	-7
+	.short	30472
 	.short	-26761
 	.short	30576
 	.short	-26761
 	.short	30576
 	.short	-26761
 	.short	30576
-	.short	-26761
-	.short	30576
-	.short	-26761
-	.short	30576
 	.short	30583
 	.short	30583
 	.short	30583
 	.short	30583
 	.short	30583
 	.short	30583
-	.short	1911
-	.short	30480
-	.short	1911
-	.short	30480
+	.short	30583
+	.short	30583
+	.short	30583
+	.short	30583
 	.short	1911
 	.short	30480
 	.short	1911
@@ -2184,10 +2180,10 @@ losebgTiles:
 	.short	30592
 	.short	1911
 	.short	30480
-	.short	30583
 	.short	1911
+	.short	30480
 	.short	1911
-	.short	0
+	.short	30480
 	.short	1911
 	.short	0
 	.short	1911
@@ -2200,12 +2196,12 @@ losebgTiles:
 	.short	1092
 	.short	30583
 	.short	1911
-	.short	28672
 	.short	30583
+	.short	1911
+	.short	30583
+	.short	1911
 	.short	29962
 	.short	30583
-	.short	32266
-	.short	14199
 	.short	29706
 	.short	18295
 	.short	30986
@@ -2216,12 +2212,12 @@ losebgTiles:
 	.short	1911
 	.short	30688
 	.short	1911
-	.short	30583
-	.short	32256
+	.short	30704
+	.short	2423
+	.short	30512
+	.short	375
 	.short	30583
 	.short	28680
-	.short	30583
-	.short	28676
 	.short	30583
 	.short	28681
 	.short	30583
@@ -2233,11 +2229,11 @@ losebgTiles:
 	.short	30583
 	.short	-28665
 	.short	30583
-	.short	28676
+	.short	-28665
+	.short	30583
+	.short	-24409
 	.short	30583
 	.short	31241
-	.short	30583
-	.short	29193
 	.short	30583
 	.short	32263
 	.short	30583
@@ -2249,11 +2245,11 @@ losebgTiles:
 	.short	30583
 	.short	29447
 	.short	30583
-	.short	30467
+	.short	30471
+	.short	30583
+	.short	30631
 	.short	30583
 	.short	30468
-	.short	30583
-	.short	30472
 	.short	30583
 	.short	30466
 	.short	30583
@@ -2265,9 +2261,9 @@ losebgTiles:
 	.short	30583
 	.short	30464
 	.short	30583
+	.short	30464
 	.short	30583
-	.short	30583
-	.short	0
+	.short	30464
 	.short	30583
 	.short	0
 	.short	30583
@@ -2280,10 +2276,10 @@ losebgTiles:
 	.short	-31676
 	.short	30583
 	.short	14199
-	.short	30976
 	.short	30583
-	.short	30976
+	.short	14199
 	.short	30583
+	.short	14199
 	.short	30976
 	.short	30583
 	.short	30986
@@ -2296,10 +2292,10 @@ losebgTiles:
 	.short	30583
 	.short	30976
 	.short	30583
-	.short	30465
-	.short	1911
-	.short	30471
-	.short	1911
+	.short	30976
+	.short	30583
+	.short	30976
+	.short	30583
 	.short	30471
 	.short	1911
 	.short	30471
@@ -2312,76 +2308,74 @@ losebgTiles:
 	.short	1911
 	.short	30583
 	.short	1911
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	-15019
-	.short	21845
-	.short	-15019
-	.short	21845
-	.short	-15019
-	.short	21845
-	.short	-15019
-	.short	21845
-	.short	-15019
-	.short	21845
-	.short	-15019
-	.short	21845
-	.short	-15019
-	.short	21845
-	.short	-15019
-	.short	-17483
-	.short	-17477
-	.short	-17483
-	.short	-17477
-	.short	-17483
-	.short	-17477
-	.short	-17483
-	.short	-17477
-	.short	-17483
-	.short	-17477
-	.short	-17483
-	.short	-17477
-	.short	-17483
-	.short	-17477
-	.short	-17483
-	.short	-17477
-	.short	-17477
-	.short	187
-	.short	-17477
-	.short	187
-	.short	-17477
-	.short	187
-	.short	-17477
-	.short	187
-	.short	-17477
-	.short	187
-	.short	-17477
-	.short	187
-	.short	-17477
-	.short	187
-	.short	-17477
-	.short	187
 	.short	30583
-	.short	-20361
+	.short	1911
 	.short	30583
-	.short	-20361
-	.short	30583
-	.short	-20361
+	.short	1911
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	-15019
+	.short	21845
+	.short	-15019
+	.short	21845
+	.short	-15019
+	.short	21845
+	.short	-15019
+	.short	21845
+	.short	-15019
+	.short	21845
+	.short	-15019
+	.short	9557
+	.short	-15067
+	.short	21845
+	.short	-15022
+	.short	-17483
+	.short	-17477
+	.short	-17483
+	.short	-17477
+	.short	-17483
+	.short	-17477
+	.short	-17483
+	.short	-17477
+	.short	-17483
+	.short	-17477
+	.short	-17483
+	.short	-17477
+	.short	-17483
+	.short	-17477
+	.short	-17483
+	.short	-17477
+	.short	-17477
+	.short	187
+	.short	-17477
+	.short	187
+	.short	-17477
+	.short	187
+	.short	-17477
+	.short	187
+	.short	-17477
+	.short	187
+	.short	-17477
+	.short	187
+	.short	-17477
+	.short	187
+	.short	-17477
+	.short	187
 	.short	30583
 	.short	-20361
 	.short	30583
@@ -2392,12 +2386,12 @@ losebgTiles:
 	.short	-20361
 	.short	30583
 	.short	20599
-	.short	-17477
-	.short	30528
-	.short	-17477
-	.short	30528
-	.short	-17477
-	.short	30512
+	.short	30583
+	.short	-20361
+	.short	30583
+	.short	-20361
+	.short	30583
+	.short	-20361
 	.short	-17477
 	.short	30576
 	.short	-17477
@@ -2408,12 +2402,12 @@ losebgTiles:
 	.short	30576
 	.short	23483
 	.short	30576
-	.short	887
-	.short	30583
-	.short	2423
-	.short	30583
-	.short	2167
-	.short	30583
+	.short	11195
+	.short	30586
+	.short	-21573
+	.short	30578
+	.short	3003
+	.short	30577
 	.short	3703
 	.short	30583
 	.short	631
@@ -2424,12 +2418,12 @@ losebgTiles:
 	.short	30583
 	.short	30583
 	.short	30583
-	.short	3591
 	.short	30583
-	.short	519
 	.short	30583
-	.short	2727
 	.short	30583
+	.short	30583
+	.short	11895
+	.short	30590
 	.short	135
 	.short	30583
 	.short	71
@@ -2440,11 +2434,11 @@ losebgTiles:
 	.short	30583
 	.short	119
 	.short	30583
+	.short	119
 	.short	30583
+	.short	119
 	.short	30583
-	.short	30583
-	.short	30583
-	.short	30615
+	.short	119
 	.short	30583
 	.short	30535
 	.short	30583
@@ -2456,15 +2450,15 @@ losebgTiles:
 	.short	30583
 	.short	30983
 	.short	30583
-	.short	30577
-	.short	4215
-	.short	30590
-	.short	-8073
+	.short	32263
+	.short	-26761
+	.short	28679
+	.short	-26761
+	.short	28679
+	.short	18295
 	.short	30576
 	.short	-32649
 	.short	30576
-	.short	-32649
-	.short	30576
 	.short	4215
 	.short	30576
 	.short	-8073
@@ -2472,12 +2466,12 @@ losebgTiles:
 	.short	-8073
 	.short	30576
 	.short	-8073
-	.short	-4578
-	.short	30512
-	.short	-4370
-	.short	30512
-	.short	-30703
-	.short	30512
+	.short	30576
+	.short	-8073
+	.short	30576
+	.short	8311
+	.short	30576
+	.short	8311
 	.short	-4376
 	.short	30512
 	.short	-4370
@@ -2488,12 +2482,12 @@ losebgTiles:
 	.short	30512
 	.short	-4370
 	.short	30512
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
+	.short	-4370
+	.short	30512
+	.short	7909
+	.short	30512
+	.short	-4382
+	.short	30512
 	.short	30583
 	.short	30583
 	.short	29559
@@ -2502,7 +2496,13 @@ losebgTiles:
 	.short	30583
 	.short	-28553
 	.short	30583
-	.short	-8073
+	.short	-24457
+	.short	30583
+	.short	119
+	.short	30583
+	.short	119
+	.short	30583
+	.short	119
 	.short	30583
 	.short	3703
 	.short	30590
@@ -2515,33 +2515,27 @@ losebgTiles:
 	.short	3703
 	.short	30590
 	.short	3703
-	.short	30590
+	.short	30586
 	.short	3703
-	.short	30590
+	.short	30576
 	.short	3703
-	.short	30590
-	.short	1911
-	.short	30585
-	.short	1911
-	.short	30585
-	.short	1911
-	.short	30585
-	.short	1911
-	.short	30585
-	.short	1911
-	.short	30585
-	.short	1911
-	.short	30585
-	.short	1911
-	.short	30585
-	.short	1911
-	.short	30585
-	.short	119
 	.short	30576
-	.short	119
-	.short	30576
-	.short	119
-	.short	30576
+	.short	1911
+	.short	30585
+	.short	1911
+	.short	30585
+	.short	1911
+	.short	30585
+	.short	1911
+	.short	30585
+	.short	1911
+	.short	30585
+	.short	1911
+	.short	30579
+	.short	1911
+	.short	30583
+	.short	1911
+	.short	30583
 	.short	-24457
 	.short	30576
 	.short	-24457
@@ -2550,14 +2544,14 @@ losebgTiles:
 	.short	30576
 	.short	16503
 	.short	30576
-	.short	-28553
-	.short	30512
-	.short	31351
-	.short	30583
-	.short	31351
-	.short	30583
-	.short	32375
-	.short	30583
+	.short	12407
+	.short	30608
+	.short	28791
+	.short	30528
+	.short	28791
+	.short	30702
+	.short	28791
+	.short	30510
 	.short	29815
 	.short	30583
 	.short	29815
@@ -2567,13 +2561,13 @@ losebgTiles:
 	.short	30583
 	.short	-24969
 	.short	30583
-	.short	19063
-	.short	-20873
+	.short	-32649
 	.short	30583
-	.short	11895
+	.short	151
 	.short	30583
-	.short	-31625
+	.short	151
 	.short	30583
+	.short	71
 	.short	18807
 	.short	30583
 	.short	18807
@@ -2584,12 +2578,12 @@ losebgTiles:
 	.short	30583
 	.short	30583
 	.short	30583
-	.short	14599
-	.short	-29321
-	.short	14599
-	.short	-29321
-	.short	14087
-	.short	-4643
+	.short	30583
+	.short	30583
+	.short	30583
+	.short	30583
+	.short	30583
+	.short	30583
 	.short	14087
 	.short	-7373
 	.short	14087
@@ -2598,14 +2592,14 @@ losebgTiles:
 	.short	-7373
 	.short	14087
 	.short	-4809
-	.short	30467
-	.short	-30253
-	.short	30576
-	.short	3703
-	.short	30576
-	.short	3703
-	.short	30576
-	.short	3703
+	.short	30473
+	.short	-30413
+	.short	13220
+	.short	-30311
+	.short	-11426
+	.short	-30311
+	.short	-27675
+	.short	-30311
 	.short	30586
 	.short	3703
 	.short	30586
@@ -2616,12 +2610,12 @@ losebgTiles:
 	.short	3703
 	.short	30576
 	.short	3703
+	.short	30586
+	.short	3703
 	.short	30576
-	.short	30583
+	.short	3703
 	.short	30576
-	.short	30583
-	.short	30576
-	.short	30583
+	.short	3703
 	.short	30576
 	.short	30583
 	.short	30576
@@ -2632,28 +2626,28 @@ losebgTiles:
 	.short	28791
 	.short	30576
 	.short	28791
-	.short	30583
+	.short	30576
+	.short	12407
+	.short	30576
 	.short	-8073
-	.short	30583
-	.short	-32649
-	.short	30583
-	.short	-8073
-	.short	30583
-	.short	-8073
-	.short	30583
-	.short	-8073
+	.short	30576
+	.short	119
 	.short	30583
 	.short	-8073
 	.short	30583
 	.short	-8073
 	.short	30583
 	.short	-8073
-	.short	20476
-	.short	30472
-	.short	-4
-	.short	30478
-	.short	-7
-	.short	30472
+	.short	30583
+	.short	-8073
+	.short	30583
+	.short	-8073
+	.short	30583
+	.short	-8073
+	.short	30583
+	.short	-8073
+	.short	30583
+	.short	-8073
 	.short	-12291
 	.short	30479
 	.short	-12291
@@ -2664,12 +2658,12 @@ losebgTiles:
 	.short	30479
 	.short	-13108
 	.short	30479
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
+	.short	-13108
+	.short	30479
+	.short	-13108
+	.short	30479
+	.short	-13108
+	.short	30479
 	.short	30583
 	.short	30583
 	.short	14199
@@ -2680,12 +2674,12 @@ losebgTiles:
 	.short	30576
 	.short	-26761
 	.short	30576
-	.short	1911
-	.short	30480
-	.short	1911
-	.short	30480
-	.short	1911
-	.short	30480
+	.short	-26761
+	.short	30576
+	.short	-26761
+	.short	30576
+	.short	-26761
+	.short	30576
 	.short	1911
 	.short	30480
 	.short	1911
@@ -2696,12 +2690,12 @@ losebgTiles:
 	.short	30480
 	.short	1911
 	.short	30592
-	.short	30583
 	.short	1911
-	.short	30583
+	.short	30592
 	.short	1911
-	.short	30583
+	.short	30592
 	.short	1911
+	.short	30592
 	.short	30583
 	.short	1911
 	.short	18295
@@ -2711,13 +2705,13 @@ losebgTiles:
 	.short	1911
 	.short	-21974
 	.short	1911
-	.short	8746
-	.short	30704
-	.short	2423
-	.short	30528
-	.short	2423
-	.short	30512
-	.short	375
+	.short	9514
+	.short	1911
+	.short	0
+	.short	14199
+	.short	18295
+	.short	30583
+	.short	-26761
 	.short	30576
 	.short	3703
 	.short	30576
@@ -2728,12 +2722,12 @@ losebgTiles:
 	.short	30583
 	.short	30576
 	.short	30583
+	.short	30586
 	.short	30583
-	.short	-28665
+	.short	30590
 	.short	30583
-	.short	16391
-	.short	30583
-	.short	-24409
+	.short	30590
+	.short	-4489
 	.short	30583
 	.short	135
 	.short	30579
@@ -2745,11 +2739,11 @@ losebgTiles:
 	.short	30583
 	.short	119
 	.short	30583
-	.short	30471
+	.short	119
 	.short	30583
-	.short	30471
-	.short	30583
-	.short	30631
+	.short	119
+	.short	30577
+	.short	119
 	.short	30583
 	.short	30695
 	.short	30583
@@ -2760,12 +2754,12 @@ losebgTiles:
 	.short	30583
 	.short	30583
 	.short	30583
+	.short	30585
 	.short	30583
-	.short	30464
+	.short	30580
 	.short	30583
-	.short	30464
+	.short	30577
 	.short	30583
-	.short	30464
 	.short	14199
 	.short	30464
 	.short	-26761
@@ -2775,13 +2769,13 @@ losebgTiles:
 	.short	-22665
 	.short	30464
 	.short	1911
-	.short	30464
-	.short	30583
-	.short	14199
-	.short	30583
-	.short	14199
-	.short	30583
-	.short	14199
+	.short	30474
+	.short	2423
+	.short	30474
+	.short	1143
+	.short	30474
+	.short	2167
+	.short	30474
 	.short	30583
 	.short	14199
 	.short	30583
@@ -2792,470 +2786,16 @@ losebgTiles:
 	.short	0
 	.short	30583
 	.short	0
-	.short	30976
-	.short	30583
-	.short	30976
-	.short	30583
-	.short	30976
-	.short	30583
-	.short	30976
-	.short	30583
-	.short	30976
-	.short	-26761
-	.short	30976
-	.short	1911
-	.short	30976
-	.short	1911
-	.short	30976
-	.short	1911
-	.short	30583
-	.short	1911
-	.short	30583
-	.short	1911
-	.short	30583
-	.short	1911
-	.short	30583
-	.short	1911
-	.short	30583
-	.short	1911
-	.short	30583
-	.short	1911
-	.short	30583
-	.short	1911
-	.short	30583
-	.short	1911
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	9557
-	.short	9557
-	.short	21077
-	.short	9557
-	.short	-15067
-	.short	21845
-	.short	-15019
-	.short	21845
-	.short	-15022
-	.short	21077
-	.short	-15019
-	.short	21077
-	.short	-15019
-	.short	21845
-	.short	-15019
-	.short	21845
-	.short	-15022
-	.short	21845
-	.short	-15067
-	.short	-17477
-	.short	187
-	.short	-17477
-	.short	187
-	.short	-17477
-	.short	187
-	.short	-17477
-	.short	187
-	.short	-17477
-	.short	187
-	.short	-17477
-	.short	2747
-	.short	-17477
-	.short	2747
-	.short	-17477
-	.short	187
-	.short	23483
-	.short	30576
-	.short	11195
-	.short	30586
-	.short	-21573
-	.short	30578
-	.short	3003
-	.short	30577
-	.short	1467
-	.short	30580
-	.short	3003
-	.short	30579
-	.short	3003
-	.short	30583
-	.short	3003
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	11895
-	.short	30590
-	.short	119
-	.short	30586
-	.short	119
-	.short	30576
-	.short	119
-	.short	30576
-	.short	119
-	.short	30576
-	.short	119
-	.short	30583
-	.short	119
-	.short	30583
-	.short	119
-	.short	30583
-	.short	119
-	.short	30583
-	.short	2679
-	.short	30583
-	.short	1143
-	.short	30583
-	.short	2423
-	.short	30583
-	.short	887
-	.short	30583
-	.short	30983
-	.short	30583
-	.short	32263
-	.short	-26761
-	.short	28679
-	.short	-26761
-	.short	28679
-	.short	18295
-	.short	28679
-	.short	-6281
-	.short	28679
-	.short	1911
-	.short	28679
-	.short	887
-	.short	28679
-	.short	2423
-	.short	30576
-	.short	-8073
-	.short	30576
-	.short	-8073
-	.short	30576
-	.short	8311
-	.short	30576
-	.short	8311
-	.short	30576
-	.short	-8073
-	.short	30576
-	.short	-32649
-	.short	30576
-	.short	-8073
-	.short	30576
-	.short	-8073
-	.short	-4370
-	.short	30512
-	.short	-4370
-	.short	30512
-	.short	7909
-	.short	30512
-	.short	-4382
-	.short	30512
-	.short	7918
-	.short	30512
-	.short	18564
-	.short	30512
-	.short	17480
-	.short	30512
-	.short	-26303
-	.short	30512
-	.short	-24457
-	.short	30583
-	.short	119
-	.short	30583
-	.short	119
-	.short	30583
-	.short	119
-	.short	30583
-	.short	119
-	.short	30580
-	.short	119
-	.short	30576
-	.short	119
-	.short	30576
-	.short	119
-	.short	30576
-	.short	3703
-	.short	30590
-	.short	3703
-	.short	30586
-	.short	3703
-	.short	30576
-	.short	3703
-	.short	30576
-	.short	-4489
-	.short	30528
-	.short	-4489
-	.short	30464
-	.short	-4489
-	.short	31235
-	.short	11895
-	.short	28695
-	.short	1911
-	.short	30585
-	.short	1911
-	.short	30579
-	.short	1911
-	.short	30583
-	.short	1911
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	12407
-	.short	30608
-	.short	28791
-	.short	30528
-	.short	28791
-	.short	30702
-	.short	28791
-	.short	30510
-	.short	12339
-	.short	30632
-	.short	13319
-	.short	30473
-	.short	-27900
-	.short	30473
-	.short	14752
-	.short	30473
-	.short	30583
-	.short	-32649
-	.short	30583
-	.short	151
-	.short	30583
-	.short	151
-	.short	30583
-	.short	71
-	.short	30583
-	.short	231
-	.short	30583
-	.short	7
-	.short	30583
-	.short	7
-	.short	30583
-	.short	7
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	14199
-	.short	30583
-	.short	-26761
-	.short	30579
-	.short	-26761
-	.short	30473
-	.short	-30413
-	.short	13220
-	.short	-30311
-	.short	-11426
-	.short	-30311
-	.short	-27675
-	.short	-30311
-	.short	-25206
-	.short	-4916
-	.short	18880
-	.short	-7100
-	.short	19600
-	.short	-4273
-	.short	17552
-	.short	-4097
-	.short	30576
-	.short	3703
-	.short	30586
-	.short	3703
-	.short	30576
-	.short	3703
-	.short	30576
-	.short	3703
-	.short	30576
-	.short	3703
-	.short	30576
-	.short	3703
-	.short	30576
-	.short	3703
-	.short	30576
-	.short	3703
-	.short	30576
-	.short	28791
-	.short	30576
-	.short	12407
-	.short	30576
-	.short	-8073
-	.short	30576
-	.short	119
-	.short	30576
-	.short	119
-	.short	30576
-	.short	119
-	.short	30576
-	.short	119
-	.short	30576
-	.short	119
-	.short	30583
-	.short	-8073
-	.short	30583
-	.short	-8073
-	.short	30583
-	.short	-8073
-	.short	30583
-	.short	-8073
-	.short	30583
-	.short	-8073
-	.short	30583
-	.short	-8073
-	.short	30585
-	.short	-8073
-	.short	30591
-	.short	-8073
-	.short	-13108
-	.short	30479
-	.short	-13108
-	.short	30479
-	.short	-13108
-	.short	30479
-	.short	-13108
-	.short	30479
-	.short	-13108
-	.short	30479
-	.short	-13108
-	.short	30472
-	.short	-13108
-	.short	30472
-	.short	-13108
-	.short	30472
-	.short	1911
-	.short	30592
-	.short	1911
-	.short	30592
-	.short	1911
-	.short	30592
-	.short	1911
-	.short	30592
-	.short	1911
-	.short	30480
-	.short	1911
-	.short	30480
-	.short	1911
-	.short	30480
-	.short	1911
-	.short	30480
-	.short	1911
-	.short	9514
-	.short	1911
-	.short	0
-	.short	14199
-	.short	18295
-	.short	30583
-	.short	-26761
-	.short	30583
-	.short	-26761
-	.short	30583
-	.short	-26761
-	.short	30583
-	.short	-26761
-	.short	30583
-	.short	-26761
-	.short	30576
-	.short	30583
-	.short	30586
-	.short	30583
-	.short	30590
-	.short	30583
-	.short	30590
-	.short	-4489
-	.short	30585
-	.short	119
-	.short	30579
-	.short	119
-	.short	30583
-	.short	119
-	.short	30583
-	.short	119
-	.short	30583
-	.short	119
-	.short	30583
-	.short	119
-	.short	30583
-	.short	119
-	.short	30577
-	.short	119
-	.short	30586
-	.short	2679
-	.short	30576
-	.short	375
-	.short	30576
-	.short	2423
-	.short	30576
-	.short	2423
-	.short	30583
-	.short	30583
-	.short	30585
-	.short	30583
-	.short	30580
-	.short	30583
-	.short	30577
-	.short	30583
-	.short	30578
-	.short	30583
-	.short	30576
-	.short	30583
-	.short	30608
-	.short	30583
-	.short	30528
-	.short	30583
-	.short	1911
-	.short	30474
-	.short	2423
-	.short	30474
-	.short	1143
-	.short	30474
-	.short	2167
-	.short	30474
-	.short	631
-	.short	30474
-	.short	119
-	.short	30474
-	.short	119
-	.short	30474
-	.short	119
-	.short	30474
-	.short	30583
-	.short	0
 	.short	30583
 	.short	0
 	.short	30583
 	.short	29555
 	.short	30583
 	.short	30583
+	.short	30976
 	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
-	.short	30583
+	.short	30976
+	.short	-26761
 	.short	30976
 	.short	1911
 	.short	30976
@@ -3268,9 +2808,13 @@ losebgTiles:
 	.short	1911
 	.short	30976
 	.short	1911
-	.short	30976
+	.short	30583
 	.short	1911
-	.short	30976
+	.short	30583
+	.short	1911
+	.short	30583
+	.short	1911
+	.short	30583
 	.short	1911
 	.short	30583
 	.short	1911
@@ -3280,14 +2824,14 @@ losebgTiles:
 	.short	1911
 	.short	30576
 	.short	1911
-	.short	30576
-	.short	1911
-	.short	30608
-	.short	1911
-	.short	30496
-	.short	1911
-	.short	30464
-	.short	1911
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	9557
 	.short	9557
 	.short	21077
 	.short	8789
@@ -3296,14 +2840,14 @@ losebgTiles:
 	.short	8741
 	.short	9557
 	.short	21077
-	.short	8786
+	.short	21077
+	.short	-15019
+	.short	21077
+	.short	-15019
 	.short	21845
+	.short	-15019
 	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
-	.short	21845
+	.short	-15022
 	.short	21845
 	.short	-15787
 	.short	8738
@@ -3312,14 +2856,12 @@ losebgTiles:
 	.short	-15067
 	.short	9506
 	.short	-15019
-	.short	21845
-	.short	-15019
-	.short	21077
-	.short	-15019
-	.short	21845
-	.short	-15019
-	.short	21845
-	.short	-15019
+	.short	-17483
+	.short	-17477
+	.short	-17483
+	.short	-17477
+	.short	-17483
+	.short	-17477
 	.short	-17579
 	.short	-17477
 	.short	-17483
@@ -3330,12 +2872,12 @@ losebgTiles:
 	.short	-17477
 	.short	-17483
 	.short	-17477
-	.short	-17483
 	.short	-17477
-	.short	-17483
+	.short	187
 	.short	-17477
-	.short	-17483
+	.short	2747
 	.short	-17477
+	.short	187
 	.short	-17477
 	.short	2747
 	.short	-17477
@@ -3346,12 +2888,12 @@ losebgTiles:
 	.short	-17477
 	.short	-17477
 	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-19013
-	.short	-17477
-	.short	-19013
+	.short	30583
+	.short	-20361
+	.short	30583
+	.short	-20361
+	.short	30583
+	.short	-20361
 	.short	17476
 	.short	-32700
 	.short	8738
@@ -3362,12 +2904,12 @@ losebgTiles:
 	.short	23381
 	.short	-17477
 	.short	-17477
-	.short	-17477
-	.short	-17483
-	.short	-17477
-	.short	-17483
-	.short	-17477
-	.short	-17477
+	.short	1467
+	.short	30580
+	.short	3003
+	.short	30579
+	.short	3003
+	.short	30583
 	.short	3003
 	.short	17476
 	.short	23483
@@ -3378,12 +2920,12 @@ losebgTiles:
 	.short	-17477
 	.short	-17477
 	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-17477
+	.short	119
+	.short	30586
+	.short	119
+	.short	30576
+	.short	119
+	.short	30576
 	.short	148
 	.short	17472
 	.short	-31454
@@ -3394,12 +2936,12 @@ losebgTiles:
 	.short	-17477
 	.short	-17477
 	.short	-17573
-	.short	-17573
-	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-17477
+	.short	2679
+	.short	30583
+	.short	1143
+	.short	30583
+	.short	887
+	.short	30583
 	.short	1092
 	.short	17476
 	.short	21026
@@ -3410,12 +2952,12 @@ losebgTiles:
 	.short	-17477
 	.short	-17477
 	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-17477
+	.short	28679
+	.short	-6281
+	.short	28679
+	.short	1911
+	.short	28679
+	.short	2423
 	.short	16393
 	.short	3652
 	.short	-20910
@@ -3426,12 +2968,12 @@ losebgTiles:
 	.short	-24030
 	.short	11099
 	.short	-21856
-	.short	23483
-	.short	-21856
-	.short	23483
-	.short	-23902
-	.short	23483
-	.short	8706
+	.short	30576
+	.short	-8073
+	.short	30576
+	.short	-32649
+	.short	30576
+	.short	-8073
 	.short	17472
 	.short	16452
 	.short	-22006
@@ -3442,12 +2984,12 @@ losebgTiles:
 	.short	20197
 	.short	10922
 	.short	-4571
-	.short	-21846
-	.short	20194
-	.short	10922
-	.short	20194
-	.short	8738
-	.short	17634
+	.short	7918
+	.short	30512
+	.short	18564
+	.short	30512
+	.short	-26303
+	.short	30512
 	.short	14612
 	.short	17472
 	.short	14745
@@ -3458,12 +3000,12 @@ losebgTiles:
 	.short	13107
 	.short	14740
 	.short	13107
-	.short	13204
-	.short	13107
-	.short	14660
-	.short	13107
-	.short	14745
-	.short	13107
+	.short	119
+	.short	30580
+	.short	119
+	.short	30576
+	.short	119
+	.short	30576
 	.short	68
 	.short	17472
 	.short	30993
@@ -3474,12 +3016,12 @@ losebgTiles:
 	.short	13171
 	.short	13175
 	.short	14649
-	.short	13107
-	.short	-26317
-	.short	13107
-	.short	-26215
-	.short	-26221
-	.short	-26221
+	.short	-4489
+	.short	30528
+	.short	-4489
+	.short	30464
+	.short	11895
+	.short	28695
 	.short	-5564
 	.short	2611
 	.short	29713
@@ -3490,12 +3032,12 @@ losebgTiles:
 	.short	-27751
 	.short	-26221
 	.short	-26215
-	.short	-26221
-	.short	-26215
-	.short	-26221
-	.short	-26215
-	.short	-26215
-	.short	17481
+	.short	30583
+	.short	30583
+	.short	30583
+	.short	30583
+	.short	30583
+	.short	30583
 	.short	30580
 	.short	3703
 	.short	2
@@ -3506,12 +3048,12 @@ losebgTiles:
 	.short	-26215
 	.short	17481
 	.short	-14012
-	.short	17481
-	.short	17476
-	.short	17481
-	.short	17476
-	.short	17556
-	.short	-31500
+	.short	12339
+	.short	30632
+	.short	13319
+	.short	30473
+	.short	14752
+	.short	30473
 	.short	-26224
 	.short	17417
 	.short	-25453
@@ -3522,12 +3064,12 @@ losebgTiles:
 	.short	19524
 	.short	-180
 	.short	-2817
-	.short	-30652
-	.short	-30577
-	.short	-30476
-	.short	-30584
-	.short	-29044
-	.short	-30578
+	.short	30583
+	.short	231
+	.short	30583
+	.short	7
+	.short	30583
+	.short	7
 	.short	17476
 	.short	4
 	.short	24302
@@ -3538,12 +3080,12 @@ losebgTiles:
 	.short	-3004
 	.short	-1793
 	.short	-30476
-	.short	-30641
-	.short	-28673
-	.short	-30641
-	.short	-28680
-	.short	-1905
-	.short	-28856
+	.short	30583
+	.short	30583
+	.short	30583
+	.short	14199
+	.short	30579
+	.short	-26761
 	.short	17486
 	.short	-7100
 	.short	-4382
@@ -3554,12 +3096,12 @@ losebgTiles:
 	.short	-26167
 	.short	19592
 	.short	19524
-	.short	17646
-	.short	-15281
-	.short	20462
-	.short	-15292
-	.short	-30482
-	.short	18840
+	.short	-25206
+	.short	-4916
+	.short	18880
+	.short	-7100
+	.short	17552
+	.short	-4097
 	.short	19600
 	.short	-4097
 	.short	-15207
@@ -3570,12 +3112,12 @@ losebgTiles:
 	.short	-120
 	.short	-2868
 	.short	18568
-	.short	-31668
-	.short	-1137
-	.short	-188
-	.short	-31233
-	.short	-2817
-	.short	-17528
+	.short	30576
+	.short	3703
+	.short	30576
+	.short	3703
+	.short	30576
+	.short	3703
 	.short	17472
 	.short	660
 	.short	21848
@@ -3586,12 +3128,12 @@ losebgTiles:
 	.short	-28680
 	.short	-18184
 	.short	-1861
-	.short	-18289
-	.short	-29765
-	.short	-17521
-	.short	-29765
-	.short	-17480
-	.short	-29707
+	.short	30576
+	.short	119
+	.short	30576
+	.short	119
+	.short	30576
+	.short	119
 	.short	17472
 	.short	20548
 	.short	8799
@@ -3602,12 +3144,12 @@ losebgTiles:
 	.short	-1861
 	.short	-19016
 	.short	-29765
-	.short	-19013
-	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-17480
-	.short	-17477
+	.short	30583
+	.short	-8073
+	.short	30583
+	.short	-8073
+	.short	30591
+	.short	-8073
 	.short	17552
 	.short	20548
 	.short	24152
@@ -3618,12 +3160,12 @@ losebgTiles:
 	.short	-1
 	.short	-1
 	.short	-113
-	.short	-28677
-	.short	-28792
-	.short	-18181
-	.short	-16504
-	.short	-17413
-	.short	-18293
+	.short	-13108
+	.short	30479
+	.short	-13108
+	.short	30472
+	.short	-13108
+	.short	30472
 	.short	19708
 	.short	17416
 	.short	-1
@@ -3634,12 +3176,12 @@ losebgTiles:
 	.short	-1
 	.short	-30584
 	.short	-1
-	.short	-14200
-	.short	-30577
-	.short	-14149
-	.short	-29809
-	.short	-28741
-	.short	-29813
+	.short	-26761
+	.short	30576
+	.short	-26761
+	.short	30576
+	.short	-26761
+	.short	30576
 	.short	-7100
 	.short	17472
 	.short	-31403
@@ -3650,12 +3192,12 @@ losebgTiles:
 	.short	-1
 	.short	-1
 	.short	-1
-	.short	-1912
-	.short	-1
-	.short	-30584
-	.short	-1
-	.short	-30577
-	.short	-1
+	.short	1911
+	.short	30480
+	.short	1911
+	.short	30480
+	.short	1911
+	.short	30480
 	.short	1092
 	.short	17488
 	.short	-31403
@@ -3666,12 +3208,12 @@ losebgTiles:
 	.short	-52
 	.short	-13057
 	.short	-49
-	.short	-1
-	.short	-49
-	.short	-1
-	.short	-1
-	.short	-12289
-	.short	-1
+	.short	30583
+	.short	-26761
+	.short	30583
+	.short	-26761
+	.short	30583
+	.short	-26761
 	.short	17476
 	.short	-7100
 	.short	21845
@@ -3682,12 +3224,12 @@ losebgTiles:
 	.short	-49
 	.short	-12289
 	.short	-4
-	.short	-12289
-	.short	-1
-	.short	-12289
-	.short	-1
-	.short	-1
-	.short	-1
+	.short	30585
+	.short	119
+	.short	30579
+	.short	119
+	.short	30583
+	.short	119
 	.short	17484
 	.short	-24428
 	.short	21845
@@ -3698,12 +3240,12 @@ losebgTiles:
 	.short	23439
 	.short	-1
 	.short	-30472
-	.short	-28673
-	.short	-1
-	.short	-1793
-	.short	-1
-	.short	-1
-	.short	-1
+	.short	30586
+	.short	2679
+	.short	30576
+	.short	375
+	.short	30576
+	.short	2423
 	.short	17472
 	.short	1092
 	.short	-24539
@@ -3714,12 +3256,12 @@ losebgTiles:
 	.short	11189
 	.short	-1905
 	.short	23432
-	.short	-28673
-	.short	-17528
-	.short	-28673
-	.short	-17528
-	.short	-1
-	.short	22671
+	.short	30578
+	.short	30583
+	.short	30576
+	.short	30583
+	.short	30528
+	.short	30583
 	.short	17632
 	.short	17476
 	.short	0
@@ -3730,12 +3272,12 @@ losebgTiles:
 	.short	0
 	.short	37
 	.short	0
-	.short	2
-	.short	0
-	.short	-21982
-	.short	0
-	.short	-23211
-	.short	0
+	.short	631
+	.short	30474
+	.short	119
+	.short	30474
+	.short	119
+	.short	30474
 	.short	68
 	.short	17418
 	.short	0
@@ -3746,12 +3288,12 @@ losebgTiles:
 	.short	-22016
 	.short	0
 	.short	0
-	.short	2560
-	.short	0
-	.short	2560
-	.short	0
-	.short	0
-	.short	0
+	.short	30583
+	.short	30583
+	.short	30583
+	.short	30583
+	.short	30583
+	.short	30583
 	.short	17476
 	.short	17476
 	.short	0
@@ -3762,12 +3304,12 @@ losebgTiles:
 	.short	8354
 	.short	0
 	.short	8202
-	.short	-24576
-	.short	8202
-	.short	-24576
-	.short	8202
-	.short	0
-	.short	8192
+	.short	30976
+	.short	1911
+	.short	30976
+	.short	1911
+	.short	30976
+	.short	1911
 	.short	19968
 	.short	2372
 	.short	10794
@@ -3778,12 +3320,12 @@ losebgTiles:
 	.short	21845
 	.short	21842
 	.short	21845
-	.short	21842
-	.short	21845
-	.short	21842
-	.short	21845
-	.short	21842
-	.short	21845
+	.short	30576
+	.short	1911
+	.short	30608
+	.short	1911
+	.short	30464
+	.short	1911
 	.short	17418
 	.short	1092
 	.short	10837
@@ -3794,12 +3336,12 @@ losebgTiles:
 	.short	21074
 	.short	21845
 	.short	21077
+	.short	8786
 	.short	21845
 	.short	21845
 	.short	21845
 	.short	21845
 	.short	21845
-	.short	21077
 	.short	21845
 	.short	21845
 	.short	9557
@@ -3811,11 +3353,25 @@ losebgTiles:
 	.short	21845
 	.short	21845
 	.short	21845
+	.short	-15019
+	.short	21077
+	.short	-15019
 	.short	21845
+	.short	-15019
 	.short	21845
+	.short	-15019
 	.short	21845
+	.short	-15019
 	.short	21845
+	.short	-15019
 	.short	21845
+	.short	-15019
+	.short	21845
+	.short	-15019
+	.short	-17483
+	.short	-17477
+	.short	-17483
+	.short	-17477
 	.short	-17483
 	.short	21947
 	.short	-19115
@@ -3824,14 +3380,14 @@ losebgTiles:
 	.short	-17477
 	.short	23477
 	.short	-17579
-	.short	-17483
-	.short	-17477
 	.short	-17579
 	.short	-17477
 	.short	-17579
 	.short	-17477
-	.short	21845
 	.short	-17477
+	.short	-19013
+	.short	-17477
+	.short	-19013
 	.short	23477
 	.short	-17477
 	.short	23477
@@ -3845,9 +3401,7 @@ losebgTiles:
 	.short	-17477
 	.short	-17477
 	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-17477
+	.short	-17483
 	.short	-17477
 	.short	-17477
 	.short	-17477
@@ -3878,8 +3432,26 @@ losebgTiles:
 	.short	-17477
 	.short	-29765
 	.short	-17477
-	.short	-29765
 	.short	-17477
+	.short	-17477
+	.short	-17477
+	.short	-17477
+	.short	-17477
+	.short	-17477
+	.short	-17477
+	.short	-17477
+	.short	-17477
+	.short	-17477
+	.short	-17477
+	.short	-17477
+	.short	-17477
+	.short	-17477
+	.short	-17477
+	.short	-17477
+	.short	23483
+	.short	-23902
+	.short	23483
+	.short	8706
 	.short	-17477
 	.short	5
 	.short	-17477
@@ -3889,13 +3461,13 @@ losebgTiles:
 	.short	-17477
 	.short	8795
 	.short	-17477
-	.short	21851
-	.short	-17477
 	.short	23483
 	.short	-17477
 	.short	-30533
-	.short	-17477
-	.short	-5957
+	.short	10922
+	.short	20194
+	.short	8738
+	.short	17634
 	.short	-21846
 	.short	20002
 	.short	-21974
@@ -3904,14 +3476,14 @@ losebgTiles:
 	.short	20192
 	.short	-7680
 	.short	17454
-	.short	-5470
-	.short	17550
 	.short	-7595
 	.short	-27506
 	.short	-4514
 	.short	17486
-	.short	-28946
-	.short	17480
+	.short	14660
+	.short	13107
+	.short	14745
+	.short	13107
 	.short	-27751
 	.short	-27847
 	.short	-27751
@@ -3920,14 +3492,14 @@ losebgTiles:
 	.short	-26215
 	.short	-26215
 	.short	18841
-	.short	-26220
-	.short	18841
 	.short	-13927
 	.short	17476
 	.short	18756
 	.short	-12
-	.short	17476
-	.short	-30476
+	.short	13107
+	.short	-26215
+	.short	-26221
+	.short	-26221
 	.short	-26215
 	.short	-26215
 	.short	17561
@@ -3936,14 +3508,14 @@ losebgTiles:
 	.short	17556
 	.short	17556
 	.short	17476
-	.short	17476
-	.short	17652
 	.short	-30652
 	.short	-28684
 	.short	-1793
 	.short	-30577
-	.short	-8
-	.short	-30577
+	.short	-26221
+	.short	-26215
+	.short	-26215
+	.short	17481
 	.short	18761
 	.short	-30652
 	.short	17481
@@ -3952,14 +3524,14 @@ losebgTiles:
 	.short	-30652
 	.short	17480
 	.short	-31608
-	.short	18564
-	.short	20456
 	.short	-6008
 	.short	-29116
 	.short	-4376
 	.short	-28786
-	.short	-4376
-	.short	-28946
+	.short	17481
+	.short	17476
+	.short	17556
+	.short	-31500
 	.short	18756
 	.short	-6008
 	.short	-15228
@@ -3969,13 +3541,13 @@ losebgTiles:
 	.short	-6008
 	.short	24148
 	.short	-6008
-	.short	21896
-	.short	-6008
 	.short	9701
 	.short	22664
 	.short	9509
-	.short	21992
-	.short	8741
+	.short	-30476
+	.short	-30584
+	.short	-29044
+	.short	-30578
 	.short	-6673
 	.short	-6002
 	.short	-6680
@@ -3984,14 +3556,14 @@ losebgTiles:
 	.short	-5906
 	.short	21122
 	.short	-30578
-	.short	21842
-	.short	-6002
 	.short	21794
 	.short	-6011
 	.short	8738
 	.short	-6011
-	.short	8738
-	.short	-5915
+	.short	-30641
+	.short	-28680
+	.short	-1905
+	.short	-28856
 	.short	-30584
 	.short	-6008
 	.short	20366
@@ -4000,14 +3572,14 @@ losebgTiles:
 	.short	24302
 	.short	-5896
 	.short	24293
-	.short	-4465
-	.short	-6674
 	.short	-4370
 	.short	24302
 	.short	24293
 	.short	-23058
-	.short	24302
-	.short	10789
+	.short	20462
+	.short	-15292
+	.short	-30482
+	.short	18840
 	.short	-6107
 	.short	-29628
 	.short	-4571
@@ -4016,14 +3588,14 @@ losebgTiles:
 	.short	17556
 	.short	-6747
 	.short	17476
-	.short	-6875
-	.short	18840
 	.short	-7518
 	.short	18836
 	.short	-29022
 	.short	18836
-	.short	-30638
-	.short	-30316
+	.short	-188
+	.short	-31233
+	.short	-2817
+	.short	-17528
 	.short	-769
 	.short	-16497
 	.short	-2993
@@ -4032,14 +3604,14 @@ losebgTiles:
 	.short	-29809
 	.short	18569
 	.short	-17528
-	.short	-188
-	.short	21896
 	.short	-30652
 	.short	23432
 	.short	-30568
 	.short	21944
-	.short	-1896
-	.short	21173
+	.short	-17521
+	.short	-29765
+	.short	-17480
+	.short	-29707
 	.short	-19109
 	.short	-17579
 	.short	21851
@@ -4049,13 +3621,13 @@ losebgTiles:
 	.short	8795
 	.short	23339
 	.short	8789
-	.short	21845
-	.short	8789
 	.short	-19022
 	.short	8738
 	.short	21842
-	.short	21794
-	.short	-19166
+	.short	-17477
+	.short	-17477
+	.short	-17480
+	.short	-17477
 	.short	-17477
 	.short	23483
 	.short	-17477
@@ -4064,14 +3636,14 @@ losebgTiles:
 	.short	21947
 	.short	23477
 	.short	21845
-	.short	23381
-	.short	9557
 	.short	-17579
 	.short	9557
 	.short	-17477
 	.short	8789
-	.short	-19013
-	.short	8789
+	.short	-18181
+	.short	-16504
+	.short	-17413
+	.short	-18293
 	.short	21941
 	.short	-17413
 	.short	21941
@@ -4080,30 +3652,30 @@ losebgTiles:
 	.short	-17477
 	.short	21077
 	.short	-17477
-	.short	8741
-	.short	-17573
 	.short	8738
 	.short	-17579
 	.short	21026
 	.short	-17582
-	.short	20994
-	.short	21842
-	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-29765
-	.short	-17477
-	.short	-29765
-	.short	-17477
-	.short	-29765
-	.short	-17477
+	.short	-14149
+	.short	-29809
+	.short	-28741
 	.short	-29813
+	.short	-17477
+	.short	-17477
+	.short	-17477
+	.short	-29765
+	.short	-17477
+	.short	-29765
+	.short	-17477
+	.short	-29765
 	.short	-17573
 	.short	-1957
 	.short	-17483
 	.short	-17528
-	.short	-29861
-	.short	21951
+	.short	-30584
+	.short	-1
+	.short	-30577
+	.short	-1
 	.short	-30581
 	.short	-1800
 	.short	-30533
@@ -4112,14 +3684,14 @@ losebgTiles:
 	.short	-1
 	.short	-1
 	.short	-1
-	.short	-30465
-	.short	-30581
 	.short	-17477
 	.short	-30584
 	.short	-17477
 	.short	-30581
-	.short	-17483
-	.short	-30581
+	.short	-1
+	.short	-1
+	.short	-12289
+	.short	-1
 	.short	-769
 	.short	-13108
 	.short	-769
@@ -4130,12 +3702,12 @@ losebgTiles:
 	.short	-1
 	.short	-1
 	.short	-1
-	.short	-1
-	.short	-1
 	.short	-8
 	.short	-1
-	.short	-120
-	.short	-1800
+	.short	-12289
+	.short	-1
+	.short	-1
+	.short	-1
 	.short	-13108
 	.short	-13108
 	.short	-13108
@@ -4148,7 +3720,7 @@ losebgTiles:
 	.short	-1
 	.short	-1
 	.short	-1
-	.short	-1
+	.short	-1793
 	.short	-1
 	.short	-1
 	.short	-1
@@ -4164,10 +3736,10 @@ losebgTiles:
 	.short	-1
 	.short	-1
 	.short	-1
+	.short	-28673
+	.short	-17528
 	.short	-1
-	.short	-1
-	.short	-1
-	.short	-1
+	.short	22671
 	.short	-28673
 	.short	-18296
 	.short	-28673
@@ -4176,14 +3748,14 @@ losebgTiles:
 	.short	23480
 	.short	-1
 	.short	9663
-	.short	-1
-	.short	21896
 	.short	-28673
 	.short	-17480
 	.short	-28785
 	.short	-17480
-	.short	-28673
-	.short	-30584
+	.short	-21982
+	.short	0
+	.short	-23211
+	.short	0
 	.short	162
 	.short	0
 	.short	2
@@ -4192,14 +3764,30 @@ losebgTiles:
 	.short	0
 	.short	2594
 	.short	0
-	.short	597
-	.short	0
 	.short	-24027
 	.short	0
 	.short	-23877
 	.short	0
-	.short	9563
+	.short	2560
 	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	-24576
+	.short	8202
+	.short	0
+	.short	8192
 	.short	0
 	.short	10752
 	.short	0
@@ -4208,14 +3796,19 @@ losebgTiles:
 	.short	21152
 	.short	0
 	.short	21152
-	.short	0
-	.short	20992
 	.short	0
 	.short	21920
 	.short	0
 	.short	21802
-	.short	8192
-	.short	9554
+	.short	21842
+	.short	21845
+	.short	21842
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
 	.short	21845
 	.short	21845
 	.short	21845
@@ -4230,8 +3823,33 @@ losebgTiles:
 	.short	21845
 	.short	21845
 	.short	21845
-	.short	9557
-	.short	8738
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21077
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	21845
+	.short	-15019
 	.short	21845
 	.short	-15019
 	.short	21845
@@ -4246,13 +3864,11 @@ losebgTiles:
 	.short	-27358
 	.short	8738
 	.short	-27310
-	.short	-6827
-	.short	-26386
-	.short	-17579
+	.short	21845
 	.short	-17477
 	.short	-17579
 	.short	-17477
-	.short	-17483
+	.short	-17579
 	.short	-17477
 	.short	-17483
 	.short	-17477
@@ -4266,12 +3882,12 @@ losebgTiles:
 	.short	-17477
 	.short	-29765
 	.short	-17477
-	.short	-1093
+	.short	-29765
 	.short	-17477
 	.short	-1093
 	.short	-17477
 	.short	-1093
-	.short	-17480
+	.short	-17477
 	.short	-17477
 	.short	-17473
 	.short	-17477
@@ -4297,11 +3913,11 @@ losebgTiles:
 	.short	-17477
 	.short	-17477
 	.short	-17477
+	.short	-5957
+	.short	-17477
 	.short	-6005
 	.short	-17477
 	.short	-6053
-	.short	-17477
-	.short	-4376
 	.short	-17477
 	.short	-4376
 	.short	-19013
@@ -4312,14 +3928,14 @@ losebgTiles:
 	.short	20360
 	.short	-30581
 	.short	20360
+	.short	-28946
+	.short	17480
 	.short	-30482
 	.short	17487
 	.short	-30584
 	.short	17487
 	.short	-8
 	.short	-28673
-	.short	-31496
-	.short	-30577
 	.short	-31489
 	.short	-4472
 	.short	-3004
@@ -4328,14 +3944,14 @@ losebgTiles:
 	.short	21992
 	.short	-30588
 	.short	24296
+	.short	17476
+	.short	-30476
 	.short	-30588
 	.short	-30584
 	.short	-4476
 	.short	-28946
 	.short	-6008
 	.short	-28946
-	.short	-6008
-	.short	-4370
 	.short	-4370
 	.short	-4370
 	.short	-6827
@@ -4344,14 +3960,14 @@ losebgTiles:
 	.short	-4379
 	.short	21845
 	.short	-4379
+	.short	-8
+	.short	-30577
 	.short	-30584
 	.short	-30488
 	.short	-30584
 	.short	-30584
 	.short	-30482
 	.short	-30584
-	.short	-30578
-	.short	-30584
 	.short	-30584
 	.short	-4370
 	.short	-4370
@@ -4360,14 +3976,14 @@ losebgTiles:
 	.short	-4370
 	.short	-4370
 	.short	-4370
+	.short	-4376
+	.short	-28946
 	.short	-4472
 	.short	-4370
 	.short	-4370
 	.short	24302
 	.short	-4376
 	.short	24302
-	.short	-4376
-	.short	-4370
 	.short	-4370
 	.short	24149
 	.short	-28946
@@ -4376,13 +3992,13 @@ losebgTiles:
 	.short	21854
 	.short	-4370
 	.short	9710
+	.short	21992
+	.short	8741
 	.short	9566
 	.short	-21982
 	.short	8741
 	.short	-21982
 	.short	-21854
-	.short	-21846
-	.short	2722
 	.short	-21846
 	.short	162
 	.short	2720
@@ -4392,13 +4008,13 @@ losebgTiles:
 	.short	2560
 	.short	-21982
 	.short	0
+	.short	8738
+	.short	-5915
 	.short	21026
 	.short	-4370
 	.short	21026
 	.short	-4370
 	.short	23082
-	.short	24149
-	.short	10922
 	.short	24149
 	.short	10922
 	.short	21989
@@ -4408,14 +4024,14 @@ losebgTiles:
 	.short	8798
 	.short	10922
 	.short	8741
+	.short	24302
+	.short	10789
 	.short	24149
 	.short	8741
 	.short	21797
 	.short	9566
 	.short	-6827
 	.short	8738
-	.short	-4523
-	.short	-24030
 	.short	-6878
 	.short	8738
 	.short	11813
@@ -4424,14 +4040,14 @@ losebgTiles:
 	.short	-7510
 	.short	8942
 	.short	-6870
+	.short	-30638
+	.short	-30316
 	.short	-30494
 	.short	-5740
 	.short	18517
 	.short	-7015
 	.short	17634
 	.short	-4460
-	.short	17634
-	.short	-4540
 	.short	18766
 	.short	-4476
 	.short	18756
@@ -4440,14 +4056,14 @@ losebgTiles:
 	.short	-4376
 	.short	18836
 	.short	-4370
+	.short	-1896
+	.short	21173
 	.short	-30386
 	.short	9560
 	.short	18760
 	.short	8792
 	.short	-26162
 	.short	655
-	.short	-26296
-	.short	8847
 	.short	15502
 	.short	9615
 	.short	13454
@@ -4456,12 +4072,12 @@ losebgTiles:
 	.short	22681
 	.short	-27410
 	.short	24473
+	.short	21794
+	.short	-19166
 	.short	8741
 	.short	21074
 	.short	8786
 	.short	21797
-	.short	9506
-	.short	21842
 	.short	9506
 	.short	21842
 	.short	8738
@@ -4472,14 +4088,14 @@ losebgTiles:
 	.short	21074
 	.short	21806
 	.short	21074
+	.short	-19013
+	.short	8789
 	.short	21797
 	.short	8789
 	.short	21029
 	.short	8789
 	.short	21029
 	.short	8789
-	.short	8741
-	.short	8738
 	.short	8786
 	.short	-24030
 	.short	8738
@@ -4488,14 +4104,14 @@ losebgTiles:
 	.short	2720
 	.short	8789
 	.short	160
+	.short	20994
+	.short	21842
 	.short	8704
 	.short	21074
 	.short	8738
 	.short	21794
 	.short	-24032
 	.short	21794
-	.short	-21984
-	.short	21026
 	.short	0
 	.short	8864
 	.short	0
@@ -4504,14 +4120,14 @@ losebgTiles:
 	.short	-22016
 	.short	0
 	.short	-22016
+	.short	-29861
+	.short	21951
 	.short	-18347
 	.short	21845
 	.short	21845
 	.short	21845
 	.short	21842
 	.short	21077
-	.short	21842
-	.short	21029
 	.short	8738
 	.short	8738
 	.short	9554
@@ -4520,6 +4136,8 @@ losebgTiles:
 	.short	21026
 	.short	8786
 	.short	21026
+	.short	-17483
+	.short	-30581
 	.short	-17483
 	.short	-30533
 	.short	-17483
@@ -4529,21 +4147,19 @@ losebgTiles:
 	.short	-17579
 	.short	-17477
 	.short	-17579
-	.short	-17477
-	.short	-17579
 	.short	-17483
 	.short	21845
 	.short	-19115
 	.short	21845
 	.short	21845
+	.short	-120
+	.short	-1800
 	.short	-28680
 	.short	-120
 	.short	-30472
 	.short	-8
 	.short	-30581
 	.short	-30584
-	.short	-17525
-	.short	-30581
 	.short	-17477
 	.short	-30584
 	.short	-17477
@@ -4556,7 +4172,7 @@ losebgTiles:
 	.short	-1
 	.short	-1
 	.short	-1
-	.short	-8
+	.short	-1
 	.short	-1
 	.short	-8
 	.short	-1
@@ -4585,8 +4201,8 @@ losebgTiles:
 	.short	-120
 	.short	-30584
 	.short	-28673
-	.short	-17528
-	.short	-30465
+	.short	-30584
+	.short	-28673
 	.short	-17528
 	.short	-30465
 	.short	-17528
@@ -4600,14 +4216,14 @@ losebgTiles:
 	.short	-17528
 	.short	-30584
 	.short	-18296
+	.short	9563
+	.short	0
 	.short	8741
 	.short	2
 	.short	549
 	.short	34
 	.short	597
 	.short	2560
-	.short	597
-	.short	0
 	.short	-24539
 	.short	0
 	.short	8891
@@ -4616,8 +4232,8 @@ losebgTiles:
 	.short	162
 	.short	9659
 	.short	2594
-	.short	20992
-	.short	21845
+	.short	8192
+	.short	9554
 	.short	20992
 	.short	21845
 	.short	20992
@@ -4651,11 +4267,11 @@ losebgTiles:
 	.short	21845
 	.short	21845
 	.short	21845
+	.short	21845
+	.short	21845
 	.short	20053
 	.short	21077
 	.short	16866
-	.short	21077
-	.short	4581
 	.short	-4370
 	.short	16670
 	.short	4376
@@ -4664,6 +4280,8 @@ losebgTiles:
 	.short	4369
 	.short	7706
 	.short	5137
+	.short	9557
+	.short	8738
 	.short	-28946
 	.short	-6818
 	.short	17561
@@ -4674,19 +4292,17 @@ losebgTiles:
 	.short	4369
 	.short	4369
 	.short	4369
-	.short	4369
-	.short	4369
 	.short	4372
 	.short	4369
 	.short	4372
 	.short	4369
+	.short	-6827
+	.short	-26386
 	.short	4424
 	.short	-28191
 	.short	4372
 	.short	-25874
 	.short	-4591
-	.short	-28399
-	.short	4369
 	.short	-28399
 	.short	4369
 	.short	-28399
@@ -4703,7 +4319,6 @@ losebgTiles:
 	.short	-17483
 	.short	-17477
 	.short	-17483
-	.short	-17477
 	.short	-17483
 	.short	-17483
 	.short	-17483
@@ -4712,8 +4327,7 @@ losebgTiles:
 	.short	-17483
 	.short	-17483
 	.short	-17483
-	.short	-17477
-	.short	-17477
+	.short	-17579
 	.short	-17477
 	.short	-17477
 	.short	-17477
@@ -4728,8 +4342,8 @@ losebgTiles:
 	.short	-17477
 	.short	-17477
 	.short	-30533
-	.short	-17477
-	.short	-17477
+	.short	-17483
+	.short	-30584
 	.short	-17477
 	.short	-17477
 	.short	-17477
@@ -4744,9 +4358,9 @@ losebgTiles:
 	.short	-30584
 	.short	-30584
 	.short	-30584
+	.short	-30584
+	.short	-30584
 	.short	-17477
-	.short	-18293
-	.short	-30581
 	.short	-18293
 	.short	-30581
 	.short	-18293
@@ -4760,7 +4374,7 @@ losebgTiles:
 	.short	-17477
 	.short	-30584
 	.short	-17477
-	.short	-17477
+	.short	-18296
 	.short	-17477
 	.short	-17477
 	.short	-17477
@@ -4777,9 +4391,9 @@ losebgTiles:
 	.short	-17525
 	.short	-29765
 	.short	-18245
+	.short	-30539
+	.short	-18245
 	.short	-30581
-	.short	-29765
-	.short	-30584
 	.short	-30533
 	.short	-30584
 	.short	-29765
@@ -4792,10 +4406,10 @@ losebgTiles:
 	.short	17476
 	.short	17544
 	.short	17476
+	.short	17476
+	.short	-27580
 	.short	-1912
 	.short	17487
-	.short	20472
-	.short	-3004
 	.short	17480
 	.short	-3004
 	.short	17476
@@ -4808,10 +4422,10 @@ losebgTiles:
 	.short	-30647
 	.short	-26215
 	.short	-6071
+	.short	-26215
+	.short	-4476
 	.short	-30588
 	.short	24296
-	.short	-4472
-	.short	21998
 	.short	-4472
 	.short	9566
 	.short	24302
@@ -4824,10 +4438,10 @@ losebgTiles:
 	.short	-21982
 	.short	8741
 	.short	8738
+	.short	8738
+	.short	21794
 	.short	21845
 	.short	-4379
-	.short	21029
-	.short	24293
 	.short	-7646
 	.short	24302
 	.short	-6878
@@ -4840,10 +4454,10 @@ losebgTiles:
 	.short	10798
 	.short	-6870
 	.short	-21970
+	.short	-4574
+	.short	2606
 	.short	-4379
 	.short	-4370
-	.short	-4574
-	.short	12014
 	.short	-4574
 	.short	-7919
 	.short	16722
@@ -4856,10 +4470,10 @@ losebgTiles:
 	.short	-20972
 	.short	31061
 	.short	-20924
+	.short	-6827
+	.short	546
 	.short	-7643
 	.short	9557
-	.short	-21854
-	.short	8789
 	.short	-24414
 	.short	8738
 	.short	14
@@ -4872,10 +4486,10 @@ losebgTiles:
 	.short	-24576
 	.short	10
 	.short	0
+	.short	0
+	.short	-24576
 	.short	-24030
 	.short	2730
-	.short	-24030
-	.short	8874
 	.short	-24030
 	.short	8874
 	.short	8738
@@ -4888,10 +4502,10 @@ losebgTiles:
 	.short	-4535
 	.short	-28182
 	.short	-7053
+	.short	-27622
+	.short	-7817
 	.short	23072
 	.short	10789
-	.short	-21936
-	.short	10786
 	.short	602
 	.short	8738
 	.short	-23126
@@ -4904,10 +4518,10 @@ losebgTiles:
 	.short	-23894
 	.short	-21842
 	.short	-21846
+	.short	-21922
+	.short	-21846
 	.short	-21979
 	.short	7722
-	.short	10786
-	.short	16866
 	.short	10914
 	.short	18658
 	.short	8874
@@ -4920,9 +4534,9 @@ losebgTiles:
 	.short	13201
 	.short	-5406
 	.short	13214
+	.short	-5462
+	.short	14737
 	.short	-31671
-	.short	-4370
-	.short	-4279
 	.short	-4370
 	.short	-30647
 	.short	-4370
@@ -4936,10 +4550,10 @@ losebgTiles:
 	.short	-26172
 	.short	-15207
 	.short	-27756
+	.short	-26317
+	.short	13113
 	.short	17646
 	.short	-30407
-	.short	-27618
-	.short	18739
 	.short	-26338
 	.short	18745
 	.short	-26296
@@ -4952,10 +4566,10 @@ losebgTiles:
 	.short	18835
 	.short	13107
 	.short	-30311
+	.short	-27853
+	.short	-7015
 	.short	21154
 	.short	8741
-	.short	-24542
-	.short	8738
 	.short	34
 	.short	8738
 	.short	2597
@@ -4968,10 +4582,10 @@ losebgTiles:
 	.short	2560
 	.short	10
 	.short	2730
+	.short	10
+	.short	0
 	.short	8738
 	.short	10
-	.short	-21982
-	.short	0
 	.short	2594
 	.short	0
 	.short	170
@@ -4985,7 +4599,7 @@ losebgTiles:
 	.short	0
 	.short	0
 	.short	0
-	.short	-24576
+	.short	0
 	.short	0
 	.short	-24576
 	.short	0
@@ -5000,10 +4614,10 @@ losebgTiles:
 	.short	160
 	.short	0
 	.short	0
+	.short	0
+	.short	-22016
 	.short	8786
 	.short	9554
-	.short	21034
-	.short	8789
 	.short	21162
 	.short	8789
 	.short	8864
@@ -5016,10 +4630,10 @@ losebgTiles:
 	.short	-24576
 	.short	0
 	.short	0
+	.short	10
+	.short	0
 	.short	21845
 	.short	-19115
-	.short	21794
-	.short	-17483
 	.short	21794
 	.short	-17483
 	.short	21026
@@ -5032,10 +4646,10 @@ losebgTiles:
 	.short	8738
 	.short	-24576
 	.short	10914
+	.short	0
+	.short	10912
 	.short	-19019
 	.short	23483
-	.short	23387
-	.short	21845
 	.short	21845
 	.short	21845
 	.short	21941
@@ -5048,10 +4662,10 @@ losebgTiles:
 	.short	21845
 	.short	21842
 	.short	8746
+	.short	-2939
+	.short	34
 	.short	-17477
 	.short	-17477
-	.short	-17579
-	.short	-17579
 	.short	21845
 	.short	-17579
 	.short	21845
@@ -5064,10 +4678,10 @@ losebgTiles:
 	.short	8738
 	.short	34
 	.short	-21984
+	.short	8736
+	.short	34
 	.short	-17477
 	.short	-17477
-	.short	-17477
-	.short	-29765
 	.short	-19115
 	.short	-17477
 	.short	-17573
@@ -5080,9 +4694,9 @@ losebgTiles:
 	.short	-17477
 	.short	8746
 	.short	-19115
+	.short	0
+	.short	8746
 	.short	-30472
-	.short	-30584
-	.short	-30584
 	.short	-30584
 	.short	-30536
 	.short	-30584
@@ -5096,10 +4710,10 @@ losebgTiles:
 	.short	-30533
 	.short	-17477
 	.short	-30581
+	.short	-17579
+	.short	-17477
 	.short	-17477
 	.short	8789
-	.short	-17477
-	.short	8795
 	.short	-17477
 	.short	8795
 	.short	-17477
@@ -5112,9 +4726,9 @@ losebgTiles:
 	.short	-29761
 	.short	-30584
 	.short	-28673
+	.short	-28792
+	.short	-30584
 	.short	2
-	.short	0
-	.short	160
 	.short	0
 	.short	2720
 	.short	0
@@ -5128,9 +4742,9 @@ losebgTiles:
 	.short	2594
 	.short	-17477
 	.short	-24027
+	.short	-17480
+	.short	23483
 	.short	-4608
-	.short	-21778
-	.short	6656
 	.short	-21778
 	.short	-5632
 	.short	-21778
@@ -5144,10 +4758,10 @@ losebgTiles:
 	.short	-20766
 	.short	-24406
 	.short	-5590
+	.short	-24027
+	.short	-23982
 	.short	7914
 	.short	-4447
-	.short	6826
-	.short	-7919
 	.short	6826
 	.short	-20975
 	.short	7850
@@ -5160,9 +4774,9 @@ losebgTiles:
 	.short	-21999
 	.short	-5462
 	.short	-20975
+	.short	-21846
+	.short	-21986
 	.short	7850
-	.short	4369
-	.short	7854
 	.short	4369
 	.short	7854
 	.short	4369
@@ -5176,10 +4790,10 @@ losebgTiles:
 	.short	-24095
 	.short	-4438
 	.short	-21778
+	.short	-21846
+	.short	-4374
 	.short	-24303
 	.short	4382
-	.short	4369
-	.short	-4591
 	.short	4369
 	.short	4369
 	.short	4369
@@ -5192,10 +4806,10 @@ losebgTiles:
 	.short	-21778
 	.short	4382
 	.short	-7919
+	.short	4369
+	.short	4369
 	.short	-21855
 	.short	-28246
-	.short	-21778
-	.short	19114
 	.short	-21842
 	.short	19114
 	.short	-21846
@@ -5208,10 +4822,8 @@ losebgTiles:
 	.short	-25942
 	.short	4369
 	.short	-24850
-	.short	-17483
-	.short	-17579
-	.short	-17483
-	.short	-17579
+	.short	-4370
+	.short	17134
 	.short	-17483
 	.short	23381
 	.short	-17483
@@ -5222,11 +4834,11 @@ losebgTiles:
 	.short	-17573
 	.short	-17483
 	.short	-29765
-	.short	-17579
+	.short	-19115
 	.short	-30584
-	.short	-17477
-	.short	-30584
-	.short	-17483
+	.short	-30626
+	.short	-28792
+	.short	-30635
 	.short	-30584
 	.short	-29771
 	.short	-30584
@@ -5238,11 +4850,11 @@ losebgTiles:
 	.short	-30584
 	.short	-30584
 	.short	-30584
+	.short	-1912
 	.short	-30584
 	.short	-30584
 	.short	-30584
-	.short	-30584
-	.short	-30584
+	.short	17476
 	.short	-30584
 	.short	-30584
 	.short	-18296
@@ -5255,11 +4867,11 @@ losebgTiles:
 	.short	-30584
 	.short	-29768
 	.short	-30584
-	.short	-30536
-	.short	-18296
-	.short	-17477
-	.short	-18296
-	.short	-17477
+	.short	-29768
+	.short	-30584
+	.short	-30584
+	.short	-30584
+	.short	-30584
 	.short	-18296
 	.short	-17477
 	.short	-18296
@@ -5270,12 +4882,12 @@ losebgTiles:
 	.short	-17480
 	.short	-30584
 	.short	-17477
+	.short	-29816
+	.short	-29813
 	.short	-30584
-	.short	-17477
-	.short	-17477
-	.short	-30533
-	.short	-18245
-	.short	-30539
+	.short	-30584
+	.short	-30584
+	.short	-30584
 	.short	-29765
 	.short	18571
 	.short	-30533
@@ -5286,12 +4898,12 @@ losebgTiles:
 	.short	18836
 	.short	17547
 	.short	18836
-	.short	17480
-	.short	-27580
-	.short	17480
+	.short	18824
 	.short	-27580
 	.short	17476
-	.short	-27580
+	.short	-26300
+	.short	17476
+	.short	-27500
 	.short	17476
 	.short	-26215
 	.short	-27580
@@ -5304,10 +4916,10 @@ losebgTiles:
 	.short	-26215
 	.short	-26215
 	.short	-26215
+	.short	17561
+	.short	-27580
 	.short	-26215
-	.short	-4476
-	.short	-26215
-	.short	-4476
+	.short	18761
 	.short	-26215
 	.short	-4476
 	.short	-26215
@@ -5319,11 +4931,11 @@ losebgTiles:
 	.short	-26215
 	.short	-31671
 	.short	-26215
-	.short	-31671
-	.short	8741
-	.short	9506
-	.short	8738
-	.short	21794
+	.short	-2999
+	.short	-26215
+	.short	17561
+	.short	-26215
+	.short	17561
 	.short	8741
 	.short	21074
 	.short	21854
@@ -5334,12 +4946,12 @@ losebgTiles:
 	.short	21845
 	.short	-4370
 	.short	21845
-	.short	21998
+	.short	21992
 	.short	8789
-	.short	-4574
-	.short	-21970
-	.short	-4574
-	.short	2606
+	.short	24296
+	.short	8789
+	.short	24296
+	.short	8741
 	.short	-4574
 	.short	2597
 	.short	-4523
@@ -5350,12 +4962,12 @@ losebgTiles:
 	.short	-24027
 	.short	-4523
 	.short	8789
-	.short	21026
+	.short	8738
 	.short	8789
-	.short	20197
-	.short	3822
-	.short	-6827
-	.short	546
+	.short	8738
+	.short	9557
+	.short	8738
+	.short	8786
 	.short	8738
 	.short	2730
 	.short	8736
@@ -5367,11 +4979,11 @@ losebgTiles:
 	.short	-24566
 	.short	8738
 	.short	2
-	.short	10912
-	.short	0
-	.short	0
-	.short	0
-	.short	-24576
+	.short	10752
+	.short	8738
+	.short	10
+	.short	8738
+	.short	-21982
 	.short	0
 	.short	-24576
 	.short	0
@@ -5383,11 +4995,11 @@ losebgTiles:
 	.short	-21854
 	.short	7850
 	.short	8738
-	.short	-7646
-	.short	-27622
-	.short	-7817
-	.short	-27622
-	.short	-7817
+	.short	8738
+	.short	-23904
+	.short	8738
+	.short	8874
+	.short	21034
 	.short	13342
 	.short	11895
 	.short	14737
@@ -5398,12 +5010,12 @@ losebgTiles:
 	.short	-21783
 	.short	-26220
 	.short	-21983
-	.short	-4370
-	.short	10922
-	.short	-21970
-	.short	-21846
-	.short	-21922
-	.short	-21846
+	.short	8741
+	.short	-4566
+	.short	8738
+	.short	-4382
+	.short	24302
+	.short	-4526
 	.short	-24018
 	.short	-21846
 	.short	-21778
@@ -5415,11 +5027,11 @@ losebgTiles:
 	.short	-21778
 	.short	-21846
 	.short	-21842
-	.short	-21846
-	.short	-5462
-	.short	13201
-	.short	-5462
-	.short	14737
+	.short	-21974
+	.short	-21842
+	.short	-4566
+	.short	-21842
+	.short	7914
 	.short	-5462
 	.short	14737
 	.short	-21846
@@ -5430,12 +5042,12 @@ losebgTiles:
 	.short	14657
 	.short	7850
 	.short	31044
-	.short	16874
-	.short	13113
-	.short	-26317
-	.short	13209
-	.short	-26317
-	.short	13113
+	.short	-27618
+	.short	29497
+	.short	14670
+	.short	30579
+	.short	14657
+	.short	30579
 	.short	13111
 	.short	13107
 	.short	30583
@@ -5447,11 +5059,11 @@ losebgTiles:
 	.short	30583
 	.short	-26313
 	.short	30583
-	.short	-11401
-	.short	13107
-	.short	-7015
-	.short	-27853
-	.short	-7015
+	.short	-10441
+	.short	30583
+	.short	-27785
+	.short	13175
+	.short	-27789
 	.short	-26317
 	.short	-4196
 	.short	-15213
@@ -5463,11 +5075,11 @@ losebgTiles:
 	.short	-871
 	.short	9560
 	.short	-823
-	.short	8792
-	.short	10
-	.short	-24576
-	.short	10
-	.short	0
+	.short	9608
+	.short	19609
+	.short	8840
+	.short	-13159
+	.short	21128
 	.short	170
 	.short	0
 	.short	10
@@ -5478,11 +5090,11 @@ losebgTiles:
 	.short	0
 	.short	0
 	.short	0
-	.short	170
+	.short	-21846
 	.short	0
+	.short	-22014
 	.short	0
-	.short	0
-	.short	0
+	.short	34
 	.short	0
 	.short	0
 	.short	0
@@ -5495,11 +5107,11 @@ losebgTiles:
 	.short	0
 	.short	-24576
 	.short	0
-	.short	-24406
+	.short	-24566
 	.short	0
-	.short	-22016
+	.short	170
 	.short	0
-	.short	-22016
+	.short	546
 	.short	0
 	.short	-21846
 	.short	10
@@ -5510,28 +5122,28 @@ losebgTiles:
 	.short	8738
 	.short	10762
 	.short	8738
-	.short	21002
-	.short	8789
-	.short	10
-	.short	0
-	.short	10
-	.short	0
-	.short	10
-	.short	0
-	.short	10
-	.short	0
-	.short	10
-	.short	0
-	.short	10
-	.short	0
-	.short	10
-	.short	0
-	.short	10
-	.short	0
-	.short	0
+	.short	23050
+	.short	21845
+	.short	-5598
+	.short	21845
 	.short	10794
+	.short	22622
+	.short	10
 	.short	0
-	.short	10912
+	.short	10
+	.short	0
+	.short	10
+	.short	0
+	.short	10
+	.short	0
+	.short	10
+	.short	0
+	.short	2
+	.short	0
+	.short	2
+	.short	0
+	.short	37
+	.short	0
 	.short	0
 	.short	10752
 	.short	0
@@ -5544,10 +5156,10 @@ losebgTiles:
 	.short	-24576
 	.short	0
 	.short	-22016
-	.short	-28699
-	.short	162
-	.short	-2939
-	.short	34
+	.short	0
+	.short	-24576
+	.short	0
+	.short	10912
 	.short	-13179
 	.short	2597
 	.short	-29099
@@ -5559,11 +5171,11 @@ losebgTiles:
 	.short	21794
 	.short	8354
 	.short	8738
-	.short	10914
-	.short	8746
-	.short	34
-	.short	8736
-	.short	34
+	.short	8866
+	.short	8738
+	.short	8714
+	.short	-21982
+	.short	8874
 	.short	8736
 	.short	34
 	.short	8746
@@ -5576,10 +5188,10 @@ losebgTiles:
 	.short	8704
 	.short	8738
 	.short	8738
-	.short	0
-	.short	8746
-	.short	0
-	.short	8746
+	.short	8738
+	.short	8738
+	.short	8738
+	.short	8738
 	.short	0
 	.short	8714
 	.short	2722
@@ -5592,10 +5204,10 @@ losebgTiles:
 	.short	8738
 	.short	8738
 	.short	8738
-	.short	-17483
-	.short	-17477
-	.short	-17579
-	.short	-17477
+	.short	8738
+	.short	8738
+	.short	8738
+	.short	8738
 	.short	-17582
 	.short	-17477
 	.short	21026
@@ -5608,10 +5220,10 @@ losebgTiles:
 	.short	-17579
 	.short	8738
 	.short	-19166
-	.short	-30465
-	.short	-1912
-	.short	-28792
-	.short	-30584
+	.short	8738
+	.short	-17630
+	.short	8738
+	.short	-19115
 	.short	-30533
 	.short	-30584
 	.short	-17477
@@ -5624,10 +5236,10 @@ losebgTiles:
 	.short	-30581
 	.short	-17477
 	.short	-17477
-	.short	-17480
-	.short	9659
-	.short	-17480
-	.short	23483
+	.short	-17477
+	.short	-29765
+	.short	-17477
+	.short	-30581
 	.short	-30584
 	.short	-17477
 	.short	-30584
@@ -5638,12 +5250,12 @@ losebgTiles:
 	.short	-18296
 	.short	-30584
 	.short	-17480
-	.short	-30581
+	.short	-30533
 	.short	-28792
-	.short	2594
-	.short	-21982
-	.short	-24027
-	.short	-23982
+	.short	-30584
+	.short	-29816
+	.short	-30584
+	.short	-17528
 	.short	21851
 	.short	9554
 	.short	-17477
@@ -5655,11 +5267,11 @@ losebgTiles:
 	.short	-30581
 	.short	-30584
 	.short	-30584
-	.short	-31489
-	.short	-5462
-	.short	-20975
-	.short	-21846
-	.short	-21986
+	.short	17544
+	.short	-30584
+	.short	-30584
+	.short	-1912
+	.short	-4465
 	.short	-4438
 	.short	-4370
 	.short	7850
@@ -5672,10 +5284,10 @@ losebgTiles:
 	.short	7697
 	.short	4369
 	.short	-21791
+	.short	4369
+	.short	-21842
+	.short	-7919
 	.short	-21846
-	.short	-21846
-	.short	-21846
-	.short	-4374
 	.short	-5462
 	.short	4369
 	.short	4369
@@ -5688,10 +5300,10 @@ losebgTiles:
 	.short	-21846
 	.short	-21846
 	.short	-21846
-	.short	4382
-	.short	4369
-	.short	4369
-	.short	4369
+	.short	-21846
+	.short	-21846
+	.short	-21846
+	.short	-24406
 	.short	4369
 	.short	-4383
 	.short	-20767
@@ -5702,12 +5314,12 @@ losebgTiles:
 	.short	-4438
 	.short	-21846
 	.short	-21846
-	.short	-21974
 	.short	-21846
-	.short	4369
-	.short	17134
-	.short	-4370
-	.short	17134
+	.short	-21846
+	.short	-21846
+	.short	-21846
+	.short	-21846
+	.short	10922
 	.short	-21982
 	.short	19114
 	.short	-21842
@@ -5720,28 +5332,26 @@ losebgTiles:
 	.short	19106
 	.short	-21846
 	.short	19114
-	.short	-19115
-	.short	-30584
-	.short	-30626
-	.short	-28792
-	.short	-30635
-	.short	-30584
+	.short	-21846
+	.short	19114
+	.short	-21846
+	.short	19114
 	.short	-30626
 	.short	-30584
 	.short	-30491
 	.short	-30584
 	.short	18670
 	.short	-31676
-	.short	17550
-	.short	6212
 	.short	5188
 	.short	4369
-	.short	-1912
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	17476
-	.short	-30584
+	.short	4372
+	.short	4369
+	.short	4369
+	.short	4369
+	.short	4369
+	.short	4369
+	.short	16657
+	.short	4369
 	.short	17476
 	.short	-30588
 	.short	-31676
@@ -5751,45 +5361,45 @@ losebgTiles:
 	.short	4369
 	.short	4369
 	.short	4369
+	.short	4382
 	.short	4369
-	.short	-30584
-	.short	-29768
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
+	.short	4369
+	.short	4369
+	.short	4369
+	.short	4369
+	.short	4369
 	.short	18568
 	.short	4484
 	.short	16657
 	.short	-4383
 	.short	4369
 	.short	-20754
-	.short	4369
-	.short	-20754
 	.short	-7919
 	.short	-4370
-	.short	-29816
-	.short	-29813
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
+	.short	-7919
+	.short	-4434
+	.short	-7919
+	.short	-5394
+	.short	-4591
+	.short	-7442
+	.short	-4370
+	.short	-29138
 	.short	-4376
 	.short	18574
 	.short	10926
 	.short	17550
 	.short	-5462
 	.short	17480
-	.short	-5462
-	.short	17480
 	.short	-28946
 	.short	-27580
-	.short	18824
+	.short	18670
+	.short	-27580
+	.short	17537
+	.short	-27580
+	.short	17544
 	.short	-27580
 	.short	17476
-	.short	-26300
-	.short	17476
-	.short	-27500
+	.short	-26295
 	.short	18756
 	.short	18841
 	.short	-26300
@@ -5800,28 +5410,28 @@ losebgTiles:
 	.short	17481
 	.short	-26215
 	.short	17481
-	.short	-26215
-	.short	-26215
 	.short	17561
+	.short	17481
+	.short	17561
+	.short	17481
+	.short	17476
+	.short	17476
+	.short	17476
+	.short	17476
+	.short	17476
+	.short	17476
+	.short	17476
+	.short	17476
+	.short	17476
+	.short	17476
+	.short	17476
 	.short	-27580
-	.short	-26215
-	.short	18761
 	.short	17476
+	.short	-27580
 	.short	17476
+	.short	-27580
 	.short	17476
-	.short	17476
-	.short	17476
-	.short	17476
-	.short	17476
-	.short	17476
-	.short	17476
-	.short	17476
-	.short	-26215
-	.short	-2999
-	.short	-26215
-	.short	17561
-	.short	-26215
-	.short	17561
+	.short	-27580
 	.short	-26215
 	.short	-31671
 	.short	-26215
@@ -5829,110 +5439,110 @@ losebgTiles:
 	.short	-26300
 	.short	-31591
 	.short	-26215
-	.short	-31591
+	.short	17561
 	.short	-26215
 	.short	17561
-	.short	21992
-	.short	8789
-	.short	24296
-	.short	8789
-	.short	24296
-	.short	8741
+	.short	-26215
+	.short	18841
+	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	-26215
 	.short	24296
 	.short	8738
 	.short	21998
 	.short	8738
 	.short	24302
 	.short	-24030
-	.short	9710
-	.short	-24030
 	.short	24296
 	.short	8741
-	.short	8738
-	.short	8789
-	.short	8738
-	.short	9557
-	.short	8738
-	.short	8786
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
+	.short	-4476
+	.short	8741
+	.short	-4476
+	.short	8798
+	.short	-4476
+	.short	8798
+	.short	-6076
+	.short	9710
 	.short	8738
 	.short	8738
 	.short	8738
 	.short	8738
 	.short	8738
 	.short	8738
-	.short	2
-	.short	10752
 	.short	8738
-	.short	10
 	.short	8738
-	.short	-21982
+	.short	8738
+	.short	8738
+	.short	8738
+	.short	8738
+	.short	8738
+	.short	8738
+	.short	8738
+	.short	8738
 	.short	21842
 	.short	8741
 	.short	21845
 	.short	21845
 	.short	21842
 	.short	21845
-	.short	21842
-	.short	21845
 	.short	8738
 	.short	21845
 	.short	8738
+	.short	21845
 	.short	8738
-	.short	-23904
 	.short	8738
-	.short	8874
-	.short	21034
+	.short	8738
+	.short	8738
+	.short	8738
+	.short	8738
 	.short	21026
 	.short	24149
 	.short	21077
 	.short	21077
 	.short	21845
 	.short	8789
-	.short	21845
-	.short	8741
 	.short	8789
 	.short	21026
-	.short	8741
-	.short	-4566
+	.short	8789
+	.short	21794
 	.short	8738
-	.short	-4382
-	.short	24302
-	.short	-4526
+	.short	9506
+	.short	8738
+	.short	9557
+	.short	8741
+	.short	8738
 	.short	9557
 	.short	-4566
 	.short	-24030
 	.short	10794
 	.short	-24030
 	.short	-21846
-	.short	10786
-	.short	-21846
 	.short	-24027
 	.short	-21846
-	.short	-21842
-	.short	-21974
-	.short	-21842
-	.short	-4566
-	.short	-21842
-	.short	7914
+	.short	8789
+	.short	-21846
+	.short	-24030
+	.short	-21846
+	.short	-24030
+	.short	-21854
+	.short	8738
+	.short	-24022
 	.short	-21976
 	.short	4522
 	.short	2734
 	.short	16874
 	.short	-21854
 	.short	16666
-	.short	-21846
-	.short	16670
 	.short	-5462
 	.short	-26290
-	.short	-27618
-	.short	29497
-	.short	14670
-	.short	30579
-	.short	14657
+	.short	-4438
+	.short	29518
+	.short	-4438
+	.short	30609
+	.short	7850
+	.short	30612
+	.short	-26390
 	.short	30579
 	.short	14657
 	.short	30579
@@ -5940,32 +5550,32 @@ losebgTiles:
 	.short	13107
 	.short	31129
 	.short	13107
-	.short	14745
-	.short	13111
 	.short	-26317
 	.short	30579
-	.short	30583
-	.short	-10441
-	.short	30583
-	.short	-27785
+	.short	-26313
+	.short	13171
+	.short	-27757
 	.short	13175
-	.short	-27789
+	.short	13203
+	.short	13111
+	.short	13107
+	.short	-26215
 	.short	30583
 	.short	-25289
 	.short	13171
 	.short	-13927
 	.short	-26317
 	.short	-13159
-	.short	-26317
+	.short	-26221
+	.short	-13111
+	.short	-26221
+	.short	-13159
+	.short	-26221
 	.short	-13111
 	.short	-26221
 	.short	-13111
-	.short	-823
-	.short	9608
-	.short	19609
-	.short	8840
-	.short	-13159
-	.short	21128
+	.short	-26215
+	.short	-13108
 	.short	-823
 	.short	22671
 	.short	-820
@@ -5973,31 +5583,31 @@ losebgTiles:
 	.short	-13108
 	.short	-30468
 	.short	-13108
-	.short	-30516
-	.short	-13108
 	.short	-52
-	.short	-21846
-	.short	0
-	.short	-22014
-	.short	0
-	.short	34
-	.short	0
+	.short	-13108
+	.short	-820
+	.short	-13108
+	.short	-13108
+	.short	-13108
+	.short	-13108
+	.short	-13108
+	.short	-13108
 	.short	-21982
 	.short	0
 	.short	-24027
 	.short	0
 	.short	-24027
 	.short	0
-	.short	-23976
-	.short	0
 	.short	8847
 	.short	0
-	.short	0
-	.short	-24566
-	.short	0
-	.short	170
-	.short	0
-	.short	546
+	.short	21903
+	.short	162
+	.short	24572
+	.short	162
+	.short	-28676
+	.short	34
+	.short	-18180
+	.short	2597
 	.short	0
 	.short	8738
 	.short	0
@@ -6005,70 +5615,79 @@ losebgTiles:
 	.short	0
 	.short	8864
 	.short	0
-	.short	8704
-	.short	0
 	.short	170
-	.short	23050
-	.short	21845
-	.short	-5598
-	.short	21845
-	.short	10794
-	.short	22622
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
+	.short	0
 	.short	8736
 	.short	-17531
 	.short	8874
 	.short	-31406
 	.short	10914
 	.short	21792
-	.short	8738
-	.short	8874
 	.short	10912
 	.short	8866
-	.short	2
+	.short	2720
+	.short	8874
 	.short	0
-	.short	2
+	.short	8736
 	.short	0
-	.short	37
+	.short	8736
 	.short	0
+	.short	8864
 	.short	-23979
 	.short	10
 	.short	21851
 	.short	34
 	.short	21851
 	.short	8741
-	.short	21845
-	.short	8741
 	.short	10786
 	.short	-24030
-	.short	0
-	.short	-22016
-	.short	0
-	.short	-24576
-	.short	0
-	.short	10912
+	.short	8738
+	.short	8738
+	.short	8738
+	.short	8738
+	.short	8746
+	.short	546
+	.short	8866
+	.short	-24030
 	.short	0
 	.short	8746
 	.short	-21856
 	.short	8738
 	.short	8738
 	.short	-24030
-	.short	8738
-	.short	2722
 	.short	-23894
 	.short	10912
-	.short	8738
-	.short	8866
-	.short	8738
-	.short	8714
-	.short	-21982
+	.short	-24030
 	.short	8874
+	.short	-23894
+	.short	10922
+	.short	-24064
+	.short	10922
+	.short	-21846
+	.short	160
 	.short	162
 	.short	8738
 	.short	10762
 	.short	8738
 	.short	8704
 	.short	8738
-	.short	8864
+	.short	8738
+	.short	8738
+	.short	8738
+	.short	-21974
+	.short	8738
+	.short	2730
+	.short	8874
+	.short	-21974
+	.short	0
+	.short	-24576
 	.short	8738
 	.short	8738
 	.short	8738
@@ -6079,117 +5698,108 @@ losebgTiles:
 	.short	8738
 	.short	8738
 	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	-19166
-	.short	8738
-	.short	-17630
-	.short	8738
-	.short	-19115
+	.short	-22006
+	.short	8746
+	.short	-24566
+	.short	-24030
+	.short	-23894
+	.short	10922
 	.short	21074
 	.short	21845
 	.short	21794
 	.short	-17579
 	.short	21794
 	.short	-17483
-	.short	21794
+	.short	-19118
+	.short	-17477
+	.short	-19115
 	.short	-17477
 	.short	-19118
 	.short	-17477
+	.short	-17579
+	.short	-17477
+	.short	-19115
+	.short	-17477
+	.short	-17477
+	.short	-17477
 	.short	-17477
 	.short	-17477
 	.short	-17477
 	.short	-29765
 	.short	-17477
-	.short	-30581
 	.short	-17477
 	.short	-17477
 	.short	-17477
 	.short	-17477
 	.short	-17477
-	.short	-29765
-	.short	-17477
-	.short	-29765
 	.short	-17477
 	.short	-17477
-	.short	-30533
-	.short	-28792
-	.short	-30584
-	.short	-29816
-	.short	-30584
-	.short	-17528
+	.short	-17477
+	.short	-17477
 	.short	-1912
 	.short	-30584
 	.short	-30536
 	.short	-1912
 	.short	-30584
 	.short	-30584
-	.short	-30584
-	.short	-30584
 	.short	-29765
 	.short	-1912
-	.short	-30584
-	.short	17544
-	.short	-30584
-	.short	-30584
-	.short	-1912
-	.short	-4465
+	.short	-30533
+	.short	-8
+	.short	-1861
+	.short	-1
+	.short	-30533
+	.short	-8
+	.short	-30533
+	.short	-120
 	.short	-28680
 	.short	-4472
 	.short	-28673
 	.short	-4472
 	.short	-1
 	.short	-6008
-	.short	-8
-	.short	-6008
 	.short	-1
 	.short	21896
-	.short	4369
-	.short	-21791
-	.short	4369
-	.short	-21842
-	.short	-7919
-	.short	-21846
+	.short	-1
+	.short	-30465
+	.short	-1
+	.short	-30465
+	.short	-1
+	.short	22783
+	.short	-1
+	.short	22783
 	.short	-4370
 	.short	-21846
 	.short	-4382
 	.short	-21846
 	.short	-24018
 	.short	-21846
-	.short	-21842
-	.short	-21846
 	.short	-24027
 	.short	2730
+	.short	-24018
 	.short	-21846
+	.short	-24027
 	.short	-21846
+	.short	-24027
 	.short	-21846
+	.short	-24027
 	.short	-21846
-	.short	-21846
-	.short	-24406
 	.short	-21846
 	.short	-21846
 	.short	-21846
 	.short	-21846
 	.short	2720
 	.short	-21856
-	.short	-21856
-	.short	-21856
 	.short	-21846
 	.short	170
+	.short	-22006
 	.short	-21846
 	.short	-21846
 	.short	-21846
 	.short	-21846
+	.short	-21856
+	.short	-22006
 	.short	-21846
-	.short	10922
 	.short	-24406
 	.short	-21846
 	.short	2570
@@ -6201,517 +5811,19 @@ losebgTiles:
 	.short	-21846
 	.short	-21846
 	.short	-21846
-	.short	19114
-	.short	-21846
-	.short	19114
-	.short	-21846
-	.short	19114
-	.short	-21846
-	.short	19114
-	.short	-21846
-	.short	19114
-	.short	-21846
-	.short	19114
-	.short	-21846
-	.short	19114
-	.short	-21846
-	.short	19114
-	.short	4372
-	.short	4369
-	.short	4369
-	.short	4369
-	.short	4369
-	.short	4369
-	.short	16657
-	.short	4369
-	.short	4369
-	.short	4372
-	.short	4369
-	.short	4372
-	.short	4369
-	.short	4369
-	.short	4369
-	.short	4369
-	.short	4369
-	.short	4382
-	.short	4369
-	.short	4369
-	.short	4369
-	.short	4369
-	.short	4369
-	.short	4369
-	.short	4369
-	.short	4369
-	.short	4369
-	.short	4369
-	.short	4369
-	.short	-7919
-	.short	4369
-	.short	-4591
-	.short	-7919
-	.short	-4434
-	.short	-7919
-	.short	-5394
-	.short	-4591
-	.short	-7442
-	.short	-4370
-	.short	-29138
-	.short	10926
-	.short	18670
-	.short	-7634
-	.short	18670
-	.short	-4370
-	.short	17480
-	.short	18670
-	.short	-26220
-	.short	18670
-	.short	-27580
-	.short	17537
-	.short	-27580
-	.short	17544
-	.short	-27580
-	.short	17476
-	.short	-26295
-	.short	18756
-	.short	17476
-	.short	17476
-	.short	17476
-	.short	17476
-	.short	17476
-	.short	17481
-	.short	17476
-	.short	-26215
-	.short	17481
-	.short	17561
-	.short	17481
-	.short	17561
-	.short	17481
-	.short	17476
-	.short	17476
-	.short	17476
-	.short	17476
-	.short	17476
-	.short	17476
-	.short	17476
-	.short	17476
-	.short	17476
-	.short	17476
-	.short	17476
-	.short	-27580
-	.short	17476
-	.short	-27580
-	.short	17476
-	.short	-27580
-	.short	17476
-	.short	-27580
-	.short	17476
-	.short	-27580
-	.short	17476
-	.short	-27580
-	.short	17476
-	.short	-27580
-	.short	18568
-	.short	-26300
-	.short	-26215
-	.short	17561
-	.short	-26215
-	.short	18841
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	18841
-	.short	-26215
-	.short	17561
-	.short	-26215
-	.short	17561
-	.short	-26215
-	.short	-26215
-	.short	-4476
-	.short	8741
-	.short	-4476
-	.short	8798
-	.short	-4476
-	.short	8798
-	.short	-6076
-	.short	9710
-	.short	-28860
-	.short	21992
-	.short	-30652
-	.short	24296
-	.short	-30652
-	.short	-6002
-	.short	-30652
-	.short	-4466
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	9509
-	.short	8738
-	.short	8798
-	.short	21029
-	.short	-6008
-	.short	21845
-	.short	8738
-	.short	21845
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8789
-	.short	9554
-	.short	8789
-	.short	21797
-	.short	8789
-	.short	21845
-	.short	21845
-	.short	8789
-	.short	21794
-	.short	8738
-	.short	9506
-	.short	8738
-	.short	9557
-	.short	8741
-	.short	8738
-	.short	8738
-	.short	10786
-	.short	8738
-	.short	8738
-	.short	21026
-	.short	21845
-	.short	-4523
-	.short	24302
-	.short	8789
-	.short	-21846
-	.short	-24030
-	.short	-21846
-	.short	-24030
-	.short	-21854
-	.short	8738
-	.short	-24022
-	.short	8738
-	.short	21026
-	.short	8738
-	.short	-7646
-	.short	21845
-	.short	-4379
-	.short	-4370
-	.short	-32274
-	.short	-4438
-	.short	29518
-	.short	-4438
-	.short	30609
-	.short	7850
-	.short	30612
-	.short	-26390
-	.short	30579
-	.short	14622
-	.short	30583
-	.short	14657
-	.short	30583
-	.short	13204
-	.short	30579
-	.short	30521
-	.short	30579
-	.short	-26313
-	.short	13171
-	.short	-27757
-	.short	13175
-	.short	13203
-	.short	13111
-	.short	13107
-	.short	-26215
-	.short	-27853
-	.short	-26215
-	.short	-27853
-	.short	-26215
-	.short	-26317
-	.short	-26215
-	.short	-27853
-	.short	-26215
-	.short	-26221
-	.short	-13159
-	.short	-26221
-	.short	-13111
-	.short	-26221
-	.short	-13111
-	.short	-26215
-	.short	-13108
-	.short	-26215
-	.short	-25396
-	.short	-13159
-	.short	-25396
-	.short	-13159
-	.short	-15292
-	.short	19609
-	.short	17484
-	.short	-13108
-	.short	-820
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	21903
-	.short	162
-	.short	24572
-	.short	162
-	.short	-28676
-	.short	34
-	.short	-18180
-	.short	2597
-	.short	-29812
-	.short	8747
-	.short	-1796
-	.short	600
-	.short	-817
-	.short	-23153
-	.short	-13105
-	.short	22783
-	.short	0
-	.short	0
-	.short	0
-	.short	0
-	.short	0
-	.short	0
-	.short	0
-	.short	0
-	.short	0
-	.short	0
-	.short	0
-	.short	0
-	.short	10
-	.short	0
-	.short	-24030
-	.short	-24576
-	.short	2720
-	.short	8874
-	.short	0
-	.short	8736
-	.short	0
-	.short	8736
-	.short	0
-	.short	8864
-	.short	-24576
-	.short	-23902
-	.short	-24566
-	.short	-24030
-	.short	8194
-	.short	8738
-	.short	-21854
-	.short	8746
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8746
-	.short	546
-	.short	8866
-	.short	-24030
-	.short	8874
-	.short	-24022
-	.short	8874
-	.short	8874
-	.short	8738
-	.short	-23894
-	.short	8738
-	.short	-24030
-	.short	-24030
-	.short	8874
-	.short	-23894
-	.short	10922
-	.short	-24064
-	.short	10922
-	.short	-21846
-	.short	160
-	.short	-24416
-	.short	2730
-	.short	-24566
-	.short	10
-	.short	-24054
-	.short	-21854
-	.short	10922
-	.short	-21982
-	.short	8738
-	.short	-21974
-	.short	8738
-	.short	2730
-	.short	8874
-	.short	-21974
-	.short	0
-	.short	-24576
-	.short	0
-	.short	0
-	.short	0
-	.short	0
-	.short	170
-	.short	0
-	.short	-21846
-	.short	8874
-	.short	8738
-	.short	8738
-	.short	-22006
-	.short	8746
-	.short	-24566
-	.short	-24030
-	.short	-23894
-	.short	10922
-	.short	8746
-	.short	546
-	.short	8874
-	.short	8738
-	.short	-21856
-	.short	8738
-	.short	8706
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	21842
-	.short	8738
-	.short	21845
-	.short	8738
-	.short	21845
-	.short	21842
-	.short	21845
-	.short	-19115
-	.short	-17477
-	.short	-19118
-	.short	-17477
-	.short	-17579
-	.short	-17477
-	.short	-19115
-	.short	-17477
-	.short	-17483
-	.short	-17477
-	.short	-17483
-	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-19115
-	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-17477
-	.short	-18245
-	.short	-17477
-	.short	-30533
-	.short	-18296
-	.short	-30581
-	.short	-30577
-	.short	-30533
-	.short	-30584
-	.short	-30533
-	.short	-8
-	.short	-1861
-	.short	-1
-	.short	-30533
-	.short	-8
-	.short	-30533
-	.short	-120
-	.short	-30581
-	.short	-1800
-	.short	-1909
-	.short	-8
-	.short	-1912
-	.short	-8
-	.short	-30584
-	.short	-8
-	.short	-1
-	.short	-30465
-	.short	-1
-	.short	-30465
-	.short	-1
-	.short	22783
-	.short	-1
-	.short	22783
-	.short	-1
-	.short	-30465
-	.short	-1
-	.short	-28673
-	.short	-1
-	.short	-28676
-	.short	-12289
-	.short	-28673
-	.short	-24018
-	.short	-21846
-	.short	-24027
-	.short	-21846
-	.short	-24027
-	.short	-21846
-	.short	-24027
-	.short	-21846
-	.short	-23970
-	.short	170
-	.short	-23970
-	.short	2730
-	.short	8789
-	.short	2730
-	.short	9557
-	.short	-21846
-	.short	-22006
-	.short	-21846
-	.short	-21846
-	.short	-21846
-	.short	-21846
-	.short	-21856
-	.short	-22006
-	.short	-21846
-	.short	-22006
-	.short	-22006
-	.short	-21846
-	.short	-22006
-	.short	2560
-	.short	-22016
-	.short	-21846
-	.short	-21846
-	.short	-21846
-	.short	-21846
-	.short	-21846
 	.short	-21846
 	.short	-21846
 	.short	-21856
 	.short	-22016
 	.short	-21846
-	.short	-21856
 	.short	-21846
+	.short	19114
 	.short	-21846
-	.short	-24566
-	.short	-22006
-	.short	-21854
+	.short	19114
 	.short	-21846
-	.short	170
+	.short	19114
+	.short	-21846
+	.short	19114
 	.short	-21846
 	.short	19114
 	.short	-21846
@@ -6720,14 +5832,8 @@ losebgTiles:
 	.short	18954
 	.short	-21846
 	.short	19114
-	.short	-21846
-	.short	19114
-	.short	-21846
-	.short	19114
-	.short	-21846
-	.short	18954
-	.short	-22016
-	.short	19114
+	.short	4369
+	.short	4372
 	.short	4369
 	.short	4369
 	.short	4369
@@ -6736,14 +5842,18 @@ losebgTiles:
 	.short	4369
 	.short	4369
 	.short	4369
-	.short	4382
+	.short	4369
+	.short	4369
+	.short	4369
 	.short	4369
 	.short	4590
 	.short	4369
-	.short	5137
 	.short	4369
-	.short	17425
 	.short	4369
+	.short	4369
+	.short	-7919
+	.short	4369
+	.short	-4591
 	.short	4369
 	.short	-4591
 	.short	4369
@@ -6752,14 +5862,14 @@ losebgTiles:
 	.short	4369
 	.short	-7919
 	.short	-30690
-	.short	-7906
-	.short	17550
 	.short	-7919
 	.short	17473
-	.short	18568
-	.short	17476
-	.short	18564
-	.short	17476
+	.short	10926
+	.short	18670
+	.short	-4370
+	.short	17480
+	.short	18670
+	.short	-26220
 	.short	-27506
 	.short	-27500
 	.short	-27519
@@ -6768,15 +5878,13 @@ losebgTiles:
 	.short	-26220
 	.short	17476
 	.short	-26220
-	.short	-27580
-	.short	-26215
 	.short	-26300
 	.short	17561
+	.short	18756
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	17476
-	.short	17476
+	.short	17481
 	.short	17476
 	.short	17476
 	.short	17476
@@ -6789,7 +5897,9 @@ losebgTiles:
 	.short	17481
 	.short	17476
 	.short	17476
-	.short	17481
+	.short	17476
+	.short	17476
+	.short	17476
 	.short	17476
 	.short	17476
 	.short	17476
@@ -6800,14 +5910,14 @@ losebgTiles:
 	.short	-30584
 	.short	-31672
 	.short	-30584
-	.short	17480
-	.short	-30584
 	.short	-30652
 	.short	-30584
 	.short	17476
-	.short	-30652
+	.short	-27580
 	.short	17476
-	.short	17476
+	.short	-27580
+	.short	18568
+	.short	-26300
 	.short	-30584
 	.short	-27580
 	.short	-30584
@@ -6818,12 +5928,10 @@ losebgTiles:
 	.short	-26300
 	.short	-30584
 	.short	-27580
-	.short	-30584
-	.short	-27580
-	.short	-30584
-	.short	17476
-	.short	-30588
-	.short	17476
+	.short	-26215
+	.short	18841
+	.short	-26215
+	.short	17561
 	.short	-26215
 	.short	-26215
 	.short	-26215
@@ -6832,14 +5940,16 @@ losebgTiles:
 	.short	-26215
 	.short	-26215
 	.short	-26215
-	.short	-27751
 	.short	-26215
 	.short	-26215
 	.short	-26215
 	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	-26215
+	.short	-28860
+	.short	21992
+	.short	-30652
+	.short	-6002
+	.short	-30652
+	.short	-4466
 	.short	-2999
 	.short	-4472
 	.short	17481
@@ -6848,14 +5958,14 @@ losebgTiles:
 	.short	-28673
 	.short	17561
 	.short	-30577
-	.short	-2919
-	.short	-6012
 	.short	17481
 	.short	-30476
-	.short	-26215
-	.short	17484
-	.short	-26215
-	.short	17612
+	.short	8738
+	.short	8738
+	.short	8798
+	.short	21029
+	.short	-6008
+	.short	21845
 	.short	-4370
 	.short	24296
 	.short	24302
@@ -6864,14 +5974,14 @@ losebgTiles:
 	.short	-6827
 	.short	-30584
 	.short	-4370
-	.short	-30578
-	.short	-6008
 	.short	-4472
 	.short	-30584
-	.short	-28673
-	.short	-30584
-	.short	-1
-	.short	-30584
+	.short	8738
+	.short	8789
+	.short	21797
+	.short	8789
+	.short	21845
+	.short	21845
 	.short	21845
 	.short	-4370
 	.short	21845
@@ -6880,14 +5990,14 @@ losebgTiles:
 	.short	-4370
 	.short	-30482
 	.short	-30577
-	.short	-4370
-	.short	-30472
 	.short	-29048
 	.short	18574
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	17487
+	.short	8738
+	.short	10786
+	.short	21026
+	.short	21845
+	.short	-4523
+	.short	24302
 	.short	-4370
 	.short	-4370
 	.short	-4370
@@ -6896,14 +6006,14 @@ losebgTiles:
 	.short	-30584
 	.short	-28952
 	.short	17656
-	.short	-29048
-	.short	-27569
 	.short	-1916
 	.short	-26300
-	.short	17487
-	.short	-26215
-	.short	-27580
-	.short	14745
+	.short	8738
+	.short	21026
+	.short	21845
+	.short	-4379
+	.short	-4370
+	.short	-32274
 	.short	-4370
 	.short	-27618
 	.short	-4370
@@ -6912,14 +6022,14 @@ losebgTiles:
 	.short	29593
 	.short	-26215
 	.short	30515
-	.short	14745
-	.short	30515
 	.short	13209
 	.short	30579
-	.short	29491
+	.short	14622
 	.short	30583
-	.short	30515
-	.short	30583
+	.short	13204
+	.short	30579
+	.short	30521
+	.short	30579
 	.short	14131
 	.short	14195
 	.short	13171
@@ -6928,14 +6038,14 @@ losebgTiles:
 	.short	13107
 	.short	-27497
 	.short	-27853
-	.short	17555
-	.short	-26311
 	.short	-26313
 	.short	18841
-	.short	14199
-	.short	18835
-	.short	14199
+	.short	-27853
+	.short	-26215
 	.short	-26317
+	.short	-26215
+	.short	-27853
+	.short	-26215
 	.short	-26317
 	.short	-26215
 	.short	-26215
@@ -6944,14 +6054,14 @@ losebgTiles:
 	.short	-3004
 	.short	17561
 	.short	-30652
-	.short	17561
-	.short	-30588
 	.short	17544
 	.short	-30588
-	.short	-7442
-	.short	-31671
-	.short	9608
-	.short	-31596
+	.short	-26215
+	.short	-25396
+	.short	-13159
+	.short	-15292
+	.short	19609
+	.short	17484
 	.short	17481
 	.short	17652
 	.short	19524
@@ -6961,13 +6071,13 @@ losebgTiles:
 	.short	17480
 	.short	-30476
 	.short	17480
-	.short	-30577
-	.short	17480
 	.short	-30588
-	.short	17480
-	.short	8744
-	.short	-31672
-	.short	40
+	.short	-13108
+	.short	-13108
+	.short	-13108
+	.short	-13108
+	.short	-13108
+	.short	-13108
 	.short	-13105
 	.short	-13108
 	.short	-13105
@@ -6976,14 +6086,14 @@ losebgTiles:
 	.short	-52
 	.short	-8
 	.short	-4
-	.short	-8
-	.short	-28673
 	.short	-120
 	.short	-16385
-	.short	-29870
-	.short	-30584
-	.short	-31454
-	.short	-1912
+	.short	-29812
+	.short	8747
+	.short	-817
+	.short	-23153
+	.short	-13105
+	.short	22783
 	.short	-13108
 	.short	22780
 	.short	-13108
@@ -6992,14 +6102,14 @@ losebgTiles:
 	.short	-820
 	.short	-13064
 	.short	-13156
-	.short	-12405
-	.short	-13108
 	.short	-12366
 	.short	-25444
-	.short	-13064
-	.short	-8756
-	.short	-13057
-	.short	-8756
+	.short	0
+	.short	0
+	.short	10
+	.short	0
+	.short	-24030
+	.short	-24576
 	.short	8786
 	.short	-24414
 	.short	8789
@@ -7008,14 +6118,14 @@ losebgTiles:
 	.short	8738
 	.short	23439
 	.short	8789
-	.short	-18180
-	.short	8789
 	.short	-28727
 	.short	21845
-	.short	-13091
-	.short	23551
-	.short	-12835
-	.short	-18180
+	.short	-24576
+	.short	-23902
+	.short	8194
+	.short	8738
+	.short	-21854
+	.short	8746
 	.short	-24030
 	.short	8738
 	.short	-24022
@@ -7024,14 +6134,14 @@ losebgTiles:
 	.short	8738
 	.short	21842
 	.short	8738
-	.short	21842
-	.short	8741
 	.short	8738
 	.short	8789
-	.short	9557
-	.short	9506
-	.short	21845
-	.short	21794
+	.short	8874
+	.short	-24022
+	.short	8738
+	.short	-23894
+	.short	8738
+	.short	-24030
 	.short	8738
 	.short	8738
 	.short	8746
@@ -7042,12 +6152,12 @@ losebgTiles:
 	.short	8738
 	.short	8738
 	.short	8738
-	.short	8738
-	.short	8738
-	.short	8786
-	.short	8738
-	.short	21026
-	.short	8789
+	.short	-24416
+	.short	2730
+	.short	-24054
+	.short	-21854
+	.short	10922
+	.short	-21982
 	.short	8738
 	.short	10786
 	.short	8738
@@ -7058,12 +6168,12 @@ losebgTiles:
 	.short	8738
 	.short	8738
 	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
+	.short	0
+	.short	0
+	.short	170
+	.short	0
+	.short	-21846
+	.short	8874
 	.short	-24030
 	.short	8746
 	.short	8738
@@ -7074,11 +6184,11 @@ losebgTiles:
 	.short	8738
 	.short	8738
 	.short	8738
+	.short	8746
+	.short	546
+	.short	-21856
 	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	9509
+	.short	8706
 	.short	8738
 	.short	8738
 	.short	21026
@@ -7091,10 +6201,10 @@ losebgTiles:
 	.short	8738
 	.short	21794
 	.short	8738
-	.short	21794
-	.short	21026
+	.short	21842
+	.short	8738
 	.short	21845
-	.short	8738
+	.short	21842
 	.short	21845
 	.short	8738
 	.short	21842
@@ -7105,12 +6215,12 @@ losebgTiles:
 	.short	21845
 	.short	-17573
 	.short	21845
-	.short	-17477
-	.short	21845
 	.short	-17579
 	.short	-17483
 	.short	-17477
-	.short	-17483
+	.short	-17477
+	.short	-17477
+	.short	-19115
 	.short	-17477
 	.short	-17579
 	.short	-17477
@@ -7121,13 +6231,13 @@ losebgTiles:
 	.short	-17477
 	.short	-30533
 	.short	-17477
+	.short	-30533
+	.short	-18245
+	.short	-17477
 	.short	-30581
-	.short	-17477
+	.short	-30577
 	.short	-30533
-	.short	-17477
-	.short	-30533
-	.short	-17477
-	.short	-1909
+	.short	-30584
 	.short	-29704
 	.short	-120
 	.short	-1793
@@ -7136,14 +6246,14 @@ losebgTiles:
 	.short	-30584
 	.short	-1912
 	.short	-28792
+	.short	-1912
+	.short	-1
+	.short	-30581
+	.short	-1800
+	.short	-1912
+	.short	-8
 	.short	-30584
-	.short	-30577
-	.short	-1912
-	.short	-1
-	.short	-120
-	.short	-1
-	.short	-1912
-	.short	-1
+	.short	-8
 	.short	-1
 	.short	-1
 	.short	-1
@@ -7155,11 +6265,11 @@ losebgTiles:
 	.short	-1
 	.short	-12289
 	.short	-1
-	.short	-12289
+	.short	-30465
 	.short	-1
-	.short	-12337
-	.short	-1
+	.short	-28676
 	.short	-12289
+	.short	-28673
 	.short	-1
 	.short	-1
 	.short	-13057
@@ -7169,13 +6279,13 @@ losebgTiles:
 	.short	-13108
 	.short	-4
 	.short	-13108
-	.short	-4
-	.short	-13108
 	.short	-28724
-	.short	-13108
-	.short	-28724
-	.short	-13108
-	.short	-28724
+	.short	-23970
+	.short	170
+	.short	8789
+	.short	2730
+	.short	9557
+	.short	-21846
 	.short	21999
 	.short	-21854
 	.short	9560
@@ -7184,13 +6294,13 @@ losebgTiles:
 	.short	-21854
 	.short	21848
 	.short	-21854
-	.short	24296
-	.short	2597
 	.short	-23064
 	.short	-21846
-	.short	12008
+	.short	-22006
+	.short	-22006
+	.short	2560
+	.short	-22016
 	.short	-21846
-	.short	-23211
 	.short	-21846
 	.short	-24416
 	.short	-22006
@@ -7200,14 +6310,14 @@ losebgTiles:
 	.short	2730
 	.short	-24406
 	.short	-21846
-	.short	10
-	.short	-21856
 	.short	170
 	.short	-21856
+	.short	-21856
 	.short	-21846
+	.short	-22006
+	.short	-21854
 	.short	-21846
-	.short	-21846
-	.short	-21846
+	.short	170
 	.short	-21846
 	.short	-21846
 	.short	-21846
@@ -7215,15 +6325,15 @@ losebgTiles:
 	.short	-24406
 	.short	2730
 	.short	-24406
-	.short	-21846
-	.short	170
 	.short	-21846
 	.short	-21846
 	.short	-24566
 	.short	-21846
+	.short	19114
 	.short	-21846
-	.short	2730
-	.short	-21846
+	.short	18954
+	.short	-22016
+	.short	19114
 	.short	-21846
 	.short	19114
 	.short	-21846
@@ -7234,18 +6344,14 @@ losebgTiles:
 	.short	19114
 	.short	-21846
 	.short	19114
-	.short	-21846
-	.short	19114
-	.short	-21846
-	.short	19114
-	.short	-21846
-	.short	19114
+	.short	5137
+	.short	4369
+	.short	17425
+	.short	4369
 	.short	5140
 	.short	4369
 	.short	4369
 	.short	4369
-	.short	4369
-	.short	16657
 	.short	4369
 	.short	18449
 	.short	4382
@@ -7254,14 +6360,14 @@ losebgTiles:
 	.short	17476
 	.short	18462
 	.short	17476
-	.short	17537
+	.short	18568
+	.short	17476
+	.short	18564
 	.short	17476
 	.short	17537
 	.short	17476
 	.short	17480
 	.short	17476
-	.short	17476
-	.short	18756
 	.short	17476
 	.short	-26300
 	.short	17476
@@ -7271,12 +6377,12 @@ losebgTiles:
 	.short	17476
 	.short	17556
 	.short	17476
-	.short	-27495
 	.short	17476
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	-27500
+	.short	17476
+	.short	17476
 	.short	17476
 	.short	-27580
 	.short	17476
@@ -7287,7 +6393,7 @@ losebgTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	17476
+	.short	17481
 	.short	17476
 	.short	17476
 	.short	17476
@@ -7303,12 +6409,12 @@ losebgTiles:
 	.short	17476
 	.short	-30584
 	.short	17476
-	.short	-30588
+	.short	-30652
+	.short	17476
+	.short	17476
 	.short	17476
 	.short	-30588
 	.short	17476
-	.short	-30584
-	.short	-31676
 	.short	-30584
 	.short	-30588
 	.short	-30584
@@ -7319,14 +6425,14 @@ losebgTiles:
 	.short	-30584
 	.short	-30584
 	.short	-30584
-	.short	-30584
+	.short	17476
+	.short	-30588
+	.short	17476
 	.short	-30584
 	.short	17476
 	.short	-30584
 	.short	-26300
 	.short	-30584
-	.short	-27580
-	.short	-30584
 	.short	17480
 	.short	-30584
 	.short	17476
@@ -7334,8 +6440,8 @@ losebgTiles:
 	.short	17480
 	.short	-30584
 	.short	17544
-	.short	-30584
-	.short	17544
+	.short	-26215
+	.short	-26215
 	.short	-26215
 	.short	-26215
 	.short	-26215
@@ -7350,14 +6456,14 @@ losebgTiles:
 	.short	13113
 	.short	-26220
 	.short	13209
-	.short	-26220
-	.short	13209
+	.short	-26215
+	.short	17484
+	.short	-26215
+	.short	17612
 	.short	-26215
 	.short	19657
 	.short	-26215
 	.short	-13927
-	.short	-26215
-	.short	-26215
 	.short	-26215
 	.short	-26215
 	.short	-26221
@@ -7366,14 +6472,14 @@ losebgTiles:
 	.short	-26215
 	.short	13107
 	.short	-26317
-	.short	13107
-	.short	14643
+	.short	-28673
+	.short	-30584
+	.short	-1
+	.short	-30584
 	.short	17476
 	.short	17652
 	.short	-13159
 	.short	17476
-	.short	-25399
-	.short	-25396
 	.short	-15287
 	.short	-15292
 	.short	17561
@@ -7382,14 +6488,14 @@ losebgTiles:
 	.short	19524
 	.short	-26215
 	.short	18841
-	.short	-26215
-	.short	18841
+	.short	-30584
+	.short	-30584
+	.short	-30584
+	.short	17487
 	.short	-30584
 	.short	17487
 	.short	-188
 	.short	-27580
-	.short	-13236
-	.short	-26220
 	.short	17476
 	.short	-26220
 	.short	17476
@@ -7398,24 +6504,26 @@ losebgTiles:
 	.short	-26300
 	.short	17476
 	.short	14740
-	.short	19660
-	.short	14740
+	.short	17487
+	.short	-26215
+	.short	-27580
+	.short	14745
 	.short	-26220
 	.short	13107
 	.short	-26215
 	.short	13107
 	.short	13209
 	.short	13107
-	.short	13209
-	.short	13107
 	.short	13113
 	.short	13107
 	.short	13113
 	.short	13107
 	.short	13107
 	.short	13107
-	.short	13107
-	.short	13107
+	.short	29491
+	.short	30583
+	.short	30515
+	.short	30583
 	.short	30515
 	.short	30583
 	.short	30515
@@ -7428,15 +6536,13 @@ losebgTiles:
 	.short	13107
 	.short	13107
 	.short	13107
-	.short	13107
-	.short	13107
-	.short	13107
-	.short	13107
+	.short	14199
+	.short	18835
 	.short	14199
 	.short	-26317
 	.short	14199
-	.short	-27853
-	.short	13107
+	.short	-26317
+	.short	14199
 	.short	-27853
 	.short	13107
 	.short	13107
@@ -7446,14 +6552,14 @@ losebgTiles:
 	.short	-26317
 	.short	13107
 	.short	-26317
-	.short	14643
-	.short	-26317
+	.short	-7442
+	.short	-31671
+	.short	9608
+	.short	-31596
 	.short	22596
 	.short	-31672
 	.short	-30567
 	.short	-30584
-	.short	-31591
-	.short	9656
 	.short	18841
 	.short	23432
 	.short	18841
@@ -7462,14 +6568,14 @@ losebgTiles:
 	.short	-30588
 	.short	17556
 	.short	-30584
-	.short	17481
-	.short	22664
+	.short	17480
+	.short	8744
+	.short	-31672
+	.short	40
 	.short	-30584
 	.short	-31448
 	.short	-30584
 	.short	18568
-	.short	-30590
-	.short	-27576
 	.short	-30590
 	.short	-26300
 	.short	-30587
@@ -7478,14 +6584,14 @@ losebgTiles:
 	.short	-26300
 	.short	17538
 	.short	-26300
-	.short	-30590
-	.short	-26300
+	.short	-29870
+	.short	-30584
+	.short	-31454
+	.short	-1912
 	.short	17544
 	.short	17663
 	.short	-25532
 	.short	-13927
-	.short	-26215
-	.short	-26215
 	.short	-26215
 	.short	-26215
 	.short	-26167
@@ -7494,14 +6600,14 @@ losebgTiles:
 	.short	-26215
 	.short	-26215
 	.short	-26215
-	.short	17481
-	.short	18841
+	.short	-13064
+	.short	-8756
+	.short	-13057
+	.short	-8756
 	.short	-13105
 	.short	-25140
 	.short	-13108
 	.short	-12852
-	.short	-9831
-	.short	-8739
 	.short	-9831
 	.short	-8995
 	.short	-26215
@@ -7510,13 +6616,13 @@ losebgTiles:
 	.short	-13108
 	.short	-13927
 	.short	-13108
-	.short	-13116
-	.short	-13111
+	.short	-13091
+	.short	23551
+	.short	-12835
+	.short	-18180
 	.short	-13111
 	.short	-820
 	.short	-13091
-	.short	-13108
-	.short	-8739
 	.short	-13108
 	.short	-9779
 	.short	-13108
@@ -7526,14 +6632,14 @@ losebgTiles:
 	.short	-13108
 	.short	-13108
 	.short	-13108
-	.short	-13108
-	.short	-13108
+	.short	9557
+	.short	9506
+	.short	21845
+	.short	21794
 	.short	23432
 	.short	8741
 	.short	23487
 	.short	8789
-	.short	-18180
-	.short	21947
 	.short	-28724
 	.short	21944
 	.short	-13108
@@ -7542,14 +6648,14 @@ losebgTiles:
 	.short	-52
 	.short	-13108
 	.short	-13108
-	.short	-13108
-	.short	-13108
+	.short	8786
+	.short	8738
+	.short	21026
+	.short	8789
 	.short	21026
 	.short	21845
 	.short	21026
 	.short	21941
-	.short	162
-	.short	21794
 	.short	-24574
 	.short	21024
 	.short	8741
@@ -7558,14 +6664,14 @@ losebgTiles:
 	.short	8789
 	.short	-18289
 	.short	11195
-	.short	-18177
-	.short	21947
+	.short	8738
+	.short	8738
+	.short	8738
+	.short	8738
 	.short	21077
 	.short	21845
 	.short	8789
 	.short	8738
-	.short	8738
-	.short	21842
 	.short	21077
 	.short	21842
 	.short	21842
@@ -7574,14 +6680,14 @@ losebgTiles:
 	.short	21845
 	.short	21794
 	.short	23477
-	.short	21794
-	.short	-17579
+	.short	8738
+	.short	8738
+	.short	9509
+	.short	8738
 	.short	-29813
 	.short	21947
 	.short	21794
 	.short	-29765
-	.short	21845
-	.short	21845
 	.short	21845
 	.short	21845
 	.short	-19115
@@ -7590,14 +6696,14 @@ losebgTiles:
 	.short	23483
 	.short	-17483
 	.short	-17477
-	.short	-17477
-	.short	-17477
+	.short	21026
+	.short	21845
+	.short	8738
+	.short	21845
 	.short	21845
 	.short	21794
 	.short	21944
 	.short	21845
-	.short	21845
-	.short	21947
 	.short	21845
 	.short	-19019
 	.short	9554
@@ -7606,7 +6712,7 @@ losebgTiles:
 	.short	-17579
 	.short	-17477
 	.short	-17477
-	.short	-17477
+	.short	-17483
 	.short	-17477
 	.short	-17483
 	.short	-17477
@@ -7623,13 +6729,13 @@ losebgTiles:
 	.short	-18293
 	.short	-17477
 	.short	-17477
-	.short	-17480
+	.short	-30533
 	.short	-17477
 	.short	-1909
 	.short	-17477
 	.short	-1909
-	.short	-29765
-	.short	-30584
+	.short	-17477
+	.short	-1909
 	.short	-29765
 	.short	-30584
 	.short	-30581
@@ -7638,7 +6744,8 @@ losebgTiles:
 	.short	-30584
 	.short	-29765
 	.short	-1912
-	.short	-30581
+	.short	-120
+	.short	-1
 	.short	-1912
 	.short	-1
 	.short	-1
@@ -7647,13 +6754,14 @@ losebgTiles:
 	.short	-1
 	.short	-1
 	.short	-1
-	.short	-1
 	.short	-8
 	.short	-1
 	.short	-8
 	.short	-1
 	.short	-1
 	.short	-1
+	.short	-1
+	.short	-12337
 	.short	-1
 	.short	-12289
 	.short	-1
@@ -7664,20 +6772,18 @@ losebgTiles:
 	.short	-13108
 	.short	-12289
 	.short	-13108
-	.short	-12289
-	.short	-13108
 	.short	-13105
 	.short	-13108
 	.short	-13108
 	.short	-13108
 	.short	-13108
+	.short	-28724
 	.short	-13108
+	.short	-28724
 	.short	-13108
 	.short	-28676
 	.short	-13108
 	.short	-28724
-	.short	-13108
-	.short	-820
 	.short	-13108
 	.short	-13108
 	.short	-13108
@@ -7686,14 +6792,14 @@ losebgTiles:
 	.short	-13923
 	.short	-8756
 	.short	-12835
-	.short	-8740
-	.short	-13091
+	.short	12008
+	.short	-21846
+	.short	-23211
+	.short	-21846
 	.short	8792
 	.short	-21846
 	.short	9560
 	.short	-21982
-	.short	-28673
-	.short	9701
 	.short	-52
 	.short	24296
 	.short	22671
@@ -7702,13 +6808,13 @@ losebgTiles:
 	.short	8741
 	.short	-2868
 	.short	21992
-	.short	-30465
-	.short	8741
 	.short	-21846
 	.short	-21846
 	.short	-21846
 	.short	-21846
-	.short	-21854
+	.short	-21846
+	.short	-21846
+	.short	-21846
 	.short	-21846
 	.short	-21982
 	.short	-21846
@@ -7718,14 +6824,14 @@ losebgTiles:
 	.short	-21846
 	.short	-21854
 	.short	-21846
-	.short	-21854
+	.short	-21846
+	.short	-21846
+	.short	2730
 	.short	-21846
 	.short	-21846
 	.short	-21846
 	.short	-21846
 	.short	-21846
-	.short	-21846
-	.short	-24566
 	.short	-21846
 	.short	-24566
 	.short	-21846
@@ -7735,12 +6841,12 @@ losebgTiles:
 	.short	-21846
 	.short	-21846
 	.short	-21846
-	.short	-21846
-	.short	-21846
 	.short	19114
 	.short	-21846
 	.short	19114
-	.short	-22006
+	.short	-21846
+	.short	19114
+	.short	-21846
 	.short	19114
 	.short	-21846
 	.short	18954
@@ -7750,11 +6856,10 @@ losebgTiles:
 	.short	19114
 	.short	-21846
 	.short	19114
-	.short	-21846
-	.short	19104
+	.short	17537
+	.short	17476
 	.short	17544
 	.short	17476
-	.short	17480
 	.short	17476
 	.short	17476
 	.short	17476
@@ -7768,10 +6873,9 @@ losebgTiles:
 	.short	17476
 	.short	17476
 	.short	17476
+	.short	-27495
 	.short	-27580
 	.short	-27500
-	.short	-27580
-	.short	-26215
 	.short	-27580
 	.short	17476
 	.short	-27580
@@ -7784,9 +6888,9 @@ losebgTiles:
 	.short	18836
 	.short	-27580
 	.short	17476
+	.short	17476
+	.short	17476
 	.short	-27580
-	.short	17476
-	.short	17476
 	.short	17476
 	.short	17481
 	.short	17476
@@ -7801,9 +6905,9 @@ losebgTiles:
 	.short	-31591
 	.short	-30584
 	.short	17476
+	.short	-30588
+	.short	17476
 	.short	-30652
-	.short	-31676
-	.short	-30584
 	.short	-30652
 	.short	-30584
 	.short	-30652
@@ -7848,9 +6952,9 @@ losebgTiles:
 	.short	18568
 	.short	-4379
 	.short	18568
-	.short	-26215
-	.short	13209
 	.short	-26220
+	.short	13209
+	.short	-26215
 	.short	13209
 	.short	-26220
 	.short	-26215
@@ -7864,11 +6968,11 @@ losebgTiles:
 	.short	13209
 	.short	-26220
 	.short	13209
+	.short	13107
+	.short	14643
 	.short	13107
 	.short	14739
 	.short	13107
-	.short	-26317
-	.short	13107
 	.short	-26221
 	.short	13107
 	.short	-27853
@@ -7881,7 +6985,7 @@ losebgTiles:
 	.short	13107
 	.short	13107
 	.short	-26215
-	.short	-26215
+	.short	18841
 	.short	-26215
 	.short	-26215
 	.short	-26215
@@ -7896,9 +7000,9 @@ losebgTiles:
 	.short	-26215
 	.short	13107
 	.short	-26215
+	.short	19660
+	.short	14740
 	.short	-26220
-	.short	14745
-	.short	-26215
 	.short	14745
 	.short	17481
 	.short	13209
@@ -7944,10 +7048,10 @@ losebgTiles:
 	.short	17561
 	.short	-26215
 	.short	17481
+	.short	14643
+	.short	-26317
 	.short	-26221
 	.short	-27495
-	.short	-26221
-	.short	17476
 	.short	18841
 	.short	-30652
 	.short	17561
@@ -7960,10 +7064,10 @@ losebgTiles:
 	.short	-27751
 	.short	-26311
 	.short	-26215
+	.short	17481
+	.short	22664
 	.short	-30652
 	.short	21992
-	.short	-30584
-	.short	-30584
 	.short	-31676
 	.short	-30584
 	.short	18841
@@ -7976,10 +7080,10 @@ losebgTiles:
 	.short	-27580
 	.short	-26215
 	.short	-27575
+	.short	-30590
+	.short	-26300
 	.short	-30638
 	.short	-27580
-	.short	-28946
-	.short	17544
 	.short	-30584
 	.short	-30578
 	.short	-30584
@@ -7993,9 +7097,9 @@ losebgTiles:
 	.short	17476
 	.short	20292
 	.short	17481
-	.short	-13932
+	.short	18841
 	.short	17481
-	.short	-3004
+	.short	-13932
 	.short	17480
 	.short	17476
 	.short	-1906
@@ -8008,10 +7112,10 @@ losebgTiles:
 	.short	21848
 	.short	-30465
 	.short	21896
+	.short	-13116
+	.short	-13111
 	.short	17476
 	.short	-13108
-	.short	-1
-	.short	-13116
 	.short	-113
 	.short	-60
 	.short	-12
@@ -8027,7 +7131,7 @@ losebgTiles:
 	.short	-13108
 	.short	-13108
 	.short	-13108
-	.short	-15156
+	.short	-13108
 	.short	-13233
 	.short	-13108
 	.short	20479
@@ -8057,9 +7161,9 @@ losebgTiles:
 	.short	-868
 	.short	-13108
 	.short	-18177
+	.short	21947
+	.short	-18177
 	.short	-19013
-	.short	-30577
-	.short	23480
 	.short	-4
 	.short	-30465
 	.short	-52
@@ -8072,10 +7176,10 @@ losebgTiles:
 	.short	-18296
 	.short	-1793
 	.short	-1800
+	.short	21794
+	.short	-17579
 	.short	21845
 	.short	-17483
-	.short	-17579
-	.short	-17477
 	.short	-17477
 	.short	-30581
 	.short	-1
@@ -8091,7 +7195,7 @@ losebgTiles:
 	.short	-17477
 	.short	-17477
 	.short	-17477
-	.short	-17573
+	.short	-17477
 	.short	-1912
 	.short	-17525
 	.short	-18296
@@ -8106,8 +7210,8 @@ losebgTiles:
 	.short	-18296
 	.short	-17477
 	.short	-17477
-	.short	-29765
-	.short	-18245
+	.short	-17477
+	.short	-17477
 	.short	-17477
 	.short	-30533
 	.short	-30577
@@ -8120,9 +7224,9 @@ losebgTiles:
 	.short	-30584
 	.short	-30533
 	.short	-8
-	.short	-17528
 	.short	-17477
-	.short	-30581
+	.short	-17480
+	.short	-17528
 	.short	-17477
 	.short	-17477
 	.short	-17477
@@ -8136,10 +7240,10 @@ losebgTiles:
 	.short	-1
 	.short	-1793
 	.short	-8
+	.short	-30581
+	.short	-1912
 	.short	-17477
 	.short	-29816
-	.short	-17480
-	.short	-29765
 	.short	-29765
 	.short	-120
 	.short	-29765
@@ -8152,10 +7256,10 @@ losebgTiles:
 	.short	-13057
 	.short	-52
 	.short	-13105
+	.short	-1
+	.short	-12289
 	.short	-8
 	.short	-12289
-	.short	-12289
-	.short	-13105
 	.short	-12289
 	.short	-13108
 	.short	-13057
@@ -8171,7 +7275,7 @@ losebgTiles:
 	.short	-13108
 	.short	-13108
 	.short	-13108
-	.short	-9012
+	.short	-13108
 	.short	-13108
 	.short	-8756
 	.short	-13108
@@ -8186,10 +7290,8 @@ losebgTiles:
 	.short	32221
 	.short	-8740
 	.short	-13091
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-12835
+	.short	-8740
+	.short	-13091
 	.short	-8739
 	.short	-12835
 	.short	-8739
@@ -8197,12 +7299,14 @@ losebgTiles:
 	.short	-8739
 	.short	-12835
 	.short	-8739
+	.short	-12835
 	.short	-8739
 	.short	-8739
 	.short	-8739
+	.short	-8739
+	.short	-30465
+	.short	8741
 	.short	-30468
-	.short	21848
-	.short	-52
 	.short	21848
 	.short	-823
 	.short	9560
@@ -8216,10 +7320,10 @@ losebgTiles:
 	.short	-6001
 	.short	-820
 	.short	8792
-	.short	-21982
-	.short	-24406
 	.short	-21854
 	.short	-21846
+	.short	-21982
+	.short	-24406
 	.short	170
 	.short	-22006
 	.short	-21851
@@ -8232,9 +7336,9 @@ losebgTiles:
 	.short	-21846
 	.short	-24414
 	.short	-21846
-	.short	170
-	.short	2730
 	.short	-21846
+	.short	-21846
+	.short	170
 	.short	2730
 	.short	2730
 	.short	2730
@@ -8249,7 +7353,7 @@ losebgTiles:
 	.short	-24576
 	.short	-21846
 	.short	-21846
-	.short	19114
+	.short	19104
 	.short	-21846
 	.short	19114
 	.short	-21846
@@ -8264,8 +7368,6 @@ losebgTiles:
 	.short	18944
 	.short	-22016
 	.short	19114
-	.short	17476
-	.short	17476
 	.short	17481
 	.short	17476
 	.short	17481
@@ -8278,10 +7380,10 @@ losebgTiles:
 	.short	18500
 	.short	-30584
 	.short	-30584
+	.short	-4421
 	.short	-30584
-	.short	-30584
-	.short	17476
-	.short	17481
+	.short	26214
+	.short	-31397
 	.short	17481
 	.short	17476
 	.short	17476
@@ -8296,9 +7398,10 @@ losebgTiles:
 	.short	-30584
 	.short	-30584
 	.short	-30584
+	.short	-30584
+	.short	-30584
 	.short	-31676
 	.short	-30584
-	.short	-31676
 	.short	-30584
 	.short	-30584
 	.short	-30584
@@ -8310,10 +7413,9 @@ losebgTiles:
 	.short	-30584
 	.short	-30584
 	.short	-30584
+	.short	-6008
 	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
+	.short	-4376
 	.short	-30584
 	.short	-30584
 	.short	-30584
@@ -8327,9 +7429,9 @@ losebgTiles:
 	.short	-4370
 	.short	-6683
 	.short	-4370
-	.short	-4379
-	.short	-30584
-	.short	21848
+	.short	-4370
+	.short	-4370
+	.short	21854
 	.short	21896
 	.short	21845
 	.short	21845
@@ -8342,10 +7444,10 @@ losebgTiles:
 	.short	21845
 	.short	24302
 	.short	-6875
-	.short	21854
+	.short	21797
 	.short	-4523
-	.short	-4523
-	.short	18568
+	.short	21845
+	.short	21845
 	.short	-30635
 	.short	18568
 	.short	-6011
@@ -8359,9 +7461,9 @@ losebgTiles:
 	.short	-5906
 	.short	-30482
 	.short	-4370
-	.short	18670
-	.short	-26220
-	.short	13209
+	.short	-28946
+	.short	-6827
+	.short	-30482
 	.short	-26220
 	.short	13113
 	.short	-26220
@@ -8374,7 +7476,9 @@ losebgTiles:
 	.short	13209
 	.short	-26300
 	.short	13209
-	.short	-26220
+	.short	-26300
+	.short	13209
+	.short	-27580
 	.short	13209
 	.short	13107
 	.short	13107
@@ -8392,8 +7496,6 @@ losebgTiles:
 	.short	13107
 	.short	13107
 	.short	13107
-	.short	13107
-	.short	-26215
 	.short	13107
 	.short	-26221
 	.short	13107
@@ -8408,8 +7510,8 @@ losebgTiles:
 	.short	13107
 	.short	13107
 	.short	13107
-	.short	-26215
-	.short	-26215
+	.short	13107
+	.short	13107
 	.short	-26215
 	.short	-26215
 	.short	-26215
@@ -8422,10 +7524,10 @@ losebgTiles:
 	.short	-26215
 	.short	-26221
 	.short	-26215
-	.short	-26221
-	.short	-26215
+	.short	-26317
 	.short	-26215
 	.short	-27853
+	.short	-26215
 	.short	14745
 	.short	-26317
 	.short	13209
@@ -8438,10 +7540,10 @@ losebgTiles:
 	.short	30515
 	.short	3
 	.short	0
-	.short	3
-	.short	0
-	.short	-26215
-	.short	-27580
+	.short	30473
+	.short	18295
+	.short	13065
+	.short	17203
 	.short	-26215
 	.short	-26300
 	.short	-26221
@@ -8454,10 +7556,10 @@ losebgTiles:
 	.short	29495
 	.short	13107
 	.short	563
-	.short	14654
-	.short	55
-	.short	-26215
-	.short	13113
+	.short	14736
+	.short	-32653
+	.short	-26224
+	.short	4153
 	.short	-26215
 	.short	13113
 	.short	14745
@@ -8470,10 +7572,10 @@ losebgTiles:
 	.short	13171
 	.short	0
 	.short	0
-	.short	0
-	.short	0
-	.short	-27847
-	.short	-27575
+	.short	30583
+	.short	28679
+	.short	30583
+	.short	28679
 	.short	13113
 	.short	-26215
 	.short	13107
@@ -8486,10 +7588,10 @@ losebgTiles:
 	.short	-27849
 	.short	0
 	.short	-26320
-	.short	0
-	.short	-26352
-	.short	17476
-	.short	-3004
+	.short	30583
+	.short	-6239
+	.short	30583
+	.short	-23647
 	.short	17476
 	.short	17556
 	.short	-26220
@@ -8502,10 +7604,10 @@ losebgTiles:
 	.short	-26215
 	.short	0
 	.short	0
-	.short	0
-	.short	0
-	.short	-28849
-	.short	-30584
+	.short	30586
+	.short	30583
+	.short	30577
+	.short	30583
 	.short	-28860
 	.short	-30465
 	.short	17540
@@ -8518,10 +7620,10 @@ losebgTiles:
 	.short	17476
 	.short	2560
 	.short	0
-	.short	0
-	.short	0
-	.short	-19115
-	.short	-30584
+	.short	28839
+	.short	30583
+	.short	28695
+	.short	30583
 	.short	21848
 	.short	-30584
 	.short	-18296
@@ -8534,10 +7636,10 @@ losebgTiles:
 	.short	-30584
 	.short	0
 	.short	0
-	.short	0
-	.short	0
-	.short	-28680
-	.short	19711
+	.short	30583
+	.short	10103
+	.short	30583
+	.short	10103
 	.short	-113
 	.short	-12401
 	.short	-8
@@ -8550,10 +7652,10 @@ losebgTiles:
 	.short	-25521
 	.short	0
 	.short	0
-	.short	0
-	.short	0
-	.short	-13108
-	.short	-13108
+	.short	30512
+	.short	30583
+	.short	30512
+	.short	30583
 	.short	-25396
 	.short	-13108
 	.short	-1
@@ -8566,10 +7668,10 @@ losebgTiles:
 	.short	-12
 	.short	8192
 	.short	-7
-	.short	0
-	.short	-3
-	.short	-28724
-	.short	-120
+	.short	1911
+	.short	-871
+	.short	1911
+	.short	19612
 	.short	-52
 	.short	-1144
 	.short	-1
@@ -8582,10 +7684,10 @@ losebgTiles:
 	.short	-1
 	.short	239
 	.short	0
-	.short	15
-	.short	0
-	.short	-1912
-	.short	-30577
+	.short	30479
+	.short	30583
+	.short	30468
+	.short	30583
 	.short	-29697
 	.short	-30465
 	.short	-1912
@@ -8598,10 +7700,10 @@ losebgTiles:
 	.short	-30577
 	.short	10
 	.short	0
-	.short	0
-	.short	0
-	.short	-29816
-	.short	-30476
+	.short	30464
+	.short	30583
+	.short	30464
+	.short	30583
 	.short	-17477
 	.short	-1800
 	.short	-29809
@@ -8614,10 +7716,10 @@ losebgTiles:
 	.short	-4
 	.short	0
 	.short	-4096
-	.short	0
-	.short	-28672
-	.short	-17480
-	.short	-1093
+	.short	30583
+	.short	-32649
+	.short	30583
+	.short	-32649
 	.short	-17521
 	.short	-17477
 	.short	-30536
@@ -8630,10 +7732,10 @@ losebgTiles:
 	.short	-1
 	.short	-769
 	.short	-52
-	.short	-12292
-	.short	-780
-	.short	-1905
-	.short	-1
+	.short	-52
+	.short	-13108
+	.short	-13060
+	.short	-13108
 	.short	-1793
 	.short	-49
 	.short	-1
@@ -8646,9 +7748,9 @@ losebgTiles:
 	.short	-13108
 	.short	-13057
 	.short	-13108
-	.short	-13057
 	.short	-13108
-	.short	-13057
+	.short	-13108
+	.short	-13108
 	.short	-13108
 	.short	-13057
 	.short	-13108
@@ -8663,9 +7765,9 @@ losebgTiles:
 	.short	-13108
 	.short	-13108
 	.short	-13108
-	.short	-9012
+	.short	-8756
 	.short	-13108
-	.short	-13108
+	.short	-8739
 	.short	-13108
 	.short	-13108
 	.short	-13108
@@ -8679,7 +7781,6 @@ losebgTiles:
 	.short	-8739
 	.short	-8739
 	.short	-8739
-	.short	32221
 	.short	-8739
 	.short	-8739
 	.short	-8739
@@ -8696,8 +7797,9 @@ losebgTiles:
 	.short	-8739
 	.short	-8739
 	.short	-8739
-	.short	-13108
-	.short	24207
+	.short	-8739
+	.short	-8739
+	.short	-8739
 	.short	-13091
 	.short	22671
 	.short	-12903
@@ -8711,9 +7813,9 @@ losebgTiles:
 	.short	-13107
 	.short	-52
 	.short	-13107
-	.short	-52
-	.short	-21854
-	.short	-21846
+	.short	-4
+	.short	-13108
+	.short	-30468
 	.short	-21979
 	.short	-21846
 	.short	9557
@@ -8726,10 +7828,10 @@ losebgTiles:
 	.short	-21982
 	.short	21992
 	.short	-21979
-	.short	21992
+	.short	21845
 	.short	-21854
-	.short	-24406
-	.short	-21856
+	.short	21851
+	.short	-21979
 	.short	-24406
 	.short	-21846
 	.short	2570
@@ -8742,10 +7844,10 @@ losebgTiles:
 	.short	170
 	.short	2730
 	.short	2720
-	.short	0
-	.short	2720
-	.short	170
-	.short	18944
+	.short	-21856
+	.short	2560
+	.short	-21846
+	.short	-21846
 	.short	-24406
 	.short	18954
 	.short	2730
@@ -8758,12 +7860,10 @@ losebgTiles:
 	.short	19104
 	.short	-21846
 	.short	19104
-	.short	2730
+	.short	-21846
 	.short	19114
-	.short	-4421
-	.short	-30584
-	.short	26214
-	.short	-31397
+	.short	0
+	.short	19104
 	.short	26214
 	.short	23398
 	.short	26214
@@ -8774,12 +7874,12 @@ losebgTiles:
 	.short	26214
 	.short	26214
 	.short	26214
+	.short	26219
 	.short	26214
+	.short	-20446
 	.short	26214
-	.short	-30584
-	.short	-30584
-	.short	-30584
-	.short	-30584
+	.short	8738
+	.short	26214
 	.short	-28946
 	.short	-4472
 	.short	-28955
@@ -8788,14 +7888,14 @@ losebgTiles:
 	.short	-4370
 	.short	9830
 	.short	-28955
-	.short	-18842
-	.short	24146
 	.short	26214
 	.short	21030
-	.short	-30584
-	.short	-6008
-	.short	-30584
-	.short	-4376
+	.short	26214
+	.short	8886
+	.short	26214
+	.short	-18842
+	.short	26214
+	.short	26214
 	.short	-6008
 	.short	-4370
 	.short	-6002
@@ -8804,13 +7904,13 @@ losebgTiles:
 	.short	-4370
 	.short	21998
 	.short	-4379
-	.short	21998
-	.short	24293
 	.short	24293
 	.short	21845
-	.short	-4370
-	.short	-4370
-	.short	-4370
+	.short	-6827
+	.short	21854
+	.short	-6830
+	.short	21854
+	.short	-6878
 	.short	21854
 	.short	-4370
 	.short	21077
@@ -8820,14 +7920,14 @@ losebgTiles:
 	.short	21845
 	.short	21845
 	.short	9566
-	.short	-4523
-	.short	9566
 	.short	21998
 	.short	8738
-	.short	21797
-	.short	-4523
-	.short	21845
-	.short	21845
+	.short	9557
+	.short	8738
+	.short	8738
+	.short	8738
+	.short	8738
+	.short	8738
 	.short	21845
 	.short	21029
 	.short	9557
@@ -8837,13 +7937,13 @@ losebgTiles:
 	.short	8738
 	.short	21026
 	.short	8738
-	.short	21794
-	.short	8738
 	.short	-6878
-	.short	-4370
-	.short	-28946
+	.short	8738
 	.short	-6827
-	.short	-30482
+	.short	21026
+	.short	21998
+	.short	-6878
+	.short	21854
 	.short	-4523
 	.short	-30584
 	.short	-4379
@@ -8854,12 +7954,12 @@ losebgTiles:
 	.short	-30482
 	.short	-4370
 	.short	-28946
+	.short	-4514
+	.short	-30482
+	.short	-6830
 	.short	-4370
-	.short	-28946
-	.short	-26300
-	.short	13209
-	.short	-27580
-	.short	13209
+	.short	21845
+	.short	-30482
 	.short	-27580
 	.short	14745
 	.short	-27580
@@ -8868,7 +7968,11 @@ losebgTiles:
 	.short	-26215
 	.short	-27580
 	.short	-26215
-	.short	-26300
+	.short	-27580
+	.short	-26215
+	.short	-27580
+	.short	-26215
+	.short	-27569
 	.short	-26215
 	.short	-27580
 	.short	-26215
@@ -8878,20 +7982,16 @@ losebgTiles:
 	.short	13107
 	.short	13107
 	.short	13107
-	.short	13107
-	.short	13107
-	.short	13107
-	.short	13107
 	.short	13113
 	.short	13107
 	.short	13113
 	.short	13107
 	.short	13113
 	.short	13107
-	.short	-26317
-	.short	-26215
-	.short	-27853
-	.short	-26215
+	.short	13209
+	.short	13107
+	.short	13209
+	.short	13107
 	.short	13107
 	.short	-26215
 	.short	13107
@@ -8904,8 +8004,10 @@ losebgTiles:
 	.short	-27853
 	.short	13107
 	.short	-27853
-	.short	30473
-	.short	18295
+	.short	13107
+	.short	-27853
+	.short	13107
+	.short	-27853
 	.short	13065
 	.short	17203
 	.short	13065
@@ -8920,10 +8022,8 @@ losebgTiles:
 	.short	17203
 	.short	13065
 	.short	17203
-	.short	14736
-	.short	-32653
-	.short	-26224
-	.short	4153
+	.short	13065
+	.short	17203
 	.short	-26224
 	.short	4249
 	.short	-26224
@@ -8936,10 +8036,10 @@ losebgTiles:
 	.short	4252
 	.short	-13168
 	.short	4252
-	.short	30583
-	.short	28679
-	.short	30583
-	.short	28679
+	.short	-26224
+	.short	4249
+	.short	-26224
+	.short	4249
 	.short	30583
 	.short	28679
 	.short	30583
@@ -8952,12 +8052,10 @@ losebgTiles:
 	.short	28679
 	.short	30519
 	.short	28679
-	.short	30583
-	.short	-6239
-	.short	30583
-	.short	-23647
-	.short	30583
-	.short	1953
+	.short	14135
+	.short	12295
+	.short	14131
+	.short	29587
 	.short	30583
 	.short	1953
 	.short	30583
@@ -8968,10 +8066,12 @@ losebgTiles:
 	.short	1953
 	.short	30583
 	.short	1953
-	.short	30586
 	.short	30583
-	.short	30577
-	.short	30583
+	.short	1953
+	.short	14135
+	.short	2465
+	.short	14135
+	.short	1185
 	.short	30580
 	.short	30583
 	.short	30585
@@ -8981,13 +8081,13 @@ losebgTiles:
 	.short	30583
 	.short	30579
 	.short	30583
-	.short	30583
-	.short	30583
 	.short	30519
-	.short	28839
 	.short	30583
-	.short	28695
-	.short	30583
+	.short	30615
+	.short	30519
+	.short	30615
+	.short	30519
+	.short	30535
 	.short	28743
 	.short	30583
 	.short	28823
@@ -8996,14 +8096,14 @@ losebgTiles:
 	.short	30583
 	.short	8311
 	.short	30762
-	.short	119
-	.short	32256
 	.short	-28553
 	.short	32425
-	.short	30583
-	.short	10103
-	.short	30583
-	.short	10103
+	.short	-28553
+	.short	32423
+	.short	16503
+	.short	32295
+	.short	6775
+	.short	32295
 	.short	30583
 	.short	10103
 	.short	30583
@@ -9013,13 +8113,13 @@ losebgTiles:
 	.short	30583
 	.short	-23890
 	.short	30583
-	.short	10
-	.short	30583
 	.short	17642
-	.short	30512
 	.short	30583
-	.short	30512
+	.short	18922
 	.short	30583
+	.short	18922
+	.short	30583
+	.short	18922
 	.short	30512
 	.short	30583
 	.short	30512
@@ -9032,10 +8132,10 @@ losebgTiles:
 	.short	1911
 	.short	30512
 	.short	1911
+	.short	30576
 	.short	1911
-	.short	-871
+	.short	30576
 	.short	1911
-	.short	19612
 	.short	1911
 	.short	-14004
 	.short	1911
@@ -9044,14 +8144,14 @@ losebgTiles:
 	.short	-9140
 	.short	546
 	.short	17609
-	.short	0
-	.short	-2871
 	.short	-15292
 	.short	-15284
-	.short	30479
-	.short	30583
-	.short	30468
-	.short	30583
+	.short	19532
+	.short	17484
+	.short	16384
+	.short	-13876
+	.short	-24576
+	.short	-26172
 	.short	30468
 	.short	30583
 	.short	30468
@@ -9060,13 +8160,13 @@ losebgTiles:
 	.short	30583
 	.short	30473
 	.short	30583
-	.short	30477
-	.short	30583
 	.short	30473
 	.short	30583
-	.short	30464
+	.short	30476
 	.short	30583
-	.short	30464
+	.short	30476
+	.short	30583
+	.short	30473
 	.short	30583
 	.short	30464
 	.short	30583
@@ -9076,14 +8176,14 @@ losebgTiles:
 	.short	30583
 	.short	8704
 	.short	30586
-	.short	0
-	.short	30576
 	.short	-30304
 	.short	30576
-	.short	30583
-	.short	-32649
-	.short	30583
-	.short	-32649
+	.short	-25440
+	.short	30576
+	.short	-13280
+	.short	30576
+	.short	-13280
+	.short	30576
 	.short	30583
 	.short	-32649
 	.short	30583
@@ -9093,12 +8193,12 @@ losebgTiles:
 	.short	-23689
 	.short	16418
 	.short	2423
-	.short	-16384
-	.short	2423
 	.short	-15281
-	.short	-52
+	.short	2423
 	.short	-13108
-	.short	-13060
+	.short	2423
+	.short	-13108
+	.short	2423
 	.short	-13108
 	.short	-945
 	.short	-13156
@@ -9111,11 +8211,11 @@ losebgTiles:
 	.short	-13108
 	.short	-13108
 	.short	-13108
+	.short	-8756
 	.short	-13108
+	.short	-25396
 	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
+	.short	-25396
 	.short	-13092
 	.short	-13108
 	.short	-12852
@@ -9126,11 +8226,11 @@ losebgTiles:
 	.short	-8740
 	.short	-9012
 	.short	-8739
-	.short	-9012
-	.short	-8739
-	.short	-13108
 	.short	-8756
-	.short	-13108
+	.short	-8739
+	.short	-8739
+	.short	-8739
+	.short	-8739
 	.short	-8739
 	.short	-8756
 	.short	-8739
@@ -9160,10 +8260,10 @@ losebgTiles:
 	.short	-12835
 	.short	-8739
 	.short	-12835
-	.short	-13107
-	.short	-4
-	.short	-13108
-	.short	-30468
+	.short	-8739
+	.short	-12835
+	.short	-8739
+	.short	-12835
 	.short	-13108
 	.short	-30468
 	.short	-13108
@@ -9175,11 +8275,11 @@ losebgTiles:
 	.short	-13108
 	.short	-52
 	.short	-13108
-	.short	-52
-	.short	21845
-	.short	-21854
-	.short	21851
-	.short	-21979
+	.short	-13108
+	.short	-13108
+	.short	-13108
+	.short	-13108
+	.short	-13108
 	.short	8741
 	.short	-21982
 	.short	9560
@@ -9188,14 +8288,14 @@ losebgTiles:
 	.short	-21979
 	.short	21903
 	.short	-23979
-	.short	21903
-	.short	-23970
 	.short	-5889
 	.short	-23979
-	.short	-21856
-	.short	2560
-	.short	-21846
-	.short	-21846
+	.short	22783
+	.short	-23902
+	.short	22783
+	.short	-21854
+	.short	11919
+	.short	-24406
 	.short	2720
 	.short	-21846
 	.short	-24406
@@ -9204,14 +8304,14 @@ losebgTiles:
 	.short	-21846
 	.short	2730
 	.short	-24576
-	.short	170
-	.short	-24576
 	.short	-21846
 	.short	-21846
-	.short	-21846
-	.short	19114
+	.short	-21856
+	.short	2730
 	.short	0
-	.short	19104
+	.short	-21856
+	.short	0
+	.short	-21856
 	.short	0
 	.short	18944
 	.short	0
@@ -9224,16 +8324,12 @@ losebgTiles:
 	.short	19114
 	.short	-21846
 	.short	19114
-	.short	26219
-	.short	26214
-	.short	-20446
-	.short	26214
-	.short	8738
-	.short	26214
+	.short	-21846
+	.short	16544
+	.short	-21846
+	.short	19114
 	.short	8294
 	.short	26144
-	.short	26214
-	.short	-20448
 	.short	26214
 	.short	8706
 	.short	26214
@@ -9241,12 +8337,12 @@ losebgTiles:
 	.short	26214
 	.short	1638
 	.short	26214
-	.short	8886
-	.short	26214
-	.short	-18842
+	.short	1638
 	.short	26214
 	.short	26214
 	.short	26214
+	.short	26214
+	.short	26219
 	.short	26214
 	.short	26214
 	.short	26214
@@ -9255,438 +8351,6 @@ losebgTiles:
 	.short	26210
 	.short	26214
 	.short	26288
-	.short	26214
-	.short	-6827
-	.short	21854
-	.short	-6830
-	.short	21854
-	.short	-6878
-	.short	21854
-	.short	21803
-	.short	9710
-	.short	8886
-	.short	21026
-	.short	8806
-	.short	8738
-	.short	8806
-	.short	8738
-	.short	1638
-	.short	8738
-	.short	9557
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	21026
-	.short	8738
-	.short	21842
-	.short	8738
-	.short	-6827
-	.short	21026
-	.short	21998
-	.short	-6878
-	.short	21854
-	.short	21842
-	.short	21854
-	.short	21989
-	.short	21845
-	.short	8789
-	.short	21845
-	.short	8789
-	.short	-6830
-	.short	21797
-	.short	-6827
-	.short	-4514
-	.short	-30482
-	.short	-6830
-	.short	-4370
-	.short	21845
-	.short	-30482
-	.short	-6827
-	.short	18670
-	.short	-4379
-	.short	18568
-	.short	-28946
-	.short	18568
-	.short	-4370
-	.short	18568
-	.short	-4370
-	.short	18568
-	.short	-27580
-	.short	-26215
-	.short	-27569
-	.short	-26215
-	.short	-27580
-	.short	-26215
-	.short	-27580
-	.short	-26215
-	.short	-26300
-	.short	-26215
-	.short	-26300
-	.short	-26215
-	.short	-27580
-	.short	-26215
-	.short	-27580
-	.short	-26215
-	.short	13113
-	.short	13107
-	.short	13209
-	.short	13107
-	.short	13209
-	.short	13107
-	.short	-26215
-	.short	13107
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	14745
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	13107
-	.short	-27853
-	.short	13107
-	.short	-27853
-	.short	13107
-	.short	-27853
-	.short	13107
-	.short	-27853
-	.short	13107
-	.short	-27853
-	.short	13107
-	.short	-26317
-	.short	13107
-	.short	-26317
-	.short	13107
-	.short	13107
-	.short	13065
-	.short	17203
-	.short	13065
-	.short	17203
-	.short	13065
-	.short	17203
-	.short	13065
-	.short	17203
-	.short	13065
-	.short	17203
-	.short	13065
-	.short	17203
-	.short	13065
-	.short	17203
-	.short	13065
-	.short	17203
-	.short	-13168
-	.short	4252
-	.short	-26224
-	.short	4249
-	.short	-26224
-	.short	4249
-	.short	-26224
-	.short	4249
-	.short	-26224
-	.short	4249
-	.short	-26224
-	.short	4249
-	.short	-26224
-	.short	4249
-	.short	-26224
-	.short	4249
-	.short	30519
-	.short	28679
-	.short	14135
-	.short	12295
-	.short	14131
-	.short	29587
-	.short	13107
-	.short	29555
-	.short	13107
-	.short	14135
-	.short	13107
-	.short	13107
-	.short	13107
-	.short	13107
-	.short	13107
-	.short	13107
-	.short	30583
-	.short	1953
-	.short	14135
-	.short	2465
-	.short	14135
-	.short	1185
-	.short	14135
-	.short	-20831
-	.short	14135
-	.short	4769
-	.short	14131
-	.short	19105
-	.short	13107
-	.short	-28671
-	.short	13107
-	.short	-28671
-	.short	30583
-	.short	30615
-	.short	30519
-	.short	30615
-	.short	30519
-	.short	30535
-	.short	30583
-	.short	30535
-	.short	29559
-	.short	30697
-	.short	13175
-	.short	30505
-	.short	29555
-	.short	30628
-	.short	30519
-	.short	30478
-	.short	-28553
-	.short	32423
-	.short	16503
-	.short	32295
-	.short	6775
-	.short	32295
-	.short	-24201
-	.short	32291
-	.short	2423
-	.short	32295
-	.short	2419
-	.short	32419
-	.short	1911
-	.short	32291
-	.short	1911
-	.short	32419
-	.short	30583
-	.short	18922
-	.short	30583
-	.short	18922
-	.short	30583
-	.short	18922
-	.short	30583
-	.short	18922
-	.short	30583
-	.short	18922
-	.short	30583
-	.short	18922
-	.short	30583
-	.short	18922
-	.short	30583
-	.short	18922
-	.short	30512
-	.short	1911
-	.short	30576
-	.short	1911
-	.short	30576
-	.short	1911
-	.short	30576
-	.short	14199
-	.short	30576
-	.short	30583
-	.short	30512
-	.short	30583
-	.short	30512
-	.short	30583
-	.short	30512
-	.short	30583
-	.short	19532
-	.short	17484
-	.short	16384
-	.short	-13876
-	.short	-24576
-	.short	-26172
-	.short	887
-	.short	-26295
-	.short	1911
-	.short	-26221
-	.short	1911
-	.short	-26317
-	.short	1911
-	.short	-26215
-	.short	887
-	.short	13209
-	.short	30476
-	.short	30583
-	.short	30476
-	.short	30583
-	.short	30473
-	.short	30583
-	.short	30473
-	.short	30583
-	.short	30467
-	.short	30583
-	.short	30467
-	.short	30583
-	.short	30467
-	.short	30583
-	.short	30467
-	.short	30583
-	.short	-25440
-	.short	30576
-	.short	-13280
-	.short	30576
-	.short	-13280
-	.short	30576
-	.short	19488
-	.short	30576
-	.short	-26336
-	.short	30576
-	.short	-26336
-	.short	30576
-	.short	-27872
-	.short	30576
-	.short	-26336
-	.short	30576
-	.short	2423
-	.short	-13108
-	.short	2423
-	.short	-13108
-	.short	2423
-	.short	-13108
-	.short	2423
-	.short	-13108
-	.short	2423
-	.short	-25127
-	.short	2423
-	.short	-8804
-	.short	2423
-	.short	-25399
-	.short	2423
-	.short	-26151
-	.short	-13108
-	.short	-8756
-	.short	-13108
-	.short	-25396
-	.short	-13108
-	.short	-25396
-	.short	-26164
-	.short	-8743
-	.short	-26215
-	.short	-25191
-	.short	-26211
-	.short	-8807
-	.short	-26215
-	.short	-8739
-	.short	-25191
-	.short	-8807
-	.short	-8756
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-9827
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-12835
-	.short	-8739
-	.short	-12835
-	.short	-8739
-	.short	-12835
-	.short	-8739
-	.short	-13091
-	.short	-8739
-	.short	-13091
-	.short	-8739
-	.short	-13107
-	.short	-8739
-	.short	-13155
-	.short	-8739
-	.short	-13159
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-820
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-52
-	.short	-13108
-	.short	-13108
-	.short	22783
-	.short	-23902
-	.short	22783
-	.short	-21854
-	.short	11919
-	.short	-24406
-	.short	22664
-	.short	2
-	.short	-6769
-	.short	-21979
-	.short	-6001
-	.short	-23979
-	.short	22671
-	.short	-21922
-	.short	-5889
-	.short	-23058
-	.short	-21856
-	.short	2730
-	.short	0
-	.short	-21856
-	.short	0
-	.short	-21856
-	.short	-22016
-	.short	-24566
-	.short	170
-	.short	-21856
-	.short	-24406
-	.short	-21856
-	.short	170
-	.short	-24576
-	.short	-21846
-	.short	-21846
-	.short	-21846
-	.short	19114
-	.short	-21846
-	.short	16544
-	.short	-21846
-	.short	19114
-	.short	-21856
-	.short	19104
-	.short	-22006
-	.short	19114
-	.short	-22006
-	.short	19104
-	.short	-22016
-	.short	19114
-	.short	-21846
-	.short	18954
-	.short	26214
-	.short	1638
-	.short	26214
-	.short	26214
-	.short	26214
-	.short	26214
-	.short	26214
-	.short	26214
-	.short	26219
-	.short	26214
-	.short	26298
-	.short	26214
-	.short	26112
-	.short	26214
-	.short	26112
 	.short	26214
 	.short	26154
 	.short	26214
@@ -9696,14 +8360,14 @@ losebgTiles:
 	.short	26214
 	.short	38
 	.short	26214
-	.short	38
-	.short	26214
-	.short	11110
-	.short	26210
+	.short	21803
+	.short	9710
+	.short	8806
+	.short	8738
+	.short	8806
+	.short	8738
 	.short	1638
-	.short	26208
-	.short	1638
-	.short	26208
+	.short	8738
 	.short	1638
 	.short	8736
 	.short	26214
@@ -9711,63 +8375,63 @@ losebgTiles:
 	.short	26214
 	.short	8706
 	.short	26214
-	.short	8710
-	.short	26214
 	.short	10758
-	.short	26214
-	.short	10790
-	.short	26214
-	.short	8886
-	.short	26214
-	.short	8886
+	.short	8738
+	.short	8738
+	.short	8738
+	.short	8738
+	.short	8738
+	.short	21026
+	.short	8738
+	.short	21842
 	.short	8738
 	.short	21842
 	.short	8738
 	.short	9557
 	.short	8738
 	.short	8789
-	.short	8738
-	.short	8741
 	.short	21026
 	.short	8741
-	.short	21026
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
-	.short	8738
+	.short	21842
+	.short	21854
+	.short	8789
+	.short	21845
+	.short	8789
+	.short	-6830
+	.short	21797
+	.short	-6827
 	.short	21797
 	.short	-6827
 	.short	21842
 	.short	21845
 	.short	21026
 	.short	21845
-	.short	21026
-	.short	21842
 	.short	8738
 	.short	-6830
-	.short	9554
 	.short	-6827
-	.short	21794
-	.short	-6827
-	.short	21794
-	.short	-6827
+	.short	18670
+	.short	-28946
+	.short	18568
+	.short	-4370
+	.short	18568
+	.short	-4370
+	.short	18568
 	.short	-4370
 	.short	17544
 	.short	-28955
 	.short	17480
 	.short	-28955
 	.short	17480
-	.short	-28955
-	.short	17476
 	.short	-28946
 	.short	17476
-	.short	-30482
-	.short	17476
-	.short	-28946
-	.short	17480
-	.short	-4370
-	.short	17480
+	.short	-27580
+	.short	-26215
+	.short	-26300
+	.short	-26215
+	.short	-27580
+	.short	-26215
+	.short	-27580
+	.short	-26215
 	.short	-27580
 	.short	-26215
 	.short	-26220
@@ -9776,38 +8440,8 @@ losebgTiles:
 	.short	-26215
 	.short	-26300
 	.short	-26215
-	.short	-26300
-	.short	-26215
-	.short	-27580
-	.short	-26215
-	.short	17476
-	.short	-26215
-	.short	17476
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	13209
-	.short	13107
 	.short	-26215
 	.short	13107
-	.short	-26215
-	.short	13209
-	.short	-26215
-	.short	14745
 	.short	-26215
 	.short	14745
 	.short	-26215
@@ -9816,6 +8450,12 @@ losebgTiles:
 	.short	-26215
 	.short	-26215
 	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	-26215
 	.short	13107
 	.short	13107
 	.short	13107
@@ -9823,15 +8463,39 @@ losebgTiles:
 	.short	13107
 	.short	13107
 	.short	13107
-	.short	13203
+	.short	13107
+	.short	13209
+	.short	13107
+	.short	-26215
+	.short	13107
+	.short	-26215
+	.short	13209
+	.short	-26215
+	.short	14745
+	.short	13107
+	.short	-27853
+	.short	13107
+	.short	-26317
+	.short	13107
+	.short	-26317
+	.short	13107
+	.short	13107
+	.short	13107
+	.short	13107
+	.short	13107
+	.short	13107
+	.short	13107
+	.short	13107
 	.short	-27853
 	.short	-27751
-	.short	14745
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	-26215
-	.short	-26215
+	.short	-26224
+	.short	4249
+	.short	-26224
+	.short	4249
+	.short	-26224
+	.short	4249
+	.short	-26224
+	.short	4249
 	.short	-26224
 	.short	4249
 	.short	-26224
@@ -9840,14 +8504,14 @@ losebgTiles:
 	.short	4153
 	.short	-27760
 	.short	4153
-	.short	-27760
-	.short	4153
-	.short	-26224
-	.short	-8135
-	.short	-26224
-	.short	4153
-	.short	-26224
-	.short	4249
+	.short	13107
+	.short	29555
+	.short	13107
+	.short	13107
+	.short	13107
+	.short	13107
+	.short	13107
+	.short	13107
 	.short	13107
 	.short	13107
 	.short	13107
@@ -9856,14 +8520,14 @@ losebgTiles:
 	.short	12291
 	.short	13107
 	.short	12291
+	.short	14135
+	.short	-20831
+	.short	14131
+	.short	19105
 	.short	13107
-	.short	12291
+	.short	-28671
 	.short	13107
-	.short	12291
-	.short	13107
-	.short	12291
-	.short	13107
-	.short	12291
+	.short	-28671
 	.short	13107
 	.short	12289
 	.short	14131
@@ -9872,46 +8536,46 @@ losebgTiles:
 	.short	28673
 	.short	13107
 	.short	12289
-	.short	13107
-	.short	12289
-	.short	13107
-	.short	12302
-	.short	13107
-	.short	14862
-	.short	13107
-	.short	15886
+	.short	30583
+	.short	30535
+	.short	13175
+	.short	30505
+	.short	29555
+	.short	30628
+	.short	30519
+	.short	30478
 	.short	30583
 	.short	30466
 	.short	13107
 	.short	13066
 	.short	13107
 	.short	30532
-	.short	13107
-	.short	30583
 	.short	14131
 	.short	30519
-	.short	13171
-	.short	14195
-	.short	29555
-	.short	14131
-	.short	14131
-	.short	30519
+	.short	-24201
+	.short	32291
+	.short	2419
+	.short	32419
+	.short	1911
+	.short	32291
+	.short	1911
+	.short	32419
 	.short	1911
 	.short	32419
 	.short	1847
 	.short	32425
 	.short	1911
 	.short	32297
-	.short	1907
-	.short	32292
 	.short	-22665
 	.short	32296
-	.short	-30925
-	.short	32298
-	.short	-27789
-	.short	32416
-	.short	-27785
-	.short	32416
+	.short	30583
+	.short	18922
+	.short	30583
+	.short	18922
+	.short	30583
+	.short	18922
+	.short	30583
+	.short	18922
 	.short	30583
 	.short	18922
 	.short	30583
@@ -9920,78 +8584,78 @@ losebgTiles:
 	.short	-26134
 	.short	30583
 	.short	17386
-	.short	30583
-	.short	17386
-	.short	30583
-	.short	-27670
-	.short	30583
-	.short	17386
-	.short	30583
-	.short	17386
+	.short	30576
+	.short	14199
 	.short	30512
 	.short	30583
 	.short	30512
-	.short	1911
+	.short	30583
+	.short	30512
+	.short	30583
+	.short	30512
+	.short	30583
 	.short	30512
 	.short	1911
 	.short	30512
 	.short	1911
 	.short	30512
 	.short	1911
-	.short	30512
+	.short	887
+	.short	-26295
 	.short	1911
-	.short	30512
+	.short	-26317
 	.short	1911
-	.short	30512
-	.short	18295
+	.short	-26215
+	.short	887
+	.short	13209
 	.short	1911
 	.short	13209
 	.short	0
 	.short	-26215
 	.short	14739
 	.short	-26215
-	.short	14739
-	.short	13209
 	.short	-26221
 	.short	13203
-	.short	-4370
-	.short	14745
-	.short	0
-	.short	-26220
-	.short	-22119
-	.short	-26216
-	.short	30467
-	.short	30583
-	.short	30467
-	.short	30583
-	.short	30467
-	.short	30583
-	.short	30467
-	.short	30583
-	.short	30467
-	.short	30583
-	.short	30467
-	.short	30583
 	.short	30473
 	.short	30583
-	.short	30473
+	.short	30467
 	.short	30583
+	.short	30467
+	.short	30583
+	.short	30467
+	.short	30583
+	.short	30467
+	.short	30583
+	.short	30467
+	.short	30583
+	.short	30467
+	.short	30583
+	.short	30467
+	.short	30583
+	.short	19488
+	.short	30576
+	.short	-26336
+	.short	30576
+	.short	-27872
+	.short	30576
+	.short	-26336
+	.short	30576
 	.short	-26336
 	.short	30576
 	.short	13136
 	.short	30576
 	.short	-27680
 	.short	30576
-	.short	-26288
-	.short	30576
 	.short	-26144
 	.short	30576
-	.short	17568
-	.short	30576
-	.short	17568
-	.short	30576
-	.short	-96
-	.short	30576
+	.short	2423
+	.short	-13108
+	.short	2423
+	.short	-8804
+	.short	2423
+	.short	-25399
+	.short	2423
+	.short	-26151
 	.short	2423
 	.short	-8743
 	.short	2423
@@ -9999,79 +8663,47 @@ losebgTiles:
 	.short	2423
 	.short	-8743
 	.short	2423
-	.short	-9773
-	.short	2423
 	.short	-9763
-	.short	2423
-	.short	-26220
-	.short	2423
-	.short	-14012
-	.short	2423
-	.short	-26300
+	.short	-26164
+	.short	-8743
+	.short	-26211
+	.short	-8807
+	.short	-26215
+	.short	-8739
+	.short	-25191
+	.short	-8807
 	.short	-26151
 	.short	-8807
 	.short	-8743
 	.short	-8739
 	.short	-8743
 	.short	-8739
-	.short	-8739
-	.short	-8739
 	.short	-8743
 	.short	-8739
-	.short	-13236
-	.short	-9780
-	.short	-13111
-	.short	-13236
-	.short	-13108
-	.short	-13108
+	.short	-8739
+	.short	-8739
+	.short	-8739
+	.short	-8739
+	.short	-8739
+	.short	-8739
+	.short	-8739
+	.short	-8739
 	.short	-8739
 	.short	-8739
 	.short	-11469
 	.short	-8739
 	.short	-11469
-	.short	-8739
-	.short	-8739
 	.short	-8739
 	.short	-26211
 	.short	-8739
 	.short	-8739
-	.short	-8807
-	.short	-26212
-	.short	-8743
-	.short	-26212
-	.short	-9831
+	.short	-13091
 	.short	-8739
+	.short	-13107
 	.short	-8739
+	.short	-13155
 	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-25123
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-8739
-	.short	-10275
-	.short	-8739
-	.short	-10275
-	.short	-8739
-	.short	-8739
+	.short	-13159
 	.short	-8739
 	.short	-13927
 	.short	-12835
@@ -10080,14 +8712,12 @@ losebgTiles:
 	.short	-13108
 	.short	-8739
 	.short	-13108
-	.short	-8739
 	.short	-13108
-	.short	-12835
 	.short	-13108
-	.short	-12835
 	.short	-13108
-	.short	-12835
 	.short	-13108
+	.short	-13108
+	.short	-52
 	.short	-13108
 	.short	-13108
 	.short	-13108
@@ -10098,28 +8728,30 @@ losebgTiles:
 	.short	-13108
 	.short	-13108
 	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
+	.short	22664
+	.short	2
+	.short	-6001
+	.short	-23979
+	.short	22671
+	.short	-21922
+	.short	-5889
+	.short	-23058
 	.short	-28676
 	.short	-23970
 	.short	-30468
 	.short	8789
 	.short	-30465
 	.short	-24027
-	.short	-5889
-	.short	-21979
 	.short	-28676
 	.short	-23970
-	.short	-28676
-	.short	-24024
-	.short	-4
-	.short	21903
-	.short	-52
-	.short	21903
+	.short	-22016
+	.short	-24566
+	.short	-24406
+	.short	-21856
+	.short	170
+	.short	-24576
+	.short	-21846
+	.short	-21846
 	.short	-21846
 	.short	-21846
 	.short	2730
@@ -10128,35 +8760,31 @@ losebgTiles:
 	.short	0
 	.short	2730
 	.short	-21846
-	.short	2730
+	.short	-21856
+	.short	19104
+	.short	-22006
+	.short	19104
+	.short	-22016
+	.short	19114
 	.short	-21846
-	.short	-21846
-	.short	-24566
-	.short	-21854
-	.short	170
-	.short	-21854
-	.short	170
+	.short	18954
 	.short	-21846
 	.short	19114
 	.short	0
 	.short	19114
 	.short	0
-	.short	19114
-	.short	-24566
 	.short	19114
 	.short	-22006
 	.short	16554
-	.short	2730
-	.short	19104
-	.short	-22016
-	.short	18944
-	.short	-22016
-	.short	18954
+	.short	26298
+	.short	26214
+	.short	26112
+	.short	26214
+	.short	26112
+	.short	26214
 	.short	25099
 	.short	26214
 	.short	25126
-	.short	26214
-	.short	25094
 	.short	26214
 	.short	-19925
 	.short	26214
@@ -10164,14 +8792,14 @@ losebgTiles:
 	.short	8738
 	.short	8738
 	.short	8738
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	11110
+	.short	26210
+	.short	1638
+	.short	26208
+	.short	1638
+	.short	26208
 	.short	9830
 	.short	26218
-	.short	9830
-	.short	26288
 	.short	9830
 	.short	26288
 	.short	9830
@@ -10180,12 +8808,12 @@ losebgTiles:
 	.short	8746
 	.short	8738
 	.short	8738
-	.short	0
-	.short	0
-	.short	0
-	.short	0
 	.short	26214
-	.short	8294
+	.short	10790
+	.short	26214
+	.short	8886
+	.short	26214
+	.short	8886
 	.short	26214
 	.short	8294
 	.short	26214
@@ -10196,10 +8824,10 @@ losebgTiles:
 	.short	8738
 	.short	8738
 	.short	8738
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	21026
+	.short	8738
+	.short	8738
+	.short	8738
 	.short	8738
 	.short	8738
 	.short	8738
@@ -10212,30 +8840,30 @@ losebgTiles:
 	.short	8738
 	.short	8738
 	.short	8738
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	9554
+	.short	-6827
+	.short	21794
+	.short	-6827
+	.short	21794
+	.short	-6827
 	.short	8738
 	.short	-6830
 	.short	8786
 	.short	-6827
 	.short	21842
 	.short	-4523
-	.short	21842
-	.short	-4523
 	.short	21794
 	.short	-4523
 	.short	21842
 	.short	-4523
-	.short	0
-	.short	0
-	.short	0
-	.short	0
 	.short	-30482
 	.short	17476
-	.short	-30578
-	.short	17544
+	.short	-28946
+	.short	17480
+	.short	-4370
+	.short	17480
+	.short	-30482
+	.short	17476
 	.short	-30578
 	.short	17544
 	.short	-30482
@@ -10244,10 +8872,12 @@ losebgTiles:
 	.short	17544
 	.short	-30482
 	.short	18568
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	-27580
+	.short	-26215
+	.short	17476
+	.short	-26215
+	.short	17476
+	.short	-26215
 	.short	17476
 	.short	-26220
 	.short	17476
@@ -10258,12 +8888,10 @@ losebgTiles:
 	.short	17476
 	.short	17476
 	.short	17476
-	.short	17476
-	.short	17476
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	-26215
 	.short	-26215
 	.short	-26215
 	.short	-26215
@@ -10276,10 +8904,6 @@ losebgTiles:
 	.short	-26215
 	.short	-26215
 	.short	-26215
-	.short	0
-	.short	0
-	.short	0
-	.short	0
 	.short	-26215
 	.short	-26215
 	.short	-26215
@@ -10292,10 +8916,30 @@ losebgTiles:
 	.short	-26215
 	.short	-26215
 	.short	-26215
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	14745
+	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	-26215
+	.short	13065
+	.short	17203
+	.short	13065
+	.short	17203
 	.short	13065
 	.short	17203
 	.short	13065
@@ -10308,10 +8952,10 @@ losebgTiles:
 	.short	6553
 	.short	9
 	.short	0
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	-26224
+	.short	-8135
+	.short	-26224
+	.short	4153
 	.short	-26224
 	.short	4249
 	.short	-26224
@@ -10324,10 +8968,10 @@ losebgTiles:
 	.short	-8039
 	.short	-26216
 	.short	153
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	13107
+	.short	12291
+	.short	13107
+	.short	12291
 	.short	13107
 	.short	12291
 	.short	13107
@@ -10340,14 +8984,14 @@ losebgTiles:
 	.short	-28663
 	.short	0
 	.short	0
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	13107
+	.short	12302
+	.short	13107
+	.short	14862
+	.short	13107
+	.short	15886
 	.short	13107
 	.short	13326
-	.short	13107
-	.short	14606
 	.short	13107
 	.short	14606
 	.short	13107
@@ -10356,31 +9000,31 @@ losebgTiles:
 	.short	-26322
 	.short	0
 	.short	0
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	13171
+	.short	14195
+	.short	29555
+	.short	14131
+	.short	14131
+	.short	30519
 	.short	14131
 	.short	30464
 	.short	29491
 	.short	14080
-	.short	13107
-	.short	13056
 	.short	29491
 	.short	13056
 	.short	-26215
 	.short	-27648
 	.short	0
 	.short	224
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	-30925
+	.short	32298
+	.short	-27789
+	.short	32416
+	.short	-27785
+	.short	32416
 	.short	30515
 	.short	32256
 	.short	30579
-	.short	32256
-	.short	29559
 	.short	32256
 	.short	13107
 	.short	32256
@@ -10388,28 +9032,28 @@ losebgTiles:
 	.short	-25088
 	.short	0
 	.short	32
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	30583
+	.short	-27670
+	.short	30583
+	.short	17386
+	.short	30583
+	.short	17386
 	.short	30583
 	.short	-30230
 	.short	14195
 	.short	-31510
-	.short	30583
-	.short	8170
 	.short	13171
 	.short	-31654
 	.short	-26215
 	.short	-28702
 	.short	0
 	.short	17536
-	.short	0
-	.short	0
-	.short	0
-	.short	0
 	.short	30512
-	.short	30583
+	.short	1911
+	.short	30512
+	.short	1911
+	.short	30512
+	.short	18295
 	.short	30512
 	.short	30583
 	.short	30512
@@ -10420,27 +9064,27 @@ losebgTiles:
 	.short	-26215
 	.short	10
 	.short	0
+	.short	-4370
+	.short	14745
 	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	-26220
+	.short	-22119
+	.short	-26216
 	.short	-22665
 	.short	-13234
 	.short	-22665
 	.short	17486
 	.short	-22665
 	.short	-2
-	.short	-22665
-	.short	-2
 	.short	-22221
 	.short	20478
 	.short	0
 	.short	-1
-	.short	0
-	.short	0
-	.short	0
-	.short	0
-	.short	30468
+	.short	30467
+	.short	30583
+	.short	30473
+	.short	30583
+	.short	30473
 	.short	30583
 	.short	30468
 	.short	30583
@@ -10452,15 +9096,15 @@ losebgTiles:
 	.short	13113
 	.short	15
 	.short	0
-	.short	0
-	.short	0
-	.short	0
-	.short	0
-	.short	-96
+	.short	17568
+	.short	30576
+	.short	17568
 	.short	30576
 	.short	-96
 	.short	30576
-	.short	-28896
+	.short	-96
+	.short	30576
+	.short	-96
 	.short	30576
 	.short	-96
 	.short	30576
@@ -10468,31 +9112,31 @@ losebgTiles:
 	.short	13104
 	.short	-128
 	.short	0
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	2423
+	.short	-26220
+	.short	2423
+	.short	-14012
+	.short	2423
+	.short	-26300
 	.short	2423
 	.short	-25404
 	.short	2423
 	.short	-15292
-	.short	2423
-	.short	17604
 	.short	2423
 	.short	-15164
 	.short	2451
 	.short	19652
 	.short	0
 	.short	19652
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	-13236
+	.short	-9780
 	.short	-13111
+	.short	-13236
+	.short	-13108
 	.short	-13108
 	.short	-13111
 	.short	-13108
-	.short	-13156
+	.short	-13111
 	.short	-13108
 	.short	-27500
 	.short	-26164
@@ -10500,31 +9144,31 @@ losebgTiles:
 	.short	-13876
 	.short	-13876
 	.short	-13108
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	-8739
+	.short	-8807
+	.short	-26212
+	.short	-8743
+	.short	-26212
+	.short	-9831
 	.short	-13108
 	.short	-8807
 	.short	-13108
 	.short	-26212
-	.short	-26215
-	.short	-13879
 	.short	-26215
 	.short	-26215
 	.short	-26212
 	.short	-8743
 	.short	-26212
 	.short	-26151
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	-8739
+	.short	-8739
+	.short	-8739
+	.short	-8739
+	.short	-8739
+	.short	-8739
 	.short	-8739
 	.short	-8739
 	.short	-8807
-	.short	-8739
-	.short	-9828
 	.short	-8739
 	.short	-25396
 	.short	-8743
@@ -10532,14 +9176,14 @@ losebgTiles:
 	.short	-26215
 	.short	13181
 	.short	-8909
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	-8739
+	.short	-10275
+	.short	-8739
+	.short	-10275
+	.short	-8739
+	.short	-8739
 	.short	-8739
 	.short	-8745
-	.short	-8739
-	.short	-8739
 	.short	-8739
 	.short	-8739
 	.short	-8739
@@ -10548,42 +9192,32 @@ losebgTiles:
 	.short	-26163
 	.short	-8803
 	.short	-8739
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	-8739
+	.short	-8739
+	.short	-8739
+	.short	-8739
+	.short	-8739
+	.short	-8739
 	.short	-8739
 	.short	-8739
 	.short	-8745
 	.short	-8739
-	.short	-8739
-	.short	-8995
 	.short	-8739
 	.short	-12835
 	.short	-13155
 	.short	-13108
 	.short	-25123
 	.short	-13108
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	-12835
+	.short	-13108
+	.short	-12835
+	.short	-13108
+	.short	-12835
+	.short	-13108
 	.short	-12835
 	.short	-13108
 	.short	-8739
 	.short	-13108
-	.short	-13107
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	-13108
-	.short	0
-	.short	0
-	.short	0
-	.short	0
 	.short	-13108
 	.short	-13108
 	.short	-13108
@@ -10596,47 +9230,57 @@ losebgTiles:
 	.short	-13108
 	.short	-13108
 	.short	-13108
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	-13108
+	.short	-13108
+	.short	-13108
+	.short	-13108
+	.short	-13108
+	.short	-13108
+	.short	-13108
+	.short	-13108
+	.short	-13108
+	.short	-13108
+	.short	-28676
+	.short	-24024
+	.short	-4
+	.short	21903
+	.short	-52
+	.short	21903
 	.short	-52
 	.short	9615
 	.short	-2868
 	.short	-6001
-	.short	-52
-	.short	-30465
 	.short	-52
 	.short	-28673
 	.short	-52
 	.short	-30465
 	.short	-12340
 	.short	22671
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	-21846
+	.short	-24566
+	.short	-21854
+	.short	170
+	.short	-21854
+	.short	170
 	.short	2730
 	.short	2730
 	.short	-23211
 	.short	2730
-	.short	-21931
-	.short	170
 	.short	2654
 	.short	170
 	.short	-23970
 	.short	-21846
 	.short	-21979
 	.short	-21846
-	.short	0
-	.short	0
-	.short	0
-	.short	0
+	.short	2730
+	.short	19104
+	.short	-22016
+	.short	18944
+	.short	-22016
+	.short	18954
 	.short	-21856
 	.short	19104
 	.short	-21856
-	.short	19114
-	.short	-22016
 	.short	19114
 	.short	-22006
 	.short	18954
@@ -10644,8 +9288,4 @@ losebgTiles:
 	.short	16544
 	.short	-24406
 	.short	19104
-	.short	0
-	.short	0
-	.short	0
-	.short	0
 	.ident	"GCC: (devkitARM release 53) 9.1.0"
