@@ -572,7 +572,7 @@ void win();
 void goToWin();
 void draw();
 # 2 "main.c" 2
-# 17 "main.c"
+# 15 "main.c"
 int delayTimer;
 int state;
 enum {START, GAME, INSTRUCTION, PAUSE, WIN, LOSE};
@@ -706,10 +706,10 @@ void game() {
     if ((!(~(oldButtons) & ((1 << 3))) && (~buttons & ((1 << 3))))) {
         goToPause();
     }
-# 161 "main.c"
+# 159 "main.c"
     if (player.lives == 0) {
         if (delayTimer <= 0) {
-            delayTimer = 100;
+            delayTimer = 40;
         }
         delayTimer--;
 
@@ -724,9 +724,9 @@ void game() {
             break;
         }
     }
-    if (player.score >= 5 && ratsDead) {
+    if (player.score == 6 && ratsDead) {
         if (delayTimer <= 0) {
-            delayTimer = 100;
+            delayTimer = 40;
         }
         delayTimer--;
 
@@ -734,7 +734,7 @@ void game() {
             goToWin();
         }
     }
-# 201 "main.c"
+# 199 "main.c"
 }
 
 

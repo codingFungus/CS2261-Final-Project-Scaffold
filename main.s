@@ -635,29 +635,29 @@ game:
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	push	{r4, lr}
-	ldr	r3, .L80
+	ldr	r3, .L81
 	mov	lr, pc
 	bx	r3
-	ldr	r3, .L80+4
+	ldr	r3, .L81+4
 	mov	lr, pc
 	bx	r3
-	ldr	r3, .L80+8
+	ldr	r3, .L81+8
 	ldrh	r3, [r3]
 	tst	r3, #8
 	beq	.L66
-	ldr	r3, .L80+12
+	ldr	r3, .L81+12
 	ldrh	r3, [r3]
 	tst	r3, #8
 	beq	.L79
 .L66:
-	ldr	r4, .L80+16
+	ldr	r4, .L81+16
 	ldr	r3, [r4, #56]
 	cmp	r3, #0
 	bne	.L68
-	ldr	r2, .L80+20
+	ldr	r2, .L81+20
 	ldr	r3, [r2]
 	cmp	r3, #0
-	movle	r3, #99
+	movle	r3, #39
 	strle	r3, [r2]
 	ble	.L68
 	sub	r3, r3, #1
@@ -665,7 +665,7 @@ game:
 	str	r3, [r2]
 	bleq	goToLose
 .L68:
-	ldr	r3, .L80+24
+	ldr	r3, .L81+24
 	ldr	r2, [r3, #56]
 	cmp	r2, #0
 	bgt	.L65
@@ -676,28 +676,30 @@ game:
 	cmp	r3, #0
 	bgt	.L65
 	ldr	r3, [r4, #60]
-	cmp	r3, #4
-	ble	.L65
-	ldr	r2, .L80+20
-	ldr	r3, [r2]
-	cmp	r3, #0
-	movle	r3, #99
-	strle	r3, [r2]
-	ble	.L65
-	sub	r3, r3, #1
-	cmp	r3, #0
-	str	r3, [r2]
-	popeq	{r4, lr}
-	beq	goToWin
+	cmp	r3, #6
+	beq	.L80
 .L65:
 	pop	{r4, lr}
 	bx	lr
 .L79:
 	bl	goToPause
 	b	.L66
-.L81:
-	.align	2
 .L80:
+	ldr	r2, .L81+20
+	ldr	r3, [r2]
+	cmp	r3, #0
+	movle	r3, #39
+	strle	r3, [r2]
+	ble	.L65
+	sub	r3, r3, #1
+	cmp	r3, #0
+	str	r3, [r2]
+	bne	.L65
+	pop	{r4, lr}
+	b	goToWin
+.L82:
+	.align	2
+.L81:
 	.word	updateGame
 	.word	drawGame
 	.word	oldButtons
@@ -730,27 +732,27 @@ draw:
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	mov	r3, #67108864
-	ldr	r2, .L85
+	ldr	r2, .L86
 	push	{r4, lr}
 	ldrh	r0, [r2]
 	ldrh	r1, [r2, #4]
 	strh	r0, [r3, #16]	@ movhi
-	ldr	r2, .L85+4
+	ldr	r2, .L86+4
 	strh	r1, [r3, #18]	@ movhi
 	mov	lr, pc
 	bx	r2
-	ldr	r4, .L85+8
+	ldr	r4, .L86+8
 	mov	r3, #512
 	mov	r2, #117440512
 	mov	r0, #3
-	ldr	r1, .L85+12
+	ldr	r1, .L86+12
 	mov	lr, pc
 	bx	r4
 	pop	{r4, lr}
 	bx	lr
-.L86:
+.L87:
 	.align	2
-.L85:
+.L86:
 	.word	.LANCHOR0
 	.word	waitForVBlank
 	.word	DMANow
@@ -769,18 +771,18 @@ main:
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	push	{r4, r7, fp, lr}
-	ldr	r3, .L107
+	ldr	r3, .L108
 	mov	lr, pc
 	bx	r3
-	ldr	r4, .L107+4
-	ldr	r8, .L107+8
-	ldr	r7, .L107+12
-	ldr	fp, .L107+16
-	ldr	r10, .L107+20
-	ldr	r9, .L107+24
-	ldr	r5, .L107+28
-	ldr	r6, .L107+32
-.L96:
+	ldr	r4, .L108+4
+	ldr	r8, .L108+8
+	ldr	r7, .L108+12
+	ldr	fp, .L108+16
+	ldr	r10, .L108+20
+	ldr	r9, .L108+24
+	ldr	r5, .L108+28
+	ldr	r6, .L108+32
+.L97:
 	ldrh	r2, [r4]
 	strh	r2, [r8]	@ movhi
 	ldr	r3, [r7]
@@ -788,52 +790,52 @@ main:
 	strh	r1, [r4]	@ movhi
 	cmp	r3, #5
 	ldrls	pc, [pc, r3, asl #2]
-	b	.L88
-.L90:
+	b	.L89
+.L91:
+	.word	.L96
 	.word	.L95
 	.word	.L94
 	.word	.L93
 	.word	.L92
-	.word	.L91
-	.word	.L89
-.L89:
+	.word	.L90
+.L90:
 	tst	r2, #8
-	ldrne	r3, .L107+36
+	ldrne	r3, .L108+36
 	movne	lr, pc
 	bxne	r3
-.L88:
+.L89:
 	mov	lr, pc
 	bx	r5
-	b	.L96
-.L91:
+	b	.L97
+.L92:
 	tst	r2, #8
-	beq	.L88
-	ldr	r3, .L107+40
+	beq	.L89
+	ldr	r3, .L108+40
 	mov	lr, pc
 	bx	r3
-	b	.L88
-.L92:
+	b	.L89
+.L93:
 	mov	lr, pc
 	bx	r9
-	b	.L88
-.L93:
+	b	.L89
+.L94:
 	tst	r2, #8
-	beq	.L88
-	ldr	r3, .L107+44
+	beq	.L89
+	ldr	r3, .L108+44
 	mov	lr, pc
 	bx	r3
-	b	.L88
-.L95:
+	b	.L89
+.L96:
 	mov	lr, pc
 	bx	fp
-	b	.L88
-.L94:
+	b	.L89
+.L95:
 	mov	lr, pc
 	bx	r10
-	b	.L88
-.L108:
+	b	.L89
+.L109:
 	.align	2
-.L107:
+.L108:
 	.word	initialize
 	.word	buttons
 	.word	oldButtons

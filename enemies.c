@@ -9,7 +9,7 @@ void initRat() {
         rat[i].height = 24;
         rat[i].x = xRat[i];
         rat[i].y = yRat[i];
-        rat[i].oamIndex = 15 + i;
+        rat[i].oamIndex = 30 + i;
         rat[i].xVel = 1;
         rat[i].yVel = 1;
         rat[i].direction = RIGHT;

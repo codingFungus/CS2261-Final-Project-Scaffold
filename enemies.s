@@ -21,13 +21,13 @@ initRat:
 	@ Function supports interworking.
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
+	mov	r2, #30
 	push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
-	mov	r1, #15
-	mov	r4, #30
-	mov	lr, #120
+	mov	r1, #1
+	mov	r4, #120
+	mov	lr, r2
 	mov	fp, #32
 	mov	r10, #24
-	mov	r2, #1
 	mov	r9, #10
 	mov	r0, #0
 	mov	r8, #7
@@ -36,26 +36,25 @@ initRat:
 	ldr	r3, .L6+4
 	add	r6, ip, #12
 .L3:
-	add	r5, r1, #1
-	strb	r1, [r3, #44]
-	and	r1, r5, #255
-	cmp	r1, #18
+	add	r5, r2, #1
+	strb	r2, [r3, #44]
+	and	r2, r5, #255
+	cmp	r2, #33
+	stm	r3, {r4, lr}
 	str	fp, [r3, #16]
 	str	r10, [r3, #20]
-	str	lr, [r3]
-	str	r4, [r3, #4]
-	str	r2, [r3, #8]
-	str	r2, [r3, #12]
-	str	r2, [r3, #28]
+	str	r1, [r3, #8]
+	str	r1, [r3, #12]
+	str	r1, [r3, #28]
 	str	r9, [r3, #24]
 	str	r0, [r3, #36]
 	str	r8, [r3, #40]
-	str	r2, [r3, #32]
+	str	r1, [r3, #32]
 	str	r0, [r3, #52]
 	str	r7, [r3, #56]
 	add	r3, r3, #76
-	ldrne	lr, [ip], #4
-	ldrne	r4, [r6], #4
+	ldrne	r4, [ip], #4
+	ldrne	lr, [r6], #4
 	bne	.L3
 .L1:
 	pop	{r4, r5, r6, r7, r8, r9, r10, fp, lr}

@@ -9,7 +9,7 @@
  * updated the artwork of the game
  * added time delay to win/lose state so it doesn't happen suddenly
  * made the pause screen a moving background
- *  
+ * updated instructions
 */
 
 int delayTimer;
@@ -173,7 +173,7 @@ void game() {
             break;
         }
     }
-    if (player.score >= 5 && ratsDead) {
+    if (player.score == 6 && ratsDead) {
         if (delayTimer <= 0) {
             delayTimer = delay_time;
         }
