@@ -4045,7 +4045,7 @@ catSpritesheetTiles:
 	.short	0
 	.short	0
 	.short	0
-	.short	-24576
+	.short	0
 	.short	0
 	.short	0
 	.short	0

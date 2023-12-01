@@ -1,101 +1,76 @@
 #include "enemies.h"
 
+const int xRat[3] = {120, 200, 350};
+const int yRat[3] = {30, 50, 200};
+
 void initRat() {
-    rat.width = 32;
-    rat.height = 24;
-    rat.x = 120;
-    rat.y = 30;
-    rat.oamIndex = 15;
-    rat.xVel = 1;
-    rat.yVel = 1;
-    rat.direction = RIGHT;
-    rat.timeUntilNextFrame = 10;
-    rat.currentFrame = 0;
-    rat.numFrames = 7;
-    rat.isAnimating = 1;
-    rat.hide = 0;
-    rat.lives = 3;
+    for (int i = 0; i < 3; i++) {
+        rat[i].width = 32;
+        rat[i].height = 24;
+        rat[i].x = xRat[i];
+        rat[i].y = yRat[i];
+        rat[i].oamIndex = 15 + i;
+        rat[i].xVel = 1;
+        rat[i].yVel = 1;
+        rat[i].direction = RIGHT;
+        rat[i].timeUntilNextFrame = 10;
+        rat[i].currentFrame = 0;
+        rat[i].numFrames = 7;
+        rat[i].isAnimating = 1;
+        rat[i].hide = 0;
+        rat[i].lives = 3;
+
+    }
+    
 }
 
 void drawRat() {
-    shadowOAM[rat.oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(rat.y - vOff);
-    shadowOAM[rat.oamIndex].attr1 = ATTR1_MEDIUM | ATTR1_X(rat.x - hOff);
-    shadowOAM[rat.oamIndex].attr2 = ATTR2_TILEID(rat.currentFrame * 4, 12);
+    for (int i = 0; i < 3; i++) {
+        shadowOAM[rat[i].oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(rat[i].y - vOff);
+        shadowOAM[rat[i].oamIndex].attr1 = ATTR1_MEDIUM | ATTR1_X(rat[i].x - hOff);
+        shadowOAM[rat[i].oamIndex].attr2 = ATTR2_TILEID(rat[i].currentFrame * 4, 12);
 
-    if (rat.direction == RIGHT) {
-        shadowOAM[rat.oamIndex].attr1 |= ATTR1_HFLIP;
+        if (rat[i].direction == RIGHT) {
+            shadowOAM[rat[i].oamIndex].attr1 |= ATTR1_HFLIP;
+        }
     }
 }
 
 void updateRat() {
-    if (!rat.hide) {
-        if (rat.isAnimating) {
-            rat.timeUntilNextFrame--;
+    for (int i = 0; i < 3; i++) {
 
-            if (rat.timeUntilNextFrame == 0) {
-                rat.currentFrame++;
-                if (rat.currentFrame >= rat.numFrames) {
-                    rat.currentFrame = 0;
+        if (!rat[i].hide) {
+            if (rat[i].isAnimating) {
+                rat[i].timeUntilNextFrame--;
+
+                if (rat[i].timeUntilNextFrame == 0) {
+                    rat[i].currentFrame++;
+                    if (rat[i].currentFrame >= rat[i].numFrames) {
+                        rat[i].currentFrame = 0;
+                    }
+                    rat[i].timeUntilNextFrame = 10;
                 }
-                rat.timeUntilNextFrame = 10;
             }
-        }
 
-        // Update rat movement logic
-        if (rat.direction == RIGHT) {
-            rat.x += rat.xVel;
-            //rat.y += rat.yVel;
-            if (rat.x > 200) {
-                rat.direction = LEFT;
+            // Update rat[i] movement logic
+            if (rat[i].direction == RIGHT) {
+                rat[i].x += rat[i].xVel;
+                //rat[i].y += rat[i].yVel;
+                if (rat[i].x > 200) {
+                    rat[i].direction = LEFT;
+                }
+            } else {
+                rat[i].x -= rat[i].xVel;
+                //rat[i].y -= rat[i].yVel;
+                if (rat[i].x < 20) {
+                    rat[i].direction = RIGHT;
+                }
             }
+
+
         } else {
-            rat.x -= rat.xVel;
-            //rat.y -= rat.yVel;
-            if (rat.x < 20) {
-                rat.direction = RIGHT;
-            }
+            shadowOAM[rat[i].oamIndex].attr0 = ATTR0_HIDE;
         }
-
-
-    } else {
-        shadowOAM[rat.oamIndex].attr0 = ATTR0_HIDE;
     }
 }
 
-void initDog() {
-    dog.width = 64;
-    dog.height = 64;
-    dog.currentFrame = 0;
-    dog.direction = RIGHT;
-    dog.isAnimating = 1;
-    dog.hide = 0;
-    dog.lives = 8;
-    dog.oamIndex = 14;
-    dog.numFrames = 8;
-    dog.timeUntilNextFrame = 10;
-    dog.x = 100;
-    dog.y = 200;
-}
-
-void drawDog() {
-    int tileID;
-    // if (dog.currentFrame < 4) {
-    //     tileID = 16;
-    // } else {
-    //     tileID = 24;
-    // }
-    shadowOAM[dog.oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(dog.y - vOff);
-    shadowOAM[dog.oamIndex].attr1 = ATTR1_LARGE | ATTR1_X(dog.x - hOff);
-    shadowOAM[rat.oamIndex].attr2 = ATTR2_TILEID(0, 16);
-
-    // if (dog.direction == RIGHT) {
-    //     shadowOAM[dog.oamIndex].attr1 |= ATTR1_HFLIP;
-    // }
-
-
-
-}
-
-void updateDog() {
-
-}

@@ -9,6 +9,7 @@ const int yCuc[CUCUMBER_COUNT] = {20, 32, 196, 212};
 const int xNip[CATNIP_COUNT] = {5, 8, 480, 400, 90, 350};
 const int yNip[CATNIP_COUNT] = {160, 16, 100, 0, 10, 70};
 
+
 int collisionCooldown = 0;
 int disgustedDisplayTimer = 0;
 
@@ -22,7 +23,7 @@ Bullet bullet[5];
 //         }
 //     } else if (code == CUCUMBER) {
 
-//     } else if (code == RAT) {
+//     } else if (code == rat[i]) {
 
 //     } else if (code == DOG) {
 
@@ -53,7 +54,6 @@ void drawGame() {
     drawScore();
     drawHeart();
     drawLives();
-    //drawBullet();
     
 }
 void updateGame() {
@@ -65,19 +65,14 @@ void updateGame() {
         disgustedDisplayTimer--;
         
     }
-    //     if (disgustedDisplayTimer == 0) {
-            
-    //     }
-    // }
     
     updatePlayer();
     updateRat();
-    //updateBullet();
-    //updateDog();
+    
 
 }
 
-unsigned char colorAt(int x, int y){
+unsigned char colorat(int x, int y){
     return (((unsigned char*)bg_collisionmapBitmap)[OFFSET(x, y, 512)]);
 }
 
@@ -99,18 +94,8 @@ void initPlayer() {
     player.score = 0;
     player.isAttacking = 0;
     player.cheat = 0;
+    player.cheatActivated = 0;
 
-    //init bullet
-    for (int i = 0; i < 5; i++) {
-        bullet[i].x = player.x;
-        bullet[i].y = player.y;
-        bullet[i].direction = player.direction;
-        bullet[i].active = 0;
-        bullet[i].height = 32;
-        bullet[i].width = 32;
-        bullet[i].oamIndex = 30;
-
-    }
     
     
 }
@@ -143,24 +128,25 @@ void updatePlayer() {
 
     if (BUTTON_HELD(BUTTON_UP)) {
         //player.isMoving = 1;
-        if (player.y > 0 && colorAt(leftX, topY - player.yVel)
-            && colorAt(rightX, topY - player.yVel)) {
+        if (player.y > 0 && colorat(leftX, topY - player.yVel)
+            && colorat(rightX, topY - player.yVel)) {
             player.y -= player.yVel;
         }
         
     }
     if (BUTTON_HELD(BUTTON_DOWN)) {
         //player.isMoving = 1;
-        if (player.y + player.height < MAPHEIGHT && colorAt(leftX, bottomY + player.yVel)
-            && colorAt(rightX, bottomY + player.yVel)) {
+        if (player.y + player.height < MAPHEIGHT && colorat(leftX, bottomY + player.yVel)
+            && colorat(rightX, bottomY + player.yVel)) {
             player.y += player.yVel;
         }
     }
     if (BUTTON_HELD(BUTTON_LEFT)) {
         player.direction = LEFT;
         //player.isMoving = 1;
-        if (player.x > 0 && colorAt(leftX - player.xVel, topY)
-        && colorAt(leftX - player.xVel, bottomY)) {
+        if (player.x > 0 && colorat(leftX - player.xVel, topY)
+        && colorat(leftX - player.xVel, bottomY)) {
+            
             player.x -= player.xVel;
         }
         
@@ -169,8 +155,8 @@ void updatePlayer() {
         player.direction = RIGHT;
         //player.isMoving = 1;
         
-        if (player.x + player.width < MAPWIDTH && colorAt(rightX + player.xVel, topY) 
-            && colorAt(rightX + player.xVel, bottomY)) {
+        if (player.x + player.width < MAPWIDTH && colorat(rightX + player.xVel, topY) 
+            && colorat(rightX + player.xVel, bottomY)) {
             player.x += player.xVel;
         }
 
@@ -178,7 +164,7 @@ void updatePlayer() {
 
     //cheats bypressting buttonA while attacking
     if (BUTTON_HELD(BUTTON_LSHOULDER)) {
-        playerAttack();
+        playerattack();
         player.isAttacking = 1;
         if (BUTTON_PRESSED(BUTTON_A)) {
             if (player.cheat == 0) {
@@ -190,58 +176,16 @@ void updatePlayer() {
         }
 
     }
-
-    // if (BUTTON_PRESSED(BUTTON_A)) {
-    //     shootBullet();
-    //     player.isAttacking = 1;
-    //     playerAttack();
-    // } 
     else {
         player.isAttacking = 0;
     }
+
+
     playerAnimation();
-    //updateBullet();
 
     
 
 }
-
-// void shootBullet() {
-//     for (int i = 0; i < 5; i++) {
-//         if (!bullet[i].active) {
-//             bullet[i].active = 1;
-//             bullet[i].x+= bullet[i].speed;
-//         }
-//     }
-// }
-// void updateBullet() {
-//     for (int i = 0; i < 5; i++) {
-//         if (bullet[i].active) {
-//             bullet[i].direction = player.direction;
-//             bullet[i].x += bullet[i].speed * bullet[i].direction;
-//             bullet[i].y = player.y;
-
-//             // Deactivate the bullet if it goes off-screen
-//             if (bullet[i].x < 0 || bullet[i].x > SCREENWIDTH) {
-//                 bullet[i].active = 0;
-//             }
-//         }
-//     }
-// }
-// void drawBullet() {
-//     for (int i = 0; i < 5; i++) {
-//         if (bullet[i].active) {
-//             shadowOAM[bullet[i].oamIndex].attr0 = ATTR0_4BPP | ATTR0_SQUARE | ATTR0_Y(bullet[i].y - vOff);
-//             shadowOAM[bullet[i].oamIndex].attr1 = ATTR1_MEDIUM | ATTR1_X(bullet[i].x - hOff);
-//             shadowOAM[bullet[i].oamIndex].attr2 = ATTR2_TILEID(24, 0);
-//             if (bullet[i].direction == RIGHT) {
-//                 shadowOAM[bullet[i].oamIndex].attr1 |= ATTR1_HFLIP;
-//         } else {
-//             shadowOAM[bullet[i].oamIndex].attr0 = ATTR0_HIDE;
-//             }
-//         }
-//     }
-// }
 
 void playerAnimation() { 
     //handles animation of player
@@ -417,32 +361,34 @@ void playerCollision() {
     }
 
     //player being attacked by enemies
-
-    if (collision(player.x + attackOffset, player.y, player.width - 5, player.height - 5, 
-        rat.x, rat.y, rat.width, rat.height)
-        && !rat.hide) {
+    for (int i = 0; i < 3; i++) {
+        if (collision(player.x + attackOffset, player.y, player.width - 5, player.height - 5, 
+        rat[i].x, rat[i].y, rat[i].width, rat[i].height)
+        && !rat[i].hide) {
         
         if (player.isAttacking && !collidedDuringAttack) {
             collidedDuringAttack = 1;
-            mgba_printf("player attacked rat");
-            mgba_printf("rat lives: %d\n", rat.lives);
-            rat.lives--;
-            if (rat.lives == 0) {
-                rat.hide = 1;
+            mgba_printf("player attacked rat[i]");
+            mgba_printf("rat[i] lives: %d\n", rat[i].lives);
+            rat[i].lives--;
+            if (rat[i].lives == 0) {
+                rat[i].hide = 1;
             }
         } else {
             player.lives--;
             collisionCooldown = COLLISION_COOLDOWN;
             playerDisgusted();
             mgba_printf("player lives: %d\n", player.lives);
+            }
         }
+
     }
 
-
+    
     
 }
 
-void playerAttack() {
+void playerattack() {
     mgba_printf("attack");
     
     if (player.cheat == 0) {

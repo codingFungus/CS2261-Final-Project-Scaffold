@@ -83,6 +83,7 @@ typedef struct {
     int score;
     int isAttacking;
     int cheat;
+    int cheatActivated;
 } SPRITE;
 
 #endif

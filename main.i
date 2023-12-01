@@ -104,6 +104,7 @@ typedef struct {
     int score;
     int isAttacking;
     int cheat;
+    int cheatActivated;
 } SPRITE;
 # 8 "main.h" 2
 # 1 "print.h" 1
@@ -388,7 +389,7 @@ typedef struct {
 SPRITE player;
 SPRITE orange[5];
 SPRITE cucumber[4];
-SPRITE rat;
+SPRITE rat[3];
 SPRITE catnip[6];
 SPRITE dog;
 SPRITE player_score;
@@ -554,6 +555,8 @@ extern const signed char Meow_data[];
 # 26 "main.h" 2
 
 
+
+
 void initialize();
 void start();
 void goToStart();
@@ -570,6 +573,7 @@ void goToWin();
 void draw();
 # 2 "main.c" 2
 # 17 "main.c"
+int delayTimer;
 int state;
 enum {START, GAME, INSTRUCTION, PAUSE, WIN, LOSE};
 
@@ -697,22 +701,48 @@ void game() {
 
     updateGame();
     drawGame();
+    int ratsDead = 1;
 
     if ((!(~(oldButtons) & ((1 << 3))) && (~buttons & ((1 << 3))))) {
         goToPause();
     }
+# 161 "main.c"
     if (player.lives == 0) {
-        goToLose();
+        if (delayTimer <= 0) {
+            delayTimer = 100;
+        }
+        delayTimer--;
+
+        if (delayTimer == 0) {
+            goToLose();
+        }
     }
-    if (player.score == 5 && rat.lives == 0) {
-        goToWin();
+
+    for (int i = 0; i < 3; i++) {
+        if (rat[i].lives > 0) {
+            ratsDead = 0;
+            break;
+        }
     }
+    if (player.score >= 5 && ratsDead) {
+        if (delayTimer <= 0) {
+            delayTimer = 100;
+        }
+        delayTimer--;
 
-
-
-
-
+        if (delayTimer == 0) {
+            goToWin();
+        }
+    }
+# 201 "main.c"
 }
+
+
+
+
+
+
+
 void goToInstruction() {
     (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | (1 << (8 + (0 % 4)));
     (*(volatile unsigned short*) 0x04000008) = ((0) << 2) | ((28) << 8) | (0 << 14);

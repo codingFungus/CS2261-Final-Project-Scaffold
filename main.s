@@ -635,53 +635,75 @@ game:
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	push	{r4, lr}
-	ldr	r3, .L76
+	ldr	r3, .L80
 	mov	lr, pc
 	bx	r3
-	ldr	r3, .L76+4
+	ldr	r3, .L80+4
 	mov	lr, pc
 	bx	r3
-	ldr	r3, .L76+8
+	ldr	r3, .L80+8
 	ldrh	r3, [r3]
 	tst	r3, #8
 	beq	.L66
-	ldr	r3, .L76+12
+	ldr	r3, .L80+12
 	ldrh	r3, [r3]
 	tst	r3, #8
-	beq	.L73
+	beq	.L79
 .L66:
-	ldr	r4, .L76+16
+	ldr	r4, .L80+16
 	ldr	r3, [r4, #56]
 	cmp	r3, #0
-	beq	.L74
-.L67:
+	bne	.L68
+	ldr	r2, .L80+20
+	ldr	r3, [r2]
+	cmp	r3, #0
+	movle	r3, #99
+	strle	r3, [r2]
+	ble	.L68
+	sub	r3, r3, #1
+	cmp	r3, #0
+	str	r3, [r2]
+	bleq	goToLose
+.L68:
+	ldr	r3, .L80+24
+	ldr	r2, [r3, #56]
+	cmp	r2, #0
+	bgt	.L65
+	ldr	r2, [r3, #132]
+	cmp	r2, #0
+	bgt	.L65
+	ldr	r3, [r3, #208]
+	cmp	r3, #0
+	bgt	.L65
 	ldr	r3, [r4, #60]
-	cmp	r3, #5
-	beq	.L75
+	cmp	r3, #4
+	ble	.L65
+	ldr	r2, .L80+20
+	ldr	r3, [r2]
+	cmp	r3, #0
+	movle	r3, #99
+	strle	r3, [r2]
+	ble	.L65
+	sub	r3, r3, #1
+	cmp	r3, #0
+	str	r3, [r2]
+	popeq	{r4, lr}
+	beq	goToWin
 .L65:
 	pop	{r4, lr}
 	bx	lr
-.L75:
-	ldr	r3, .L76+20
-	ldr	r3, [r3, #56]
-	cmp	r3, #0
-	bne	.L65
-	pop	{r4, lr}
-	b	goToWin
-.L74:
-	bl	goToLose
-	b	.L67
-.L73:
+.L79:
 	bl	goToPause
 	b	.L66
-.L77:
+.L81:
 	.align	2
-.L76:
+.L80:
 	.word	updateGame
 	.word	drawGame
 	.word	oldButtons
 	.word	buttons
 	.word	player
+	.word	delayTimer
 	.word	rat
 	.size	game, .-game
 	.align	2
@@ -708,27 +730,27 @@ draw:
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	mov	r3, #67108864
-	ldr	r2, .L81
+	ldr	r2, .L85
 	push	{r4, lr}
 	ldrh	r0, [r2]
 	ldrh	r1, [r2, #4]
 	strh	r0, [r3, #16]	@ movhi
-	ldr	r2, .L81+4
+	ldr	r2, .L85+4
 	strh	r1, [r3, #18]	@ movhi
 	mov	lr, pc
 	bx	r2
-	ldr	r4, .L81+8
+	ldr	r4, .L85+8
 	mov	r3, #512
 	mov	r2, #117440512
 	mov	r0, #3
-	ldr	r1, .L81+12
+	ldr	r1, .L85+12
 	mov	lr, pc
 	bx	r4
 	pop	{r4, lr}
 	bx	lr
-.L82:
+.L86:
 	.align	2
-.L81:
+.L85:
 	.word	.LANCHOR0
 	.word	waitForVBlank
 	.word	DMANow
@@ -747,18 +769,18 @@ main:
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	push	{r4, r7, fp, lr}
-	ldr	r3, .L103
+	ldr	r3, .L107
 	mov	lr, pc
 	bx	r3
-	ldr	r4, .L103+4
-	ldr	r8, .L103+8
-	ldr	r7, .L103+12
-	ldr	fp, .L103+16
-	ldr	r10, .L103+20
-	ldr	r9, .L103+24
-	ldr	r5, .L103+28
-	ldr	r6, .L103+32
-.L92:
+	ldr	r4, .L107+4
+	ldr	r8, .L107+8
+	ldr	r7, .L107+12
+	ldr	fp, .L107+16
+	ldr	r10, .L107+20
+	ldr	r9, .L107+24
+	ldr	r5, .L107+28
+	ldr	r6, .L107+32
+.L96:
 	ldrh	r2, [r4]
 	strh	r2, [r8]	@ movhi
 	ldr	r3, [r7]
@@ -766,52 +788,52 @@ main:
 	strh	r1, [r4]	@ movhi
 	cmp	r3, #5
 	ldrls	pc, [pc, r3, asl #2]
-	b	.L84
-.L86:
+	b	.L88
+.L90:
+	.word	.L95
+	.word	.L94
+	.word	.L93
+	.word	.L92
 	.word	.L91
-	.word	.L90
 	.word	.L89
-	.word	.L88
-	.word	.L87
-	.word	.L85
-.L85:
-	tst	r2, #8
-	ldrne	r3, .L103+36
-	movne	lr, pc
-	bxne	r3
-.L84:
-	mov	lr, pc
-	bx	r5
-	b	.L92
-.L87:
-	tst	r2, #8
-	beq	.L84
-	ldr	r3, .L103+40
-	mov	lr, pc
-	bx	r3
-	b	.L84
-.L88:
-	mov	lr, pc
-	bx	r9
-	b	.L84
 .L89:
 	tst	r2, #8
-	beq	.L84
-	ldr	r3, .L103+44
+	ldrne	r3, .L107+36
+	movne	lr, pc
+	bxne	r3
+.L88:
+	mov	lr, pc
+	bx	r5
+	b	.L96
+.L91:
+	tst	r2, #8
+	beq	.L88
+	ldr	r3, .L107+40
 	mov	lr, pc
 	bx	r3
-	b	.L84
-.L91:
+	b	.L88
+.L92:
+	mov	lr, pc
+	bx	r9
+	b	.L88
+.L93:
+	tst	r2, #8
+	beq	.L88
+	ldr	r3, .L107+44
+	mov	lr, pc
+	bx	r3
+	b	.L88
+.L95:
 	mov	lr, pc
 	bx	fp
-	b	.L84
-.L90:
+	b	.L88
+.L94:
 	mov	lr, pc
 	bx	r10
-	b	.L84
-.L104:
+	b	.L88
+.L108:
 	.align	2
-.L103:
+.L107:
 	.word	initialize
 	.word	buttons
 	.word	oldButtons
@@ -833,15 +855,16 @@ main:
 	.comm	oldButtons,2,2
 	.comm	buttons,2,2
 	.comm	state,4,4
-	.comm	player_life,72,4
-	.comm	heart,72,4
-	.comm	player_score,72,4
-	.comm	dog,72,4
-	.comm	catnip,432,4
-	.comm	rat,72,4
-	.comm	cucumber,288,4
-	.comm	orange,360,4
-	.comm	player,72,4
+	.comm	delayTimer,4,4
+	.comm	player_life,76,4
+	.comm	heart,76,4
+	.comm	player_score,76,4
+	.comm	dog,76,4
+	.comm	catnip,456,4
+	.comm	rat,228,4
+	.comm	cucumber,304,4
+	.comm	orange,380,4
+	.comm	player,76,4
 	.comm	soundB,24,4
 	.comm	soundA,24,4
 	.bss

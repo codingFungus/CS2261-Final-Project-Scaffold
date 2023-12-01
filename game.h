@@ -40,7 +40,7 @@ typedef struct {
 SPRITE player;
 SPRITE orange[ORANGE_COUNT];
 SPRITE cucumber[CUCUMBER_COUNT];
-SPRITE rat;
+SPRITE rat[3];
 SPRITE catnip[CATNIP_COUNT];
 SPRITE dog;
 SPRITE player_score;

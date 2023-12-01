@@ -83,6 +83,7 @@ typedef struct {
     int score;
     int isAttacking;
     int cheat;
+    int cheatActivated;
 } SPRITE;
 # 6 "game.h" 2
 # 1 "mode0.h" 1
@@ -164,7 +165,7 @@ typedef struct {
 SPRITE player;
 SPRITE orange[5];
 SPRITE cucumber[4];
-SPRITE rat;
+SPRITE rat[3];
 SPRITE catnip[6];
 SPRITE dog;
 SPRITE player_score;
@@ -226,11 +227,12 @@ const int yCuc[4] = {20, 32, 196, 212};
 const int xNip[6] = {5, 8, 480, 400, 90, 350};
 const int yNip[6] = {160, 16, 100, 0, 10, 70};
 
+
 int collisionCooldown = 0;
 int disgustedDisplayTimer = 0;
 
 Bullet bullet[5];
-# 34 "game.c"
+# 35 "game.c"
 void initGame() {
     initPlayer();
 
@@ -254,7 +256,6 @@ void drawGame() {
     drawHeart();
     drawLives();
 
-
 }
 void updateGame() {
     if (collisionCooldown > 0) {
@@ -266,18 +267,13 @@ void updateGame() {
 
     }
 
-
-
-
-
     updatePlayer();
     updateRat();
 
 
-
 }
 
-unsigned char colorAt(int x, int y){
+unsigned char colorat(int x, int y){
     return (((unsigned char*)bg_collisionmapBitmap)[((y) * (512) + (x))]);
 }
 
@@ -299,18 +295,8 @@ void initPlayer() {
     player.score = 0;
     player.isAttacking = 0;
     player.cheat = 0;
+    player.cheatActivated = 0;
 
-
-    for (int i = 0; i < 5; i++) {
-        bullet[i].x = player.x;
-        bullet[i].y = player.y;
-        bullet[i].direction = player.direction;
-        bullet[i].active = 0;
-        bullet[i].height = 32;
-        bullet[i].width = 32;
-        bullet[i].oamIndex = 30;
-
-    }
 
 
 }
@@ -343,24 +329,25 @@ void updatePlayer() {
 
     if ((~(buttons) & ((1 << 6)))) {
 
-        if (player.y > 0 && colorAt(leftX, topY - player.yVel)
-            && colorAt(rightX, topY - player.yVel)) {
+        if (player.y > 0 && colorat(leftX, topY - player.yVel)
+            && colorat(rightX, topY - player.yVel)) {
             player.y -= player.yVel;
         }
 
     }
     if ((~(buttons) & ((1 << 7)))) {
 
-        if (player.y + player.height < 256 && colorAt(leftX, bottomY + player.yVel)
-            && colorAt(rightX, bottomY + player.yVel)) {
+        if (player.y + player.height < 256 && colorat(leftX, bottomY + player.yVel)
+            && colorat(rightX, bottomY + player.yVel)) {
             player.y += player.yVel;
         }
     }
     if ((~(buttons) & ((1 << 5)))) {
         player.direction = LEFT;
 
-        if (player.x > 0 && colorAt(leftX - player.xVel, topY)
-        && colorAt(leftX - player.xVel, bottomY)) {
+        if (player.x > 0 && colorat(leftX - player.xVel, topY)
+        && colorat(leftX - player.xVel, bottomY)) {
+
             player.x -= player.xVel;
         }
 
@@ -369,8 +356,8 @@ void updatePlayer() {
         player.direction = RIGHT;
 
 
-        if (player.x + player.width < 512 && colorAt(rightX + player.xVel, topY)
-            && colorAt(rightX + player.xVel, bottomY)) {
+        if (player.x + player.width < 512 && colorat(rightX + player.xVel, topY)
+            && colorat(rightX + player.xVel, bottomY)) {
             player.x += player.xVel;
         }
 
@@ -378,7 +365,7 @@ void updatePlayer() {
 
 
     if ((~(buttons) & ((1 << 9)))) {
-        playerAttack();
+        playerattack();
         player.isAttacking = 1;
         if ((!(~(oldButtons) & ((1 << 0))) && (~buttons & ((1 << 0))))) {
             if (player.cheat == 0) {
@@ -390,22 +377,17 @@ void updatePlayer() {
         }
 
     }
-
-
-
-
-
-
     else {
         player.isAttacking = 0;
     }
+
+
     playerAnimation();
 
 
 
-
 }
-# 246 "game.c"
+
 void playerAnimation() {
 
 
@@ -580,32 +562,34 @@ void playerCollision() {
     }
 
 
-
-    if (collision(player.x + attackOffset, player.y, player.width - 5, player.height - 5,
-        rat.x, rat.y, rat.width, rat.height)
-        && !rat.hide) {
+    for (int i = 0; i < 3; i++) {
+        if (collision(player.x + attackOffset, player.y, player.width - 5, player.height - 5,
+        rat[i].x, rat[i].y, rat[i].width, rat[i].height)
+        && !rat[i].hide) {
 
         if (player.isAttacking && !collidedDuringAttack) {
             collidedDuringAttack = 1;
-            mgba_printf("player attacked rat");
-            mgba_printf("rat lives: %d\n", rat.lives);
-            rat.lives--;
-            if (rat.lives == 0) {
-                rat.hide = 1;
+            mgba_printf("player attacked rat[i]");
+            mgba_printf("rat[i] lives: %d\n", rat[i].lives);
+            rat[i].lives--;
+            if (rat[i].lives == 0) {
+                rat[i].hide = 1;
             }
         } else {
             player.lives--;
             collisionCooldown = 40;
             playerDisgusted();
             mgba_printf("player lives: %d\n", player.lives);
+            }
         }
+
     }
 
 
 
 }
 
-void playerAttack() {
+void playerattack() {
     mgba_printf("attack");
 
     if (player.cheat == 0) {
@@ -633,7 +617,7 @@ void playerAttack() {
 
 void playerDisgusted() {
     mgba_printf("disgusted");
-# 484 "game.c"
+# 430 "game.c"
     if (disgustedDisplayTimer == 0) {
         shadowOAM[player.oamIndex].attr0 = (0 << 13) | (0 << 14) | ((player.y - vOff) & 0xFF);
         shadowOAM[player.oamIndex].attr1 = (2 << 14) | ((player.x - hOff) & 0x1FF);
@@ -675,7 +659,7 @@ void drawOrange() {
     }
 
 }
-# 539 "game.c"
+# 485 "game.c"
 void initCucumber() {
     for (int i = 0; i < 4; i++) {
 

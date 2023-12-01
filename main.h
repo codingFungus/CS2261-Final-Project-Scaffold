@@ -25,6 +25,8 @@
 #include "Meow.h"
 #include "digitalSound.h"
 
+#define delay_time 40
+
 void initialize();
 void start();
 void goToStart();

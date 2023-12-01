@@ -14,6 +14,7 @@
  *  
 */
 
+int delayTimer;
 int state;
 enum {START, GAME, INSTRUCTION, PAUSE, WIN, LOSE};
 
@@ -141,22 +142,70 @@ void game() {
     
     updateGame();
     drawGame();
+    int ratsDead = 1;
     
     if (BUTTON_PRESSED(BUTTON_START)) {
         goToPause();
     }
+    // if (player.lives == 0) {
+    //     delayTimer = delay_time;
+    //     if (delayTimer > 0) {
+    //         delayTimer--;
+
+    //         if (delayTimer == 0) {
+    //             goToLose();
+    //         }
+    //     }
+        
+    // }
     if (player.lives == 0) {
-        goToLose();
+        if (delayTimer <= 0) {
+            delayTimer = delay_time;
+        }
+        delayTimer--;
+
+        if (delayTimer == 0) {
+            goToLose();
+        }
     }
-    if (player.score == 5 && rat.lives == 0) {
-        goToWin();
+
+    for (int i = 0; i < 3; i++) {
+        if (rat[i].lives > 0) {
+            ratsDead = 0;
+            break;
+        }
     }
+    if (player.score >= 5 && ratsDead) {
+        if (delayTimer <= 0) {
+            delayTimer = delay_time;
+        }
+        delayTimer--;
+
+        if (delayTimer == 0) {
+            goToWin();
+        }
+    }
+
+    // if (player.score >= 5 && ratsDead) {
+    //     delayTimer = delay_time;
+    //     if (delayTimer > 0) {
+    //         delayTimer--;
+
+    //         if (delayTimer == 0) {
+    //             goToWin();
+    //         }
+    //     }
+    // }
+    
+
+}
+    
     
     //will implement more on win&lose state in the next milestone
     //if (BUTTON_PRESSED(BUTTON_A)) {
         //goToWin();
     //}
-}
+
 void goToInstruction() {
     REG_DISPCTL = MODE(0) | BG_ENABLE(0);
     REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_SMALL;
