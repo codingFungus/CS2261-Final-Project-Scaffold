@@ -374,6 +374,17 @@ SOUND soundA;
 SOUND soundB;
 # 12 "game.h" 2
 # 29 "game.h"
+typedef struct {
+    int x;
+    int y;
+    int speed;
+    int direction;
+    int active;
+    int width;
+    int height;
+    int oamIndex;
+} Bullet;
+
 SPRITE player;
 SPRITE orange[5];
 SPRITE cucumber[4];
@@ -407,7 +418,7 @@ void initPlayer();
 void drawGame();
 void updateGame();
 
-void initObject(int index, SPRITE* object, int width, int height, int x, int y, int oamIndex, int hide);
+
 
 void drawOrange();
 void initOrange();
@@ -778,7 +789,7 @@ void lose() {
 
 void goToWin() {
     (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | (1 << (8 + (1 % 4)));
-    (*(volatile unsigned short*) 0x0400000A) = ((0) << 2) | ((28) << 8) | (1 << 14);
+    (*(volatile unsigned short*) 0x0400000A) = ((0) << 2) | ((28) << 8) | (0 << 14);
 
     DMANow(3, winbgMap, &((SB*) 0x06000000)[28], 2048/2);
     DMANow(3, winbgTiles, &((CB*) 0x06000000)[0], 4544/2);

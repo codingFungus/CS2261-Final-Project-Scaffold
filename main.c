@@ -233,7 +233,7 @@ void lose() {
 
 void goToWin() {
     REG_DISPCTL = MODE(0) | BG_ENABLE(1);
-    REG_BG1CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_WIDE;
+    REG_BG1CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_SMALL;
 
     DMANow(3, winbgMap, &SCREENBLOCK[28], winbgMapLen/2);
     DMANow(3, winbgTiles, &CHARBLOCK[0], winbgTilesLen/2);

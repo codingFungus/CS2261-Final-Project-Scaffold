@@ -26,6 +26,17 @@
 #define COLLISION_COOLDOWN 40
 #define DISGUSTED_TIME 100
 
+typedef struct {
+    int x;
+    int y;
+    int speed;
+    int direction;
+    int active;
+    int width;
+    int height;
+    int oamIndex;
+} Bullet;
+
 SPRITE player;
 SPRITE orange[ORANGE_COUNT];
 SPRITE cucumber[CUCUMBER_COUNT];
@@ -59,7 +70,7 @@ void initPlayer();
 void drawGame();
 void updateGame();
 
-void initObject(int index, SPRITE* object, int width, int height, int x, int y, int oamIndex, int hide);
+// void initObject(int index, SPRITE* object, int width, int height, int x, int y, int oamIndex, int hide);
 
 void drawOrange();
 void initOrange();

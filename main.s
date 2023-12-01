@@ -572,7 +572,7 @@ goToWin:
 	push	{r4, r5, r6, lr}
 	mov	r2, #67108864
 	mov	r5, #512
-	mov	r1, #23552
+	mov	r1, #7168
 	ldr	r4, .L63
 	strh	r5, [r2]	@ movhi
 	mov	r3, #1024
