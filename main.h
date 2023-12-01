@@ -24,6 +24,7 @@
 #include "disgusted.h"
 #include "Meow.h"
 #include "digitalSound.h"
+#include "blankbg.h"
 
 #define delay_time 40
 

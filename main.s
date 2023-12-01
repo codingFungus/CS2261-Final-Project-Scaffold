@@ -21,49 +21,51 @@ goToStart:
 	@ Function supports interworking.
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
-	mov	r2, #67108864
+	push	{r4, r5, r6, lr}
 	mov	r3, #4352
-	mov	r1, #7168
-	push	{r4, lr}
+	mov	r6, #67108864
+	mov	r2, #7168
+	mov	r4, #0
+	ldr	r5, .L4
+	strh	r3, [r6]	@ movhi
 	mov	r0, #3
-	ldr	r4, .L4
-	strh	r3, [r2]	@ movhi
-	strh	r1, [r2, #8]	@ movhi
+	strh	r2, [r6, #8]	@ movhi
 	mov	r3, #1024
 	ldr	r2, .L4+4
 	ldr	r1, .L4+8
 	mov	lr, pc
-	bx	r4
+	bx	r5
 	mov	r2, #100663296
 	mov	r0, #3
 	ldr	r3, .L4+12
 	ldr	r1, .L4+16
 	mov	lr, pc
-	bx	r4
+	bx	r5
 	mov	r2, #83886080
 	mov	r0, #3
 	ldr	r1, .L4+20
 	mov	r3, #256
 	mov	lr, pc
-	bx	r4
+	bx	r5
 	ldr	r3, .L4+24
 	mov	lr, pc
 	bx	r3
 	ldr	r3, .L4+28
 	mov	lr, pc
 	bx	r3
+	ldr	ip, .L4+32
+	strh	r4, [r6, #18]	@ movhi
 	mov	r3, #512
+	strh	r4, [r6, #16]	@ movhi
 	mov	r2, #117440512
-	ldr	r1, .L4+32
 	mov	r0, #3
-	mov	lr, pc
-	bx	r4
-	mov	r3, #0
 	ldr	r1, .L4+36
-	ldr	r2, .L4+40
-	str	r3, [r1]
-	str	r3, [r2]
-	pop	{r4, lr}
+	str	r4, [ip]
+	mov	lr, pc
+	bx	r5
+	ldr	r3, .L4+40
+	str	r4, [r3]
+	pop	{r4, r5, r6, lr}
 	bx	lr
 .L5:
 	.align	2
@@ -71,13 +73,13 @@ goToStart:
 	.word	DMANow
 	.word	100720640
 	.word	startscreenMap
-	.word	4848
+	.word	5200
 	.word	startscreenTiles
 	.word	startscreenPal
 	.word	hideSprites
 	.word	waitForVBlank
-	.word	shadowOAM
 	.word	seed
+	.word	shadowOAM
 	.word	state
 	.size	goToStart, .-goToStart
 	.align	2
@@ -256,7 +258,7 @@ goToInstruction:
 	ldr	r1, .L20+8
 	mov	lr, pc
 	bx	r4
-	mov	r3, #2992
+	mov	r3, #3440
 	mov	r2, #100663296
 	mov	r0, #3
 	ldr	r1, .L20+12
@@ -513,7 +515,7 @@ goToLose:
 	mov	r2, #83886080
 	mov	r0, #3
 	ldr	r1, .L58+16
-	mov	r3, #16
+	mov	r3, #256
 	mov	lr, pc
 	bx	r4
 	ldr	r3, .L58+20
@@ -731,28 +733,34 @@ draw:
 	@ Function supports interworking.
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
+	ldr	r3, .L88
+	ldr	r3, [r3]
+	cmp	r3, #1
+	movne	r2, #0
 	mov	r3, #67108864
-	ldr	r2, .L86
+	ldreq	r2, .L88+4
 	push	{r4, lr}
-	ldrh	r0, [r2]
-	ldrh	r1, [r2, #4]
-	strh	r0, [r3, #16]	@ movhi
-	ldr	r2, .L86+4
-	strh	r1, [r3, #18]	@ movhi
+	ldrheq	r1, [r2]
+	ldrheq	r2, [r2, #4]
+	strhne	r2, [r3, #16]	@ movhi
+	strheq	r1, [r3, #16]	@ movhi
+	strh	r2, [r3, #18]	@ movhi
+	ldr	r3, .L88+8
 	mov	lr, pc
-	bx	r2
-	ldr	r4, .L86+8
+	bx	r3
+	ldr	r4, .L88+12
 	mov	r3, #512
 	mov	r2, #117440512
 	mov	r0, #3
-	ldr	r1, .L86+12
+	ldr	r1, .L88+16
 	mov	lr, pc
 	bx	r4
 	pop	{r4, lr}
 	bx	lr
-.L87:
+.L89:
 	.align	2
-.L86:
+.L88:
+	.word	state
 	.word	.LANCHOR0
 	.word	waitForVBlank
 	.word	DMANow
@@ -771,18 +779,18 @@ main:
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	push	{r4, r7, fp, lr}
-	ldr	r3, .L108
+	ldr	r3, .L110
 	mov	lr, pc
 	bx	r3
-	ldr	r4, .L108+4
-	ldr	r8, .L108+8
-	ldr	r7, .L108+12
-	ldr	fp, .L108+16
-	ldr	r10, .L108+20
-	ldr	r9, .L108+24
-	ldr	r5, .L108+28
-	ldr	r6, .L108+32
-.L97:
+	ldr	r4, .L110+4
+	ldr	r8, .L110+8
+	ldr	r7, .L110+12
+	ldr	fp, .L110+16
+	ldr	r10, .L110+20
+	ldr	r9, .L110+24
+	ldr	r5, .L110+28
+	ldr	r6, .L110+32
+.L99:
 	ldrh	r2, [r4]
 	strh	r2, [r8]	@ movhi
 	ldr	r3, [r7]
@@ -790,52 +798,52 @@ main:
 	strh	r1, [r4]	@ movhi
 	cmp	r3, #5
 	ldrls	pc, [pc, r3, asl #2]
-	b	.L89
-.L91:
+	b	.L91
+.L93:
+	.word	.L98
+	.word	.L97
 	.word	.L96
 	.word	.L95
 	.word	.L94
-	.word	.L93
 	.word	.L92
-	.word	.L90
-.L90:
-	tst	r2, #8
-	ldrne	r3, .L108+36
-	movne	lr, pc
-	bxne	r3
-.L89:
-	mov	lr, pc
-	bx	r5
-	b	.L97
 .L92:
 	tst	r2, #8
-	beq	.L89
-	ldr	r3, .L108+40
+	ldrne	r3, .L110+36
+	movne	lr, pc
+	bxne	r3
+.L91:
 	mov	lr, pc
-	bx	r3
-	b	.L89
-.L93:
-	mov	lr, pc
-	bx	r9
-	b	.L89
+	bx	r5
+	b	.L99
 .L94:
 	tst	r2, #8
-	beq	.L89
-	ldr	r3, .L108+44
+	beq	.L91
+	ldr	r3, .L110+40
 	mov	lr, pc
 	bx	r3
-	b	.L89
-.L96:
-	mov	lr, pc
-	bx	fp
-	b	.L89
+	b	.L91
 .L95:
 	mov	lr, pc
+	bx	r9
+	b	.L91
+.L96:
+	tst	r2, #8
+	beq	.L91
+	ldr	r3, .L110+44
+	mov	lr, pc
+	bx	r3
+	b	.L91
+.L98:
+	mov	lr, pc
+	bx	fp
+	b	.L91
+.L97:
+	mov	lr, pc
 	bx	r10
-	b	.L89
-.L109:
+	b	.L91
+.L111:
 	.align	2
-.L108:
+.L110:
 	.word	initialize
 	.word	buttons
 	.word	oldButtons

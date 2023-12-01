@@ -85,14 +85,23 @@ void goToStart() {
     REG_DISPCTL = MODE(0) | BG_ENABLE(0) | SPRITE_ENABLE;
     REG_BG0CNT = BG_CHARBLOCK(0) | BG_SCREENBLOCK(28) | BG_SIZE_SMALL;
 
+    //DMANow(3, blankbgMap, &SCREENBLOCK[28], blankbgMapLen / 2);
+
     DMANow(3, startscreenMap, &SCREENBLOCK[28], startscreenMapLen / 2);
     DMANow(3, startscreenTiles, &CHARBLOCK[0], startscreenTilesLen / 2);
     DMANow(3, startscreenPal, BG_PALETTE, startscreenPalLen / 2);
+
+
     
     hideSprites();
+    
+    
     waitForVBlank();
-    DMANow(3, shadowOAM, OAM, 512);
+
+    REG_BG0VOFF = 0;
+    REG_BG0HOFF = 0;
     seed = 0;
+    DMANow(3, shadowOAM, OAM, 512);
 
     state = START;
 
@@ -263,7 +272,7 @@ void goToLose() {
 
     DMANow(3, losebgMap, &SCREENBLOCK[28], losebgMapLen/2);
     DMANow(3, losebgTiles, &CHARBLOCK[0], losebgTilesLen/2);
-    DMANow(3, losebgPal, BG_PALETTE, 16);
+    DMANow(3, losebgPal, BG_PALETTE, losebgPalLen/2);
 
     hideSprites();
     waitForVBlank();
@@ -302,9 +311,17 @@ void win() {
 }
 
 void draw() {
-    REG_BG0HOFF = hOff;
-    REG_BG0VOFF = vOff;
+    if (state == GAME) {
+        REG_BG0HOFF = hOff;
+        REG_BG0VOFF = vOff;
+        
+    } else {
+        REG_BG0HOFF = 0;
+        REG_BG0VOFF = 0;
+
+    }
     waitForVBlank();
 
     DMANow(3, shadowOAM, OAM, 128*4);
+    
 }
