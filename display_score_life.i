@@ -84,6 +84,7 @@ typedef struct {
     int score;
     int isAttacking;
     int cheat;
+    int cheatActivated;
 } SPRITE;
 # 6 "game.h" 2
 # 1 "mode0.h" 1
@@ -102,12 +103,71 @@ typedef struct {
 # 20 "bg_collisionmap.h"
 extern const unsigned short bg_collisionmapBitmap[65536];
 # 8 "game.h" 2
-# 25 "game.h"
+# 1 "Catbgm.h" 1
+
+
+extern const unsigned int Catbgm_sampleRate;
+extern const unsigned int Catbgm_length;
+extern const signed char Catbgm_data[];
+# 9 "game.h" 2
+# 1 "disgusted.h" 1
+
+
+extern const unsigned int disgusted_sampleRate;
+extern const unsigned int disgusted_length;
+extern const signed char disgusted_data[];
+# 10 "game.h" 2
+# 1 "Meow.h" 1
+
+
+extern const unsigned int Meow_sampleRate;
+extern const unsigned int Meow_length;
+extern const signed char Meow_data[];
+# 11 "game.h" 2
+# 1 "digitalSound.h" 1
+
+
+
+void setupSounds();
+void setupSoundInterrupts();
+void interruptHandler();
+
+void playSoundA(const signed char* sound, int length, int loops);
+void playSoundB(const signed char* sound, int length, int loops);
+
+void pauseSounds();
+void unpauseSounds();
+void stopSounds();
+# 52 "digitalSound.h"
+typedef struct{
+    const signed char* data;
+    int dataLength;
+    int isPlaying;
+    int looping;
+    int durationInVBlanks;
+    int vBlankCount;
+} SOUND;
+
+SOUND soundA;
+SOUND soundB;
+# 12 "game.h" 2
+# 29 "game.h"
+typedef struct {
+    int x;
+    int y;
+    int speed;
+    int direction;
+    int active;
+    int width;
+    int height;
+    int oamIndex;
+} Bullet;
+
 SPRITE player;
-SPRITE orange[6];
+SPRITE orange[5];
 SPRITE cucumber[4];
-SPRITE rat;
-SPRITE catnip[7];
+SPRITE rat[3];
+SPRITE catnip[6];
 SPRITE dog;
 SPRITE player_score;
 SPRITE heart;
@@ -136,7 +196,7 @@ void initPlayer();
 void drawGame();
 void updateGame();
 
-void initObject(int index, SPRITE* object, int width, int height, int x, int y, int oamIndex, int hide);
+
 
 void drawOrange();
 void initOrange();

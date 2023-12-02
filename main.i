@@ -462,7 +462,7 @@ extern const unsigned short winbgPal[256];
 # 15 "main.h" 2
 # 1 "startscreen.h" 1
 # 22 "startscreen.h"
-extern const unsigned short startscreenTiles[5152];
+extern const unsigned short startscreenTiles[5120];
 
 
 extern const unsigned short startscreenMap[1024];
@@ -602,7 +602,7 @@ void win();
 void goToWin();
 void draw();
 # 2 "main.c" 2
-# 15 "main.c"
+# 16 "main.c"
 int delayTimer;
 int state;
 enum {START, GAME, INSTRUCTION, PAUSE, WIN, LOSE};
@@ -667,7 +667,7 @@ void initialize() {
 
     buttons = (*(volatile unsigned short*) 0x04000130);
     setupSounds();
-
+    hOff = 0;
 
     goToStart();
 
@@ -680,17 +680,11 @@ void goToStart() {
     DMANow(3, startscreenPal, ((unsigned short*) 0x05000000), 16);
 
 
-    DMANow(3, startscreenTiles, &((CB*) 0x06000000)[0], 10304/2);
+    DMANow(3, startscreenTiles, &((CB*) 0x06000000)[0], 10240/2);
     DMANow(3, startscreenMap, &((SB*) 0x06000000)[28], 2048/2);
 
     DMANow(3, startscreen2Tiles, &((CB*) 0x06000000)[1], 32/2);
     DMANow(3, startscreen2Map, &((SB*) 0x06000000)[30], 2048/2);
-
-
-
-
-
-
 
     hideSprites();
 
@@ -700,6 +694,7 @@ void goToStart() {
     (*(volatile unsigned short*) 0x04000010) = 0;
     (*(volatile unsigned short*) 0x04000016) = 0;
     (*(volatile unsigned short*) 0x04000014) = 0;
+
 
     seed = 0;
     DMANow(3, shadowOAM, ((OBJ_ATTR*) 0x7000000), 512);
@@ -809,6 +804,8 @@ void goToInstruction() {
 
     hideSprites();
     waitForVBlank();
+    (*(volatile unsigned short*) 0x04000010) = 0;
+    (*(volatile unsigned short*) 0x04000012) = 0;
 
     DMANow(3, shadowOAM, ((OBJ_ATTR*) 0x7000000), 512);
     state = INSTRUCTION;
@@ -835,9 +832,11 @@ void goToPause() {
     DMANow(3, newpauseScreenMap, &((SB*) 0x06000000)[28], 2048/2);
     DMANow(3, newpauseScreenPal, ((unsigned short*) 0x05000000), 512/2);
 
+    hOff = 0;
+    vOff = 0;
+
     hideSprites();
     waitForVBlank();
-
     DMANow(3, shadowOAM, ((OBJ_ATTR*) 0x7000000), 512);
 
     state = PAUSE;
@@ -847,6 +846,8 @@ void pause() {
     if ((!(~(oldButtons) & ((1 << 3))) && (~buttons & ((1 << 3))))) {
         goToGame();
     } else if ((!(~(oldButtons) & ((1 << 2))) && (~buttons & ((1 << 2))))) {
+        hOff = 0;
+        vOff = 0;
         goToStart();
     }
 }
@@ -862,6 +863,8 @@ void goToLose() {
 
     hideSprites();
     waitForVBlank();
+    (*(volatile unsigned short*) 0x04000010) = 0;
+    (*(volatile unsigned short*) 0x04000012) = 0;
 
     DMANow(3, shadowOAM, ((OBJ_ATTR*) 0x7000000), 512);
     state = LOSE;
@@ -869,6 +872,8 @@ void goToLose() {
 }
 void lose() {
     if ((!(~(oldButtons) & ((1 << 3))) && (~buttons & ((1 << 3))))) {
+        hOff = 0;
+        vOff = 0;
         goToStart();
     }
 }
@@ -884,6 +889,9 @@ void goToWin() {
     hideSprites();
     waitForVBlank();
 
+    (*(volatile unsigned short*) 0x04000010) = 0;
+    (*(volatile unsigned short*) 0x04000012) = 0;
+
     DMANow(3, shadowOAM, ((OBJ_ATTR*) 0x7000000), 512);
 
     state = WIN;
@@ -897,22 +905,20 @@ void win() {
 }
 
 void draw() {
+
     if (state == GAME) {
         (*(volatile unsigned short*) 0x04000010) = hOff;
         (*(volatile unsigned short*) 0x04000012) = vOff;
-
-
     } else if (state == START) {
-        (*(volatile unsigned short*) 0x04000010) = 0;
-        (*(volatile unsigned short*) 0x04000012) = 0;
-        (*(volatile unsigned short*) 0x04000014) = hOff/2;
-        (*(volatile unsigned short*) 0x04000016) = vOff/2;
+        (*(volatile unsigned short*) 0x04000014) = hOff;
+     (*(volatile unsigned short*) 0x04000016) = vOff;
+
     } else {
         (*(volatile unsigned short*) 0x04000010) = 0;
         (*(volatile unsigned short*) 0x04000012) = 0;
-
     }
     waitForVBlank();
+
 
     DMANow(3, shadowOAM, ((OBJ_ATTR*) 0x7000000), 128*4);
 

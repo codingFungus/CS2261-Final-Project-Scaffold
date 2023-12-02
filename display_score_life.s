@@ -210,13 +210,15 @@ drawLives:
 	.word	shadowOAM
 	.word	1022
 	.size	drawLives, .-drawLives
-	.comm	player_life,72,4
-	.comm	heart,72,4
-	.comm	player_score,72,4
-	.comm	dog,72,4
-	.comm	catnip,504,4
-	.comm	rat,72,4
-	.comm	cucumber,288,4
-	.comm	orange,432,4
-	.comm	player,72,4
+	.comm	player_life,76,4
+	.comm	heart,76,4
+	.comm	player_score,76,4
+	.comm	dog,76,4
+	.comm	catnip,456,4
+	.comm	rat,228,4
+	.comm	cucumber,304,4
+	.comm	orange,380,4
+	.comm	player,76,4
+	.comm	soundB,24,4
+	.comm	soundA,24,4
 	.ident	"GCC: (devkitARM release 53) 9.1.0"

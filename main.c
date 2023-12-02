@@ -6,9 +6,10 @@
  * all game play implemented: movement, attack, cheat
  * added more rat enemies
  * added bgm and sound effects for the game
+ * made the start screen a scrolling screen
+ * readjusted the collision functions
  * updated the artwork of the game
  * added time delay to win/lose state so it doesn't happen suddenly
- * made the pause screen a moving background
  * updated instructions
 */
 
@@ -76,7 +77,7 @@ void initialize() {
     
     buttons = REG_BUTTONS;
     setupSounds();
-    //hOff = 0;
+    hOff = 0;
     
     goToStart();
 
@@ -88,19 +89,13 @@ void goToStart() {
 
     DMANow(3, startscreenPal, BG_PALETTE, 16);
 
-//load in start screen 1: the background of the start screen
+//load in start screen 1: the start screen
     DMANow(3, startscreenTiles, &CHARBLOCK[0], startscreenTilesLen/2);
     DMANow(3, startscreenMap, &SCREENBLOCK[28], startscreenMapLen/2);
-//load in start screen 2
+//load in start screen 2: blank bg
     DMANow(3, startscreen2Tiles, &CHARBLOCK[1], startscreen2TilesLen/2);
     DMANow(3, startscreen2Map, &SCREENBLOCK[30], startscreen2MapLen/2);
 
-    //DMANow(3, blankbgMap, &SCREENBLOCK[28], blankbgMapLen / 2);
-
-    // DMANow(3, startscreenMap, &SCREENBLOCK[28], startscreenMapLen / 2);
-    // DMANow(3, startscreenTiles, &CHARBLOCK[0], startscreenTilesLen / 2);
-    // DMANow(3, startscreenPal, BG_PALETTE, startscreenPalLen / 2);
-    
     hideSprites();
     
     waitForVBlank();
@@ -109,6 +104,7 @@ void goToStart() {
     REG_BG0HOFF = 0;
     REG_BG1VOFF = 0;
     REG_BG1HOFF = 0;
+    
 
     seed = 0;
     DMANow(3, shadowOAM, OAM, 512);
@@ -218,6 +214,8 @@ void goToInstruction() {
 
     hideSprites();
     waitForVBlank();
+    REG_BG0HOFF = 0;
+    REG_BG0VOFF = 0;
 
     DMANow(3, shadowOAM, OAM, 512);
     state = INSTRUCTION;
@@ -244,9 +242,11 @@ void goToPause() {
     DMANow(3, newpauseScreenMap, &SCREENBLOCK[28], newpauseScreenMapLen/2);
     DMANow(3, newpauseScreenPal, BG_PALETTE, newpauseScreenPalLen/2);
 
+    hOff = 0;
+    vOff = 0;
+
     hideSprites();
     waitForVBlank();
-
     DMANow(3, shadowOAM, OAM, 512);
 
     state = PAUSE;
@@ -256,6 +256,8 @@ void pause() {
     if (BUTTON_PRESSED(BUTTON_START)) {
         goToGame();
     } else if (BUTTON_PRESSED(BUTTON_SELECT)) {
+        hOff = 0;
+        vOff = 0;
         goToStart();
     }
 }
@@ -271,6 +273,8 @@ void goToLose() {
 
     hideSprites();
     waitForVBlank();
+    REG_BG0HOFF = 0;
+    REG_BG0VOFF = 0;
 
     DMANow(3, shadowOAM, OAM, 512);
     state = LOSE;
@@ -278,6 +282,8 @@ void goToLose() {
 }
 void lose() {
     if (BUTTON_PRESSED(BUTTON_START)) {
+        hOff = 0;
+        vOff = 0;
         goToStart();
     }
 }
@@ -293,6 +299,9 @@ void goToWin() {
     hideSprites();
     waitForVBlank();
 
+    REG_BG0HOFF = 0;
+    REG_BG0VOFF = 0;
+
     DMANow(3, shadowOAM, OAM, 512);
     
     state = WIN;
@@ -306,22 +315,20 @@ void win() {
 }
 
 void draw() {
+    
     if (state == GAME) {
         REG_BG0HOFF = hOff;
         REG_BG0VOFF = vOff;
-
-        
     } else if (state == START) {
-        REG_BG0HOFF = 0;
-        REG_BG0VOFF = 0;
-        REG_BG1HOFF = hOff/2;
-        REG_BG1VOFF = vOff/2;
+        REG_BG1HOFF = hOff;
+	    REG_BG1VOFF = vOff;
+        
     } else {
         REG_BG0HOFF = 0;
         REG_BG0VOFF = 0;
-
     }
     waitForVBlank();
+    
 
     DMANow(3, shadowOAM, OAM, 128*4);
     

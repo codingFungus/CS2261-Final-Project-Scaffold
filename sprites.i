@@ -86,6 +86,7 @@ typedef struct {
     int score;
     int isAttacking;
     int cheat;
+    int cheatActivated;
 } SPRITE;
 # 2 "sprites.c" 2
 

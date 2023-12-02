@@ -235,7 +235,7 @@ void playerCollision() {
     //loses life by touching orange
     for (int i = 0; i < ORANGE_COUNT; i++) {
         //int attackOffset = (player.direction == RIGHT) ? 15: -15;
-        if (player.cheat == 0 && player.direction == RIGHT) {
+        if (player.cheat == 0) {
             if (collision(player.x + 5, player.y, player.width - 5, player.height - 5,
                 orange[i].x, orange[i].y - 10, orange[i].width - 10, orange[i].height - 10)
                 &&
