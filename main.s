@@ -242,8 +242,8 @@ goToGame:
 	.align	2
 .L16:
 	.word	waitForVBlank
-	.word	Catbgm_length
-	.word	Catbgm_data
+	.word	CatSong_length
+	.word	CatSong_data
 	.word	playSoundA
 	.word	DMANow
 	.word	100720640

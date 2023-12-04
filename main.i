@@ -374,7 +374,14 @@ typedef struct{
 SOUND soundA;
 SOUND soundB;
 # 12 "game.h" 2
-# 29 "game.h"
+# 1 "crushing_orange.h" 1
+
+
+extern const unsigned int crushing_orange_sampleRate;
+extern const unsigned int crushing_orange_length;
+extern const signed char crushing_orange_data[];
+# 13 "game.h" 2
+# 31 "game.h"
 typedef struct {
     int x;
     int y;
@@ -532,12 +539,12 @@ extern const unsigned short newpauseScreenMap[1024];
 
 extern const unsigned short newpauseScreenPal[256];
 # 23 "main.h" 2
-# 1 "Catbgm.h" 1
+# 1 "CatSong.h" 1
 
 
-extern const unsigned int Catbgm_sampleRate;
-extern const unsigned int Catbgm_length;
-extern const signed char Catbgm_data[];
+extern const unsigned int CatSong_sampleRate;
+extern const unsigned int CatSong_length;
+extern const signed char CatSong_data[];
 # 24 "main.h" 2
 # 1 "disgusted.h" 1
 
@@ -738,7 +745,7 @@ void goToGame() {
     (*(volatile unsigned short*) 0x04000000) = ((0) & 7) | (1 << (8 + (0 % 4))) | (1 << 12);
 
     waitForVBlank();
-    playSoundA(Catbgm_data, Catbgm_length, 1);
+    playSoundA(CatSong_data, CatSong_length, 1);
 
     DMANow(3, newbgMap, &((SB*) 0x06000000)[28], (4096)/2);
     DMANow(3, newbg_tileTiles, &((CB*) 0x06000000)[0], 512/2);
