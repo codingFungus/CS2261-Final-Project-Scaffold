@@ -242,9 +242,9 @@ void playerCollision() {
                 !orange[i].hide) {
                     if (player.isAttacking && !collidedDuringAttack) {
                         collidedDuringAttack = 1;
-                        
                         orange[i].hide = 1;
                         mgba_printf("player attacked orange");
+                        playSoundB(crushing_orange_data, crushing_orange_length, 0);
                     } else {
                         playerDisgusted();
                         player.lives--;
@@ -264,9 +264,9 @@ void playerCollision() {
                 !orange[i].hide) {
                     if (player.isAttacking && !collidedDuringAttack) {
                         collidedDuringAttack = 1;
-                        
                         orange[i].hide = 1;
                         mgba_printf("player attacked orange");
+                        playSoundB(crushing_orange_data, crushing_orange_length, 0);
                     } else {
                         playerDisgusted();
                         player.lives--;
@@ -284,7 +284,7 @@ void playerCollision() {
                 !orange[i].hide) {
                     if (player.isAttacking && !collidedDuringAttack) {
                         collidedDuringAttack = 1;
-                        
+                        playSoundB(crushing_orange_data, crushing_orange_length, 0);
                         orange[i].hide = 1;
                         mgba_printf("player attacked orange");
                     } else {
@@ -313,7 +313,7 @@ void playerCollision() {
             !cucumber[j].hide) {
                 if (player.isAttacking && !collidedDuringAttack) {
                     collidedDuringAttack = 1;
-                    
+                    playSoundB(crushing_orange_data, crushing_orange_length, 0);
                     cucumber[j].hide = 1;
                     mgba_printf("player attacked cucumber");
 
@@ -334,7 +334,7 @@ void playerCollision() {
                 !cucumber[j].hide) {
                     if (player.isAttacking && !collidedDuringAttack) {
                         collidedDuringAttack = 1;
-                        
+                        playSoundB(crushing_orange_data, crushing_orange_length, 0);
                         cucumber[j].hide = 1;
                         mgba_printf("player attacked cucumber");
 
@@ -355,7 +355,7 @@ void playerCollision() {
                     !cucumber[j].hide) {
                         if (player.isAttacking && !collidedDuringAttack) {
                             collidedDuringAttack = 1;
-                            
+                            playSoundB(crushing_orange_data, crushing_orange_length, 0);
                             cucumber[j].hide = 1;
                             mgba_printf("player attacked cucumber");
 
