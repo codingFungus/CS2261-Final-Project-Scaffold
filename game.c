@@ -10,13 +10,13 @@ const int xNip[CATNIP_COUNT] = {5, 8, 480, 400, 90, 350};
 const int yNip[CATNIP_COUNT] = {160, 16, 100, 0, 10, 70};
 
 
+
 int collisionCooldown = 0;
 int disgustedDisplayTimer = 0;
-
-Bullet bullet[5];
-
+int collided = 0;
+int changecolorTimer = 0;
 //wip
-// void objectFactory(enum Code code) {
+// void objectFactory(enum Code code) {u want to change the color of a specific SP
 //     if (code == ORANGE) {
 //         for (int i = 0; i < ORANGE_xCOUNT; ++i) {
 //             initObject(i, orange, 32, 32, xOrange[i], yOrange[i], 1 + i, 0);
@@ -65,6 +65,9 @@ void updateGame() {
         disgustedDisplayTimer--;
         
     }
+    if (changecolorTimer > 0) {
+        changecolorTimer--;
+    }
     
     updatePlayer();
     updateRat();
@@ -109,6 +112,9 @@ void drawPlayer() {
         shadowOAM[player.oamIndex].attr2 = ATTR2_TILEID(player.currentFrame * 4, 0);
 
     }
+
+    
+    
     
     if (player.direction == RIGHT) {
         shadowOAM[player.oamIndex].attr1 |= ATTR1_HFLIP;
@@ -243,13 +249,17 @@ void playerCollision() {
                     if (player.isAttacking && !collidedDuringAttack) {
                         collidedDuringAttack = 1;
                         orange[i].hide = 1;
+                        collided = 1;
+                        
                         mgba_printf("player attacked orange");
                         playSoundB(crushing_orange_data, crushing_orange_length, 0);
+                        
                     } else {
                         playerDisgusted();
                         player.lives--;
                         collisionCooldown = COLLISION_COOLDOWN;
                         playSoundB(disgusted_data, disgusted_length, 0);
+                        SPRITE_PALETTE[10] = RGB(31, 23, 0);
                         
                         playerDisgusted();
                         mgba_printf("player lives: %d\n", player.lives);
@@ -267,11 +277,13 @@ void playerCollision() {
                         orange[i].hide = 1;
                         mgba_printf("player attacked orange");
                         playSoundB(crushing_orange_data, crushing_orange_length, 0);
+
                     } else {
                         playerDisgusted();
                         player.lives--;
                         collisionCooldown = COLLISION_COOLDOWN;
                         playSoundB(disgusted_data, disgusted_length, 0);
+                        SPRITE_PALETTE[10] = RGB(31, 23, 0);
                         
                         playerDisgusted();
                         mgba_printf("player lives: %d\n", player.lives);
@@ -292,7 +304,7 @@ void playerCollision() {
                         player.lives--;
                         collisionCooldown = COLLISION_COOLDOWN;
                         playSoundB(disgusted_data, disgusted_length, 0);
-                        
+                        SPRITE_PALETTE[10] = RGB(31, 23, 0);
                         playerDisgusted();
                         mgba_printf("player lives: %d\n", player.lives);
                     }
@@ -322,6 +334,7 @@ void playerCollision() {
                     player.lives--;
                     playSoundB(disgusted_data, disgusted_length, 0);
                     collisionCooldown = COLLISION_COOLDOWN;
+                    SPRITE_PALETTE[10] = RGB(0, 20, 0);
                     mgba_printf("player lives: %d\n", player.lives);
                 }
             }

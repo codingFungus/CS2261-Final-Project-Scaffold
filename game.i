@@ -157,7 +157,7 @@ extern const unsigned int crushing_orange_sampleRate;
 extern const unsigned int crushing_orange_length;
 extern const signed char crushing_orange_data[];
 # 13 "game.h" 2
-# 30 "game.h"
+# 33 "game.h"
 typedef struct {
     int x;
     int y;
@@ -235,10 +235,11 @@ const int xNip[6] = {5, 8, 480, 400, 90, 350};
 const int yNip[6] = {160, 16, 100, 0, 10, 70};
 
 
+
 int collisionCooldown = 0;
 int disgustedDisplayTimer = 0;
-
-Bullet bullet[5];
+int collided = 0;
+int changecolorTimer = 0;
 # 35 "game.c"
 void initGame() {
     initPlayer();
@@ -272,6 +273,9 @@ void updateGame() {
         playerDisgusted();
         disgustedDisplayTimer--;
 
+    }
+    if (changecolorTimer > 0) {
+        changecolorTimer--;
     }
 
     updatePlayer();
@@ -317,6 +321,9 @@ void drawPlayer() {
         shadowOAM[player.oamIndex].attr2 = (((0) * (32) + (player.currentFrame * 4)) & 0x3FF);
 
     }
+
+
+
 
     if (player.direction == RIGHT) {
         shadowOAM[player.oamIndex].attr1 |= (1 << 12);
@@ -451,13 +458,17 @@ void playerCollision() {
                     if (player.isAttacking && !collidedDuringAttack) {
                         collidedDuringAttack = 1;
                         orange[i].hide = 1;
+                        collided = 1;
+
                         mgba_printf("player attacked orange");
                         playSoundB(crushing_orange_data, crushing_orange_length, 0);
+
                     } else {
                         playerDisgusted();
                         player.lives--;
                         collisionCooldown = 40;
                         playSoundB(disgusted_data, disgusted_length, 0);
+                        ((u16*) 0x5000200)[10] = (((31) & 31) | ((23) & 31) << 5 | ((0) & 31) << 10);
 
                         playerDisgusted();
                         mgba_printf("player lives: %d\n", player.lives);
@@ -475,11 +486,13 @@ void playerCollision() {
                         orange[i].hide = 1;
                         mgba_printf("player attacked orange");
                         playSoundB(crushing_orange_data, crushing_orange_length, 0);
+
                     } else {
                         playerDisgusted();
                         player.lives--;
                         collisionCooldown = 40;
                         playSoundB(disgusted_data, disgusted_length, 0);
+                        ((u16*) 0x5000200)[10] = (((31) & 31) | ((23) & 31) << 5 | ((0) & 31) << 10);
 
                         playerDisgusted();
                         mgba_printf("player lives: %d\n", player.lives);
@@ -500,7 +513,7 @@ void playerCollision() {
                         player.lives--;
                         collisionCooldown = 40;
                         playSoundB(disgusted_data, disgusted_length, 0);
-
+                        ((u16*) 0x5000200)[10] = (((31) & 31) | ((23) & 31) << 5 | ((0) & 31) << 10);
                         playerDisgusted();
                         mgba_printf("player lives: %d\n", player.lives);
                     }
@@ -530,6 +543,7 @@ void playerCollision() {
                     player.lives--;
                     playSoundB(disgusted_data, disgusted_length, 0);
                     collisionCooldown = 40;
+                    ((u16*) 0x5000200)[10] = (((0) & 31) | ((20) & 31) << 5 | ((0) & 31) << 10);
                     mgba_printf("player lives: %d\n", player.lives);
                 }
             }
@@ -780,7 +794,7 @@ void drawOrange() {
     }
 
 }
-# 589 "game.c"
+# 602 "game.c"
 void initCucumber() {
     for (int i = 0; i < 4; i++) {
 

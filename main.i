@@ -381,7 +381,7 @@ extern const unsigned int crushing_orange_sampleRate;
 extern const unsigned int crushing_orange_length;
 extern const signed char crushing_orange_data[];
 # 13 "game.h" 2
-# 31 "game.h"
+# 33 "game.h"
 typedef struct {
     int x;
     int y;
@@ -459,7 +459,7 @@ extern const unsigned short catSpritesheetPal[256];
 
 # 1 "winbg.h" 1
 # 22 "winbg.h"
-extern const unsigned short winbgTiles[2272];
+extern const unsigned short winbgTiles[2256];
 
 
 extern const unsigned short winbgMap[1024];
@@ -890,7 +890,7 @@ void goToWin() {
     (*(volatile unsigned short*) 0x0400000A) = ((0) << 2) | ((28) << 8) | (0 << 14);
 
     DMANow(3, winbgMap, &((SB*) 0x06000000)[28], 2048/2);
-    DMANow(3, winbgTiles, &((CB*) 0x06000000)[0], 4544/2);
+    DMANow(3, winbgTiles, &((CB*) 0x06000000)[0], 4512/2);
     DMANow(3, winbgPal, ((unsigned short*) 0x05000000), 512/2);
 
     hideSprites();

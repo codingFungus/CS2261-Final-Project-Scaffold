@@ -27,6 +27,8 @@
 #define CATNIP_COUNT 6
 #define COLLISION_COOLDOWN 40
 #define DISGUSTED_TIME 100
+#define CHANGE_TIME 30
+#define PLAYER_PALETTE_INDEX 1
 
 typedef struct {
     int x;
