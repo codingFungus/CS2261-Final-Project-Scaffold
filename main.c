@@ -92,9 +92,12 @@ void goToStart() {
 //load in start screen 1: the start screen
     DMANow(3, startscreenTiles, &CHARBLOCK[0], startscreenTilesLen/2);
     DMANow(3, startscreenMap, &SCREENBLOCK[28], startscreenMapLen/2);
+    
 //load in start screen 2: blank bg
-    DMANow(3, startscreen2Tiles, &CHARBLOCK[1], startscreen2TilesLen/2);
     DMANow(3, startscreen2Map, &SCREENBLOCK[30], startscreen2MapLen/2);
+    for (int i = 0; i < startscreen2MapLen/2; i++) {
+        SCREENBLOCK[30].tilemap[i] |= TILEMAP_ENTRY_PALROW(2);
+    }
 
     hideSprites();
     

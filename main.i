@@ -690,8 +690,11 @@ void goToStart() {
     DMANow(3, startscreenTiles, &((CB*) 0x06000000)[0], 10240/2);
     DMANow(3, startscreenMap, &((SB*) 0x06000000)[28], 2048/2);
 
-    DMANow(3, startscreen2Tiles, &((CB*) 0x06000000)[1], 32/2);
+
     DMANow(3, startscreen2Map, &((SB*) 0x06000000)[30], 2048/2);
+    for (int i = 0; i < 2048/2; i++) {
+        ((SB*) 0x06000000)[30].tilemap[i] |= ((2 & 15) << 12);
+    }
 
     hideSprites();
 
